@@ -15,7 +15,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup symbol_id_layers
     ///
     /// @brief Reads the row index of the Reed-Solomon generator matrix from

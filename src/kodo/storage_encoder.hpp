@@ -11,7 +11,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @brief A storage encoder creates a number of encoders over a
     ///        sak::const_storage object.
     ///

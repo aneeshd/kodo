@@ -1,0 +1,157 @@
+\hypertarget{classkodo_1_1random__annex__base}{\section{kodo\-:\-:random\-\_\-annex\-\_\-base$<$ Block\-Partitioning $>$ Class Template Reference}
+\label{classkodo_1_1random__annex__base}\index{kodo\-::random\-\_\-annex\-\_\-base$<$ Block\-Partitioning $>$@{kodo\-::random\-\_\-annex\-\_\-base$<$ Block\-Partitioning $>$}}
+}
+
+
+Base class for the random annex encoder and decoder.  
+
+
+
+
+{\ttfamily \#include $<$random\-\_\-annex\-\_\-base.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:random\-\_\-annex\-\_\-base$<$ Block\-Partitioning $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.131979cm]{classkodo_1_1random__annex__base}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1random__annex__base_a2853201f19ed35facc0d41a936379d17}{typedef Block\-Partitioning \hyperlink{classkodo_1_1random__annex__base_a2853201f19ed35facc0d41a936379d17}{block\-\_\-partitioning}}\label{classkodo_1_1random__annex__base_a2853201f19ed35facc0d41a936379d17}
+
+\begin{DoxyCompactList}\small\item\em The block partitioning scheme used. \end{DoxyCompactList}\item 
+typedef std\-::pair$<$ std\-::set\\*
+$<$ \hyperlink{structkodo_1_1annex__info}{annex\-\_\-info} $>$\-::iterator, bool $>$ \hyperlink{classkodo_1_1random__annex__base_abbc4827931452604ab1ea4546462c588}{annex\-\_\-return}
+\item 
+\hypertarget{classkodo_1_1random__annex__base_ab35772eb5e7d4dbd74fbdea0c7bb04c7}{typedef \\*
+boost\-::random\-::uniform\-\_\-int\-\_\-distribution\\*
+$<$ uint32\-\_\-t $>$ \hyperlink{classkodo_1_1random__annex__base_ab35772eb5e7d4dbd74fbdea0c7bb04c7}{uniform\-\_\-int}}\label{classkodo_1_1random__annex__base_ab35772eb5e7d4dbd74fbdea0c7bb04c7}
+
+\begin{DoxyCompactList}\small\item\em The uniform int distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1random__annex__base_acafec787f6330df1804cc0cc36d2fd75}{build\-\_\-annex} (uint32\-\_\-t annex\-\_\-size, const \hyperlink{classkodo_1_1random__annex__base_a2853201f19ed35facc0d41a936379d17}{block\-\_\-partitioning} \&partitioning)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1random__annex__base_a039cf58b6cc56adc6cd7ed4865fbcedc}{select\-\_\-block} (uint32\-\_\-t exclude\-\_\-block)
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1random__annex__base_a4691622d46017f89de8f0d4c5efe0f2a}{select\-\_\-symbol} (uint32\-\_\-t block\-\_\-symbols)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1random__annex__base_a2590b643a969943744f10b681d6a8e91}{\hyperlink{classkodo_1_1random__annex__base_ab35772eb5e7d4dbd74fbdea0c7bb04c7}{uniform\-\_\-int} \hyperlink{classkodo_1_1random__annex__base_a2590b643a969943744f10b681d6a8e91}{m\-\_\-block\-\_\-distribution}}\label{classkodo_1_1random__annex__base_a2590b643a969943744f10b681d6a8e91}
+
+\begin{DoxyCompactList}\small\item\em The distribution wrapping the random generator. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1random__annex__base_a661488fd30cb07fb9cfb48b98db15dee}{boost\-::random\-::mt19937 \hyperlink{classkodo_1_1random__annex__base_a661488fd30cb07fb9cfb48b98db15dee}{m\-\_\-random\-\_\-generator}}\label{classkodo_1_1random__annex__base_a661488fd30cb07fb9cfb48b98db15dee}
+
+\begin{DoxyCompactList}\small\item\em The random generator. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1random__annex__base_a03b1dd1da1eb7423f405c5846b713438}{std\-::vector$<$ std\-::set\\*
+$<$ \hyperlink{structkodo_1_1annex__info}{annex\-\_\-info} $>$ $>$ \hyperlink{classkodo_1_1random__annex__base_a03b1dd1da1eb7423f405c5846b713438}{m\-\_\-annex}}\label{classkodo_1_1random__annex__base_a03b1dd1da1eb7423f405c5846b713438}
+
+\begin{DoxyCompactList}\small\item\em Stores the annex for every block. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1random__annex__base_ab76b16b50935419ac6b948ec787901fe}{std\-::vector\\*
+$<$ boost\-::dynamic\-\_\-bitset$<$$>$ $>$ \hyperlink{classkodo_1_1random__annex__base_ab76b16b50935419ac6b948ec787901fe}{m\-\_\-reverse\-\_\-annex}}\label{classkodo_1_1random__annex__base_ab76b16b50935419ac6b948ec787901fe}
+
+\begin{DoxyCompactList}\small\item\em Stores the reverse annex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Block\-Partitioning$>$class kodo\-::random\-\_\-annex\-\_\-base$<$ Block\-Partitioning $>$}
+
+Base class for the random annex encoder and decoder. 
+
+Definition at line 100 of file random\-\_\-annex\-\_\-base.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1random__annex__base_abbc4827931452604ab1ea4546462c588}{\index{kodo\-::random\-\_\-annex\-\_\-base@{kodo\-::random\-\_\-annex\-\_\-base}!annex\-\_\-return@{annex\-\_\-return}}
+\index{annex\-\_\-return@{annex\-\_\-return}!kodo::random_annex_base@{kodo\-::random\-\_\-annex\-\_\-base}}
+\subsubsection[{annex\-\_\-return}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Block\-Partitioning$>$ typedef std\-::pair$<$std\-::set$<${\bf annex\-\_\-info}$>$\-::iterator,bool$>$ {\bf kodo\-::random\-\_\-annex\-\_\-base}$<$ Block\-Partitioning $>$\-::{\bf annex\-\_\-return}}}\label{classkodo_1_1random__annex__base_abbc4827931452604ab1ea4546462c588}
+Convenient typedef to make the Standard Libary insert ugly'ness a bit more nicer 
+
+Definition at line 109 of file random\-\_\-annex\-\_\-base.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1random__annex__base_acafec787f6330df1804cc0cc36d2fd75}{\index{kodo\-::random\-\_\-annex\-\_\-base@{kodo\-::random\-\_\-annex\-\_\-base}!build\-\_\-annex@{build\-\_\-annex}}
+\index{build\-\_\-annex@{build\-\_\-annex}!kodo::random_annex_base@{kodo\-::random\-\_\-annex\-\_\-base}}
+\subsubsection[{build\-\_\-annex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Block\-Partitioning$>$ void {\bf kodo\-::random\-\_\-annex\-\_\-base}$<$ Block\-Partitioning $>$\-::build\-\_\-annex (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{annex\-\_\-size, }
+\item[{const {\bf block\-\_\-partitioning} \&}]{partitioning}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1random__annex__base_acafec787f6330df1804cc0cc36d2fd75}
+Builds the random annex according to the given annex size and partitioning scheme 
+\begin{DoxyParams}{Parameters}
+{\em annex\-\_\-size} & the size of the annex \\
+\hline
+{\em partitioning} & the partitioning scheme used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file random\-\_\-annex\-\_\-base.\-hpp.
+
+
+
+Referenced by invoke\-\_\-random\-\_\-annex\-\_\-base(), kodo\-::random\-\_\-annex\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-::random\-\_\-annex\-\_\-decoder(), and kodo\-::random\-\_\-annex\-\_\-encoder$<$ Encoder\-Type, Block\-Partitioning $>$\-::random\-\_\-annex\-\_\-encoder().
+
+\hypertarget{classkodo_1_1random__annex__base_a039cf58b6cc56adc6cd7ed4865fbcedc}{\index{kodo\-::random\-\_\-annex\-\_\-base@{kodo\-::random\-\_\-annex\-\_\-base}!select\-\_\-block@{select\-\_\-block}}
+\index{select\-\_\-block@{select\-\_\-block}!kodo::random_annex_base@{kodo\-::random\-\_\-annex\-\_\-base}}
+\subsubsection[{select\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Block\-Partitioning$>$ uint32\-\_\-t {\bf kodo\-::random\-\_\-annex\-\_\-base}$<$ Block\-Partitioning $>$\-::select\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{exclude\-\_\-block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classkodo_1_1random__annex__base_a039cf58b6cc56adc6cd7ed4865fbcedc}
+Selects a block from the block distribution, however with a certain block excluded 
+\begin{DoxyParams}{Parameters}
+{\em exclude\-\_\-block} & block excluded from the random pick \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the selected block 
+\end{DoxyReturn}
+
+
+Definition at line 224 of file random\-\_\-annex\-\_\-base.\-hpp.
+
+
+
+Referenced by kodo\-::random\-\_\-annex\-\_\-base$<$ Block\-Partitioning $>$\-::build\-\_\-annex().
+
+\hypertarget{classkodo_1_1random__annex__base_a4691622d46017f89de8f0d4c5efe0f2a}{\index{kodo\-::random\-\_\-annex\-\_\-base@{kodo\-::random\-\_\-annex\-\_\-base}!select\-\_\-symbol@{select\-\_\-symbol}}
+\index{select\-\_\-symbol@{select\-\_\-symbol}!kodo::random_annex_base@{kodo\-::random\-\_\-annex\-\_\-base}}
+\subsubsection[{select\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Block\-Partitioning$>$ uint32\-\_\-t {\bf kodo\-::random\-\_\-annex\-\_\-base}$<$ Block\-Partitioning $>$\-::select\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{block\-\_\-symbols}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classkodo_1_1random__annex__base_a4691622d46017f89de8f0d4c5efe0f2a}
+Selects a symbol id 
+\begin{DoxyParams}{Parameters}
+{\em block\-\_\-symbols} & the number of symbols in a block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the selected block index 
+\end{DoxyReturn}
+
+
+Definition at line 241 of file random\-\_\-annex\-\_\-base.\-hpp.
+
+
+
+Referenced by kodo\-::random\-\_\-annex\-\_\-base$<$ Block\-Partitioning $>$\-::build\-\_\-annex().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+random\-\_\-annex\-\_\-base.\-hpp\end{DoxyCompactItemize}

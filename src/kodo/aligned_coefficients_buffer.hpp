@@ -14,6 +14,7 @@
 
 namespace kodo
 {
+    /// @todo Missing or incorrectly named unit test
     /// @brief Helper layer for layers that require a buffer for storing
     ///        symbol coefficients. The storage is uninitialized. The
     ///        buffer is guaranteed to be aligned (on a 16 byte boundary).

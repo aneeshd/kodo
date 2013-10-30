@@ -1,0 +1,163 @@
+\hypertarget{encode_decode_storage_8cpp-example}{\section{encode\-\_\-decode\-\_\-storage.\-cpp}
+}
+Often we want to encode / decode data that exceed a single encoding/decoding block. In this case we need to \char`\"{}chop\char`\"{} up the data into manageable chunks and then encode and decode each chuck separately. This examples shows how to use the storage encoder and decoder in Kodo.
+
+Both the encoder and decoder uses a shallow storage which means that they operate directly on the memory provided.
+
+
+\begin{DoxyCodeInclude}
+\textcolor{comment}{// Copyright Steinwurf ApS 2011-2012.}
+\textcolor{comment}{// Distributed under the "STEINWURF RESEARCH LICENSE 1.0".}
+\textcolor{comment}{// See accompanying file LICENSE.rst or}
+\textcolor{comment}{// http://www.steinwurf.com/licensing}
+
+\textcolor{preprocessor}{#include <kodo/file\_encoder.hpp>}
+\textcolor{preprocessor}{#include <kodo/shallow\_storage\_decoder.hpp>}
+\textcolor{preprocessor}{#include <kodo/storage\_encoder.hpp>}
+\textcolor{preprocessor}{#include <kodo/rlnc/full\_vector\_codes.hpp>}
+\textcolor{preprocessor}{#include <kodo/partial\_shallow\_symbol\_storage.hpp>}
+
+
+\textcolor{keyword}{namespace }kodo
+\{
+
+    \textcolor{keyword}{template}<\textcolor{keyword}{class} Field>
+    \textcolor{keyword}{class }shallow\_rlnc\_encoder :
+        \textcolor{keyword}{public} \textcolor{comment}{// Payload Codec API}
+               payload\_encoder<
+               \textcolor{comment}{// Codec Header API}
+               systematic\_encoder<
+               symbol\_id\_encoder<
+               \textcolor{comment}{// Symbol ID API}
+               plain\_symbol\_id\_writer<
+               \textcolor{comment}{// Coefficient Generator API}
+               uniform\_generator<
+               \textcolor{comment}{// Encoder API}
+               storage\_aware\_encoder<
+               encode\_symbol\_tracker<
+               zero\_symbol\_encoder<
+               linear\_block\_encoder<
+               \textcolor{comment}{// Coefficient Storage API}
+               coefficient\_value\_access<
+               coefficient\_info<
+               \textcolor{comment}{// Symbol Storage API}
+               partial\_shallow\_symbol\_storage<
+               storage\_bytes\_used<
+               storage\_block\_info<
+               \textcolor{comment}{// Finite Field API}
+               finite\_field\_math<typename fifi::default\_field<Field>::type,
+               finite\_field\_info<Field,
+               \textcolor{comment}{// Factory API}
+               final\_coder\_factory\_pool<
+               \textcolor{comment}{// Final type}
+               full\_rlnc\_encoder<Field>
+                   > > > > > > > > > > > > > > > > >
+    \{ \};
+
+    \textcolor{keyword}{template}<\textcolor{keyword}{class} Field>
+    \textcolor{keyword}{class }shallow\_rlnc\_decoder :
+        \textcolor{keyword}{public} \textcolor{comment}{// Payload API}
+               payload\_recoder<recoding\_stack,
+               payload\_decoder<
+               \textcolor{comment}{// Codec Header API}
+               systematic\_decoder<
+               symbol\_id\_decoder<
+               \textcolor{comment}{// Symbol ID API}
+               plain\_symbol\_id\_reader<
+               \textcolor{comment}{// Decoder API}
+               aligned\_coefficients\_decoder<
+               forward\_linear\_block\_decoder<
+               symbol\_decoding\_status\_counter<
+               symbol\_decoding\_status\_tracker<
+               \textcolor{comment}{// Coefficient Storage API}
+               coefficient\_value\_access<
+               coefficient\_storage<
+               coefficient\_info<
+               \textcolor{comment}{// Storage API}
+               mutable\_shallow\_symbol\_storage<
+               storage\_bytes\_used<
+               storage\_block\_info<
+               \textcolor{comment}{// Finite Field API}
+               finite\_field\_math<typename fifi::default\_field<Field>::type,
+               finite\_field\_info<Field,
+               \textcolor{comment}{// Factory API}
+               final\_coder\_factory\_pool<
+               \textcolor{comment}{// Final type}
+               shallow\_rlnc\_decoder<Field>
+                   > > > > > > > > > > > > > > > > > >
+    \{ \};
+\}
+
+
+
+\textcolor{keywordtype}{int} main()
+\{
+
+    \textcolor{comment}{// Set the number of symbols (i.e. the generation size in RLNC}
+    \textcolor{comment}{// terminology) and the size of a symbol in bytes}
+    uint32\_t max\_symbols = 42;
+    uint32\_t max\_symbol\_size = 64;
+    uint32\_t object\_size = 23456;
+
+    \textcolor{keyword}{typedef} \hyperlink{classkodo_1_1storage__encoder}{kodo::storage\_encoder}<
+        \hyperlink{classkodo_1_1shallow__rlnc__encoder}{kodo::shallow\_rlnc\_encoder<fifi::binary>} >
+           storage\_encoder;
+
+    \textcolor{keyword}{typedef} \hyperlink{classkodo_1_1shallow__storage__decoder}{kodo::shallow\_storage\_decoder}<
+        kodo::shallow\_rlnc\_decoder<fifi::binary> >
+           storage\_decoder;
+
+    storage\_encoder::factory encoder\_factory(max\_symbols, max\_symbol\_size);
+    storage\_decoder::factory decoder\_factory(max\_symbols, max\_symbol\_size);
+
+    \textcolor{comment}{// The storage needed for all decoders}
+    uint32\_t total\_block\_size =
+        decoder\_factory.total\_block\_size(object\_size);
+
+    std::vector<uint8\_t> data\_out(total\_block\_size, \textcolor{charliteral}{'\(\backslash\)0'});
+    std::vector<uint8\_t> data\_in(object\_size, \textcolor{charliteral}{'x'});
+
+    storage\_encoder encoder(
+        encoder\_factory, sak::storage(data\_in));
+
+    storage\_decoder decoder(
+        decoder\_factory, object\_size, sak::storage(data\_out));
+
+    \textcolor{keywordflow}{for}(uint32\_t i = 0; i < encoder.encoders(); ++i)
+    \{
+        \textcolor{keyword}{auto} e = encoder.build(i);
+        \textcolor{keyword}{auto} d = decoder.build(i);
+
+        std::vector<uint8\_t> payload(e->payload\_size());
+
+        \textcolor{keywordflow}{while}(!d->is\_complete())
+        \{
+            e->encode( &payload[0] );
+
+            \textcolor{comment}{// Here we would send and receive the payload over a}
+            \textcolor{comment}{// network. Lets throw away some packet to simulate.}
+            \textcolor{keywordflow}{if}((rand() % 2) == 0)
+                \textcolor{keywordflow}{continue};
+
+            d->decode( &payload[0] );
+
+        \}
+    \}
+
+    \textcolor{comment}{// Resize the output buffer to contain only the object data}
+    data\_out.resize(object\_size);
+
+    \textcolor{comment}{// Check we properly decoded the data}
+    \textcolor{keywordflow}{if} (std::equal(data\_in.begin(),data\_in.end(), data\_out.begin()))
+    \{
+        std::cout << \textcolor{stringliteral}{"Data decoded correctly"} << std::endl;
+    \}
+    \textcolor{keywordflow}{else}
+    \{
+        std::cout << \textcolor{stringliteral}{"Unexpected failure to decode "}
+                  << \textcolor{stringliteral}{"please file a bug report :)"} << std::endl;
+    \}
+\}
+
+\end{DoxyCodeInclude}
+ 

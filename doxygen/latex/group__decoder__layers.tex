@@ -1,0 +1,35 @@
+\hypertarget{group__decoder__layers}{\section{Layers}
+\label{group__decoder__layers}\index{Layers@{Layers}}
+}
+
+
+Implementations of the decoder A\-P\-I.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1aligned__coefficients__decoder}{kodo\-::aligned\-\_\-coefficients\-\_\-decoder$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em Aligns the symbol coefficient buffer if necessary. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1backward__linear__block__decoder}{kodo\-::backward\-\_\-linear\-\_\-block\-\_\-decoder$<$ Super\-Coder $>$}
+\item 
+class \hyperlink{classkodo_1_1bidirectional__linear__block__decoder}{kodo\-::bidirectional\-\_\-linear\-\_\-block\-\_\-decoder$<$ Direction\-Policy, Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em Implements basic linear block decoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1cached__symbol__decoder}{kodo\-::cached\-\_\-symbol\-\_\-decoder$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em This layer extracts the symbol coefficients and symbol data and makes it available for use. It does not perform any decoding on the coefficients or the symbol. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1empty__decoder}{kodo\-::empty\-\_\-decoder$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em Empty implementation of the \hyperlink{classkodo_1_1empty__decoder_aa700bffb25d17e3e2c819d36ed61308a}{decode\-\_\-symbol(uint8\-\_\-t$\ast$,uint8\-\_\-t$\ast$)} and \hyperlink{classkodo_1_1empty__decoder_aac8f8c663ddeaf9700d1a0fc50674462}{decode\-\_\-symbol(uint8\-\_\-t$\ast$, uint32\-\_\-t)} functions. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1forward__linear__block__decoder}{kodo\-::forward\-\_\-linear\-\_\-block\-\_\-decoder$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em Implements basic linear block decoder using the forward direction policy. This is equivalent to the standard approach to Gaussian Elimination. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1largest__nonzero__index__decoder}{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em This layer can be added to a decoding stack to monitor the coding coefficients passed to a decoder. This specific layer tracks the largest index where it have seen non-\/zero coefficients. One use-\/case of this is to monitor when partial decoding is possible i.\-e. when symbols in decoder are fully decoded even though the full data block has not been sent. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1linear__block__decoder__delayed}{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em Linear block decoder with delayer backwards substitution. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1nocode__decoder}{kodo\-::nocode\-\_\-decoder$<$ Super\-Coder $>$}
+\item 
+class \hyperlink{classkodo_1_1rank__callback__decoder}{kodo\-::rank\-\_\-callback\-\_\-decoder$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em Allows a callback function to be invoked after rank changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementations of the decoder A\-P\-I. 

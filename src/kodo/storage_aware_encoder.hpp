@@ -9,7 +9,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup encoder_layers
     /// @brief Implements the layer::rank() and layer::is_symbol_pivot()
     ///        functions based on the storage status.

@@ -1,0 +1,186 @@
+\hypertarget{classkodo_1_1coefficient__info}{\section{kodo\-:\-:coefficient\-\_\-info$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1coefficient__info}\index{kodo\-::coefficient\-\_\-info$<$ Super\-Coder $>$@{kodo\-::coefficient\-\_\-info$<$ Super\-Coder $>$}}
+}
+
+
+Provides info about the coding coefficients used during encoding and decoding.  
+
+
+
+
+{\ttfamily \#include $<$coefficient\-\_\-info.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:coefficient\-\_\-info$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1coefficient__info}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1coefficient__info_1_1factory}{factory}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Super\-Coder\-::field\-\_\-type \hyperlink{classkodo_1_1coefficient__info_a99c7ca3d45844ae0ea385e26ab89e7e2}{field\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+typedef field\-\_\-type\-::value\-\_\-type \hyperlink{classkodo_1_1coefficient__info_aad4c09d64c58a0469b87aff5ee7c1607}{value\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1coefficient__info_aebcd7f57c492a854646c83631ee6a86c}{\hyperlink{classkodo_1_1coefficient__info_aebcd7f57c492a854646c83631ee6a86c}{coefficient\-\_\-info} ()}\label{classkodo_1_1coefficient__info_aebcd7f57c492a854646c83631ee6a86c}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1coefficient__info_a5645a41990fe69c783e326b58c0530bf}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1coefficient__info_af1d7e9b534262aab49f7c15aacb09981}{coefficient\-\_\-vectors} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1coefficient__info_a48d8d488f4a4327bf43b1693e3bd2d54}{coefficient\-\_\-vector\-\_\-elements} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1coefficient__info_af8946b34b40c1036ec6da6cefee60f67}{coefficient\-\_\-vector\-\_\-length} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1coefficient__info_af176b13de27ed152a0745c64dbf3e732}{coefficient\-\_\-vector\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::coefficient\-\_\-info$<$ Super\-Coder $>$}
+
+Provides info about the coding coefficients used during encoding and decoding. 
+
+Definition at line 19 of file coefficient\-\_\-info.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1coefficient__info_a99c7ca3d45844ae0ea385e26ab89e7e2}{\index{kodo\-::coefficient\-\_\-info@{kodo\-::coefficient\-\_\-info}!field\-\_\-type@{field\-\_\-type}}
+\index{field\-\_\-type@{field\-\_\-type}!kodo::coefficient_info@{kodo\-::coefficient\-\_\-info}}
+\subsubsection[{field\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef Super\-Coder\-::field\-\_\-type {\bf kodo\-::coefficient\-\_\-info}$<$ Super\-Coder $>$\-::{\bf field\-\_\-type}}}\label{classkodo_1_1coefficient__info_a99c7ca3d45844ae0ea385e26ab89e7e2}
+
+
+
+
+The finite field type used e.\-g. fifi\-::binary8 for the Finite Field 2$^\wedge$8 
+
+Definition at line 24 of file coefficient\-\_\-info.\-hpp.
+
+\hypertarget{classkodo_1_1coefficient__info_aad4c09d64c58a0469b87aff5ee7c1607}{\index{kodo\-::coefficient\-\_\-info@{kodo\-::coefficient\-\_\-info}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!kodo::coefficient_info@{kodo\-::coefficient\-\_\-info}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef field\-\_\-type\-::value\-\_\-type {\bf kodo\-::coefficient\-\_\-info}$<$ Super\-Coder $>$\-::{\bf value\-\_\-type}}}\label{classkodo_1_1coefficient__info_aad4c09d64c58a0469b87aff5ee7c1607}
+
+
+
+
+The value type storing the field elements used for the specified field. E.\-g. the binary extension field 2$^\wedge$8 uses uint8\-\_\-t as the value\-\_\-type. 
+
+Definition at line 27 of file coefficient\-\_\-info.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1coefficient__info_a48d8d488f4a4327bf43b1693e3bd2d54}{\index{kodo\-::coefficient\-\_\-info@{kodo\-::coefficient\-\_\-info}!coefficient\-\_\-vector\-\_\-elements@{coefficient\-\_\-vector\-\_\-elements}}
+\index{coefficient\-\_\-vector\-\_\-elements@{coefficient\-\_\-vector\-\_\-elements}!kodo::coefficient_info@{kodo\-::coefficient\-\_\-info}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-elements}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::coefficient\-\_\-info}$<$ Super\-Coder $>$\-::coefficient\-\_\-vector\-\_\-elements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1coefficient__info_a48d8d488f4a4327bf43b1693e3bd2d54}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+The number of coefficients stored in a coefficient vector. The count will say how many finite field elements will be stored within a coefficient vector, whereas the size and length refers to the space (in terms of memory) occupied by those coefficients. 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file coefficient\-\_\-info.\-hpp.
+
+\hypertarget{classkodo_1_1coefficient__info_af8946b34b40c1036ec6da6cefee60f67}{\index{kodo\-::coefficient\-\_\-info@{kodo\-::coefficient\-\_\-info}!coefficient\-\_\-vector\-\_\-length@{coefficient\-\_\-vector\-\_\-length}}
+\index{coefficient\-\_\-vector\-\_\-length@{coefficient\-\_\-vector\-\_\-length}!kodo::coefficient_info@{kodo\-::coefficient\-\_\-info}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::coefficient\-\_\-info}$<$ Super\-Coder $>$\-::coefficient\-\_\-vector\-\_\-length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1coefficient__info_af8946b34b40c1036ec6da6cefee60f67}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+The number of \hyperlink{classlayer_a3ad6d6930927932e5c25f2a2b5277cc0}{layer\-::value\-\_\-type} elements needed to store the symbol coefficients. 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file coefficient\-\_\-info.\-hpp.
+
+\hypertarget{classkodo_1_1coefficient__info_af176b13de27ed152a0745c64dbf3e732}{\index{kodo\-::coefficient\-\_\-info@{kodo\-::coefficient\-\_\-info}!coefficient\-\_\-vector\-\_\-size@{coefficient\-\_\-vector\-\_\-size}}
+\index{coefficient\-\_\-vector\-\_\-size@{coefficient\-\_\-vector\-\_\-size}!kodo::coefficient_info@{kodo\-::coefficient\-\_\-info}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::coefficient\-\_\-info}$<$ Super\-Coder $>$\-::coefficient\-\_\-vector\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1coefficient__info_af176b13de27ed152a0745c64dbf3e732}
+
+
+
+
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the layer\-::factory\-::max\-\_\-coefficient\-\_\-vector\-\_\-size() function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The number of bytes needed to store the symbol coefficients. 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file coefficient\-\_\-info.\-hpp.
+
+\hypertarget{classkodo_1_1coefficient__info_af1d7e9b534262aab49f7c15aacb09981}{\index{kodo\-::coefficient\-\_\-info@{kodo\-::coefficient\-\_\-info}!coefficient\-\_\-vectors@{coefficient\-\_\-vectors}}
+\index{coefficient\-\_\-vectors@{coefficient\-\_\-vectors}!kodo::coefficient_info@{kodo\-::coefficient\-\_\-info}}
+\subsubsection[{coefficient\-\_\-vectors}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::coefficient\-\_\-info}$<$ Super\-Coder $>$\-::coefficient\-\_\-vectors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1coefficient__info_af1d7e9b534262aab49f7c15aacb09981}
+
+
+
+
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the \hyperlink{group__coefficient__storage__api_ga82899f2e9bb1ac587ce04d480d9e3af8}{layer\-::factory\-::max\-\_\-coefficient\-\_\-vectors()} function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The number of coefficient vectors stored. When accessing the coefficients data the index used should be between 0 and the number returned by this function. 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file coefficient\-\_\-info.\-hpp.
+
+\hypertarget{classkodo_1_1coefficient__info_a5645a41990fe69c783e326b58c0530bf}{\index{kodo\-::coefficient\-\_\-info@{kodo\-::coefficient\-\_\-info}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::coefficient_info@{kodo\-::coefficient\-\_\-info}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ template$<$class Factory $>$ void {\bf kodo\-::coefficient\-\_\-info}$<$ Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1coefficient__info_a5645a41990fe69c783e326b58c0530bf}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 67 of file coefficient\-\_\-info.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+coefficient\-\_\-info.\-hpp\end{DoxyCompactItemize}

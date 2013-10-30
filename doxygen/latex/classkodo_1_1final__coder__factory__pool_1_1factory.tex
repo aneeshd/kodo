@@ -1,0 +1,116 @@
+\hypertarget{classkodo_1_1final__coder__factory__pool_1_1factory}{\section{kodo\-:\-:final\-\_\-coder\-\_\-factory\-\_\-pool$<$ Final\-Type $>$\-:\-:factory Class Reference}
+\label{classkodo_1_1final__coder__factory__pool_1_1factory}\index{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool$<$ Final\-Type $>$\-::factory@{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool$<$ Final\-Type $>$\-::factory}}
+}
+
+
+{\ttfamily \#include $<$final\-\_\-coder\-\_\-factory\-\_\-pool.\-hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1final__coder__factory__pool_1_1factory_a673b6da58a0ed21dbe089e0e914b00a7}{typedef Final\-Type\-::factory \hyperlink{classkodo_1_1final__coder__factory__pool_1_1factory_a673b6da58a0ed21dbe089e0e914b00a7}{factory\-\_\-type}}\label{classkodo_1_1final__coder__factory__pool_1_1factory_a673b6da58a0ed21dbe089e0e914b00a7}
+
+\begin{DoxyCompactList}\small\item\em The factory type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classkodo_1_1final__coder__factory__pool_1_1factory_a628ce5338871facf3d201d59fb82ddf4}{factory} (uint32\-\_\-t max\-\_\-symbols, uint32\-\_\-t max\-\_\-symbol\-\_\-size)
+\begin{DoxyCompactList}\small\item\em Factory constructor. \end{DoxyCompactList}\item 
+\hyperlink{classkodo_1_1final__coder__factory__pool_afa50091a69bbad9de46e96b1f64795bd}{pointer} \hyperlink{classkodo_1_1final__coder__factory__pool_1_1factory_a805538b6d2546f6797ecdba5f72167de}{build} ()
+\begin{DoxyCompactList}\small\item\em Builds the actual coder. \end{DoxyCompactList}\item 
+const sak\-::resource\-\_\-pool\\*
+$<$ Final\-Type $>$ \& \hyperlink{classkodo_1_1final__coder__factory__pool_1_1factory_a265ff2f83f67cf95a5530561d8691fb8}{pool} () const 
+\item 
+sak\-::resource\-\_\-pool$<$ Final\-Type $>$ \& \hyperlink{classkodo_1_1final__coder__factory__pool_1_1factory_af81fb7234eff7c0304b0284daf9d96ee}{pool} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Final\-Type$>$class kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool$<$ Final\-Type $>$\-::factory}
+
+The final factory 
+
+Definition at line 32 of file final\-\_\-coder\-\_\-factory\-\_\-pool.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classkodo_1_1final__coder__factory__pool_1_1factory_a628ce5338871facf3d201d59fb82ddf4}{\index{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory@{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory}!factory@{factory}}
+\index{factory@{factory}!kodo::final_coder_factory_pool::factory@{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory}}
+\subsubsection[{factory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type$>$ {\bf kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool}$<$ Final\-Type $>$\-::factory\-::factory (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{max\-\_\-symbols, }
+\item[{uint32\-\_\-t}]{max\-\_\-symbol\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1final__coder__factory__pool_1_1factory_a628ce5338871facf3d201d59fb82ddf4}
+
+
+Factory constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\-\_\-symbols} & the maximum symbols this coder can expect \\
+\hline
+{\em max\-\_\-symbol\-\_\-size} & the maximum size of a symbol in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file final\-\_\-coder\-\_\-factory\-\_\-pool.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1final__coder__factory__pool_1_1factory_a805538b6d2546f6797ecdba5f72167de}{\index{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory@{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory}!build@{build}}
+\index{build@{build}!kodo::final_coder_factory_pool::factory@{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory}}
+\subsubsection[{build}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type$>$ {\bf pointer} {\bf kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool}$<$ Final\-Type $>$\-::factory\-::build (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1final__coder__factory__pool_1_1factory_a805538b6d2546f6797ecdba5f72167de}
+
+
+Builds the actual coder. 
+
+\begin{DoxyReturn}{Returns}
+pointer to an instantiation of an encoder or decoder 
+
+the maximum number of symbols in a block 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file final\-\_\-coder\-\_\-factory\-\_\-pool.\-hpp.
+
+\hypertarget{classkodo_1_1final__coder__factory__pool_1_1factory_a265ff2f83f67cf95a5530561d8691fb8}{\index{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory@{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory}!pool@{pool}}
+\index{pool@{pool}!kodo::final_coder_factory_pool::factory@{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory}}
+\subsubsection[{pool}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type$>$ const sak\-::resource\-\_\-pool$<$Final\-Type$>$\& {\bf kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool}$<$ Final\-Type $>$\-::factory\-::pool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1final__coder__factory__pool_1_1factory_a265ff2f83f67cf95a5530561d8691fb8}
+\begin{DoxyReturn}{Returns}
+A reference to the internal resource pool 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file final\-\_\-coder\-\_\-factory\-\_\-pool.\-hpp.
+
+\hypertarget{classkodo_1_1final__coder__factory__pool_1_1factory_af81fb7234eff7c0304b0284daf9d96ee}{\index{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory@{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory}!pool@{pool}}
+\index{pool@{pool}!kodo::final_coder_factory_pool::factory@{kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool\-::factory}}
+\subsubsection[{pool}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type$>$ sak\-::resource\-\_\-pool$<$Final\-Type$>$\& {\bf kodo\-::final\-\_\-coder\-\_\-factory\-\_\-pool}$<$ Final\-Type $>$\-::factory\-::pool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1final__coder__factory__pool_1_1factory_af81fb7234eff7c0304b0284daf9d96ee}
+\begin{DoxyReturn}{Returns}
+A reference to the internal resource pool 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file final\-\_\-coder\-\_\-factory\-\_\-pool.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+final\-\_\-coder\-\_\-factory\-\_\-pool.\-hpp\end{DoxyCompactItemize}

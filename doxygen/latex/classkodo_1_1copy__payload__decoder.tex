@@ -1,0 +1,84 @@
+\hypertarget{classkodo_1_1copy__payload__decoder}{\section{kodo\-:\-:copy\-\_\-payload\-\_\-decoder$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1copy__payload__decoder}\index{kodo\-::copy\-\_\-payload\-\_\-decoder$<$ Super\-Coder $>$@{kodo\-::copy\-\_\-payload\-\_\-decoder$<$ Super\-Coder $>$}}
+}
+
+
+Make decoder work on a copy of the payload.  
+
+
+
+
+{\ttfamily \#include $<$copy\-\_\-payload\-\_\-decoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:copy\-\_\-payload\-\_\-decoder$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1copy__payload__decoder}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1copy__payload__decoder_aa25f10859841e441c62f397cee91f80b}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1copy__payload__decoder_ac1bf5f2d18beb3111c28004138cf6042}{decode} (const uint8\-\_\-t $\ast$payload)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::copy\-\_\-payload\-\_\-decoder$<$ Super\-Coder $>$}
+
+Make decoder work on a copy of the payload. 
+
+In the standard A\-P\-I the payload buffer may be modified during decoding, this can be problematic if you wish to e.\-g. pass the same payload to multiple decoders. To solve this you may use the \hyperlink{classkodo_1_1copy__payload__decoder}{copy\-\_\-payload\-\_\-decoder} layer to ensure that the payload is not modified by decoders. 
+
+Definition at line 24 of file copy\-\_\-payload\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1copy__payload__decoder_ac1bf5f2d18beb3111c28004138cf6042}{\index{kodo\-::copy\-\_\-payload\-\_\-decoder@{kodo\-::copy\-\_\-payload\-\_\-decoder}!decode@{decode}}
+\index{decode@{decode}!kodo::copy_payload_decoder@{kodo\-::copy\-\_\-payload\-\_\-decoder}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void {\bf kodo\-::copy\-\_\-payload\-\_\-decoder}$<$ Super\-Coder $>$\-::decode (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1copy__payload__decoder_ac1bf5f2d18beb3111c28004138cf6042}
+
+
+
+
+Copy the payload data to ensure that the payload isn't overwritten during decoding Decodes an encoded symbol stored in the payload buffer. 
+\begin{DoxyParams}{Parameters}
+{\em payload} & The buffer storing the payload of an encoded symbol. The payload buffer may be changed by the decode function, an cannot be reused. If the payload is needed in several places make sure to keep a copy of the original payload. \\
+\hline
+\end{DoxyParams}
+Copy payload to m\-\_\-payload\-\_\-copy 
+
+Definition at line 40 of file copy\-\_\-payload\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1copy__payload__decoder_aa25f10859841e441c62f397cee91f80b}{\index{kodo\-::copy\-\_\-payload\-\_\-decoder@{kodo\-::copy\-\_\-payload\-\_\-decoder}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::copy_payload_decoder@{kodo\-::copy\-\_\-payload\-\_\-decoder}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ template$<$class Factory $>$ void {\bf kodo\-::copy\-\_\-payload\-\_\-decoder}$<$ Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1copy__payload__decoder_aa25f10859841e441c62f397cee91f80b}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file copy\-\_\-payload\-\_\-decoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+copy\-\_\-payload\-\_\-decoder.\-hpp\end{DoxyCompactItemize}

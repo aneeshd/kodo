@@ -13,7 +13,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup finite_field_layers
     /// @brief Basic layer performing common finite field operation
     template<class FieldImpl, class SuperCoder>

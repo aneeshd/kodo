@@ -10,7 +10,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup codec_layers
     /// @brief provides the layer::rank_type typedef
     ///

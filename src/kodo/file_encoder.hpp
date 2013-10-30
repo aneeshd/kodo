@@ -11,7 +11,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @brief A file encoder creates a number of encoders
     ///        over the data of a file.
     ///

@@ -14,7 +14,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @brief The object decoder supports decoding objects split over
     ///        multiple decoders.
     ///

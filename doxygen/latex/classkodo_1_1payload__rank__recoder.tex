@@ -1,0 +1,137 @@
+\hypertarget{classkodo_1_1payload__rank__recoder}{\section{kodo\-:\-:payload\-\_\-rank\-\_\-recoder$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1payload__rank__recoder}\index{kodo\-::payload\-\_\-rank\-\_\-recoder$<$ Super\-Coder $>$@{kodo\-::payload\-\_\-rank\-\_\-recoder$<$ Super\-Coder $>$}}
+}
+
+
+The payload rank recoder writes the rank of the encoder into the payload buffer.  
+
+
+
+
+{\ttfamily \#include $<$payload\-\_\-rank\-\_\-recoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:payload\-\_\-rank\-\_\-recoder$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1payload__rank__recoder}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1payload__rank__recoder_1_1factory}{factory}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Super\-Coder\-::rank\-\_\-type \hyperlink{classkodo_1_1payload__rank__recoder_a386c05a2c9fcfd5d913b97867e1f1944}{rank\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1payload__rank__recoder_a704630609ec502781425400c4eceb690}{encode} (uint8\-\_\-t $\ast$payload)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1payload__rank__recoder_ac57ba846d993631fb4c50a6b2562caac}{write\-\_\-rank} (uint8\-\_\-t $\ast$payload)
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1payload__rank__recoder_ab0f64eb2e5479e3fab2ba69b4b594dd7}{payload\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::payload\-\_\-rank\-\_\-recoder$<$ Super\-Coder $>$}
+
+The payload rank recoder writes the rank of the encoder into the payload buffer. 
+
+The payload rank recoder will forward rank returned by the seen\-\_\-encoder\-\_\-rank() function. This is done to avoid problems where a recoder has seen a rank of e.\-g. 3 but itself has rank 1. If the recoder would forward its own rank another decoder might falsely detect is\-\_\-partially\-\_\-complete as it also sees rank 1. 
+
+Definition at line 24 of file payload\-\_\-rank\-\_\-recoder.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1payload__rank__recoder_a386c05a2c9fcfd5d913b97867e1f1944}{\index{kodo\-::payload\-\_\-rank\-\_\-recoder@{kodo\-::payload\-\_\-rank\-\_\-recoder}!rank\-\_\-type@{rank\-\_\-type}}
+\index{rank\-\_\-type@{rank\-\_\-type}!kodo::payload_rank_recoder@{kodo\-::payload\-\_\-rank\-\_\-recoder}}
+\subsubsection[{rank\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef Super\-Coder\-::rank\-\_\-type {\bf kodo\-::payload\-\_\-rank\-\_\-recoder}$<$ Super\-Coder $>$\-::{\bf rank\-\_\-type}}}\label{classkodo_1_1payload__rank__recoder_a386c05a2c9fcfd5d913b97867e1f1944}
+
+
+
+
+Specifies the data type used to store the rank 
+
+Definition at line 29 of file payload\-\_\-rank\-\_\-recoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1payload__rank__recoder_a704630609ec502781425400c4eceb690}{\index{kodo\-::payload\-\_\-rank\-\_\-recoder@{kodo\-::payload\-\_\-rank\-\_\-recoder}!encode@{encode}}
+\index{encode@{encode}!kodo::payload_rank_recoder@{kodo\-::payload\-\_\-rank\-\_\-recoder}}
+\subsubsection[{encode}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::payload\-\_\-rank\-\_\-recoder}$<$ Super\-Coder $>$\-::encode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1payload__rank__recoder_a704630609ec502781425400c4eceb690}
+
+
+
+
+Encodes a symbol into the provided buffer. 
+\begin{DoxyParams}{Parameters}
+{\em payload} & The buffer which should contain the encoded symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the total bytes used from the payload buffer 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file payload\-\_\-rank\-\_\-recoder.\-hpp.
+
+\hypertarget{classkodo_1_1payload__rank__recoder_ab0f64eb2e5479e3fab2ba69b4b594dd7}{\index{kodo\-::payload\-\_\-rank\-\_\-recoder@{kodo\-::payload\-\_\-rank\-\_\-recoder}!payload\-\_\-size@{payload\-\_\-size}}
+\index{payload\-\_\-size@{payload\-\_\-size}!kodo::payload_rank_recoder@{kodo\-::payload\-\_\-rank\-\_\-recoder}}
+\subsubsection[{payload\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::payload\-\_\-rank\-\_\-recoder}$<$ Super\-Coder $>$\-::payload\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1payload__rank__recoder_ab0f64eb2e5479e3fab2ba69b4b594dd7}
+
+
+
+
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the \hyperlink{group__codec__header__api_ga7138ea5d64116c9594774e0a3806eece}{layer\-::factory\-::max\-\_\-header\-\_\-size()} function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the required payload buffer size in bytes 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file payload\-\_\-rank\-\_\-recoder.\-hpp.
+
+\hypertarget{classkodo_1_1payload__rank__recoder_ac57ba846d993631fb4c50a6b2562caac}{\index{kodo\-::payload\-\_\-rank\-\_\-recoder@{kodo\-::payload\-\_\-rank\-\_\-recoder}!write\-\_\-rank@{write\-\_\-rank}}
+\index{write\-\_\-rank@{write\-\_\-rank}!kodo::payload_rank_recoder@{kodo\-::payload\-\_\-rank\-\_\-recoder}}
+\subsubsection[{write\-\_\-rank}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::payload\-\_\-rank\-\_\-recoder}$<$ Super\-Coder $>$\-::write\-\_\-rank (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1payload__rank__recoder_ac57ba846d993631fb4c50a6b2562caac}
+Helper function which writes the rank of the encoder into the payload buffer 
+\begin{DoxyParams}{Parameters}
+{\em payload} & The buffer where the rank should be written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written to the payload 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file payload\-\_\-rank\-\_\-recoder.\-hpp.
+
+
+
+Referenced by kodo\-::payload\-\_\-rank\-\_\-recoder$<$ payload\-\_\-encoder$<$ non\-\_\-systematic\-\_\-encoder$<$ symbol\-\_\-id\-\_\-encoder$<$ recoding\-\_\-symbol\-\_\-id$<$ uniform\-\_\-generator$<$ encode\-\_\-symbol\-\_\-tracker$<$ zero\-\_\-symbol\-\_\-encoder$<$ linear\-\_\-block\-\_\-encoder$<$ rank\-\_\-info$<$ coefficient\-\_\-value\-\_\-access$<$ proxy\-\_\-seen\-\_\-encoder\-\_\-rank$<$ proxy\-\_\-layer$<$ on\-\_\-the\-\_\-fly\-\_\-recoding\-\_\-stack$<$ Main\-Stack $>$, Main\-Stack $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$\-::encode().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+payload\-\_\-rank\-\_\-recoder.\-hpp\end{DoxyCompactItemize}

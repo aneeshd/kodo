@@ -12,7 +12,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup factory_layers
     /// Terminates the layered coder and contains the coder allocation
     /// policy

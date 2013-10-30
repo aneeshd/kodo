@@ -1,0 +1,154 @@
+\hypertarget{classkodo_1_1object__decoder}{\section{kodo\-:\-:object\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$ Class Template Reference}
+\label{classkodo_1_1object__decoder}\index{kodo\-::object\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$@{kodo\-::object\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$}}
+}
+
+
+The object decoder supports decoding objects split over multiple decoders.  
+
+
+
+
+{\ttfamily \#include $<$object\-\_\-decoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:object\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.089552cm]{classkodo_1_1object__decoder}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1object__decoder_acd1470f04f34ae297bcc5a6e625f38a2}{typedef Decoder\-Type\-::factory \hyperlink{classkodo_1_1object__decoder_acd1470f04f34ae297bcc5a6e625f38a2}{factory}}\label{classkodo_1_1object__decoder_acd1470f04f34ae297bcc5a6e625f38a2}
+
+\begin{DoxyCompactList}\small\item\em The type of factory used to build decoders. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1object__decoder_a2d53e4d4369d535ca146ac5c912d9310}{typedef Decoder\-Type\-::pointer \hyperlink{classkodo_1_1object__decoder_a2d53e4d4369d535ca146ac5c912d9310}{pointer}}\label{classkodo_1_1object__decoder_a2d53e4d4369d535ca146ac5c912d9310}
+
+\begin{DoxyCompactList}\small\item\em Pointer to a decoder. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1object__decoder_a4c945b71219089d00d652f146a3dd1fa}{typedef Block\-Partitioning \hyperlink{classkodo_1_1object__decoder_a4c945b71219089d00d652f146a3dd1fa}{block\-\_\-partitioning}}\label{classkodo_1_1object__decoder_a4c945b71219089d00d652f146a3dd1fa}
+
+\begin{DoxyCompactList}\small\item\em The block partitioning scheme used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classkodo_1_1object__decoder_a66b91c6fccc5e7cad7ebfecc5ff10839}{object\-\_\-decoder} (\hyperlink{classkodo_1_1object__decoder_acd1470f04f34ae297bcc5a6e625f38a2}{factory} \&decoder\-\_\-factory, uint32\-\_\-t \hyperlink{classkodo_1_1object__decoder_ae4759b34a39ae09018af600dbc6095e7}{object\-\_\-size})
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1object__decoder_a672065905507020b863096d1b458037d}{decoders} () const 
+\item 
+\hyperlink{classkodo_1_1object__decoder_a2d53e4d4369d535ca146ac5c912d9310}{pointer} \hyperlink{classkodo_1_1object__decoder_a6405eba3cec6ec50b00ebcb4599ff63c}{build} (uint32\-\_\-t decoder\-\_\-id)
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1object__decoder_ae4759b34a39ae09018af600dbc6095e7}{object\-\_\-size} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1object__decoder_a0979abab4b971f4127265764b8107f3e}{\hyperlink{classkodo_1_1object__decoder_acd1470f04f34ae297bcc5a6e625f38a2}{factory} \& \hyperlink{classkodo_1_1object__decoder_a0979abab4b971f4127265764b8107f3e}{m\-\_\-factory}}\label{classkodo_1_1object__decoder_a0979abab4b971f4127265764b8107f3e}
+
+\begin{DoxyCompactList}\small\item\em The decoder factory. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1object__decoder_a0018d88cb046b911df1fbb69790a9635}{\hyperlink{classkodo_1_1object__decoder_a4c945b71219089d00d652f146a3dd1fa}{block\-\_\-partitioning} \hyperlink{classkodo_1_1object__decoder_a0018d88cb046b911df1fbb69790a9635}{m\-\_\-partitioning}}\label{classkodo_1_1object__decoder_a0018d88cb046b911df1fbb69790a9635}
+
+\begin{DoxyCompactList}\small\item\em The block partitioning scheme used. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1object__decoder_acd436a34ade06db54dc213e30a86f279}{uint32\-\_\-t \hyperlink{classkodo_1_1object__decoder_acd436a34ade06db54dc213e30a86f279}{m\-\_\-object\-\_\-size}}\label{classkodo_1_1object__decoder_acd436a34ade06db54dc213e30a86f279}
+
+\begin{DoxyCompactList}\small\item\em Store the total object size in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Decoder\-Type, class Block\-Partitioning = rfc5052\-\_\-partitioning\-\_\-scheme$>$class kodo\-::object\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$}
+
+The object decoder supports decoding objects split over multiple decoders. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000029}{Todo}]Missing or incorrectly named unit test \end{DoxyRefDesc}
+When an object is too large for a single encoder/decoder pair, the object decoder uses the specified partitioning scheme to determine how decoders should be constructed to cover the entire object. \begin{Desc}
+\item[Examples\-: ]\par
+\hyperlink{encode_decode_file_8cpp-example}{encode\-\_\-decode\-\_\-file.\-cpp}.\end{Desc}
+
+
+Definition at line 30 of file object\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classkodo_1_1object__decoder_a66b91c6fccc5e7cad7ebfecc5ff10839}{\index{kodo\-::object\-\_\-decoder@{kodo\-::object\-\_\-decoder}!object\-\_\-decoder@{object\-\_\-decoder}}
+\index{object\-\_\-decoder@{object\-\_\-decoder}!kodo::object_decoder@{kodo\-::object\-\_\-decoder}}
+\subsubsection[{object\-\_\-decoder}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Decoder\-Type , class Block\-Partitioning  = rfc5052\-\_\-partitioning\-\_\-scheme$>$ {\bf kodo\-::object\-\_\-decoder}$<$ Decoder\-Type, Block\-Partitioning $>$\-::{\bf object\-\_\-decoder} (
+\begin{DoxyParamCaption}
+\item[{{\bf factory} \&}]{decoder\-\_\-factory, }
+\item[{uint32\-\_\-t}]{object\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1object__decoder_a66b91c6fccc5e7cad7ebfecc5ff10839}
+Constructs a new object decoder 
+\begin{DoxyParams}{Parameters}
+{\em factory} & The decoder factory to use \\
+\hline
+{\em object\-\_\-size} & The size in bytes of the object to be decoded \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file object\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1object__decoder_a6405eba3cec6ec50b00ebcb4599ff63c}{\index{kodo\-::object\-\_\-decoder@{kodo\-::object\-\_\-decoder}!build@{build}}
+\index{build@{build}!kodo::object_decoder@{kodo\-::object\-\_\-decoder}}
+\subsubsection[{build}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Decoder\-Type , class Block\-Partitioning  = rfc5052\-\_\-partitioning\-\_\-scheme$>$ {\bf pointer} {\bf kodo\-::object\-\_\-decoder}$<$ Decoder\-Type, Block\-Partitioning $>$\-::build (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{decoder\-\_\-id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1object__decoder_a6405eba3cec6ec50b00ebcb4599ff63c}
+Builds a specific decoder 
+\begin{DoxyParams}{Parameters}
+{\em decoder\-\_\-id} & Specifies the decoder to build \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The initialized decoder 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file object\-\_\-decoder.\-hpp.
+
+
+
+Referenced by kodo\-::deep\-\_\-storage\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-::build(), and kodo\-::shallow\-\_\-storage\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-::build().
+
+\hypertarget{classkodo_1_1object__decoder_a672065905507020b863096d1b458037d}{\index{kodo\-::object\-\_\-decoder@{kodo\-::object\-\_\-decoder}!decoders@{decoders}}
+\index{decoders@{decoders}!kodo::object_decoder@{kodo\-::object\-\_\-decoder}}
+\subsubsection[{decoders}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Decoder\-Type , class Block\-Partitioning  = rfc5052\-\_\-partitioning\-\_\-scheme$>$ uint32\-\_\-t {\bf kodo\-::object\-\_\-decoder}$<$ Decoder\-Type, Block\-Partitioning $>$\-::decoders (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1object__decoder_a672065905507020b863096d1b458037d}
+\begin{DoxyReturn}{Returns}
+The number of decoders which may be created for this object 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file object\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1object__decoder_ae4759b34a39ae09018af600dbc6095e7}{\index{kodo\-::object\-\_\-decoder@{kodo\-::object\-\_\-decoder}!object\-\_\-size@{object\-\_\-size}}
+\index{object\-\_\-size@{object\-\_\-size}!kodo::object_decoder@{kodo\-::object\-\_\-decoder}}
+\subsubsection[{object\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Decoder\-Type , class Block\-Partitioning  = rfc5052\-\_\-partitioning\-\_\-scheme$>$ uint32\-\_\-t {\bf kodo\-::object\-\_\-decoder}$<$ Decoder\-Type, Block\-Partitioning $>$\-::object\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1object__decoder_ae4759b34a39ae09018af600dbc6095e7}
+\begin{DoxyReturn}{Returns}
+The total size of the object to decode in bytes 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file object\-\_\-decoder.\-hpp.
+
+
+
+Referenced by kodo\-::deep\-\_\-storage\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-::swap().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+object\-\_\-decoder.\-hpp\end{DoxyCompactItemize}

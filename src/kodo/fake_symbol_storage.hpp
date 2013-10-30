@@ -12,7 +12,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup storage_layers
     /// @brief Implements the Symbol Storage API but only with empty
     ///        functions. Useful in unit tests.

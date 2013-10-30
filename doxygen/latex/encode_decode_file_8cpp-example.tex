@@ -1,0 +1,127 @@
+\hypertarget{encode_decode_file_8cpp-example}{\section{encode\-\_\-decode\-\_\-file.\-cpp}
+}
+Often we want to encode / decode data that exceed a single encoding/decoding block. In this case we need to \char`\"{}chop\char`\"{} up the data into manageable chunks and then encode and decode each chuck separately. This examples shows how to use the file encoder in Kodo. The file encoder operates directly on a file in the file-\/system. For decoding we use an object decoder which decodes data to memory, but which is compatible with file encoder.
+
+
+\begin{DoxyCodeInclude}
+\textcolor{comment}{// Copyright Steinwurf ApS 2011-2012.}
+\textcolor{comment}{// Distributed under the "STEINWURF RESEARCH LICENSE 1.0".}
+\textcolor{comment}{// See accompanying file LICENSE.rst or}
+\textcolor{comment}{// http://www.steinwurf.com/licensing}
+
+\textcolor{preprocessor}{#include <kodo/file\_encoder.hpp>}
+\textcolor{preprocessor}{#include <kodo/object\_decoder.hpp>}
+\textcolor{preprocessor}{#include <kodo/rlnc/full\_vector\_codes.hpp>}
+
+
+\textcolor{keywordtype}{int} main()
+\{
+
+    \textcolor{comment}{// Set the number of symbols (i.e. the generation size in RLNC}
+    \textcolor{comment}{// terminology) and the size of a symbol in bytes}
+    uint32\_t max\_symbols = 42;
+    uint32\_t max\_symbol\_size = 64;
+
+    std::string encode\_filename = \textcolor{stringliteral}{"encode-file.bin"};
+
+    \textcolor{comment}{// Create a test file for encoding.}
+    std::ofstream encode\_file;
+    encode\_file.open (encode\_filename, std::ios::binary);
+
+    uint32\_t file\_size = 50000;
+    std::vector<char> encode\_data(file\_size);
+    std::vector<char> decode\_data;
+
+    \textcolor{comment}{// Just write some bytes to the file}
+    \textcolor{keywordflow}{for}(uint32\_t i = 0; i < file\_size; ++i)
+    \{
+        encode\_data[i] = rand() % 255;
+    \}
+    encode\_file.write(&encode\_data[0], file\_size);
+    encode\_file.close();
+
+    \textcolor{comment}{// Select the encoding and decoding algorithms}
+    \textcolor{keyword}{typedef} \hyperlink{classkodo_1_1full__rlnc__encoder}{kodo::full\_rlnc\_encoder<fifi::binary>}
+        encoder\_t;
+
+    \textcolor{keyword}{typedef} \hyperlink{classkodo_1_1full__rlnc__decoder}{kodo::full\_rlnc\_decoder<fifi::binary>}
+        decoder\_t;
+
+    \textcolor{comment}{// Now for the encoder we use a file\_encoder with the chosen}
+    \textcolor{comment}{// encoding algorithm}
+    \textcolor{keyword}{typedef} \hyperlink{classkodo_1_1file__encoder}{kodo::file\_encoder<encoder\_t>}
+        file\_encoder\_t;
+
+    \textcolor{comment}{// For decoding we use an object\_decoder with the chosen}
+    \textcolor{comment}{// decoding algorithm}
+    \textcolor{keyword}{typedef} \hyperlink{classkodo_1_1object__decoder}{kodo::object\_decoder<decoder\_t>}
+        object\_decoder\_t;
+
+    \textcolor{comment}{// Create the encoder factory - builds the individual encoders used}
+    file\_encoder\_t::factory encoder\_factory(max\_symbols, max\_symbol\_size);
+
+    \textcolor{comment}{// Create the actual file encoder using the encoder factory and}
+    \textcolor{comment}{// the filename of the file to be encoded}
+    file\_encoder\_t file\_encoder(encoder\_factory, encode\_filename);
+
+    \textcolor{comment}{// Create the decoder factory - build the individual decoders used}
+    object\_decoder\_t::factory decoder\_factory(max\_symbols, max\_symbol\_size);
+
+    \textcolor{comment}{// Create the object decoder using the decoder factory and the}
+    \textcolor{comment}{// size of the file to be decoded}
+    object\_decoder\_t object\_decoder(decoder\_factory, file\_size);
+
+    \textcolor{comment}{// Now in the following loop we go through all the encoders}
+    \textcolor{comment}{// needed to encode the entire file. We the build the corresponding}
+    \textcolor{comment}{// decoder and decode the chunk immediately. In practice where}
+    \textcolor{comment}{// encoders and decoders are on different devices e.g. connected}
+    \textcolor{comment}{// over a network, we would have to pass also the encoder and decoder}
+    \textcolor{comment}{// index between the source and sink to allow the correct data would}
+    \textcolor{comment}{// passed from encoder to corresponding decoder.}
+    \textcolor{keywordflow}{for}(uint32\_t i = 0; i < file\_encoder.encoders(); ++i)
+    \{
+        \textcolor{keyword}{auto} encoder = file\_encoder.build(i);
+        \textcolor{keyword}{auto} decoder = object\_decoder.build(i);
+
+        \textcolor{comment}{// Set the encoder non-systematic}
+        \textcolor{keywordflow}{if}(\hyperlink{namespacekodo_a28819f1383e522581e8dc7fb351b0438}{kodo::is\_systematic\_encoder}(encoder))
+            \hyperlink{namespacekodo_a759a26580c7da7172657f338fd72a934}{kodo::set\_systematic\_off}(encoder);
+
+        std::vector<uint8\_t> payload(encoder->payload\_size());
+
+        \textcolor{keywordflow}{while}( !decoder->is\_complete() )
+        \{
+            \textcolor{comment}{// Encode a packet into the payload buffer}
+            encoder->encode( &payload[0] );
+
+            \textcolor{comment}{// In practice send the payload over a network, save it to}
+            \textcolor{comment}{// a file etc. Then when needed build and pass it to the decoder}
+
+            \textcolor{comment}{// Pass that packet to the decoder}
+            decoder->decode( &payload[0] );
+        \}
+
+        std::vector<uint8\_t> data\_out(decoder->block\_size());
+        decoder->copy\_symbols(sak::storage(data\_out));
+        data\_out.resize(decoder->bytes\_used());
+
+        decode\_data.insert(decode\_data.end(),
+                           data\_out.begin(),
+                           data\_out.end());
+    \}
+
+    \textcolor{comment}{// Check we properly decoded the data}
+    \textcolor{keywordflow}{if} (std::equal(decode\_data.begin(),
+                   decode\_data.end(), encode\_data.begin()))
+    \{
+        std::cout << \textcolor{stringliteral}{"Data decoded correctly"} << std::endl;
+    \}
+    \textcolor{keywordflow}{else}
+    \{
+        std::cout << \textcolor{stringliteral}{"Unexpected failure to decode "}
+                  << \textcolor{stringliteral}{"please file a bug report :)"} << std::endl;
+    \}
+\}
+
+\end{DoxyCodeInclude}
+ 

@@ -1,0 +1,106 @@
+\hypertarget{use_debug_layers_8cpp-example}{\section{use\-\_\-debug\-\_\-layers.\-cpp}
+}
+Simple example showing how to use some of the debug layers defined in Kodo.
+
+
+\begin{DoxyCodeInclude}
+\textcolor{comment}{// Copyright Steinwurf ApS 2011-2012.}
+\textcolor{comment}{// Distributed under the "STEINWURF RESEARCH LICENSE 1.0".}
+\textcolor{comment}{// See accompanying file LICENSE.rst or}
+\textcolor{comment}{// http://www.steinwurf.com/licensing}
+
+\textcolor{preprocessor}{#include <ctime>}
+
+\textcolor{preprocessor}{#include <kodo/rlnc/full\_vector\_codes.hpp>}
+
+\textcolor{preprocessor}{#include <kodo/cached\_symbol\_decoder.hpp>}
+\textcolor{preprocessor}{#include <kodo/debug\_cached\_symbol\_decoder.hpp>}
+\textcolor{preprocessor}{#include <kodo/debug\_linear\_block\_decoder.hpp>}
+
+
+\textcolor{keywordtype}{int} main()
+\{
+    \textcolor{comment}{// Seed rand}
+    srand(time(0));
+
+    \textcolor{comment}{// Set the number of symbols (i.e. the generation size in RLNC}
+    \textcolor{comment}{// terminology) and the size of a symbol in bytes}
+    uint32\_t symbols = 8;
+    uint32\_t symbol\_size = 16;
+
+    \textcolor{comment}{// Typdefs for the encoder/decoder type we wish to use}
+    \textcolor{keyword}{typedef} \hyperlink{classkodo_1_1full__rlnc__encoder}{kodo::full\_rlnc\_encoder<fifi::binary8>} 
+      \hyperlink{classkodo_1_1full__rlnc__encoder}{rlnc\_encoder};
+    \textcolor{keyword}{typedef} \hyperlink{classkodo_1_1debug__full__rlnc__decoder}{kodo::debug\_full\_rlnc\_decoder<fifi::binary8>} 
+      \hyperlink{classkodo_1_1full__rlnc__callback__decoder}{rlnc\_decoder};
+
+    \textcolor{comment}{// In the following we will make an encoder/decoder factory.}
+    \textcolor{comment}{// The factories are used to build actual encoders/decoders}
+    \hyperlink{classkodo_1_1payload__encoder_1_1factory}{rlnc\_encoder::factory} encoder\_factory(symbols, symbol\_size);
+    \textcolor{keyword}{auto} encoder = encoder\_factory.build();
+
+    \hyperlink{classkodo_1_1payload__decoder_1_1factory}{rlnc\_decoder::factory} decoder\_factory(symbols, symbol\_size);
+    \textcolor{keyword}{auto} decoder = decoder\_factory.build();
+
+    \textcolor{comment}{// Allocate some storage for a "payload" the payload is what we would}
+    \textcolor{comment}{// eventually send over a network}
+    std::vector<uint8\_t> payload(encoder->payload\_size());
+
+    \textcolor{comment}{// Allocate some data to encode. In this case we make a buffer}
+    \textcolor{comment}{// with the same size as the encoder's block size (the max.}
+    \textcolor{comment}{// amount a single encoder can encode)}
+    std::vector<uint8\_t> data\_in(encoder->block\_size());
+
+    \textcolor{comment}{// Just for fun - fill the data with random data}
+    \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} &e: data\_in)
+        e = rand() % 256;
+
+    \textcolor{comment}{// Assign the data buffer to the encoder so that we may start}
+    \textcolor{comment}{// to produce encoded symbols from it}
+    encoder->set\_symbols(sak::storage(data\_in));
+
+    \textcolor{keywordflow}{while}( !decoder->is\_complete() )
+    \{
+        \textcolor{comment}{// Encode a packet into the payload buffer}
+        encoder->encode( &payload[0] );
+
+        \textcolor{comment}{// Here we "simulate" a packet loss of approximately 50%}
+        \textcolor{comment}{// by dropping half of the encoded packets.}
+        \textcolor{comment}{// When running this example you will notice that the initial}
+        \textcolor{comment}{// symbols are received systematically (i.e. uncoded). After}
+        \textcolor{comment}{// sending all symbols once uncoded, the encoder will switch}
+        \textcolor{comment}{// to full coding, in which case you will see the full encoding}
+        \textcolor{comment}{// vectors being sent and received.}
+        \textcolor{keywordflow}{if}((rand() % 2) == 0)
+            \textcolor{keywordflow}{continue};
+
+        \textcolor{comment}{// Pass that packet to the decoder}
+        decoder->decode( &payload[0] );
+
+        std::cout << \textcolor{stringliteral}{"Received symbol:"} << std::endl;
+        decoder->print\_cached\_symbol\_coefficients(std::cout);
+
+        std::cout << \textcolor{stringliteral}{"Decoder state:"} << std::endl;
+        decoder->print\_decoder\_state(std::cout);
+
+        std::cout << \textcolor{stringliteral}{"Decoder rank:"} << decoder->rank() << std::endl;
+    \}
+
+    \textcolor{comment}{// The decoder is complete, now copy the symbols from the decoder}
+    std::vector<uint8\_t> data\_out(decoder->block\_size());
+    decoder->copy\_symbols(sak::storage(data\_out));
+
+    \textcolor{comment}{// Check we properly decoded the data}
+    \textcolor{keywordflow}{if} (std::equal(data\_out.begin(), data\_out.end(), data\_in.begin()))
+    \{
+        std::cout << \textcolor{stringliteral}{"Data decoded correctly"} << std::endl;
+    \}
+    \textcolor{keywordflow}{else}
+    \{
+        std::cout << \textcolor{stringliteral}{"Unexpected failure to decode "}
+                  << \textcolor{stringliteral}{"please file a bug report :)"} << std::endl;
+    \}
+\}
+
+\end{DoxyCodeInclude}
+ 

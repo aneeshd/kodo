@@ -11,7 +11,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @copydoc systematic_vandermonde_matrix_base
     template<class SuperCoder>
     class systematic_vandermonde_matrix

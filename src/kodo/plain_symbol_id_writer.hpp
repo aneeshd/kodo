@@ -11,7 +11,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup symbol_id_layers
     /// @brief Writes the symbol id and initializes the coding
     ///        coefficients pointer. This implementation is the most

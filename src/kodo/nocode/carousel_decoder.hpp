@@ -11,7 +11,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup codec_header_layers
     /// @brief Carousel decoder takes symbols produced by a carousel encoder
     ///        and decodes them.

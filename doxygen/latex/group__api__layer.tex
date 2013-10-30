@@ -1,0 +1,46 @@
+\hypertarget{group__api__layer}{\section{A\-P\-I Layers}
+\label{group__api__layer}\index{A\-P\-I Layers@{A\-P\-I Layers}}
+}
+
+
+Provides an overview of the A\-P\-Is implemented by different components in Kodo.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__factory}{Factory}
+\begin{DoxyCompactList}\small\item\em The factories are responsible for construction and initialization of encoders and decoders. \end{DoxyCompactList}\item 
+\hyperlink{group__finite__field}{Finite Field}
+\begin{DoxyCompactList}\small\item\em The finite field layers perform computations on symbols and symbol coefficients. \end{DoxyCompactList}\item 
+\hyperlink{group__coefficient__generator}{Coefficient Generator}
+\begin{DoxyCompactList}\small\item\em Responsible for generating the coding coefficients. \end{DoxyCompactList}\item 
+\hyperlink{group__symbol__id}{Symbol I\-Ds}
+\begin{DoxyCompactList}\small\item\em The symbol id describes how an encoded symbol has been produced. \end{DoxyCompactList}\item 
+\hyperlink{group__symbol__storage}{Symbol Storage}
+\begin{DoxyCompactList}\small\item\em Handles storage of encoding and decoding symbols. \end{DoxyCompactList}\item 
+\hyperlink{group__coefficient__storage}{Coefficient Storage}
+\begin{DoxyCompactList}\small\item\em Handles storage of coding coefficients. \end{DoxyCompactList}\item 
+\hyperlink{group__codec}{Codec}
+\begin{DoxyCompactList}\small\item\em Implements A\-P\-I common to encoding and decoding algorithms. \end{DoxyCompactList}\item 
+\hyperlink{group__decoder}{Decoder}
+\begin{DoxyCompactList}\small\item\em Implements decoding A\-P\-I. \end{DoxyCompactList}\item 
+\hyperlink{group__encoder}{Encoder}
+\begin{DoxyCompactList}\small\item\em Implements decoding A\-P\-I. \end{DoxyCompactList}\item 
+\hyperlink{group__codec__header}{Codec Header}
+\begin{DoxyCompactList}\small\item\em Implements header information to the coding symbols. \end{DoxyCompactList}\item 
+\hyperlink{group__payload__codec}{Payload Codec}
+\begin{DoxyCompactList}\small\item\em The payload layer provides users of an encoder or decoder with a convenient A\-P\-I. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides an overview of the A\-P\-Is implemented by different components in Kodo. Kodo is built using a C++ design technique called Mixin-\/\-Layers. Mixin-\/\-Layers is a flexible way of separating functionality into reusable building blocks (called layers).
+
+At each layer a separate A\-P\-I is specified and in order to customize or add functionality to Kodo it is necessary to understand which A\-P\-I layer to look at.
+
+\begin{DoxyNote}{Note}
+That is by no means required that a specific encoder and decoder utilize or provide all A\-P\-I layers. The A\-P\-I layers main purpose is to facilitate re-\/use between implementations of different encoders and decoders.
+\end{DoxyNote}
+If you wish to get a better understanding of the layering technique used, you may take a look at the mixin\-\_\-example.
+
+Before showing the typical layered structure of an encoder and decoder implemented in Kodo is ... 

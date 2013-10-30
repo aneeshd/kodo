@@ -16,7 +16,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup debug
     ///
     /// @brief This layer makes it easy to print the incoming coded symbol

@@ -1,0 +1,144 @@
+\hypertarget{classkodo_1_1partial__shallow__symbol__storage}{\section{kodo\-:\-:partial\-\_\-shallow\-\_\-symbol\-\_\-storage$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1partial__shallow__symbol__storage}\index{kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage$<$ Super\-Coder $>$@{kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage$<$ Super\-Coder $>$}}
+}
+
+
+Same as a shallow storage but supports storage object with a total size less than the coding block size.  
+
+
+
+
+{\ttfamily \#include $<$partial\-\_\-shallow\-\_\-symbol\-\_\-storage.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:partial\-\_\-shallow\-\_\-symbol\-\_\-storage$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classkodo_1_1partial__shallow__symbol__storage}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1partial__shallow__symbol__storage_1_1factory}{factory}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1partial__shallow__symbol__storage_a70a1b5d598f651f614687cf18de48e2f}{typedef \\*
+\hyperlink{classkodo_1_1const__shallow__symbol__storage}{const\-\_\-shallow\-\_\-symbol\-\_\-storage}\\*
+$<$ Super\-Coder $>$ \hyperlink{classkodo_1_1partial__shallow__symbol__storage_a70a1b5d598f651f614687cf18de48e2f}{Super}}\label{classkodo_1_1partial__shallow__symbol__storage_a70a1b5d598f651f614687cf18de48e2f}
+
+\begin{DoxyCompactList}\small\item\em The actual Super\-Coder type. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1partial__shallow__symbol__storage_ad226c9507d108004235aa85c5cbdc319}{typedef Super\-::pointer \hyperlink{classkodo_1_1partial__shallow__symbol__storage_ad226c9507d108004235aa85c5cbdc319}{pointer}}\label{classkodo_1_1partial__shallow__symbol__storage_ad226c9507d108004235aa85c5cbdc319}
+
+\begin{DoxyCompactList}\small\item\em Pointer produced by the factory. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1partial__shallow__symbol__storage_a09fcd1f54a3ffb162ec104c99a7a5333}{typedef boost\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classkodo_1_1partial__shallow__symbol__storage}{partial\-\_\-shallow\-\_\-symbol\-\_\-storage} $>$ \hyperlink{classkodo_1_1partial__shallow__symbol__storage_a09fcd1f54a3ffb162ec104c99a7a5333}{this\-\_\-pointer}}\label{classkodo_1_1partial__shallow__symbol__storage_a09fcd1f54a3ffb162ec104c99a7a5333}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the type of this layer. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1partial__shallow__symbol__storage_a491e576e9bbf42a70802d3e0cc694551}{typedef std\-::vector$<$ uint8\-\_\-t $>$ \hyperlink{classkodo_1_1partial__shallow__symbol__storage_a491e576e9bbf42a70802d3e0cc694551}{symbol\-\_\-type}}\label{classkodo_1_1partial__shallow__symbol__storage_a491e576e9bbf42a70802d3e0cc694551}
+
+\begin{DoxyCompactList}\small\item\em Partial and zero symbol types. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1partial__shallow__symbol__storage_acee6b5408cfc5bd21794e750bc3d9950}{typedef boost\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classkodo_1_1partial__shallow__symbol__storage_a491e576e9bbf42a70802d3e0cc694551}{symbol\-\_\-type} $>$ \hyperlink{classkodo_1_1partial__shallow__symbol__storage_acee6b5408cfc5bd21794e750bc3d9950}{symbol\-\_\-ptr}}\label{classkodo_1_1partial__shallow__symbol__storage_acee6b5408cfc5bd21794e750bc3d9950}
+
+\begin{DoxyCompactList}\small\item\em Symbol data wrapped in smart ptr. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1partial__shallow__symbol__storage_a9353c4e8b6143730edf6b1de816daaba}{construct} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1partial__shallow__symbol__storage_a697666dcb9b3c5670043bd1006b5bfc7}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1partial__shallow__symbol__storage_a4be20580887f1d0f03fb50414a9d9cc6}{set\-\_\-symbols} (const sak\-::const\-\_\-storage \&symbol\-\_\-storage)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1partial__shallow__symbol__storage_af73dbeaa0b5eb0d9928707455eb2002c}{\hyperlink{classkodo_1_1partial__shallow__symbol__storage_acee6b5408cfc5bd21794e750bc3d9950}{symbol\-\_\-ptr} \hyperlink{classkodo_1_1partial__shallow__symbol__storage_af73dbeaa0b5eb0d9928707455eb2002c}{m\-\_\-zero\-\_\-symbol}}\label{classkodo_1_1partial__shallow__symbol__storage_af73dbeaa0b5eb0d9928707455eb2002c}
+
+\begin{DoxyCompactList}\small\item\em The zero symbol. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1partial__shallow__symbol__storage_aef5890731c4a15807cefaa0e959886c0}{\hyperlink{classkodo_1_1partial__shallow__symbol__storage_acee6b5408cfc5bd21794e750bc3d9950}{symbol\-\_\-ptr} \hyperlink{classkodo_1_1partial__shallow__symbol__storage_aef5890731c4a15807cefaa0e959886c0}{m\-\_\-partial\-\_\-symbol}}\label{classkodo_1_1partial__shallow__symbol__storage_aef5890731c4a15807cefaa0e959886c0}
+
+\begin{DoxyCompactList}\small\item\em The partial symbol. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage$<$ Super\-Coder $>$}
+
+Same as a shallow storage but supports storage object with a total size less than the coding block size. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000031}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+Essentially the same as the shallow storage however the shallow storage only allows buffers which are exactly the size of symbols $\ast$ symbol\-\_\-size. The partial buffer allows blocks of data smaller. I.\-e. of a block is 10000 bytes and the data you want to encode is in a 9995 byte buffer you can use it with the partial symbol storage without having to move it to a 10000 byte temp. buffer. 
+
+Definition at line 28 of file partial\-\_\-shallow\-\_\-symbol\-\_\-storage.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1partial__shallow__symbol__storage_a9353c4e8b6143730edf6b1de816daaba}{\index{kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage@{kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage}!construct@{construct}}
+\index{construct@{construct}!kodo::partial_shallow_symbol_storage@{kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage}}
+\subsubsection[{construct}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ template$<$class Factory $>$ void {\bf kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage}$<$ Super\-Coder $>$\-::construct (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1partial__shallow__symbol__storage_a9353c4e8b6143730edf6b1de816daaba}
+
+
+Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 86 of file partial\-\_\-shallow\-\_\-symbol\-\_\-storage.\-hpp.
+
+\hypertarget{classkodo_1_1partial__shallow__symbol__storage_a697666dcb9b3c5670043bd1006b5bfc7}{\index{kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage@{kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::partial_shallow_symbol_storage@{kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ template$<$class Factory $>$ void {\bf kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage}$<$ Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1partial__shallow__symbol__storage_a697666dcb9b3c5670043bd1006b5bfc7}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 99 of file partial\-\_\-shallow\-\_\-symbol\-\_\-storage.\-hpp.
+
+\hypertarget{classkodo_1_1partial__shallow__symbol__storage_a4be20580887f1d0f03fb50414a9d9cc6}{\index{kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage@{kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage}!set\-\_\-symbols@{set\-\_\-symbols}}
+\index{set\-\_\-symbols@{set\-\_\-symbols}!kodo::partial_shallow_symbol_storage@{kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage}}
+\subsubsection[{set\-\_\-symbols}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::partial\-\_\-shallow\-\_\-symbol\-\_\-storage}$<$ Super\-Coder $>$\-::set\-\_\-symbols (
+\begin{DoxyParamCaption}
+\item[{const sak\-::const\-\_\-storage \&}]{symbol\-\_\-storage}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1partial__shallow__symbol__storage_a4be20580887f1d0f03fb50414a9d9cc6}
+
+
+
+
+Initializes the symbol storage layer so that the pointers to the symbol data are valid. Calling this function will work even without providing data enough to initialize all symbol pointers. Sets the storage for the source symbols. This will specify all symbols also in the case of partial data. If this is not desired then the symbols should be specified individually. This also means that it is the responsibility of the user to communicate how many of the bytes transmitted are application data. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-storage} & A sak\-::const\-\_\-storage container initialized with the buffer to be use as encoding buffer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file partial\-\_\-shallow\-\_\-symbol\-\_\-storage.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+partial\-\_\-shallow\-\_\-symbol\-\_\-storage.\-hpp\end{DoxyCompactItemize}

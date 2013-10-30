@@ -1,0 +1,95 @@
+\hypertarget{classkodo_1_1symbol__id__decoder}{\section{kodo\-:\-:symbol\-\_\-id\-\_\-decoder$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1symbol__id__decoder}\index{kodo\-::symbol\-\_\-id\-\_\-decoder$<$ Super\-Coder $>$@{kodo\-::symbol\-\_\-id\-\_\-decoder$<$ Super\-Coder $>$}}
+}
+
+
+Writes the symbol id into the symbol header. Generates the the symbol coding coefficients. and calls the \hyperlink{group__decoder__api_gae28d93bf78534b4f4f4052ad6b1f7a4d}{layer\-::decode\-\_\-symbol()} function.  
+
+
+
+
+{\ttfamily \#include $<$symbol\-\_\-id\-\_\-decoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:symbol\-\_\-id\-\_\-decoder$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1symbol__id__decoder}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1symbol__id__decoder_1_1factory}{factory}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1symbol__id__decoder_a08fb5f29a6e6ab8b940fc9ae1ae1245c}{decode} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint8\-\_\-t $\ast$symbol\-\_\-header)
+\begin{DoxyCompactList}\small\item\em Reads the symbol header. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1symbol__id__decoder_a91524c79431549568b3cfb655c28492e}{header\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em Can be reimplemented by a symbol header A\-P\-I layer to ensure that enough space is available in the header for some layer specific data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::symbol\-\_\-id\-\_\-decoder$<$ Super\-Coder $>$}
+
+Writes the symbol id into the symbol header. Generates the the symbol coding coefficients. and calls the \hyperlink{group__decoder__api_gae28d93bf78534b4f4f4052ad6b1f7a4d}{layer\-::decode\-\_\-symbol()} function. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000062}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+
+
+Definition at line 17 of file symbol\-\_\-id\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1symbol__id__decoder_a08fb5f29a6e6ab8b940fc9ae1ae1245c}{\index{kodo\-::symbol\-\_\-id\-\_\-decoder@{kodo\-::symbol\-\_\-id\-\_\-decoder}!decode@{decode}}
+\index{decode@{decode}!kodo::symbol_id_decoder@{kodo\-::symbol\-\_\-id\-\_\-decoder}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::symbol\-\_\-id\-\_\-decoder}$<$ Super\-Coder $>$\-::decode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-header}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1symbol__id__decoder_a08fb5f29a6e6ab8b940fc9ae1ae1245c}
+
+
+Reads the symbol header. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The destination buffer for the encoded symbol. \\
+\hline
+{\em symbol\-\_\-header} & At this point the symbol header should be initialized. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file symbol\-\_\-id\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1symbol__id__decoder_a91524c79431549568b3cfb655c28492e}{\index{kodo\-::symbol\-\_\-id\-\_\-decoder@{kodo\-::symbol\-\_\-id\-\_\-decoder}!header\-\_\-size@{header\-\_\-size}}
+\index{header\-\_\-size@{header\-\_\-size}!kodo::symbol_id_decoder@{kodo\-::symbol\-\_\-id\-\_\-decoder}}
+\subsubsection[{header\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::symbol\-\_\-id\-\_\-decoder}$<$ Super\-Coder $>$\-::header\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1symbol__id__decoder_a91524c79431549568b3cfb655c28492e}
+
+
+Can be reimplemented by a symbol header A\-P\-I layer to ensure that enough space is available in the header for some layer specific data. 
+
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the \hyperlink{group__codec__header__api_ga7138ea5d64116c9594774e0a3806eece}{layer\-::factory\-::max\-\_\-header\-\_\-size()} function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The size in bytes required for the symbol header buffer. 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file symbol\-\_\-id\-\_\-decoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+symbol\-\_\-id\-\_\-decoder.\-hpp\end{DoxyCompactItemize}

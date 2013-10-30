@@ -10,7 +10,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// Vandermonde matrix as described in RFC 5510. Only
     /// difference is that we transpose it, if used as
     /// suggested the k coefficients needed when producing

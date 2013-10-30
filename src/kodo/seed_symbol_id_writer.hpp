@@ -13,7 +13,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @brief Writes a seed as the symbol id. The seed is used to seed the
     ///        generator layer before generating the coefficients.
     ///        The current symbol count is used as the seed.

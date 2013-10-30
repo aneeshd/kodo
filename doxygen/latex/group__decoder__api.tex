@@ -1,0 +1,203 @@
+\hypertarget{group__decoder__api}{\section{A\-P\-I}
+\label{group__decoder__api}\index{A\-P\-I@{A\-P\-I}}
+}
+
+
+The A\-P\-I used by the decoding algorithms.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1symbol__decoding__status__counter}{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em The symbol decoding status counter maintains information about how many symbols are in which state. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1symbol__decoding__status__tracker}{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-tracker$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em The symbol decoding status tracker stores information about the status of the different symbols contained within a decoder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__decoder__api_gae28d93bf78534b4f4f4052ad6b1f7a4d}{layer\-::decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint8\-\_\-t $\ast$coefficients)
+\item 
+void \hyperlink{group__decoder__api_ga14ba28f27d03e2eee864bc7eed6cb188}{layer\-::decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint32\-\_\-t symbol\-\_\-index)
+\item 
+bool \hyperlink{group__decoder__api_gaa6d386c2d13c68f68d487bdb98d554dd}{layer\-::is\-\_\-complete} () const 
+\item 
+void \hyperlink{group__decoder__api_ga9fb83cc2102d40006c0259088f9cb41e}{layer\-::set\-\_\-symbol\-\_\-missing} (uint32\-\_\-t index)
+\item 
+void \hyperlink{group__decoder__api_gaf20c3a2144fa7808bfe373df00314a29}{layer\-::set\-\_\-symbol\-\_\-seen} (uint32\-\_\-t index)
+\item 
+void \hyperlink{group__decoder__api_ga73bcee98c996a379da824eb9a79bec52}{layer\-::set\-\_\-symbol\-\_\-decoded} (uint32\-\_\-t index)
+\item 
+bool \hyperlink{group__decoder__api_gaab2e19b7b423caddbb49b20f1adc9cc2}{layer\-::is\-\_\-symbol\-\_\-missing} (uint32\-\_\-t index) const 
+\item 
+bool \hyperlink{group__decoder__api_ga5c012c968ab573a73b4f9e0398672633}{layer\-::is\-\_\-symbol\-\_\-seen} (uint32\-\_\-t index) const 
+\item 
+bool \hyperlink{group__decoder__api_gae4e6fba10d31bdd30b40f80d614faa4d}{layer\-::is\-\_\-symbol\-\_\-decoded} (uint32\-\_\-t index) const 
+\item 
+uint32\-\_\-t \hyperlink{group__decoder__api_gafdea353ad42397a2d1f992b590e0111d}{layer\-::symbols\-\_\-missing} () const 
+\item 
+uint32\-\_\-t \hyperlink{group__decoder__api_ga75cf4d30b8f42f103a0140b0a2a65316}{layer\-::symbols\-\_\-seen} () const 
+\item 
+uint32\-\_\-t \hyperlink{group__decoder__api_ga3a3785c55a9450955473ea46c8d7afb7}{layer\-::symbols\-\_\-decoded} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The A\-P\-I used by the decoding algorithms. 
+
+\subsection{Function Documentation}
+\hypertarget{group__decoder__api_gae28d93bf78534b4f4f4052ad6b1f7a4d}{\index{A\-P\-I@{A\-P\-I}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!API@{A\-P\-I}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint8\-\_\-t $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)}}\label{group__decoder__api_gae28d93bf78534b4f4f4052ad6b1f7a4d}
+Decodes an encoded symbol according to the coding coefficients stored in the corresponding symbol\-\_\-id.
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The encoded symbol \\
+\hline
+{\em coefficients} & The coding coefficients used to create the encoded symbol \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__decoder__api_ga14ba28f27d03e2eee864bc7eed6cb188}{\index{A\-P\-I@{A\-P\-I}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!API@{A\-P\-I}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-index}
+\end{DoxyParamCaption}
+)}}\label{group__decoder__api_ga14ba28f27d03e2eee864bc7eed6cb188}
+The decode function for systematic packets i.\-e. specific uncoded symbols. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The uncoded source symbol. \\
+\hline
+{\em symbol\-\_\-index} & The index of this uncoded symbol in the data block. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__decoder__api_gaa6d386c2d13c68f68d487bdb98d554dd}{\index{A\-P\-I@{A\-P\-I}!is\-\_\-complete@{is\-\_\-complete}}
+\index{is\-\_\-complete@{is\-\_\-complete}!API@{A\-P\-I}}
+\subsubsection[{is\-\_\-complete}]{\setlength{\rightskip}{0pt plus 5cm}bool layer\-::is\-\_\-complete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__decoder__api_gaa6d386c2d13c68f68d487bdb98d554dd}
+Check whether decoding is complete. \begin{DoxyReturn}{Returns}
+true if the decoding is complete 
+\end{DoxyReturn}
+\hypertarget{group__decoder__api_gae4e6fba10d31bdd30b40f80d614faa4d}{\index{A\-P\-I@{A\-P\-I}!is\-\_\-symbol\-\_\-decoded@{is\-\_\-symbol\-\_\-decoded}}
+\index{is\-\_\-symbol\-\_\-decoded@{is\-\_\-symbol\-\_\-decoded}!API@{A\-P\-I}}
+\subsubsection[{is\-\_\-symbol\-\_\-decoded}]{\setlength{\rightskip}{0pt plus 5cm}bool layer\-::is\-\_\-symbol\-\_\-decoded (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{group__decoder__api_gae4e6fba10d31bdd30b40f80d614faa4d}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the symbol whose state should be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the symbol is decoded otherwise false 
+\end{DoxyReturn}
+\hypertarget{group__decoder__api_gaab2e19b7b423caddbb49b20f1adc9cc2}{\index{A\-P\-I@{A\-P\-I}!is\-\_\-symbol\-\_\-missing@{is\-\_\-symbol\-\_\-missing}}
+\index{is\-\_\-symbol\-\_\-missing@{is\-\_\-symbol\-\_\-missing}!API@{A\-P\-I}}
+\subsubsection[{is\-\_\-symbol\-\_\-missing}]{\setlength{\rightskip}{0pt plus 5cm}bool layer\-::is\-\_\-symbol\-\_\-missing (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{group__decoder__api_gaab2e19b7b423caddbb49b20f1adc9cc2}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the symbol whose state should be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the symbol is missing otherwise false 
+\end{DoxyReturn}
+\hypertarget{group__decoder__api_ga5c012c968ab573a73b4f9e0398672633}{\index{A\-P\-I@{A\-P\-I}!is\-\_\-symbol\-\_\-seen@{is\-\_\-symbol\-\_\-seen}}
+\index{is\-\_\-symbol\-\_\-seen@{is\-\_\-symbol\-\_\-seen}!API@{A\-P\-I}}
+\subsubsection[{is\-\_\-symbol\-\_\-seen}]{\setlength{\rightskip}{0pt plus 5cm}bool layer\-::is\-\_\-symbol\-\_\-seen (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{group__decoder__api_ga5c012c968ab573a73b4f9e0398672633}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the symbol whose state should be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the symbol is \char`\"{}seen\char`\"{} otherwise false 
+\end{DoxyReturn}
+\hypertarget{group__decoder__api_ga73bcee98c996a379da824eb9a79bec52}{\index{A\-P\-I@{A\-P\-I}!set\-\_\-symbol\-\_\-decoded@{set\-\_\-symbol\-\_\-decoded}}
+\index{set\-\_\-symbol\-\_\-decoded@{set\-\_\-symbol\-\_\-decoded}!API@{A\-P\-I}}
+\subsubsection[{set\-\_\-symbol\-\_\-decoded}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::set\-\_\-symbol\-\_\-decoded (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}}\label{group__decoder__api_ga73bcee98c996a379da824eb9a79bec52}
+Specifies that the decoder has fully decoded a specific symbol. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the symbol whose state should be changed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__decoder__api_ga9fb83cc2102d40006c0259088f9cb41e}{\index{A\-P\-I@{A\-P\-I}!set\-\_\-symbol\-\_\-missing@{set\-\_\-symbol\-\_\-missing}}
+\index{set\-\_\-symbol\-\_\-missing@{set\-\_\-symbol\-\_\-missing}!API@{A\-P\-I}}
+\subsubsection[{set\-\_\-symbol\-\_\-missing}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::set\-\_\-symbol\-\_\-missing (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}}\label{group__decoder__api_ga9fb83cc2102d40006c0259088f9cb41e}
+Specifies that the decoder has no knowledge about a specific symbol 
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the symbol whose state should be changed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__decoder__api_gaf20c3a2144fa7808bfe373df00314a29}{\index{A\-P\-I@{A\-P\-I}!set\-\_\-symbol\-\_\-seen@{set\-\_\-symbol\-\_\-seen}}
+\index{set\-\_\-symbol\-\_\-seen@{set\-\_\-symbol\-\_\-seen}!API@{A\-P\-I}}
+\subsubsection[{set\-\_\-symbol\-\_\-seen}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::set\-\_\-symbol\-\_\-seen (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}}\label{group__decoder__api_gaf20c3a2144fa7808bfe373df00314a29}
+Specifies that the decoder has \char`\"{}seen\char`\"{} a specific symbol. When a symbol is \char`\"{}seen\char`\"{} by a decoder it means that the decoder has knowledge about a specific symbol. If the decoder uses Gaussian Elimination it means that the symbol has been selected as pivot in the decoding matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the symbol whose state should be changed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__decoder__api_ga3a3785c55a9450955473ea46c8d7afb7}{\index{A\-P\-I@{A\-P\-I}!symbols\-\_\-decoded@{symbols\-\_\-decoded}}
+\index{symbols\-\_\-decoded@{symbols\-\_\-decoded}!API@{A\-P\-I}}
+\subsubsection[{symbols\-\_\-decoded}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::symbols\-\_\-decoded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__decoder__api_ga3a3785c55a9450955473ea46c8d7afb7}
+\begin{DoxyReturn}{Returns}
+The number of decoded symbols at the decoder 
+\end{DoxyReturn}
+\hypertarget{group__decoder__api_gafdea353ad42397a2d1f992b590e0111d}{\index{A\-P\-I@{A\-P\-I}!symbols\-\_\-missing@{symbols\-\_\-missing}}
+\index{symbols\-\_\-missing@{symbols\-\_\-missing}!API@{A\-P\-I}}
+\subsubsection[{symbols\-\_\-missing}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::symbols\-\_\-missing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__decoder__api_gafdea353ad42397a2d1f992b590e0111d}
+\begin{DoxyReturn}{Returns}
+The number of missing symbols at the decoder 
+\end{DoxyReturn}
+\hypertarget{group__decoder__api_ga75cf4d30b8f42f103a0140b0a2a65316}{\index{A\-P\-I@{A\-P\-I}!symbols\-\_\-seen@{symbols\-\_\-seen}}
+\index{symbols\-\_\-seen@{symbols\-\_\-seen}!API@{A\-P\-I}}
+\subsubsection[{symbols\-\_\-seen}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::symbols\-\_\-seen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__decoder__api_ga75cf4d30b8f42f103a0140b0a2a65316}
+\begin{DoxyReturn}{Returns}
+The number of \char`\"{}seen\char`\"{} symbols at the decoder 
+\end{DoxyReturn}

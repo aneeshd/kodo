@@ -14,7 +14,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @brief The object encoder, allows encoding of objects too
     ///        large for a single block encoder.
     ///

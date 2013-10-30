@@ -1,0 +1,130 @@
+\hypertarget{test__rlnc__full__vector__codes_8cpp}{\section{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp File Reference}
+\label{test__rlnc__full__vector__codes_8cpp}\index{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}}
+}
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$gtest/gtest.\-h$>$}\\*
+{\ttfamily \#include $<$kodo/rlnc/full\-\_\-vector\-\_\-codes.\-hpp$>$}\\*
+{\ttfamily \#include $<$kodo/recoding\-\_\-symbol\-\_\-id.\-hpp$>$}\\*
+{\ttfamily \#include $<$kodo/proxy\-\_\-layer.\-hpp$>$}\\*
+{\ttfamily \#include $<$kodo/payload\-\_\-recoder.\-hpp$>$}\\*
+{\ttfamily \#include $<$kodo/partial\-\_\-shallow\-\_\-symbol\-\_\-storage.\-hpp$>$}\\*
+{\ttfamily \#include $<$kodo/linear\-\_\-block\-\_\-decoder\-\_\-delayed.\-hpp$>$}\\*
+{\ttfamily \#include $<$kodo/storage\-\_\-aware\-\_\-generator.\-hpp$>$}\\*
+{\ttfamily \#include $<$kodo/shallow\-\_\-symbol\-\_\-storage.\-hpp$>$}\\*
+{\ttfamily \#include $<$kodo/has\-\_\-shallow\-\_\-symbol\-\_\-storage.\-hpp$>$}\\*
+{\ttfamily \#include \char`\"{}basic\-\_\-api\-\_\-test\-\_\-helper.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}helper\-\_\-test\-\_\-reuse\-\_\-api.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}helper\-\_\-test\-\_\-recoding\-\_\-api.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}helper\-\_\-test\-\_\-on\-\_\-the\-\_\-fly\-\_\-api.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}helper\-\_\-test\-\_\-basic\-\_\-api.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}helper\-\_\-test\-\_\-initialize\-\_\-api.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}helper\-\_\-test\-\_\-systematic\-\_\-api.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}helper\-\_\-test\-\_\-mix\-\_\-uncoded\-\_\-api.\-hpp\char`\"{}}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacekodo}{kodo}
+\begin{DoxyCompactList}\small\item\em Here we define the stacks which should be tested. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{test__rlnc__full__vector__codes_8cpp_acde9e7823313cdea0230c496a99eeb93}{T\-E\-S\-T} (Test\-Rlnc\-Full\-Vector\-Codes, test\-\_\-basic\-\_\-api)
+\item 
+\hyperlink{test__rlnc__full__vector__codes_8cpp_aa341d7683a604edbf6d13ecf910cc59a}{T\-E\-S\-T} (Test\-Rlnc\-Full\-Vector\-Codes, test\-\_\-initialize)
+\item 
+\hyperlink{test__rlnc__full__vector__codes_8cpp_add6694ad3014ae7e54c78177d0f92218}{T\-E\-S\-T} (Test\-Rlnc\-Full\-Vector\-Codes, test\-\_\-systematic)
+\item 
+\hyperlink{test__rlnc__full__vector__codes_8cpp_a3832d3da7f35d7a60685224ae6789acc}{T\-E\-S\-T} (Test\-Rlnc\-Full\-Vector\-Codes, mix\-\_\-uncoded)
+\item 
+\hypertarget{test__rlnc__full__vector__codes_8cpp_aec6bb54174475bc1868dcd8d4da36166}{\hyperlink{test__rlnc__full__vector__codes_8cpp_aec6bb54174475bc1868dcd8d4da36166}{T\-E\-S\-T} (Test\-Rlnc\-Full\-Vector\-Codes, test\-\_\-recoders\-\_\-api)}\label{test__rlnc__full__vector__codes_8cpp_aec6bb54174475bc1868dcd8d4da36166}
+
+\begin{DoxyCompactList}\small\item\em The recoding. \end{DoxyCompactList}\item 
+\hypertarget{test__rlnc__full__vector__codes_8cpp_ab067717ae7b2e83ef79c30aecfbf7d44}{\hyperlink{test__rlnc__full__vector__codes_8cpp_ab067717ae7b2e83ef79c30aecfbf7d44}{T\-E\-S\-T} (Test\-Rlnc\-Full\-Vector\-Codes, test\-\_\-recoding\-\_\-relay)}\label{test__rlnc__full__vector__codes_8cpp_ab067717ae7b2e83ef79c30aecfbf7d44}
+
+\begin{DoxyCompactList}\small\item\em The recoding. \end{DoxyCompactList}\item 
+\hyperlink{test__rlnc__full__vector__codes_8cpp_a251e66890a51e44df09486d9666c3b54}{T\-E\-S\-T} (Test\-Rlnc\-Full\-Vector\-Codes, test\-\_\-reuse\-\_\-api)
+\item 
+\hyperlink{test__rlnc__full__vector__codes_8cpp_aa453038845efdff9c9e1886ae0d3ff66}{T\-E\-S\-T} (Test\-Rlnc\-Full\-Vector\-Codes, test\-\_\-reuse\-\_\-incomplete\-\_\-api)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Unit tests for the full vector codes (i.\-e. Network Coding encoders and decoders). 
+
+Definition in file \hyperlink{test__rlnc__full__vector__codes_8cpp_source}{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{test__rlnc__full__vector__codes_8cpp_acde9e7823313cdea0230c496a99eeb93}{\index{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}!T\-E\-S\-T@{T\-E\-S\-T}}
+\index{T\-E\-S\-T@{T\-E\-S\-T}!test_rlnc_full_vector_codes.cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}}
+\subsubsection[{T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{Test\-Rlnc\-Full\-Vector\-Codes}]{, }
+\item[{test\-\_\-basic\-\_\-api}]{}
+\end{DoxyParamCaption}
+)}}\label{test__rlnc__full__vector__codes_8cpp_acde9e7823313cdea0230c496a99eeb93}
+Tests the basic A\-P\-I functionality this mean basic encoding and decoding 
+
+Definition at line 155 of file test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp.
+
+\hypertarget{test__rlnc__full__vector__codes_8cpp_aa341d7683a604edbf6d13ecf910cc59a}{\index{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}!T\-E\-S\-T@{T\-E\-S\-T}}
+\index{T\-E\-S\-T@{T\-E\-S\-T}!test_rlnc_full_vector_codes.cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}}
+\subsubsection[{T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{Test\-Rlnc\-Full\-Vector\-Codes}]{, }
+\item[{test\-\_\-initialize}]{}
+\end{DoxyParamCaption}
+)}}\label{test__rlnc__full__vector__codes_8cpp_aa341d7683a604edbf6d13ecf910cc59a}
+Test that the encoders and decoders initialize() function can be used to reset the state of an encoder and decoder and that they therefore can be safely reused. 
+
+Definition at line 173 of file test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp.
+
+\hypertarget{test__rlnc__full__vector__codes_8cpp_add6694ad3014ae7e54c78177d0f92218}{\index{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}!T\-E\-S\-T@{T\-E\-S\-T}}
+\index{T\-E\-S\-T@{T\-E\-S\-T}!test_rlnc_full_vector_codes.cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}}
+\subsubsection[{T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{Test\-Rlnc\-Full\-Vector\-Codes}]{, }
+\item[{test\-\_\-systematic}]{}
+\end{DoxyParamCaption}
+)}}\label{test__rlnc__full__vector__codes_8cpp_add6694ad3014ae7e54c78177d0f92218}
+Tests that an encoder producing systematic packets is handled correctly in the decoder. 
+
+Definition at line 189 of file test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp.
+
+\hypertarget{test__rlnc__full__vector__codes_8cpp_a3832d3da7f35d7a60685224ae6789acc}{\index{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}!T\-E\-S\-T@{T\-E\-S\-T}}
+\index{T\-E\-S\-T@{T\-E\-S\-T}!test_rlnc_full_vector_codes.cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}}
+\subsubsection[{T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{Test\-Rlnc\-Full\-Vector\-Codes}]{, }
+\item[{mix\-\_\-uncoded}]{}
+\end{DoxyParamCaption}
+)}}\label{test__rlnc__full__vector__codes_8cpp_a3832d3da7f35d7a60685224ae6789acc}
+Tests whether mixed un-\/coded and coded packets are correctly handled in the encoder and decoder. 
+
+Definition at line 200 of file test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp.
+
+\hypertarget{test__rlnc__full__vector__codes_8cpp_a251e66890a51e44df09486d9666c3b54}{\index{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}!T\-E\-S\-T@{T\-E\-S\-T}}
+\index{T\-E\-S\-T@{T\-E\-S\-T}!test_rlnc_full_vector_codes.cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}}
+\subsubsection[{T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{Test\-Rlnc\-Full\-Vector\-Codes}]{, }
+\item[{test\-\_\-reuse\-\_\-api}]{}
+\end{DoxyParamCaption}
+)}}\label{test__rlnc__full__vector__codes_8cpp_a251e66890a51e44df09486d9666c3b54}
+Tests the basic A\-P\-I functionality this mean basic encoding and decoding 
+
+Definition at line 241 of file test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp.
+
+\hypertarget{test__rlnc__full__vector__codes_8cpp_aa453038845efdff9c9e1886ae0d3ff66}{\index{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}!T\-E\-S\-T@{T\-E\-S\-T}}
+\index{T\-E\-S\-T@{T\-E\-S\-T}!test_rlnc_full_vector_codes.cpp@{test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp}}
+\subsubsection[{T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{Test\-Rlnc\-Full\-Vector\-Codes}]{, }
+\item[{test\-\_\-reuse\-\_\-incomplete\-\_\-api}]{}
+\end{DoxyParamCaption}
+)}}\label{test__rlnc__full__vector__codes_8cpp_aa453038845efdff9c9e1886ae0d3ff66}
+Tests the basic A\-P\-I functionality this mean basic encoding and decoding 
+
+Definition at line 259 of file test\-\_\-rlnc\-\_\-full\-\_\-vector\-\_\-codes.\-cpp.
+

@@ -1,0 +1,245 @@
+\hypertarget{classkodo_1_1finite__field__math}{\section{kodo\-:\-:finite\-\_\-field\-\_\-math$<$ Field\-Impl, Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1finite__field__math}\index{kodo\-::finite\-\_\-field\-\_\-math$<$ Field\-Impl, Super\-Coder $>$@{kodo\-::finite\-\_\-field\-\_\-math$<$ Field\-Impl, Super\-Coder $>$}}
+}
+
+
+Basic layer performing common finite field operation.  
+
+
+
+
+{\ttfamily \#include $<$finite\-\_\-field\-\_\-math.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:finite\-\_\-field\-\_\-math$<$ Field\-Impl, Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1finite__field__math}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1finite__field__math_1_1factory}{factory}
+\begin{DoxyCompactList}\small\item\em Check that the fields match. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1finite__field__math_a3c84e68134e42fcb67bfca6e0ec31d2e}{typedef Super\-Coder\-::field\-\_\-type \hyperlink{classkodo_1_1finite__field__math_a3c84e68134e42fcb67bfca6e0ec31d2e}{field\-\_\-type}}\label{classkodo_1_1finite__field__math_a3c84e68134e42fcb67bfca6e0ec31d2e}
+
+\begin{DoxyCompactList}\small\item\em The field type used. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{typedef Super\-Coder\-::value\-\_\-type \hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type}}\label{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}
+
+\begin{DoxyCompactList}\small\item\em The value type. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1finite__field__math_ab545cc5e66211178dee755d27b3bb719}{typedef Field\-Impl \hyperlink{classkodo_1_1finite__field__math_ab545cc5e66211178dee755d27b3bb719}{field\-\_\-impl}}\label{classkodo_1_1finite__field__math_ab545cc5e66211178dee755d27b3bb719}
+
+\begin{DoxyCompactList}\small\item\em The finite field implementation. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1finite__field__math_adc8809e96febdd3ada1a8eb784aa2da2}{typedef boost\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classkodo_1_1finite__field__math_ab545cc5e66211178dee755d27b3bb719}{field\-\_\-impl} $>$ \hyperlink{classkodo_1_1finite__field__math_adc8809e96febdd3ada1a8eb784aa2da2}{field\-\_\-pointer}}\label{classkodo_1_1finite__field__math_adc8809e96febdd3ada1a8eb784aa2da2}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the finite field implementation. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1finite__field__math_af9c063c54c2f031abe47b2aa66f0e32a}{typedef Super\-Coder\-::pointer \hyperlink{classkodo_1_1finite__field__math_af9c063c54c2f031abe47b2aa66f0e32a}{pointer}}\label{classkodo_1_1finite__field__math_af9c063c54c2f031abe47b2aa66f0e32a}
+
+\begin{DoxyCompactList}\small\item\em Pointer to coder produced by the factories. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1finite__field__math_a19453df81e4a8e53325bd10305062bc1}{construct} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1finite__field__math_a9ea80601e001ed2acb44e4b4f7a70339}{multiply} (\hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} $\ast$symbol\-\_\-dest, \hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} coefficient, uint32\-\_\-t symbol\-\_\-length)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1finite__field__math_a319c2d2116e19ba1144fdf8ab2ff7549}{multiply\-\_\-add} (\hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} $\ast$symbol\-\_\-dest, const \hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} $\ast$symbol\-\_\-src, \hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} coefficient, uint32\-\_\-t symbol\-\_\-length)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1finite__field__math_a4b975e644dfe8e3c009415ed53d1e39a}{add} (\hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} $\ast$symbol\-\_\-dest, const \hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} $\ast$symbol\-\_\-src, uint32\-\_\-t symbol\-\_\-length)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1finite__field__math_aa3840069ffcc2b3634c5a501ff171590}{multiply\-\_\-subtract} (\hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} $\ast$symbol\-\_\-dest, const \hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} $\ast$symbol\-\_\-src, \hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} coefficient, uint32\-\_\-t symbol\-\_\-length)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1finite__field__math_a81629ff252a286fc6e42cf90b0e70b57}{subtract} (\hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} $\ast$symbol\-\_\-dest, const \hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} $\ast$symbol\-\_\-src, uint32\-\_\-t symbol\-\_\-length)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} \hyperlink{classkodo_1_1finite__field__math_a859db56aca42e27f01eb4998feaffb2d}{invert} (\hyperlink{classkodo_1_1finite__field__math_a6539f35f436d64698ed6dd7d40ae3ab8}{value\-\_\-type} value)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Field\-Impl, class Super\-Coder$>$class kodo\-::finite\-\_\-field\-\_\-math$<$ Field\-Impl, Super\-Coder $>$}
+
+Basic layer performing common finite field operation. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000019}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+
+
+Definition at line 20 of file finite\-\_\-field\-\_\-math.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1finite__field__math_a4b975e644dfe8e3c009415ed53d1e39a}{\index{kodo\-::finite\-\_\-field\-\_\-math@{kodo\-::finite\-\_\-field\-\_\-math}!add@{add}}
+\index{add@{add}!kodo::finite_field_math@{kodo\-::finite\-\_\-field\-\_\-math}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Field\-Impl, class Super\-Coder$>$ void {\bf kodo\-::finite\-\_\-field\-\_\-math}$<$ Field\-Impl, Super\-Coder $>$\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{symbol\-\_\-dest, }
+\item[{const {\bf value\-\_\-type} $\ast$}]{symbol\-\_\-src, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1finite__field__math_a4b975e644dfe8e3c009415ed53d1e39a}
+
+
+
+
+Adds the source symbol adds to the destination symbol i.\-e.\-: symbol\-\_\-dest = symbol\-\_\-dest + symbol\-\_\-src
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-dest} & the destination buffer holding the resulting symbol \\
+\hline
+{\em symbol\-\_\-src} & the source symbol \\
+\hline
+{\em symbol\-\_\-length} & the length of the symbol in value\-\_\-type elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 136 of file finite\-\_\-field\-\_\-math.\-hpp.
+
+\hypertarget{classkodo_1_1finite__field__math_a19453df81e4a8e53325bd10305062bc1}{\index{kodo\-::finite\-\_\-field\-\_\-math@{kodo\-::finite\-\_\-field\-\_\-math}!construct@{construct}}
+\index{construct@{construct}!kodo::finite_field_math@{kodo\-::finite\-\_\-field\-\_\-math}}
+\subsubsection[{construct}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Field\-Impl, class Super\-Coder$>$ template$<$class Factory $>$ void {\bf kodo\-::finite\-\_\-field\-\_\-math}$<$ Field\-Impl, Super\-Coder $>$\-::construct (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1finite__field__math_a19453df81e4a8e53325bd10305062bc1}
+
+
+Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file finite\-\_\-field\-\_\-math.\-hpp.
+
+\hypertarget{classkodo_1_1finite__field__math_a859db56aca42e27f01eb4998feaffb2d}{\index{kodo\-::finite\-\_\-field\-\_\-math@{kodo\-::finite\-\_\-field\-\_\-math}!invert@{invert}}
+\index{invert@{invert}!kodo::finite_field_math@{kodo\-::finite\-\_\-field\-\_\-math}}
+\subsubsection[{invert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Field\-Impl, class Super\-Coder$>$ {\bf value\-\_\-type} {\bf kodo\-::finite\-\_\-field\-\_\-math}$<$ Field\-Impl, Super\-Coder $>$\-::invert (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1finite__field__math_a859db56aca42e27f01eb4998feaffb2d}
+
+
+
+
+Inverts the field element 
+\begin{DoxyParams}{Parameters}
+{\em value} & the finite field value to be inverted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the inverse 
+\end{DoxyReturn}
+
+
+Definition at line 179 of file finite\-\_\-field\-\_\-math.\-hpp.
+
+\hypertarget{classkodo_1_1finite__field__math_a9ea80601e001ed2acb44e4b4f7a70339}{\index{kodo\-::finite\-\_\-field\-\_\-math@{kodo\-::finite\-\_\-field\-\_\-math}!multiply@{multiply}}
+\index{multiply@{multiply}!kodo::finite_field_math@{kodo\-::finite\-\_\-field\-\_\-math}}
+\subsubsection[{multiply}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Field\-Impl, class Super\-Coder$>$ void {\bf kodo\-::finite\-\_\-field\-\_\-math}$<$ Field\-Impl, Super\-Coder $>$\-::multiply (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{symbol\-\_\-dest, }
+\item[{{\bf value\-\_\-type}}]{coefficient, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1finite__field__math_a9ea80601e001ed2acb44e4b4f7a70339}
+
+
+
+
+
+
+Definition at line 108 of file finite\-\_\-field\-\_\-math.\-hpp.
+
+\hypertarget{classkodo_1_1finite__field__math_a319c2d2116e19ba1144fdf8ab2ff7549}{\index{kodo\-::finite\-\_\-field\-\_\-math@{kodo\-::finite\-\_\-field\-\_\-math}!multiply\-\_\-add@{multiply\-\_\-add}}
+\index{multiply\-\_\-add@{multiply\-\_\-add}!kodo::finite_field_math@{kodo\-::finite\-\_\-field\-\_\-math}}
+\subsubsection[{multiply\-\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Field\-Impl, class Super\-Coder$>$ void {\bf kodo\-::finite\-\_\-field\-\_\-math}$<$ Field\-Impl, Super\-Coder $>$\-::multiply\-\_\-add (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{symbol\-\_\-dest, }
+\item[{const {\bf value\-\_\-type} $\ast$}]{symbol\-\_\-src, }
+\item[{{\bf value\-\_\-type}}]{coefficient, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1finite__field__math_a319c2d2116e19ba1144fdf8ab2ff7549}
+
+
+
+
+
+
+Definition at line 121 of file finite\-\_\-field\-\_\-math.\-hpp.
+
+\hypertarget{classkodo_1_1finite__field__math_aa3840069ffcc2b3634c5a501ff171590}{\index{kodo\-::finite\-\_\-field\-\_\-math@{kodo\-::finite\-\_\-field\-\_\-math}!multiply\-\_\-subtract@{multiply\-\_\-subtract}}
+\index{multiply\-\_\-subtract@{multiply\-\_\-subtract}!kodo::finite_field_math@{kodo\-::finite\-\_\-field\-\_\-math}}
+\subsubsection[{multiply\-\_\-subtract}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Field\-Impl, class Super\-Coder$>$ void {\bf kodo\-::finite\-\_\-field\-\_\-math}$<$ Field\-Impl, Super\-Coder $>$\-::multiply\-\_\-subtract (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{symbol\-\_\-dest, }
+\item[{const {\bf value\-\_\-type} $\ast$}]{symbol\-\_\-src, }
+\item[{{\bf value\-\_\-type}}]{coefficient, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1finite__field__math_aa3840069ffcc2b3634c5a501ff171590}
+
+
+
+
+Multiplies the source symbol with the coefficient and subtracts it from the destination symbol i.\-e.\-: symbol\-\_\-dest = symbol\-\_\-dest -\/ (symbol\-\_\-src $\ast$ coefficient)
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-dest} & the destination buffer for the source symbol \\
+\hline
+{\em symbol\-\_\-src} & the source buffer for the \\
+\hline
+{\em coefficient} & the multiplicative constant \\
+\hline
+{\em symbol\-\_\-length} & the length of the symbol in value\-\_\-type elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 149 of file finite\-\_\-field\-\_\-math.\-hpp.
+
+\hypertarget{classkodo_1_1finite__field__math_a81629ff252a286fc6e42cf90b0e70b57}{\index{kodo\-::finite\-\_\-field\-\_\-math@{kodo\-::finite\-\_\-field\-\_\-math}!subtract@{subtract}}
+\index{subtract@{subtract}!kodo::finite_field_math@{kodo\-::finite\-\_\-field\-\_\-math}}
+\subsubsection[{subtract}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Field\-Impl, class Super\-Coder$>$ void {\bf kodo\-::finite\-\_\-field\-\_\-math}$<$ Field\-Impl, Super\-Coder $>$\-::subtract (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{symbol\-\_\-dest, }
+\item[{const {\bf value\-\_\-type} $\ast$}]{symbol\-\_\-src, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1finite__field__math_a81629ff252a286fc6e42cf90b0e70b57}
+
+
+
+
+Subtracts the source symbol from the destination symbol i.\-e.\-: symbol\-\_\-dest = symbol\-\_\-dest -\/ symbol\-\_\-src
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-dest} & the destination buffer holding the resulting symbol \\
+\hline
+{\em symbol\-\_\-src} & the source symbol \\
+\hline
+{\em symbol\-\_\-length} & the length of the symbol in value\-\_\-type elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file finite\-\_\-field\-\_\-math.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+finite\-\_\-field\-\_\-math.\-hpp\end{DoxyCompactItemize}

@@ -14,7 +14,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup encoder_layers
     /// @brief A linear block encoder.
     ///

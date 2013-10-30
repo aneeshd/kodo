@@ -11,7 +11,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup codec_header_layers
     /// @brief Simple un-coded scheme not meant for practical use but
     ///        for simulation purposes. As it simply produces un-coded symbols.

@@ -9,7 +9,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup encoder_layers
     ///
     /// Implements the functionality to produce an un-coded / systematic

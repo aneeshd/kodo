@@ -1,0 +1,70 @@
+\hypertarget{classkodo_1_1base__plain__symbol__id__writer}{\section{kodo\-:\-:base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-writer$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1base__plain__symbol__id__writer}\index{kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-writer$<$ Super\-Coder $>$@{kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-writer$<$ Super\-Coder $>$}}
+}
+
+
+Writes the symbol id and initializes the coding coefficients pointer. This implementation is the most basic one where the symbol id simply is the coding coefficients.  
+
+
+
+
+{\ttfamily \#include $<$plain\-\_\-symbol\-\_\-id\-\_\-writer.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-writer$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1base__plain__symbol__id__writer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1base__plain__symbol__id__writer_a0cd4786a0a2aecc0f6262fc3721f35fb}{write\-\_\-id} (uint8\-\_\-t $\ast$symbol\-\_\-id, uint8\-\_\-t $\ast$$\ast$coefficients)
+\begin{DoxyCompactList}\small\item\em Can be reimplemented by a Symbol I\-D layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-writer$<$ Super\-Coder $>$}
+
+Writes the symbol id and initializes the coding coefficients pointer. This implementation is the most basic one where the symbol id simply is the coding coefficients. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000037}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+
+
+Definition at line 21 of file plain\-\_\-symbol\-\_\-id\-\_\-writer.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1base__plain__symbol__id__writer_a0cd4786a0a2aecc0f6262fc3721f35fb}{\index{kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-writer@{kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-writer}!write\-\_\-id@{write\-\_\-id}}
+\index{write\-\_\-id@{write\-\_\-id}!kodo::base_plain_symbol_id_writer@{kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-writer}}
+\subsubsection[{write\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-writer}$<$ Super\-Coder $>$\-::write\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-id, }
+\item[{uint8\-\_\-t $\ast$$\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1base__plain__symbol__id__writer_a0cd4786a0a2aecc0f6262fc3721f35fb}
+
+
+Can be reimplemented by a Symbol I\-D layer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-id} & The buffer where the symbol id is written. This id should uniquely describe the coding coefficients used to generate an encoded symbol. It is therefore sufficient to transmit only the symbol id and not necessarily all coding coefficients to decoders. \\
+\hline
+{\em coefficient} & Pointer to a pointer of coefficients. After the call to write\-\_\-id the coefficients pointer will point to memory storing all coding coefficients corresponding to the symbol id written to the symbol\-\_\-id buffer. Note, the buffer returned may be change by the calling code. The implementation should therefore ensure that this will not cause problems e.\-g. by returning a pointer to a internal buffered copy of the coefficients.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes used from the symbol\-\_\-id buffer. 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file plain\-\_\-symbol\-\_\-id\-\_\-writer.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+plain\-\_\-symbol\-\_\-id\-\_\-writer.\-hpp\end{DoxyCompactItemize}

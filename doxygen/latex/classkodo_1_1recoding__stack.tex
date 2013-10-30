@@ -1,0 +1,28 @@
+\hypertarget{classkodo_1_1recoding__stack}{\section{kodo\-:\-:recoding\-\_\-stack$<$ Main\-Stack $>$ Class Template Reference}
+\label{classkodo_1_1recoding__stack}\index{kodo\-::recoding\-\_\-stack$<$ Main\-Stack $>$@{kodo\-::recoding\-\_\-stack$<$ Main\-Stack $>$}}
+}
+
+
+{\ttfamily \#include $<$full\-\_\-vector\-\_\-codes.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:recoding\-\_\-stack$<$ Main\-Stack $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.973980cm]{classkodo_1_1recoding__stack}
+\end{center}
+\end{figure}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Main\-Stack$>$class kodo\-::recoding\-\_\-stack$<$ Main\-Stack $>$}
+
+Intermediate stack implementing the recoding functionality of a R\-L\-N\-C code. As can be seen we are able to reuse a great deal of layers from the encode stack. It is important that the symbols produced by the recoder are compatible with the decoder. This means we have to use compatible Payload, Codec Header Symbol I\-D layers, between the encoder, recoder and decoder. The only layer specific to recoding is the \hyperlink{classkodo_1_1recoding__symbol__id}{recoding\-\_\-symbol\-\_\-id} layer. Finally the recoder uses a \hyperlink{classkodo_1_1proxy__layer}{proxy\-\_\-layer} which forwards any calls not implemented in the recoding stack to the Main\-Stack. 
+
+Definition at line 107 of file full\-\_\-vector\-\_\-codes.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+full\-\_\-vector\-\_\-codes.\-hpp\end{DoxyCompactItemize}

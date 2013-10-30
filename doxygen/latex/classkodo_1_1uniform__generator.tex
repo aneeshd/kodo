@@ -1,0 +1,162 @@
+\hypertarget{classkodo_1_1uniform__generator}{\section{kodo\-:\-:uniform\-\_\-generator$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1uniform__generator}\index{kodo\-::uniform\-\_\-generator$<$ Super\-Coder $>$@{kodo\-::uniform\-\_\-generator$<$ Super\-Coder $>$}}
+}
+
+
+Generates an uniform random coefficient (from the chosen Finite Field) for every symbol.  
+
+
+
+
+{\ttfamily \#include $<$uniform\-\_\-generator.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:uniform\-\_\-generator$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1uniform__generator}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Super\-Coder\-::field\-\_\-type \hyperlink{classkodo_1_1uniform__generator_a04203e599b984131091bc822a383a77d}{field\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+typedef Super\-Coder\-::value\-\_\-type \hyperlink{classkodo_1_1uniform__generator_ad0b5198a06d1e7a73a62035027e1ec75}{value\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1uniform__generator_adb5b38e3d3f319e3097507e4484a1d27}{typedef boost\-::random\-::mt19937 \hyperlink{classkodo_1_1uniform__generator_adb5b38e3d3f319e3097507e4484a1d27}{generator\-\_\-type}}\label{classkodo_1_1uniform__generator_adb5b38e3d3f319e3097507e4484a1d27}
+
+\begin{DoxyCompactList}\small\item\em The random generator used. \end{DoxyCompactList}\item 
+typedef generator\-\_\-type\-::result\-\_\-type \hyperlink{classkodo_1_1uniform__generator_a6db7150ba4f8c591c9cfbbb8e3b0e6b3}{seed\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1uniform__generator_a1729e3e17b43d642c184fd1c895334cc}{\hyperlink{classkodo_1_1uniform__generator_a1729e3e17b43d642c184fd1c895334cc}{uniform\-\_\-generator} ()}\label{classkodo_1_1uniform__generator_a1729e3e17b43d642c184fd1c895334cc}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1uniform__generator_af46febf68f07fc48c735c499d131e511}{generate} (uint8\-\_\-t $\ast$coefficients)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1uniform__generator_acc0f9cd49d60547b2214fbf7fb1d9b66}{generate\-\_\-partial} (uint8\-\_\-t $\ast$coefficients)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1uniform__generator_aaf140a1654dff4501873f71ad5143950}{seed} (\hyperlink{classkodo_1_1uniform__generator_a6db7150ba4f8c591c9cfbbb8e3b0e6b3}{seed\-\_\-type} seed\-\_\-value)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::uniform\-\_\-generator$<$ Super\-Coder $>$}
+
+Generates an uniform random coefficient (from the chosen Finite Field) for every symbol. 
+
+Definition at line 20 of file uniform\-\_\-generator.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1uniform__generator_a04203e599b984131091bc822a383a77d}{\index{kodo\-::uniform\-\_\-generator@{kodo\-::uniform\-\_\-generator}!field\-\_\-type@{field\-\_\-type}}
+\index{field\-\_\-type@{field\-\_\-type}!kodo::uniform_generator@{kodo\-::uniform\-\_\-generator}}
+\subsubsection[{field\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef Super\-Coder\-::field\-\_\-type {\bf kodo\-::uniform\-\_\-generator}$<$ Super\-Coder $>$\-::{\bf field\-\_\-type}}}\label{classkodo_1_1uniform__generator_a04203e599b984131091bc822a383a77d}
+
+
+
+
+The value type storing the field elements used for the specified field. E.\-g. the binary extension field 2$^\wedge$8 uses uint8\-\_\-t as the value\-\_\-type. 
+
+Definition at line 25 of file uniform\-\_\-generator.\-hpp.
+
+\hypertarget{classkodo_1_1uniform__generator_a6db7150ba4f8c591c9cfbbb8e3b0e6b3}{\index{kodo\-::uniform\-\_\-generator@{kodo\-::uniform\-\_\-generator}!seed\-\_\-type@{seed\-\_\-type}}
+\index{seed\-\_\-type@{seed\-\_\-type}!kodo::uniform_generator@{kodo\-::uniform\-\_\-generator}}
+\subsubsection[{seed\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef generator\-\_\-type\-::result\-\_\-type {\bf kodo\-::uniform\-\_\-generator}$<$ Super\-Coder $>$\-::{\bf seed\-\_\-type}}}\label{classkodo_1_1uniform__generator_a6db7150ba4f8c591c9cfbbb8e3b0e6b3}
+
+
+
+
+The data type used for seeding the generators in the Generator A\-P\-I. Generators implementing the \hyperlink{group__coefficient__generator__api_ga4afaaccc0d847e2c8ba021cc4e8c9672}{layer\-::seed(seed\-\_\-type)} function should also provide this typedef. 
+
+Definition at line 34 of file uniform\-\_\-generator.\-hpp.
+
+\hypertarget{classkodo_1_1uniform__generator_ad0b5198a06d1e7a73a62035027e1ec75}{\index{kodo\-::uniform\-\_\-generator@{kodo\-::uniform\-\_\-generator}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!kodo::uniform_generator@{kodo\-::uniform\-\_\-generator}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef Super\-Coder\-::value\-\_\-type {\bf kodo\-::uniform\-\_\-generator}$<$ Super\-Coder $>$\-::{\bf value\-\_\-type}}}\label{classkodo_1_1uniform__generator_ad0b5198a06d1e7a73a62035027e1ec75}
+
+
+
+
+The value type storing the field elements used for the specified field. E.\-g. the binary extension field 2$^\wedge$8 uses uint8\-\_\-t as the value\-\_\-type. 
+
+Definition at line 28 of file uniform\-\_\-generator.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1uniform__generator_af46febf68f07fc48c735c499d131e511}{\index{kodo\-::uniform\-\_\-generator@{kodo\-::uniform\-\_\-generator}!generate@{generate}}
+\index{generate@{generate}!kodo::uniform_generator@{kodo\-::uniform\-\_\-generator}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::uniform\-\_\-generator}$<$ Super\-Coder $>$\-::generate (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1uniform__generator_af46febf68f07fc48c735c499d131e511}
+
+
+
+
+Fills the input buffer with symbol coefficients used for either encoding or decoding a symbol. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-coefficient} & Pointer to the memory where the symbol coefficients should be stored. The symbol\-\_\-coefficient buffer should have at least layer\-::coefficients\-\_\-size() capacity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000068}{Todo}]\-: Enable this \end{DoxyRefDesc}
+
+
+Definition at line 46 of file uniform\-\_\-generator.\-hpp.
+
+\hypertarget{classkodo_1_1uniform__generator_acc0f9cd49d60547b2214fbf7fb1d9b66}{\index{kodo\-::uniform\-\_\-generator@{kodo\-::uniform\-\_\-generator}!generate\-\_\-partial@{generate\-\_\-partial}}
+\index{generate\-\_\-partial@{generate\-\_\-partial}!kodo::uniform_generator@{kodo\-::uniform\-\_\-generator}}
+\subsubsection[{generate\-\_\-partial}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::uniform\-\_\-generator}$<$ Super\-Coder $>$\-::generate\-\_\-partial (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1uniform__generator_acc0f9cd49d60547b2214fbf7fb1d9b66}
+
+
+
+
+Fills the input buffer with symbol coefficients used for either encoding or decoding a symbol. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-coefficient} & Pointer to the memory where the symbol coefficients should be stored. The symbol\-\_\-coefficient buffer should have at least layer\-::coefficients\-\_\-size() capacity. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file uniform\-\_\-generator.\-hpp.
+
+\hypertarget{classkodo_1_1uniform__generator_aaf140a1654dff4501873f71ad5143950}{\index{kodo\-::uniform\-\_\-generator@{kodo\-::uniform\-\_\-generator}!seed@{seed}}
+\index{seed@{seed}!kodo::uniform_generator@{kodo\-::uniform\-\_\-generator}}
+\subsubsection[{seed}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::uniform\-\_\-generator}$<$ Super\-Coder $>$\-::seed (
+\begin{DoxyParamCaption}
+\item[{{\bf seed\-\_\-type}}]{seed\-\_\-value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1uniform__generator_aaf140a1654dff4501873f71ad5143950}
+
+
+
+
+Set the seed of the coefficient generator used. Note that not all generators provide the \hyperlink{group__coefficient__generator__api_ga4afaaccc0d847e2c8ba021cc4e8c9672}{seed()} function. E.\-g. a layer using a Vandermonde matrix as source for the symbol coefficients will not implement the \hyperlink{group__coefficient__generator__api_ga4afaaccc0d847e2c8ba021cc4e8c9672}{seed()} function.
+
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to provide the \hyperlink{classlayer_abd92e03d53ae960a9ef1e7a63fa06ccb}{layer\-::seed\-\_\-type} typedef.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & The seed value for the generator. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 87 of file uniform\-\_\-generator.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+uniform\-\_\-generator.\-hpp\end{DoxyCompactItemize}

@@ -1,0 +1,173 @@
+\hypertarget{classkodo_1_1object__encoder}{\section{kodo\-:\-:object\-\_\-encoder$<$ Object\-Data, Encoder\-Type, Block\-Partitioning $>$ Class Template Reference}
+\label{classkodo_1_1object__encoder}\index{kodo\-::object\-\_\-encoder$<$ Object\-Data, Encoder\-Type, Block\-Partitioning $>$@{kodo\-::object\-\_\-encoder$<$ Object\-Data, Encoder\-Type, Block\-Partitioning $>$}}
+}
+
+
+The object encoder, allows encoding of objects too large for a single block encoder.  
+
+
+
+
+{\ttfamily \#include $<$object\-\_\-encoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:object\-\_\-encoder$<$ Object\-Data, Encoder\-Type, Block\-Partitioning $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1object__encoder}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1object__encoder_ad9e399452c48178bb156e39fedb72fa3}{typedef Encoder\-Type\-::factory \hyperlink{classkodo_1_1object__encoder_ad9e399452c48178bb156e39fedb72fa3}{factory\-\_\-type}}\label{classkodo_1_1object__encoder_ad9e399452c48178bb156e39fedb72fa3}
+
+\begin{DoxyCompactList}\small\item\em The type of factory used to build encoders. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1object__encoder_afc4b239a485fcf3d53baf2774fea093b}{typedef Encoder\-Type\-::pointer \hyperlink{classkodo_1_1object__encoder_afc4b239a485fcf3d53baf2774fea093b}{pointer\-\_\-type}}\label{classkodo_1_1object__encoder_afc4b239a485fcf3d53baf2774fea093b}
+
+\begin{DoxyCompactList}\small\item\em Pointer to an encoder. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1object__encoder_a3b5e6075e66220bb587c45f1e63a7a50}{typedef Block\-Partitioning \hyperlink{classkodo_1_1object__encoder_a3b5e6075e66220bb587c45f1e63a7a50}{block\-\_\-partitioning}}\label{classkodo_1_1object__encoder_a3b5e6075e66220bb587c45f1e63a7a50}
+
+\begin{DoxyCompactList}\small\item\em The block partitioning scheme used. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1object__encoder_a05600877e34f3720c919743f43e6505d}{typedef Object\-Data \hyperlink{classkodo_1_1object__encoder_a05600877e34f3720c919743f43e6505d}{object\-\_\-data}}\label{classkodo_1_1object__encoder_a05600877e34f3720c919743f43e6505d}
+
+\begin{DoxyCompactList}\small\item\em The data source type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classkodo_1_1object__encoder_af1b84a7bf33be73afe6717cdc32776ae}{object\-\_\-encoder} (\hyperlink{classkodo_1_1object__encoder_ad9e399452c48178bb156e39fedb72fa3}{factory\-\_\-type} \&factory, const \hyperlink{classkodo_1_1object__encoder_a05600877e34f3720c919743f43e6505d}{object\-\_\-data} \&data)
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1object__encoder_ac2f8a6ec7d8b39a164b6ebd5b7ee5adf}{encoders} () const 
+\item 
+\hyperlink{classkodo_1_1object__encoder_afc4b239a485fcf3d53baf2774fea093b}{pointer\-\_\-type} \hyperlink{classkodo_1_1object__encoder_ac8a70f90a949737f121e278c63beef7c}{build} (uint32\-\_\-t encoder\-\_\-id)
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1object__encoder_a42ef903d76699d9842d209fe446b4544}{object\-\_\-size} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Object\-Data, class Encoder\-Type, class Block\-Partitioning = rfc5052\-\_\-partitioning\-\_\-scheme$>$class kodo\-::object\-\_\-encoder$<$ Object\-Data, Encoder\-Type, Block\-Partitioning $>$}
+
+The object encoder, allows encoding of objects too large for a single block encoder. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000030}{Todo}]Missing or incorrectly named unit test \end{DoxyRefDesc}
+The following diagram tries to explain how the object encoder uses its dependencies to wrap an build encoders for arbitrary objects.
+
+
+\begin{DoxyPre}
++---------------+     +---------------+     +---------------+
+| partitioning  |     |encoder factory|     |  object data  |
+|---------------|     |---------------|     |---------------|
+| chops the     |     |               |     |               |
+| object into   |     | builds new    |     | object data   |
+| blocks for    |     | encoders      |     | can be a file |
+| encoding      |     |               |     | memory buffer |
+|               |     |               |     |               |
++---------------+     +---------------+     +---------------+
+       ^                      ^                     ^
+       |                      |                     |
+       |                      | builds              |
+       |                      | encoder             | reads
+       |                      +                     |
+       |              +---------------+             |
+       |              | object encoder|             |
+       |              |---------------|             |
+       |              | uses the      |             |
+       +------------+ | factory and   | +-----------+
+                      | reader to init|
+                      | encoders for  |
+                      | an object     |
+                      +---------------+
+\end{DoxyPre}
+
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Object\-Data} & \hyperlink{classobject__data}{object\-\_\-data} \\
+\hline
+{\em Encoder\-Type} & An encoder stack which should be used \\
+\hline
+{\em Block\-Paritioning} & \hyperlink{classblock__partitioning}{block\-\_\-partitioning} \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 60 of file object\-\_\-encoder.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classkodo_1_1object__encoder_af1b84a7bf33be73afe6717cdc32776ae}{\index{kodo\-::object\-\_\-encoder@{kodo\-::object\-\_\-encoder}!object\-\_\-encoder@{object\-\_\-encoder}}
+\index{object\-\_\-encoder@{object\-\_\-encoder}!kodo::object_encoder@{kodo\-::object\-\_\-encoder}}
+\subsubsection[{object\-\_\-encoder}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object\-Data, class Encoder\-Type, class Block\-Partitioning = rfc5052\-\_\-partitioning\-\_\-scheme$>$ {\bf kodo\-::object\-\_\-encoder}$<$ Object\-Data, Encoder\-Type, Block\-Partitioning $>$\-::{\bf object\-\_\-encoder} (
+\begin{DoxyParamCaption}
+\item[{{\bf factory\-\_\-type} \&}]{factory, }
+\item[{const {\bf object\-\_\-data} \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1object__encoder_af1b84a7bf33be73afe6717cdc32776ae}
+Constructs a new object encoder 
+\begin{DoxyParams}{Parameters}
+{\em factory} & the encoder factory to use \\
+\hline
+{\em object} & the object to encode \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 81 of file object\-\_\-encoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1object__encoder_ac8a70f90a949737f121e278c63beef7c}{\index{kodo\-::object\-\_\-encoder@{kodo\-::object\-\_\-encoder}!build@{build}}
+\index{build@{build}!kodo::object_encoder@{kodo\-::object\-\_\-encoder}}
+\subsubsection[{build}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object\-Data, class Encoder\-Type, class Block\-Partitioning = rfc5052\-\_\-partitioning\-\_\-scheme$>$ {\bf pointer\-\_\-type} {\bf kodo\-::object\-\_\-encoder}$<$ Object\-Data, Encoder\-Type, Block\-Partitioning $>$\-::build (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{encoder\-\_\-id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1object__encoder_ac8a70f90a949737f121e278c63beef7c}
+Builds a specific encoder 
+\begin{DoxyParams}{Parameters}
+{\em encoder\-\_\-id} & Specifies the encoder to build \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The initialized encoder 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file object\-\_\-encoder.\-hpp.
+
+\hypertarget{classkodo_1_1object__encoder_ac2f8a6ec7d8b39a164b6ebd5b7ee5adf}{\index{kodo\-::object\-\_\-encoder@{kodo\-::object\-\_\-encoder}!encoders@{encoders}}
+\index{encoders@{encoders}!kodo::object_encoder@{kodo\-::object\-\_\-encoder}}
+\subsubsection[{encoders}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object\-Data, class Encoder\-Type, class Block\-Partitioning = rfc5052\-\_\-partitioning\-\_\-scheme$>$ uint32\-\_\-t {\bf kodo\-::object\-\_\-encoder}$<$ Object\-Data, Encoder\-Type, Block\-Partitioning $>$\-::encoders (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1object__encoder_ac2f8a6ec7d8b39a164b6ebd5b7ee5adf}
+\begin{DoxyReturn}{Returns}
+The number of encoders which may be created for this object 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file object\-\_\-encoder.\-hpp.
+
+\hypertarget{classkodo_1_1object__encoder_a42ef903d76699d9842d209fe446b4544}{\index{kodo\-::object\-\_\-encoder@{kodo\-::object\-\_\-encoder}!object\-\_\-size@{object\-\_\-size}}
+\index{object\-\_\-size@{object\-\_\-size}!kodo::object_encoder@{kodo\-::object\-\_\-encoder}}
+\subsubsection[{object\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Object\-Data, class Encoder\-Type, class Block\-Partitioning = rfc5052\-\_\-partitioning\-\_\-scheme$>$ uint32\-\_\-t {\bf kodo\-::object\-\_\-encoder}$<$ Object\-Data, Encoder\-Type, Block\-Partitioning $>$\-::object\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1object__encoder_a42ef903d76699d9842d209fe446b4544}
+\begin{DoxyReturn}{Returns}
+The total size of the object to encode in bytes 
+\end{DoxyReturn}
+
+
+Definition at line 133 of file object\-\_\-encoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+object\-\_\-encoder.\-hpp\end{DoxyCompactItemize}

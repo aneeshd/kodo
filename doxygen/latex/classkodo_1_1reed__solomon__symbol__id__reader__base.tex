@@ -1,0 +1,86 @@
+\hypertarget{classkodo_1_1reed__solomon__symbol__id__reader__base}{\section{kodo\-:\-:reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1reed__solomon__symbol__id__reader__base}\index{kodo\-::reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base$<$ Super\-Coder $>$@{kodo\-::reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base$<$ Super\-Coder $>$}}
+}
+
+
+Reads the row index of the Reed-\/\-Solomon generator matrix from the symbol id buffer. This is then use to fetch the corresponding coding coefficients.  
+
+
+
+
+{\ttfamily \#include $<$reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1reed__solomon__symbol__id__reader__base}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Super\-Coder\-::value\-\_\-type \hyperlink{classkodo_1_1reed__solomon__symbol__id__reader__base_aae5efe4cddfb83d9a895a95f44572d83}{value\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1reed__solomon__symbol__id__reader__base_a61b56c5372ab77caad96d41e386834cf}{read\-\_\-id} (uint8\-\_\-t $\ast$symbol\-\_\-id, uint8\-\_\-t $\ast$$\ast$symbol\-\_\-coefficients)
+\begin{DoxyCompactList}\small\item\em Can be reimplemented by a Symbol I\-D layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base$<$ Super\-Coder $>$}
+
+Reads the row index of the Reed-\/\-Solomon generator matrix from the symbol id buffer. This is then use to fetch the corresponding coding coefficients. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000045}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+
+
+Definition at line 26 of file reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1reed__solomon__symbol__id__reader__base_aae5efe4cddfb83d9a895a95f44572d83}{\index{kodo\-::reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base@{kodo\-::reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!kodo::reed_solomon_symbol_id_reader_base@{kodo\-::reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef Super\-Coder\-::value\-\_\-type {\bf kodo\-::reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base}$<$ Super\-Coder $>$\-::{\bf value\-\_\-type}}}\label{classkodo_1_1reed__solomon__symbol__id__reader__base_aae5efe4cddfb83d9a895a95f44572d83}
+
+
+
+
+The value type storing the field elements used for the specified field. E.\-g. the binary extension field 2$^\wedge$8 uses uint8\-\_\-t as the value\-\_\-type. 
+
+Definition at line 31 of file reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1reed__solomon__symbol__id__reader__base_a61b56c5372ab77caad96d41e386834cf}{\index{kodo\-::reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base@{kodo\-::reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base}!read\-\_\-id@{read\-\_\-id}}
+\index{read\-\_\-id@{read\-\_\-id}!kodo::reed_solomon_symbol_id_reader_base@{kodo\-::reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base}}
+\subsubsection[{read\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base}$<$ Super\-Coder $>$\-::read\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-id, }
+\item[{uint8\-\_\-t $\ast$$\ast$}]{symbol\-\_\-coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1reed__solomon__symbol__id__reader__base_a61b56c5372ab77caad96d41e386834cf}
+
+
+Can be reimplemented by a Symbol I\-D layer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-id} & Contains the symbol id for an encoded symbol. \\
+\hline
+{\em coefficient} & Pointer to pointer of the symbol coefficients. After the call to read\-\_\-id the coefficients pointer will point to memory storing all coding coefficients corresponding to the symbol id read from the symbol\-\_\-id buffer. Note, the buffer returned may be change by the calling code. The implementation should therefore ensure that this will not cause problems e.\-g. by returning a pointer to a internal buffered copy of the coefficients. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader.\-hpp\end{DoxyCompactItemize}

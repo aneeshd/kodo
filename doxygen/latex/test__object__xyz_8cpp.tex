@@ -1,0 +1,53 @@
+\hypertarget{test__object__xyz_8cpp}{\section{test\-\_\-object\-\_\-xyz.\-cpp File Reference}
+\label{test__object__xyz_8cpp}\index{test\-\_\-object\-\_\-xyz.\-cpp@{test\-\_\-object\-\_\-xyz.\-cpp}}
+}
+
+
+Unit tests for object encoder and decoders.  
+
+
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$gtest/gtest.\-h$>$}\\*
+{\ttfamily \#include $<$kodo/object\-\_\-decoder.\-hpp$>$}\\*
+{\ttfamily \#include $<$kodo/object\-\_\-encoder.\-hpp$>$}\\*
+{\ttfamily \#include $<$kodo/rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp$>$}\\*
+{\ttfamily \#include \char`\"{}basic\-\_\-api\-\_\-test\-\_\-helper.\-hpp\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{test__object__xyz_8cpp_aa6ada516d182ae6a2130145f618c42ad}{{\footnotesize template$<$class Encoder , class Decoder , class Partitioning , class Object\-Data $>$ }\\void \hyperlink{test__object__xyz_8cpp_aa6ada516d182ae6a2130145f618c42ad}{invoke\-\_\-object} (uint32\-\_\-t max\-\_\-symbols, uint32\-\_\-t max\-\_\-symbol\-\_\-size, uint32\-\_\-t multiplier)}\label{test__object__xyz_8cpp_aa6ada516d182ae6a2130145f618c42ad}
+
+\begin{DoxyCompactList}\small\item\em Runs the actual test with the object\-\_\-encoder and object\-\_\-decoder. \end{DoxyCompactList}\item 
+\hypertarget{test__object__xyz_8cpp_a9d23677ebb11c2a392f63e4d87352c6a}{void {\bfseries test\-\_\-object\-\_\-coders} (uint32\-\_\-t symbols, uint32\-\_\-t symbol\-\_\-size, uint32\-\_\-t multiplier)}\label{test__object__xyz_8cpp_a9d23677ebb11c2a392f63e4d87352c6a}
+
+\item 
+\hyperlink{test__object__xyz_8cpp_a20925f21945e7f1d45fbc609a0b84127}{T\-E\-S\-T} (Test\-Object\-Coder, construct\-\_\-and\-\_\-invoke\-\_\-the\-\_\-basic\-\_\-api)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Unit tests for object encoder and decoders. 
+
+Definition in file \hyperlink{test__object__xyz_8cpp_source}{test\-\_\-object\-\_\-xyz.\-cpp}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{test__object__xyz_8cpp_a20925f21945e7f1d45fbc609a0b84127}{\index{test\-\_\-object\-\_\-xyz.\-cpp@{test\-\_\-object\-\_\-xyz.\-cpp}!T\-E\-S\-T@{T\-E\-S\-T}}
+\index{T\-E\-S\-T@{T\-E\-S\-T}!test_object_xyz.cpp@{test\-\_\-object\-\_\-xyz.\-cpp}}
+\subsubsection[{T\-E\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}T\-E\-S\-T (
+\begin{DoxyParamCaption}
+\item[{Test\-Object\-Coder}]{, }
+\item[{construct\-\_\-and\-\_\-invoke\-\_\-the\-\_\-basic\-\_\-api}]{}
+\end{DoxyParamCaption}
+)}}\label{test__object__xyz_8cpp_a20925f21945e7f1d45fbc609a0b84127}
+Tests\-:
+\begin{DoxyItemize}
+\item object\-\_\-encoder\-::encoders() const
+\item object\-\_\-decoder\-::decoders() const
+\item object\-\_\-encoder\-::build(uint32\-\_\-t)
+\item object\-\_\-decoder\-::build(uint32\-\_\-t) 
+\end{DoxyItemize}
+
+Definition at line 264 of file test\-\_\-object\-\_\-xyz.\-cpp.
+

@@ -9,7 +9,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup encoder_layers
     /// @brief Counts the number of symbols which have been encoded.
     template<class SuperCoder>

@@ -1,0 +1,96 @@
+\hypertarget{classkodo_1_1final__coder__factory}{\section{kodo\-:\-:final\-\_\-coder\-\_\-factory$<$ Final\-Type $>$ Class Template Reference}
+\label{classkodo_1_1final__coder__factory}\index{kodo\-::final\-\_\-coder\-\_\-factory$<$ Final\-Type $>$@{kodo\-::final\-\_\-coder\-\_\-factory$<$ Final\-Type $>$}}
+}
+
+
+{\ttfamily \#include $<$final\-\_\-coder\-\_\-factory.\-hpp$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1final__coder__factory_1_1factory}{factory}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1final__coder__factory_a24608d97861db353b6e425c01d9154bb}{typedef boost\-::shared\-\_\-ptr\\*
+$<$ Final\-Type $>$ \hyperlink{classkodo_1_1final__coder__factory_a24608d97861db353b6e425c01d9154bb}{pointer}}\label{classkodo_1_1final__coder__factory_a24608d97861db353b6e425c01d9154bb}
+
+\begin{DoxyCompactList}\small\item\em Pointer type to the constructed coder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1final__coder__factory_a8f52498cf1f6796977edba47e77338bd}{construct} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1final__coder__factory_a36debbaf1cbc80d7e68291cee5d5c98d}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1final__coder__factory_abcaa0348dfa85ed45f8bc582ef2f099e}{\hyperlink{classkodo_1_1final__coder__factory_abcaa0348dfa85ed45f8bc582ef2f099e}{final\-\_\-coder\-\_\-factory} ()}\label{classkodo_1_1final__coder__factory_abcaa0348dfa85ed45f8bc582ef2f099e}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1final__coder__factory_aeafc9b3f785880744875723331f91465}{\hyperlink{classkodo_1_1final__coder__factory_aeafc9b3f785880744875723331f91465}{$\sim$final\-\_\-coder\-\_\-factory} ()}\label{classkodo_1_1final__coder__factory_aeafc9b3f785880744875723331f91465}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Final\-Type$>$class kodo\-::final\-\_\-coder\-\_\-factory$<$ Final\-Type $>$}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000016}{Todo}]Missing or incorrectly named unit test
+
+Terminates the layered coder and contains the coder allocation policy \end{DoxyRefDesc}
+
+
+Definition at line 20 of file final\-\_\-coder\-\_\-factory.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1final__coder__factory_a8f52498cf1f6796977edba47e77338bd}{\index{kodo\-::final\-\_\-coder\-\_\-factory@{kodo\-::final\-\_\-coder\-\_\-factory}!construct@{construct}}
+\index{construct@{construct}!kodo::final_coder_factory@{kodo\-::final\-\_\-coder\-\_\-factory}}
+\subsubsection[{construct}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type $>$ template$<$class Factory $>$ void {\bf kodo\-::final\-\_\-coder\-\_\-factory}$<$ Final\-Type $>$\-::construct (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1final__coder__factory_a8f52498cf1f6796977edba47e77338bd}
+
+
+Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+This is the final factory layer so we do nothing 
+
+Definition at line 75 of file final\-\_\-coder\-\_\-factory.\-hpp.
+
+\hypertarget{classkodo_1_1final__coder__factory_a36debbaf1cbc80d7e68291cee5d5c98d}{\index{kodo\-::final\-\_\-coder\-\_\-factory@{kodo\-::final\-\_\-coder\-\_\-factory}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::final_coder_factory@{kodo\-::final\-\_\-coder\-\_\-factory}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type $>$ template$<$class Factory $>$ void {\bf kodo\-::final\-\_\-coder\-\_\-factory}$<$ Final\-Type $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1final__coder__factory_a36debbaf1cbc80d7e68291cee5d5c98d}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+This is the final factory layer so we do nothing 
+
+Definition at line 83 of file final\-\_\-coder\-\_\-factory.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+final\-\_\-coder\-\_\-factory.\-hpp\end{DoxyCompactItemize}

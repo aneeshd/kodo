@@ -11,7 +11,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup symbol_id_layers
     /// @brief Base class for the plain symbol id reader and writer
     template<class SuperCoder>

@@ -1,0 +1,77 @@
+\hypertarget{group__encoder__api}{\section{A\-P\-I}
+\label{group__encoder__api}\index{A\-P\-I@{A\-P\-I}}
+}
+
+
+The A\-P\-I used by the encoding algorithms.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__encoder__api_gaf28d3c1b82242263733ed082b1e10915}{layer\-::encode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint8\-\_\-t $\ast$coefficients)
+\item 
+void \hyperlink{group__encoder__api_ga77de1761c1eb25f5e5df3a0d341163ef}{layer\-::encode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint32\-\_\-t symbol\-\_\-index)
+\item 
+uint32\-\_\-t \hyperlink{group__encoder__api_ga10c217148f82a6ed036563d3542cad72}{layer\-::rank} () const 
+\item 
+bool \hyperlink{group__encoder__api_ga72b86000f3b686b3d2791e71f4950dc6}{layer\-::is\-\_\-symbol\-\_\-pivot} (uint32\-\_\-t index) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The A\-P\-I used by the encoding algorithms. 
+
+\subsection{Function Documentation}
+\hypertarget{group__encoder__api_gaf28d3c1b82242263733ed082b1e10915}{\index{A\-P\-I@{A\-P\-I}!encode\-\_\-symbol@{encode\-\_\-symbol}}
+\index{encode\-\_\-symbol@{encode\-\_\-symbol}!API@{A\-P\-I}}
+\subsubsection[{encode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::encode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint8\-\_\-t $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)}}\label{group__encoder__api_gaf28d3c1b82242263733ed082b1e10915}
+Encodes a symbol according to the symbol coefficients
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The destination buffer for the encoded symbol \\
+\hline
+{\em coefficients} & At this point the symbol id should be initialized with the desired coding coefficients. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__encoder__api_ga77de1761c1eb25f5e5df3a0d341163ef}{\index{A\-P\-I@{A\-P\-I}!encode\-\_\-symbol@{encode\-\_\-symbol}}
+\index{encode\-\_\-symbol@{encode\-\_\-symbol}!API@{A\-P\-I}}
+\subsubsection[{encode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::encode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-index}
+\end{DoxyParamCaption}
+)}}\label{group__encoder__api_ga77de1761c1eb25f5e5df3a0d341163ef}
+The encode function for systematic packets i.\-e. specific uncoded symbols. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The destination of the uncoded source symbol. \\
+\hline
+{\em symbol\-\_\-index} & The index of this uncoded symbol in the data block. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__encoder__api_ga72b86000f3b686b3d2791e71f4950dc6}{\index{A\-P\-I@{A\-P\-I}!is\-\_\-symbol\-\_\-pivot@{is\-\_\-symbol\-\_\-pivot}}
+\index{is\-\_\-symbol\-\_\-pivot@{is\-\_\-symbol\-\_\-pivot}!API@{A\-P\-I}}
+\subsubsection[{is\-\_\-symbol\-\_\-pivot}]{\setlength{\rightskip}{0pt plus 5cm}bool layer\-::is\-\_\-symbol\-\_\-pivot (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{group__encoder__api_ga72b86000f3b686b3d2791e71f4950dc6}
+The symbol pivot indicates whether a symbol is available to either an encoder or decoder. A coefficient generator may use this information when generating coding coefficients. \begin{DoxyReturn}{Returns}
+True if the symbol is available. 
+\end{DoxyReturn}
+\hypertarget{group__encoder__api_ga10c217148f82a6ed036563d3542cad72}{\index{A\-P\-I@{A\-P\-I}!rank@{rank}}
+\index{rank@{rank}!API@{A\-P\-I}}
+\subsubsection[{rank}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::rank (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__encoder__api_ga10c217148f82a6ed036563d3542cad72}
+The rank of a decoder states how many symbols have been decoded or partially decoded. The rank of an encoder states how many symbols are available for encoding. \begin{DoxyReturn}{Returns}
+the rank of the decoder or encoder 
+\end{DoxyReturn}

@@ -9,7 +9,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// Convenience for the systematic encoder and decoder
     class systematic_base_coder
     {

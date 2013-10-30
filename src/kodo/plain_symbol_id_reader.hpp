@@ -11,7 +11,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup symbol_id_layers
     /// @brief Reads the coding coefficients from the symbol id
     ///        buffer and initializes the symbol coefficients pointer.

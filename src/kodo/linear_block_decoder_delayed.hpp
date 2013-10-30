@@ -14,7 +14,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup decoder_layers
     /// @brief Linear block decoder with delayer backwards substitution.
     ///

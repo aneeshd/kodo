@@ -1,0 +1,246 @@
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder}{\section{kodo\-:\-:largest\-\_\-nonzero\-\_\-index\-\_\-decoder$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1largest__nonzero__index__decoder}\index{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder$<$ Super\-Coder $>$@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder$<$ Super\-Coder $>$}}
+}
+
+
+This layer can be added to a decoding stack to monitor the coding coefficients passed to a decoder. This specific layer tracks the largest index where it have seen non-\/zero coefficients. One use-\/case of this is to monitor when partial decoding is possible i.\-e. when symbols in decoder are fully decoded even though the full data block has not been sent.  
+
+
+
+
+{\ttfamily \#include $<$largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:largest\-\_\-nonzero\-\_\-index\-\_\-decoder$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1largest__nonzero__index__decoder}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Super\-Coder\-::field\-\_\-type \hyperlink{classkodo_1_1largest__nonzero__index__decoder_af1a8cc14d5dfa8a9f5a08b0cd53c392e}{field\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+typedef Super\-Coder\-::value\-\_\-type \hyperlink{classkodo_1_1largest__nonzero__index__decoder_abac6bf1e872928e31bf490785aea9397}{value\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+typedef Super\-Coder\-::rank\-\_\-type \hyperlink{classkodo_1_1largest__nonzero__index__decoder_a27df8d24f0a91c14f8143d8a88205e7a}{rank\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+typedef Super\-Coder\-::factory \hyperlink{classkodo_1_1largest__nonzero__index__decoder_a2ad24f3f2995893ad2524bd085e48579}{factory}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_a042807cc2c2b3b60dbd2d5be211438cf}{\hyperlink{classkodo_1_1largest__nonzero__index__decoder_a042807cc2c2b3b60dbd2d5be211438cf}{largest\-\_\-nonzero\-\_\-index\-\_\-decoder} ()}\label{classkodo_1_1largest__nonzero__index__decoder_a042807cc2c2b3b60dbd2d5be211438cf}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1largest__nonzero__index__decoder_a4fdf0b60b478a230c6c0480c6537d0a1}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1largest__nonzero__index__decoder_aad28e42e820db1fa67de783ffa76889f}{decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint8\-\_\-t $\ast$symbol\-\_\-coefficients)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1largest__nonzero__index__decoder_ab0a0c84e44afbeee4789b53dafd48c87}{decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint32\-\_\-t symbol\-\_\-index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\hyperlink{classkodo_1_1largest__nonzero__index__decoder_a27df8d24f0a91c14f8143d8a88205e7a}{rank\-\_\-type} \hyperlink{classkodo_1_1largest__nonzero__index__decoder_a7cebb206c2a9b821aab53b7c5cf1c986}{seen\-\_\-encoder\-\_\-rank} () const 
+\item 
+\hyperlink{classkodo_1_1largest__nonzero__index__decoder_a27df8d24f0a91c14f8143d8a88205e7a}{rank\-\_\-type} \hyperlink{classkodo_1_1largest__nonzero__index__decoder_a18121651eb9868d4923e9af8b32de33f}{largest\-\_\-nonzero\-\_\-index} () const 
+\item 
+bool \hyperlink{classkodo_1_1largest__nonzero__index__decoder_a23cb7afbf21074413152e69b9b376d71}{nonzero\-\_\-index\-\_\-seen} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_a2e2e0710f40c863dbcec68565be3e8be}{bool \hyperlink{classkodo_1_1largest__nonzero__index__decoder_a2e2e0710f40c863dbcec68565be3e8be}{m\-\_\-nonzero\-\_\-seen}}\label{classkodo_1_1largest__nonzero__index__decoder_a2e2e0710f40c863dbcec68565be3e8be}
+
+\begin{DoxyCompactList}\small\item\em Tracks whether a non-\/zero coefficient has been seen. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_aca0dd4f58be2f2fd44b5aa18f4ddddc8}{\hyperlink{classkodo_1_1largest__nonzero__index__decoder_a27df8d24f0a91c14f8143d8a88205e7a}{rank\-\_\-type} \hyperlink{classkodo_1_1largest__nonzero__index__decoder_aca0dd4f58be2f2fd44b5aa18f4ddddc8}{m\-\_\-largest\-\_\-nonzero\-\_\-index}}\label{classkodo_1_1largest__nonzero__index__decoder_aca0dd4f58be2f2fd44b5aa18f4ddddc8}
+
+\begin{DoxyCompactList}\small\item\em The largest index seen with a nonzero coefficient. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder$<$ Super\-Coder $>$}
+
+This layer can be added to a decoding stack to monitor the coding coefficients passed to a decoder. This specific layer tracks the largest index where it have seen non-\/zero coefficients. One use-\/case of this is to monitor when partial decoding is possible i.\-e. when symbols in decoder are fully decoded even though the full data block has not been sent. 
+
+Keeping track when partial decoding is possible can be done in several ways. This layer will \char`\"{}monitor\char`\"{} the incoming coding coefficients, using the information stored in the it is possible to detect cases where all symbols are fully decoded.
+
+Imagine we have observed the following two coding vectors\-:
+
+1\-: 1 0 0 0 2\-: 0 1 1 0 $^\wedge$ $|$ +-\/---+ Last non-\/zero position
+
+This matrix has a rank of 2 but since the last non-\/zero coefficient is found at index 2 we cannot yet decode (packet two is still coded).
+
+However if we receive on more packet such that the matrix becomes e.\-g.
+
+1\-: 1 0 0 0 2\-: 0 1 1 0 3\-: 1 0 1 0 $^\wedge$ $|$ +-\/---+ Last non-\/zero position
+
+We see that the matrix has rank 3 and the last non-\/zero coefficient is still at index 2. We therefore must be able to decode the three packets.
+
+One word of caution, this does of course require that the decoder used will always decode all packets to the degree possible. Some decoders such as the \hyperlink{classkodo_1_1linear__block__decoder__delayed}{linear\-\_\-block\-\_\-decoder\-\_\-delayed} will not perform backward substitution until the matrix reaches full rank. That type of decoder are therefore not compatible with this layer. 
+
+Definition at line 67 of file largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_a2ad24f3f2995893ad2524bd085e48579}{\index{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}!factory@{factory}}
+\index{factory@{factory}!kodo::largest_nonzero_index_decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}}
+\subsubsection[{factory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ typedef Super\-Coder\-::factory {\bf kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}$<$ Super\-Coder $>$\-::{\bf factory}}}\label{classkodo_1_1largest__nonzero__index__decoder_a2ad24f3f2995893ad2524bd085e48579}
+
+
+
+
+
+
+Definition at line 81 of file largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_af1a8cc14d5dfa8a9f5a08b0cd53c392e}{\index{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}!field\-\_\-type@{field\-\_\-type}}
+\index{field\-\_\-type@{field\-\_\-type}!kodo::largest_nonzero_index_decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}}
+\subsubsection[{field\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ typedef Super\-Coder\-::field\-\_\-type {\bf kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}$<$ Super\-Coder $>$\-::{\bf field\-\_\-type}}}\label{classkodo_1_1largest__nonzero__index__decoder_af1a8cc14d5dfa8a9f5a08b0cd53c392e}
+
+
+
+
+The finite field type used e.\-g. fifi\-::binary8 for the Finite Field 2$^\wedge$8 
+
+Definition at line 72 of file largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_a27df8d24f0a91c14f8143d8a88205e7a}{\index{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}!rank\-\_\-type@{rank\-\_\-type}}
+\index{rank\-\_\-type@{rank\-\_\-type}!kodo::largest_nonzero_index_decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}}
+\subsubsection[{rank\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ typedef Super\-Coder\-::rank\-\_\-type {\bf kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}$<$ Super\-Coder $>$\-::{\bf rank\-\_\-type}}}\label{classkodo_1_1largest__nonzero__index__decoder_a27df8d24f0a91c14f8143d8a88205e7a}
+
+
+
+
+The value type storing the field elements used for the specified field. E.\-g. the binary extension field 2$^\wedge$8 uses uint8\-\_\-t as the value\-\_\-type. 
+
+Definition at line 78 of file largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_abac6bf1e872928e31bf490785aea9397}{\index{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!kodo::largest_nonzero_index_decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ typedef Super\-Coder\-::value\-\_\-type {\bf kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}$<$ Super\-Coder $>$\-::{\bf value\-\_\-type}}}\label{classkodo_1_1largest__nonzero__index__decoder_abac6bf1e872928e31bf490785aea9397}
+
+
+
+
+The value type storing the field elements used for the specified field. E.\-g. the binary extension field 2$^\wedge$8 uses uint8\-\_\-t as the value\-\_\-type. 
+
+Definition at line 75 of file largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_aad28e42e820db1fa67de783ffa76889f}{\index{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!kodo::largest_nonzero_index_decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void {\bf kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}$<$ Super\-Coder $>$\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1largest__nonzero__index__decoder_aad28e42e820db1fa67de783ffa76889f}
+
+
+
+
+Decodes an encoded symbol according to the coding coefficients stored in the corresponding symbol\-\_\-id.
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The encoded symbol \\
+\hline
+{\em coefficients} & The coding coefficients used to create the encoded symbol \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 101 of file largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_ab0a0c84e44afbeee4789b53dafd48c87}{\index{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!kodo::largest_nonzero_index_decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void {\bf kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}$<$ Super\-Coder $>$\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1largest__nonzero__index__decoder_ab0a0c84e44afbeee4789b53dafd48c87}
+
+
+
+
+The decode function for systematic packets i.\-e. specific uncoded symbols. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The uncoded source symbol. \\
+\hline
+{\em symbol\-\_\-index} & The index of this uncoded symbol in the data block. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 144 of file largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_a4fdf0b60b478a230c6c0480c6537d0a1}{\index{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::largest_nonzero_index_decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ template$<$class Factory $>$ void {\bf kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}$<$ Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1largest__nonzero__index__decoder_a4fdf0b60b478a230c6c0480c6537d0a1}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_a18121651eb9868d4923e9af8b32de33f}{\index{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}!largest\-\_\-nonzero\-\_\-index@{largest\-\_\-nonzero\-\_\-index}}
+\index{largest\-\_\-nonzero\-\_\-index@{largest\-\_\-nonzero\-\_\-index}!kodo::largest_nonzero_index_decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}}
+\subsubsection[{largest\-\_\-nonzero\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ {\bf rank\-\_\-type} {\bf kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}$<$ Super\-Coder $>$\-::largest\-\_\-nonzero\-\_\-index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1largest__nonzero__index__decoder_a18121651eb9868d4923e9af8b32de33f}
+\begin{DoxyReturn}{Returns}
+The position of the last seen non-\/zero coefficients 
+\end{DoxyReturn}
+
+
+Definition at line 176 of file largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_a23cb7afbf21074413152e69b9b376d71}{\index{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}!nonzero\-\_\-index\-\_\-seen@{nonzero\-\_\-index\-\_\-seen}}
+\index{nonzero\-\_\-index\-\_\-seen@{nonzero\-\_\-index\-\_\-seen}!kodo::largest_nonzero_index_decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}}
+\subsubsection[{nonzero\-\_\-index\-\_\-seen}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ bool {\bf kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}$<$ Super\-Coder $>$\-::nonzero\-\_\-index\-\_\-seen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1largest__nonzero__index__decoder_a23cb7afbf21074413152e69b9b376d71}
+\begin{DoxyReturn}{Returns}
+True is a non-\/zero coefficient has been seen 
+\end{DoxyReturn}
+
+
+Definition at line 183 of file largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1largest__nonzero__index__decoder_a7cebb206c2a9b821aab53b7c5cf1c986}{\index{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}!seen\-\_\-encoder\-\_\-rank@{seen\-\_\-encoder\-\_\-rank}}
+\index{seen\-\_\-encoder\-\_\-rank@{seen\-\_\-encoder\-\_\-rank}!kodo::largest_nonzero_index_decoder@{kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}}
+\subsubsection[{seen\-\_\-encoder\-\_\-rank}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ {\bf rank\-\_\-type} {\bf kodo\-::largest\-\_\-nonzero\-\_\-index\-\_\-decoder}$<$ Super\-Coder $>$\-::seen\-\_\-encoder\-\_\-rank (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1largest__nonzero__index__decoder_a7cebb206c2a9b821aab53b7c5cf1c986}
+\begin{DoxyReturn}{Returns}
+The rank of the encoder predicted by inspecting the coding coefficients 
+\end{DoxyReturn}
+
+
+Definition at line 160 of file largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+largest\-\_\-nonzero\-\_\-index\-\_\-decoder.\-hpp\end{DoxyCompactItemize}

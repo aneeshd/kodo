@@ -1,0 +1,980 @@
+\hypertarget{classkodo_1_1proxy__layer}{\section{kodo\-:\-:proxy\-\_\-layer$<$ Final\-Type, Main\-Stack $>$ Class Template Reference}
+\label{classkodo_1_1proxy__layer}\index{kodo\-::proxy\-\_\-layer$<$ Final\-Type, Main\-Stack $>$@{kodo\-::proxy\-\_\-layer$<$ Final\-Type, Main\-Stack $>$}}
+}
+
+
+Special layer used to create parallel stacks with some shared layers.  
+
+
+
+
+{\ttfamily \#include $<$proxy\-\_\-layer.\-hpp$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1proxy__layer_1_1factory}{factory}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Main\-Stack\-::field\-\_\-type \hyperlink{classkodo_1_1proxy__layer_a236cbb490120ba8f7ae79482319df6cc}{field\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+typedef Main\-Stack\-::value\-\_\-type \hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1proxy__layer_a71fd0add2f17f6506c5457348922e966}{typedef boost\-::shared\-\_\-ptr\\*
+$<$ Final\-Type $>$ \hyperlink{classkodo_1_1proxy__layer_a71fd0add2f17f6506c5457348922e966}{pointer}}\label{classkodo_1_1proxy__layer_a71fd0add2f17f6506c5457348922e966}
+
+\begin{DoxyCompactList}\small\item\em Pointer type to the constructed coder. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1proxy__layer_a7e2f9b1724f89d5ccfd341d7c2fb7baf}{typedef Main\-Stack \hyperlink{classkodo_1_1proxy__layer_a7e2f9b1724f89d5ccfd341d7c2fb7baf}{main\-\_\-stack}}\label{classkodo_1_1proxy__layer_a7e2f9b1724f89d5ccfd341d7c2fb7baf}
+
+\begin{DoxyCompactList}\small\item\em The type of the main stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1proxy__layer_aee161a1d316785af8d009fab7528711a}{\hyperlink{classkodo_1_1proxy__layer_aee161a1d316785af8d009fab7528711a}{proxy\-\_\-layer} ()}\label{classkodo_1_1proxy__layer_aee161a1d316785af8d009fab7528711a}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1proxy__layer_a4ff7feb88d0b178b1543419751236f22}{set\-\_\-proxy} (Main\-Stack $\ast$proxy)
+\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1proxy__layer_a649678b45b1cec8604ad81b491a70ad7}{construct} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1proxy__layer_a42022c708ffb3303c21a2a594cb25726}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+const Main\-Stack $\ast$ \hyperlink{classkodo_1_1proxy__layer_a8b0a9a2f07dc67384fd0c35fee856ba6}{proxy\-\_\-stack} () const 
+\item 
+Main\-Stack $\ast$ \hyperlink{classkodo_1_1proxy__layer_ad0d3c4d957e4ad08ad68366952b1dd09}{proxy\-\_\-stack} ()
+\item 
+void \hyperlink{classkodo_1_1proxy__layer_a2e86248fb34d469dfe7dcaba5a7f1740}{copy\-\_\-symbols} (const sak\-::mutable\-\_\-storage \&dest) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1proxy__layer_aea187e096f4e0ef81ce585c480a37346}{copy\-\_\-symbol} (uint32\-\_\-t index, const sak\-::mutable\-\_\-storage \&dest) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ \hyperlink{classkodo_1_1proxy__layer_a03645a649b76035b54165f00548b3782}{symbol} (uint32\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+const uint8\-\_\-t $\ast$ \hyperlink{classkodo_1_1proxy__layer_ae7b3311a4848af16078d408c0c4fd94d}{symbol} (uint32\-\_\-t index) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$ \hyperlink{classkodo_1_1proxy__layer_a38eaacbf7c8a0c0c602bbf45859067ed}{symbol\-\_\-value} (uint32\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+const \hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$ \hyperlink{classkodo_1_1proxy__layer_ae951cfb89bd7a6b07ec602c7f5e48d95}{symbol\-\_\-value} (uint32\-\_\-t index) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_a8b944d530e445fa4f507b4d8d8121aad}{symbols} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_aae35623724e1a776d28e15fa95bfdc8e}{symbol\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_a87583efe23d937a2cb3426bde4566ebc}{symbol\-\_\-length} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_a11f6ce3e7ef3deb2a051e25208123d20}{block\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_ad766fc9c5c73713f93179da6984d2665}{symbols\-\_\-available} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_a80ab466a1710f95d156374b6c29e5a95}{symbols\-\_\-initialized} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+bool \hyperlink{classkodo_1_1proxy__layer_a0e69f24aecca96018ea70d729db062ec}{is\-\_\-symbols\-\_\-available} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+bool \hyperlink{classkodo_1_1proxy__layer_a2cb9fee14aab5f922f68acd8a8de35d0}{is\-\_\-symbols\-\_\-initialized} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+bool \hyperlink{classkodo_1_1proxy__layer_afecc5c180c7b43e2f52472941915ca51}{is\-\_\-symbol\-\_\-available} (uint32\-\_\-t symbol\-\_\-index) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+bool \hyperlink{classkodo_1_1proxy__layer_ac43da3b0571ff3acbb9fa8b663ad74d3}{is\-\_\-symbol\-\_\-initialized} (uint32\-\_\-t symbol\-\_\-index) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_a4e0f19a0ff838c8d78c2a10b5322de2b}{coefficient\-\_\-vector\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_a6fff65f4d2573a26153eb37da5dd6af7}{coefficient\-\_\-vector\-\_\-length} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$ \hyperlink{classkodo_1_1proxy__layer_a82071c8ee9ac3d09875e358d04920c7a}{coefficient\-\_\-vector\-\_\-values} (uint32\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+const \hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$ \hyperlink{classkodo_1_1proxy__layer_a576459f102aaa62aefedfdab5caa9c33}{coefficient\-\_\-vector\-\_\-values} (uint32\-\_\-t index) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ \hyperlink{classkodo_1_1proxy__layer_ae74c00f9856fe1d6e3d89d6f1b818223}{coefficient\-\_\-vector\-\_\-data} (uint32\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+const uint8\-\_\-t $\ast$ \hyperlink{classkodo_1_1proxy__layer_a6aa066a74e316faf1791eefda7d1a5dd}{coefficient\-\_\-vector\-\_\-data} (uint32\-\_\-t index) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1proxy__layer_aac50560d78370384f33ce6276efe9b3c}{multiply} (\hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$symbol\-\_\-dest, \hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} coefficient, uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_a87583efe23d937a2cb3426bde4566ebc}{symbol\-\_\-length})
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1proxy__layer_a22fb105a9ea2513dbab917f2a9e45a09}{multiply\-\_\-add} (\hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$symbol\-\_\-dest, const \hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$symbol\-\_\-src, \hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} coefficient, uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_a87583efe23d937a2cb3426bde4566ebc}{symbol\-\_\-length})
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1proxy__layer_a6d42eb730b6ccb98f98e30ccd66ed751}{add} (\hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$symbol\-\_\-dest, const \hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$symbol\-\_\-src, uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_a87583efe23d937a2cb3426bde4566ebc}{symbol\-\_\-length})
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1proxy__layer_a1212961bf256c3a0f41af942281d5917}{multiply\-\_\-subtract} (\hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$symbol\-\_\-dest, const \hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$symbol\-\_\-src, \hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} coefficient, uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_a87583efe23d937a2cb3426bde4566ebc}{symbol\-\_\-length})
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1proxy__layer_a01c4f58e8243f7d425c1cb6fd69d75b2}{subtract} (\hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$symbol\-\_\-dest, const \hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} $\ast$symbol\-\_\-src, uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_a87583efe23d937a2cb3426bde4566ebc}{symbol\-\_\-length})
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} \hyperlink{classkodo_1_1proxy__layer_a3cacf8747632c617177eabc118d80f8d}{invert} (\hyperlink{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{value\-\_\-type} value)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1proxy__layer_ae5e31bc08644f79919d9c8bcf423f00b}{encode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint8\-\_\-t $\ast$coefficients)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1proxy__layer_ac7db34a51007e1604006ec1cb0f22585}{encode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint32\-\_\-t symbol\-\_\-index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1proxy__layer_a7009282cb24089bf752fd37421dbca5e}{decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint8\-\_\-t $\ast$coefficients)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1proxy__layer_a8ac13dbbf59e298469e9318ab00bf048}{decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint32\-\_\-t symbol\-\_\-index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+bool \hyperlink{classkodo_1_1proxy__layer_ad30a1215b020e4d98b7119142d49f2bb}{is\-\_\-complete} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1proxy__layer_ad47518fe7533335e8bf6add606e651c9}{rank} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+bool \hyperlink{classkodo_1_1proxy__layer_a04434d65503a6df95ec49c4ab463ad55}{is\-\_\-symbol\-\_\-pivot} (uint32\-\_\-t index) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1proxy__layer_a8a43f63b9a22bd17eccd3e435d4561f3}{Main\-Stack $\ast$ \hyperlink{classkodo_1_1proxy__layer_a8a43f63b9a22bd17eccd3e435d4561f3}{m\-\_\-proxy}}\label{classkodo_1_1proxy__layer_a8a43f63b9a22bd17eccd3e435d4561f3}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the main stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Final\-Type, class Main\-Stack$>$class kodo\-::proxy\-\_\-layer$<$ Final\-Type, Main\-Stack $>$}
+
+Special layer used to create parallel stacks with some shared layers. 
+
+Definition at line 16 of file proxy\-\_\-layer.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1proxy__layer_a236cbb490120ba8f7ae79482319df6cc}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!field\-\_\-type@{field\-\_\-type}}
+\index{field\-\_\-type@{field\-\_\-type}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{field\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ typedef Main\-Stack\-::field\-\_\-type {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::{\bf field\-\_\-type}}}\label{classkodo_1_1proxy__layer_a236cbb490120ba8f7ae79482319df6cc}
+
+
+
+
+The finite field type used e.\-g. fifi\-::binary8 for the Finite Field 2$^\wedge$8 
+
+Definition at line 21 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ typedef Main\-Stack\-::value\-\_\-type {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::{\bf value\-\_\-type}}}\label{classkodo_1_1proxy__layer_a1e9ff5aada4a2ab5dc0ce4e7df39160a}
+
+
+
+
+The value type storing the field elements used for the specified field. E.\-g. the binary extension field 2$^\wedge$8 uses uint8\-\_\-t as the value\-\_\-type. 
+
+Definition at line 24 of file proxy\-\_\-layer.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1proxy__layer_a6d42eb730b6ccb98f98e30ccd66ed751}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!add@{add}}
+\index{add@{add}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{symbol\-\_\-dest, }
+\item[{const {\bf value\-\_\-type} $\ast$}]{symbol\-\_\-src, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a6d42eb730b6ccb98f98e30ccd66ed751}
+
+
+
+
+Adds the source symbol adds to the destination symbol i.\-e.\-: symbol\-\_\-dest = symbol\-\_\-dest + symbol\-\_\-src
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-dest} & the destination buffer holding the resulting symbol \\
+\hline
+{\em symbol\-\_\-src} & the source symbol \\
+\hline
+{\em symbol\-\_\-length} & the length of the symbol in value\-\_\-type elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 407 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a11f6ce3e7ef3deb2a051e25208123d20}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!block\-\_\-size@{block\-\_\-size}}
+\index{block\-\_\-size@{block\-\_\-size}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{block\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ uint32\-\_\-t {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::block\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a11f6ce3e7ef3deb2a051e25208123d20}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+the block size i.\-e. the total size in bytes that this coder operates on. Users may use the \hyperlink{group__storage__api_ga69e587579d2124c13d177957777c049f}{bytes\-\_\-used()} function provided in the symbol storage layers to see how many of those bytes are then used. 
+\end{DoxyReturn}
+
+
+Definition at line 289 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_ae74c00f9856fe1d6e3d89d6f1b818223}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!coefficient\-\_\-vector\-\_\-data@{coefficient\-\_\-vector\-\_\-data}}
+\index{coefficient\-\_\-vector\-\_\-data@{coefficient\-\_\-vector\-\_\-data}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ uint8\-\_\-t$\ast$ {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::coefficient\-\_\-vector\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_ae74c00f9856fe1d6e3d89d6f1b818223}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the specified vector 
+\end{DoxyReturn}
+
+
+Definition at line 370 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a6aa066a74e316faf1791eefda7d1a5dd}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!coefficient\-\_\-vector\-\_\-data@{coefficient\-\_\-vector\-\_\-data}}
+\index{coefficient\-\_\-vector\-\_\-data@{coefficient\-\_\-vector\-\_\-data}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ const uint8\-\_\-t$\ast$ {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::coefficient\-\_\-vector\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a6aa066a74e316faf1791eefda7d1a5dd}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the specified vector 
+\end{DoxyReturn}
+
+
+Definition at line 377 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a6fff65f4d2573a26153eb37da5dd6af7}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!coefficient\-\_\-vector\-\_\-length@{coefficient\-\_\-vector\-\_\-length}}
+\index{coefficient\-\_\-vector\-\_\-length@{coefficient\-\_\-vector\-\_\-length}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ uint32\-\_\-t {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::coefficient\-\_\-vector\-\_\-length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a6fff65f4d2573a26153eb37da5dd6af7}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+The number of \hyperlink{classlayer_a3ad6d6930927932e5c25f2a2b5277cc0}{layer\-::value\-\_\-type} elements needed to store the symbol coefficients. 
+\end{DoxyReturn}
+
+
+Definition at line 349 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a4e0f19a0ff838c8d78c2a10b5322de2b}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!coefficient\-\_\-vector\-\_\-size@{coefficient\-\_\-vector\-\_\-size}}
+\index{coefficient\-\_\-vector\-\_\-size@{coefficient\-\_\-vector\-\_\-size}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ uint32\-\_\-t {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::coefficient\-\_\-vector\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a4e0f19a0ff838c8d78c2a10b5322de2b}
+
+
+
+
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the layer\-::factory\-::max\-\_\-coefficient\-\_\-vector\-\_\-size() function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The number of bytes needed to store the symbol coefficients. 
+\end{DoxyReturn}
+
+
+Definition at line 342 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a82071c8ee9ac3d09875e358d04920c7a}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!coefficient\-\_\-vector\-\_\-values@{coefficient\-\_\-vector\-\_\-values}}
+\index{coefficient\-\_\-vector\-\_\-values@{coefficient\-\_\-vector\-\_\-values}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ {\bf value\-\_\-type}$\ast$ {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::coefficient\-\_\-vector\-\_\-values (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a82071c8ee9ac3d09875e358d04920c7a}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the specified vector 
+\end{DoxyReturn}
+
+
+Definition at line 356 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a576459f102aaa62aefedfdab5caa9c33}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!coefficient\-\_\-vector\-\_\-values@{coefficient\-\_\-vector\-\_\-values}}
+\index{coefficient\-\_\-vector\-\_\-values@{coefficient\-\_\-vector\-\_\-values}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ const {\bf value\-\_\-type}$\ast$ {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::coefficient\-\_\-vector\-\_\-values (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a576459f102aaa62aefedfdab5caa9c33}
+
+
+
+
+
+
+Definition at line 363 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a649678b45b1cec8604ad81b491a70ad7}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!construct@{construct}}
+\index{construct@{construct}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{construct}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ template$<$class Factory $>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::construct (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a649678b45b1cec8604ad81b491a70ad7}
+
+
+Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 193 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_aea187e096f4e0ef81ce585c480a37346}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!copy\-\_\-symbol@{copy\-\_\-symbol}}
+\index{copy\-\_\-symbol@{copy\-\_\-symbol}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{copy\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::copy\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index, }
+\item[{const sak\-::mutable\-\_\-storage \&}]{dest}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_aea187e096f4e0ef81ce585c480a37346}
+
+
+
+
+
+
+Definition at line 232 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a2e86248fb34d469dfe7dcaba5a7f1740}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!copy\-\_\-symbols@{copy\-\_\-symbols}}
+\index{copy\-\_\-symbols@{copy\-\_\-symbols}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{copy\-\_\-symbols}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::copy\-\_\-symbols (
+\begin{DoxyParamCaption}
+\item[{const sak\-::mutable\-\_\-storage \&}]{dest}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a2e86248fb34d469dfe7dcaba5a7f1740}
+
+
+
+
+
+
+Definition at line 224 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a7009282cb24089bf752fd37421dbca5e}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint8\-\_\-t $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a7009282cb24089bf752fd37421dbca5e}
+
+
+
+
+Decodes an encoded symbol according to the coding coefficients stored in the corresponding symbol\-\_\-id.
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The encoded symbol \\
+\hline
+{\em coefficients} & The coding coefficients used to create the encoded symbol \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 461 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a8ac13dbbf59e298469e9318ab00bf048}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a8ac13dbbf59e298469e9318ab00bf048}
+
+
+
+
+The decode function for systematic packets i.\-e. specific uncoded symbols. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The uncoded source symbol. \\
+\hline
+{\em symbol\-\_\-index} & The index of this uncoded symbol in the data block. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 468 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_ae5e31bc08644f79919d9c8bcf423f00b}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!encode\-\_\-symbol@{encode\-\_\-symbol}}
+\index{encode\-\_\-symbol@{encode\-\_\-symbol}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{encode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::encode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint8\-\_\-t $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_ae5e31bc08644f79919d9c8bcf423f00b}
+
+
+
+
+Encodes a symbol according to the symbol coefficients
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The destination buffer for the encoded symbol \\
+\hline
+{\em coefficients} & At this point the symbol id should be initialized with the desired coding coefficients. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 447 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_ac7db34a51007e1604006ec1cb0f22585}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!encode\-\_\-symbol@{encode\-\_\-symbol}}
+\index{encode\-\_\-symbol@{encode\-\_\-symbol}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{encode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::encode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_ac7db34a51007e1604006ec1cb0f22585}
+
+
+
+
+The encode function for systematic packets i.\-e. specific uncoded symbols. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The destination of the uncoded source symbol. \\
+\hline
+{\em symbol\-\_\-index} & The index of this uncoded symbol in the data block. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 454 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a42022c708ffb3303c21a2a594cb25726}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ template$<$class Factory $>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a42022c708ffb3303c21a2a594cb25726}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 200 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a3cacf8747632c617177eabc118d80f8d}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!invert@{invert}}
+\index{invert@{invert}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{invert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ {\bf value\-\_\-type} {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::invert (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a3cacf8747632c617177eabc118d80f8d}
+
+
+
+
+Inverts the field element 
+\begin{DoxyParams}{Parameters}
+{\em value} & the finite field value to be inverted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the inverse 
+\end{DoxyReturn}
+
+
+Definition at line 436 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_ad30a1215b020e4d98b7119142d49f2bb}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!is\-\_\-complete@{is\-\_\-complete}}
+\index{is\-\_\-complete@{is\-\_\-complete}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{is\-\_\-complete}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ bool {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::is\-\_\-complete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_ad30a1215b020e4d98b7119142d49f2bb}
+
+
+
+
+Check whether decoding is complete. \begin{DoxyReturn}{Returns}
+true if the decoding is complete 
+\end{DoxyReturn}
+
+
+Definition at line 475 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_afecc5c180c7b43e2f52472941915ca51}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!is\-\_\-symbol\-\_\-available@{is\-\_\-symbol\-\_\-available}}
+\index{is\-\_\-symbol\-\_\-available@{is\-\_\-symbol\-\_\-available}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{is\-\_\-symbol\-\_\-available}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ bool {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::is\-\_\-symbol\-\_\-available (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{symbol\-\_\-index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_afecc5c180c7b43e2f52472941915ca51}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-index} & The index of the symbol to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the specific symbol is available. Available means where the memory is available, but which may not have been initialized through a \hyperlink{group__storage__api_ga7f79fae19b4a2fd73d4c2c3c5be1ff7f}{layer\-::set\-\_\-symbol()} or \hyperlink{group__storage__api_gac90a4ce8eb50126267d92059c9e3b1a5}{layer\-::set\-\_\-symbols()} by the user. Available means where the memory is available, but not by the user. 
+\end{DoxyReturn}
+
+
+Definition at line 324 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_ac43da3b0571ff3acbb9fa8b663ad74d3}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!is\-\_\-symbol\-\_\-initialized@{is\-\_\-symbol\-\_\-initialized}}
+\index{is\-\_\-symbol\-\_\-initialized@{is\-\_\-symbol\-\_\-initialized}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{is\-\_\-symbol\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ bool {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::is\-\_\-symbol\-\_\-initialized (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{symbol\-\_\-index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_ac43da3b0571ff3acbb9fa8b663ad74d3}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-index} & The index of the symbol to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the specific symbol is initialized. Initialized means that a symbols memory is available and has been explicitly set by the user through a \hyperlink{group__storage__api_ga7f79fae19b4a2fd73d4c2c3c5be1ff7f}{layer\-::set\-\_\-symbol()} or \hyperlink{group__storage__api_gac90a4ce8eb50126267d92059c9e3b1a5}{layer\-::set\-\_\-symbols()} call. Any symbol which is initialized is also available. 
+\end{DoxyReturn}
+
+
+Definition at line 331 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a04434d65503a6df95ec49c4ab463ad55}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!is\-\_\-symbol\-\_\-pivot@{is\-\_\-symbol\-\_\-pivot}}
+\index{is\-\_\-symbol\-\_\-pivot@{is\-\_\-symbol\-\_\-pivot}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{is\-\_\-symbol\-\_\-pivot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ bool {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::is\-\_\-symbol\-\_\-pivot (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a04434d65503a6df95ec49c4ab463ad55}
+
+
+
+
+The symbol pivot indicates whether a symbol is available to either an encoder or decoder. A coefficient generator may use this information when generating coding coefficients. \begin{DoxyReturn}{Returns}
+True if the symbol is available. 
+\end{DoxyReturn}
+
+
+Definition at line 489 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a0e69f24aecca96018ea70d729db062ec}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!is\-\_\-symbols\-\_\-available@{is\-\_\-symbols\-\_\-available}}
+\index{is\-\_\-symbols\-\_\-available@{is\-\_\-symbols\-\_\-available}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{is\-\_\-symbols\-\_\-available}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ bool {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::is\-\_\-symbols\-\_\-available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a0e69f24aecca96018ea70d729db062ec}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+True if all symbols in the storage layer are available. Available means where the memory is available, but which may not have been initialized through a \hyperlink{group__storage__api_ga7f79fae19b4a2fd73d4c2c3c5be1ff7f}{layer\-::set\-\_\-symbol()} or \hyperlink{group__storage__api_gac90a4ce8eb50126267d92059c9e3b1a5}{layer\-::set\-\_\-symbols()} by the user. Available means where the memory is available, but not by the user. 
+\end{DoxyReturn}
+
+
+Definition at line 310 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a2cb9fee14aab5f922f68acd8a8de35d0}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!is\-\_\-symbols\-\_\-initialized@{is\-\_\-symbols\-\_\-initialized}}
+\index{is\-\_\-symbols\-\_\-initialized@{is\-\_\-symbols\-\_\-initialized}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{is\-\_\-symbols\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ bool {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::is\-\_\-symbols\-\_\-initialized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a2cb9fee14aab5f922f68acd8a8de35d0}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+True if all symbols in the storage layer is initialized. Initialized means that a symbols memory is available and has been explicitly set by the user through a \hyperlink{group__storage__api_ga7f79fae19b4a2fd73d4c2c3c5be1ff7f}{layer\-::set\-\_\-symbol()} or \hyperlink{group__storage__api_gac90a4ce8eb50126267d92059c9e3b1a5}{layer\-::set\-\_\-symbols()} call. Any symbol which is initialized is also available. 
+\end{DoxyReturn}
+
+
+Definition at line 317 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_aac50560d78370384f33ce6276efe9b3c}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!multiply@{multiply}}
+\index{multiply@{multiply}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{multiply}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::multiply (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{symbol\-\_\-dest, }
+\item[{{\bf value\-\_\-type}}]{coefficient, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_aac50560d78370384f33ce6276efe9b3c}
+
+
+
+
+
+
+Definition at line 388 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a22fb105a9ea2513dbab917f2a9e45a09}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!multiply\-\_\-add@{multiply\-\_\-add}}
+\index{multiply\-\_\-add@{multiply\-\_\-add}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{multiply\-\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::multiply\-\_\-add (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{symbol\-\_\-dest, }
+\item[{const {\bf value\-\_\-type} $\ast$}]{symbol\-\_\-src, }
+\item[{{\bf value\-\_\-type}}]{coefficient, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a22fb105a9ea2513dbab917f2a9e45a09}
+
+
+
+
+
+
+Definition at line 397 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a1212961bf256c3a0f41af942281d5917}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!multiply\-\_\-subtract@{multiply\-\_\-subtract}}
+\index{multiply\-\_\-subtract@{multiply\-\_\-subtract}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{multiply\-\_\-subtract}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::multiply\-\_\-subtract (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{symbol\-\_\-dest, }
+\item[{const {\bf value\-\_\-type} $\ast$}]{symbol\-\_\-src, }
+\item[{{\bf value\-\_\-type}}]{coefficient, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a1212961bf256c3a0f41af942281d5917}
+
+
+
+
+Multiplies the source symbol with the coefficient and subtracts it from the destination symbol i.\-e.\-: symbol\-\_\-dest = symbol\-\_\-dest -\/ (symbol\-\_\-src $\ast$ coefficient)
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-dest} & the destination buffer for the source symbol \\
+\hline
+{\em symbol\-\_\-src} & the source buffer for the \\
+\hline
+{\em coefficient} & the multiplicative constant \\
+\hline
+{\em symbol\-\_\-length} & the length of the symbol in value\-\_\-type elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 417 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a8b0a9a2f07dc67384fd0c35fee856ba6}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!proxy\-\_\-stack@{proxy\-\_\-stack}}
+\index{proxy\-\_\-stack@{proxy\-\_\-stack}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{proxy\-\_\-stack}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ const Main\-Stack$\ast$ {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::proxy\-\_\-stack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a8b0a9a2f07dc67384fd0c35fee856ba6}
+\begin{DoxyReturn}{Returns}
+a pointer to the main proxy stack 
+\end{DoxyReturn}
+
+
+Definition at line 206 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_ad0d3c4d957e4ad08ad68366952b1dd09}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!proxy\-\_\-stack@{proxy\-\_\-stack}}
+\index{proxy\-\_\-stack@{proxy\-\_\-stack}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{proxy\-\_\-stack}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ Main\-Stack$\ast$ {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::proxy\-\_\-stack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_ad0d3c4d957e4ad08ad68366952b1dd09}
+\begin{DoxyReturn}{Returns}
+a pointer to the main proxy stack 
+\end{DoxyReturn}
+
+
+Definition at line 213 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_ad47518fe7533335e8bf6add606e651c9}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!rank@{rank}}
+\index{rank@{rank}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{rank}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ uint32\-\_\-t {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::rank (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_ad47518fe7533335e8bf6add606e651c9}
+
+
+
+
+The rank of a decoder states how many symbols have been decoded or partially decoded. The rank of an encoder states how many symbols are available for encoding. \begin{DoxyReturn}{Returns}
+the rank of the decoder or encoder 
+\end{DoxyReturn}
+
+
+Definition at line 482 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a4ff7feb88d0b178b1543419751236f22}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!set\-\_\-proxy@{set\-\_\-proxy}}
+\index{set\-\_\-proxy@{set\-\_\-proxy}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{set\-\_\-proxy}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::set\-\_\-proxy (
+\begin{DoxyParamCaption}
+\item[{Main\-Stack $\ast$}]{proxy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a4ff7feb88d0b178b1543419751236f22}
+Sets the pointer to the proxy stack 
+\begin{DoxyParams}{Parameters}
+{\em proxy} & The stack where calls should be forwarded. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 185 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a01c4f58e8243f7d425c1cb6fd69d75b2}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!subtract@{subtract}}
+\index{subtract@{subtract}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{subtract}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ void {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::subtract (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{symbol\-\_\-dest, }
+\item[{const {\bf value\-\_\-type} $\ast$}]{symbol\-\_\-src, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a01c4f58e8243f7d425c1cb6fd69d75b2}
+
+
+
+
+Subtracts the source symbol from the destination symbol i.\-e.\-: symbol\-\_\-dest = symbol\-\_\-dest -\/ symbol\-\_\-src
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-dest} & the destination buffer holding the resulting symbol \\
+\hline
+{\em symbol\-\_\-src} & the source symbol \\
+\hline
+{\em symbol\-\_\-length} & the length of the symbol in value\-\_\-type elements \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 428 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a03645a649b76035b54165f00548b3782}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!symbol@{symbol}}
+\index{symbol@{symbol}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ uint8\-\_\-t$\ast$ {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::symbol (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a03645a649b76035b54165f00548b3782}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index number of the symbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the symbol data. The size of the symbol data is provided by the \hyperlink{group__storage__api_gad0fc0dc98e10a49c81d5d08895f94656}{symbol\-\_\-size()} function. 
+\end{DoxyReturn}
+
+
+Definition at line 240 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_ae7b3311a4848af16078d408c0c4fd94d}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!symbol@{symbol}}
+\index{symbol@{symbol}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ const uint8\-\_\-t$\ast$ {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::symbol (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_ae7b3311a4848af16078d408c0c4fd94d}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index number of the symbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a const pointer to the symbol data. The size of the symbol data is provided by the \hyperlink{group__storage__api_gad0fc0dc98e10a49c81d5d08895f94656}{symbol\-\_\-size()} function. 
+\end{DoxyReturn}
+
+
+Definition at line 247 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a87583efe23d937a2cb3426bde4566ebc}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!symbol\-\_\-length@{symbol\-\_\-length}}
+\index{symbol\-\_\-length@{symbol\-\_\-length}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{symbol\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ uint32\-\_\-t {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::symbol\-\_\-length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a87583efe23d937a2cb3426bde4566ebc}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+the length of the symbol in \hyperlink{classlayer_a3ad6d6930927932e5c25f2a2b5277cc0}{layer\-::value\-\_\-type} elements 
+\end{DoxyReturn}
+
+
+Definition at line 282 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_aae35623724e1a776d28e15fa95bfdc8e}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!symbol\-\_\-size@{symbol\-\_\-size}}
+\index{symbol\-\_\-size@{symbol\-\_\-size}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{symbol\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ uint32\-\_\-t {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::symbol\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_aae35623724e1a776d28e15fa95bfdc8e}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+the symbol size of a symbol in bytes 
+\end{DoxyReturn}
+
+
+Definition at line 275 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a38eaacbf7c8a0c0c602bbf45859067ed}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!symbol\-\_\-value@{symbol\-\_\-value}}
+\index{symbol\-\_\-value@{symbol\-\_\-value}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{symbol\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ {\bf value\-\_\-type}$\ast$ {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::symbol\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a38eaacbf7c8a0c0c602bbf45859067ed}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index number of the symbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classlayer_a3ad6d6930927932e5c25f2a2b5277cc0}{layer\-::value\-\_\-type} pointer to the symbol data. The length of the symbol data is provided by the symbol\-\_\-length() function. 
+\end{DoxyReturn}
+
+
+Definition at line 254 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_ae951cfb89bd7a6b07ec602c7f5e48d95}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!symbol\-\_\-value@{symbol\-\_\-value}}
+\index{symbol\-\_\-value@{symbol\-\_\-value}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{symbol\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ const {\bf value\-\_\-type}$\ast$ {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::symbol\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_ae951cfb89bd7a6b07ec602c7f5e48d95}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index number of the symbol \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a const \hyperlink{classlayer_a3ad6d6930927932e5c25f2a2b5277cc0}{layer\-::value\-\_\-type} pointer to the symbol data. The length of the symbol data is provided by the symbol\-\_\-length() function. 
+\end{DoxyReturn}
+
+
+Definition at line 261 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a8b944d530e445fa4f507b4d8d8121aad}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!symbols@{symbols}}
+\index{symbols@{symbols}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{symbols}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ uint32\-\_\-t {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::symbols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a8b944d530e445fa4f507b4d8d8121aad}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+the number of symbols in this block coder 
+\end{DoxyReturn}
+
+
+Definition at line 268 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_ad766fc9c5c73713f93179da6984d2665}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!symbols\-\_\-available@{symbols\-\_\-available}}
+\index{symbols\-\_\-available@{symbols\-\_\-available}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{symbols\-\_\-available}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ uint32\-\_\-t {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::symbols\-\_\-available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_ad766fc9c5c73713f93179da6984d2665}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+The number of symbols that are available. Available means where the memory is available, but which may not have been initialized through a \hyperlink{group__storage__api_ga7f79fae19b4a2fd73d4c2c3c5be1ff7f}{layer\-::set\-\_\-symbol()} or \hyperlink{group__storage__api_gac90a4ce8eb50126267d92059c9e3b1a5}{layer\-::set\-\_\-symbols()} by the user. 
+\end{DoxyReturn}
+
+
+Definition at line 296 of file proxy\-\_\-layer.\-hpp.
+
+\hypertarget{classkodo_1_1proxy__layer_a80ab466a1710f95d156374b6c29e5a95}{\index{kodo\-::proxy\-\_\-layer@{kodo\-::proxy\-\_\-layer}!symbols\-\_\-initialized@{symbols\-\_\-initialized}}
+\index{symbols\-\_\-initialized@{symbols\-\_\-initialized}!kodo::proxy_layer@{kodo\-::proxy\-\_\-layer}}
+\subsubsection[{symbols\-\_\-initialized}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Final\-Type, class Main\-Stack$>$ uint32\-\_\-t {\bf kodo\-::proxy\-\_\-layer}$<$ Final\-Type, Main\-Stack $>$\-::symbols\-\_\-initialized (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1proxy__layer_a80ab466a1710f95d156374b6c29e5a95}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+The number of symbols that are initialized. Initialized means that a symbols memory is available and has been explicitly set by the user through a \hyperlink{group__storage__api_ga7f79fae19b4a2fd73d4c2c3c5be1ff7f}{layer\-::set\-\_\-symbol()} or \hyperlink{group__storage__api_gac90a4ce8eb50126267d92059c9e3b1a5}{layer\-::set\-\_\-symbols()} call. Any symbol which is initialized is also available. 
+\end{DoxyReturn}
+
+
+Definition at line 303 of file proxy\-\_\-layer.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+proxy\-\_\-layer.\-hpp\end{DoxyCompactItemize}

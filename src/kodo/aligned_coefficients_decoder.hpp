@@ -14,7 +14,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup decoder_layers
     /// @brief Aligns the symbol coefficient buffer if necessary
     template<class SuperCoder>

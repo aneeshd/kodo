@@ -9,7 +9,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup payload_codec_layers
     /// @brief The payload encoder splits the payload buffer into
     ///        symbol header and symbol.

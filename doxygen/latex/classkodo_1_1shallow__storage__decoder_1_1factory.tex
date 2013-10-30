@@ -1,0 +1,84 @@
+\hypertarget{classkodo_1_1shallow__storage__decoder_1_1factory}{\section{kodo\-:\-:shallow\-\_\-storage\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-:\-:factory Class Reference}
+\label{classkodo_1_1shallow__storage__decoder_1_1factory}\index{kodo\-::shallow\-\_\-storage\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-::factory@{kodo\-::shallow\-\_\-storage\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-::factory}}
+}
+
+
+The factory used by the storage\-\_\-decoder.  
+
+
+
+
+{\ttfamily \#include $<$shallow\-\_\-storage\-\_\-decoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:shallow\-\_\-storage\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-:\-:factory\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1shallow__storage__decoder_1_1factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classkodo_1_1shallow__storage__decoder_1_1factory_ae47e45fee171334923c98db4771e5008}{factory} (uint32\-\_\-t max\-\_\-symbols, uint32\-\_\-t max\-\_\-symbol\-\_\-size)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1shallow__storage__decoder_1_1factory_ab161d39c5415efc371d12a2f0ed60536}{total\-\_\-block\-\_\-size} (uint32\-\_\-t \hyperlink{classkodo_1_1object__decoder_ae4759b34a39ae09018af600dbc6095e7}{object\-\_\-size}) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Decoder\-Type, class Block\-Partitioning = rfc5052\-\_\-partitioning\-\_\-scheme$>$class kodo\-::shallow\-\_\-storage\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-::factory}
+
+The factory used by the storage\-\_\-decoder. 
+
+Definition at line 57 of file shallow\-\_\-storage\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classkodo_1_1shallow__storage__decoder_1_1factory_ae47e45fee171334923c98db4771e5008}{\index{kodo\-::shallow\-\_\-storage\-\_\-decoder\-::factory@{kodo\-::shallow\-\_\-storage\-\_\-decoder\-::factory}!factory@{factory}}
+\index{factory@{factory}!kodo::shallow_storage_decoder::factory@{kodo\-::shallow\-\_\-storage\-\_\-decoder\-::factory}}
+\subsubsection[{factory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Decoder\-Type , class Block\-Partitioning  = rfc5052\-\_\-partitioning\-\_\-scheme$>$ {\bf kodo\-::shallow\-\_\-storage\-\_\-decoder}$<$ Decoder\-Type, Block\-Partitioning $>$\-::factory\-::factory (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{max\-\_\-symbols, }
+\item[{uint32\-\_\-t}]{max\-\_\-symbol\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1shallow__storage__decoder_1_1factory_ae47e45fee171334923c98db4771e5008}
+
+
+
+
+
+
+Definition at line 62 of file shallow\-\_\-storage\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1shallow__storage__decoder_1_1factory_ab161d39c5415efc371d12a2f0ed60536}{\index{kodo\-::shallow\-\_\-storage\-\_\-decoder\-::factory@{kodo\-::shallow\-\_\-storage\-\_\-decoder\-::factory}!total\-\_\-block\-\_\-size@{total\-\_\-block\-\_\-size}}
+\index{total\-\_\-block\-\_\-size@{total\-\_\-block\-\_\-size}!kodo::shallow_storage_decoder::factory@{kodo\-::shallow\-\_\-storage\-\_\-decoder\-::factory}}
+\subsubsection[{total\-\_\-block\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Decoder\-Type , class Block\-Partitioning  = rfc5052\-\_\-partitioning\-\_\-scheme$>$ uint32\-\_\-t {\bf kodo\-::shallow\-\_\-storage\-\_\-decoder}$<$ Decoder\-Type, Block\-Partitioning $>$\-::factory\-::total\-\_\-block\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{object\-\_\-size}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1shallow__storage__decoder_1_1factory_ab161d39c5415efc371d12a2f0ed60536}
+
+\begin{DoxyParams}{Parameters}
+{\em object\-\_\-size} & The total size of the object to be decoded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of storage bytes needed to decode a object of object\-\_\-size bytes. A decoder requires symbols$\ast$symbols\-\_\-size bytes, however if a object does not fully cover all decoders we may require additional memory to be able to provide all decoders with the memory needed. 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file shallow\-\_\-storage\-\_\-decoder.\-hpp.
+
+
+
+Referenced by kodo\-::shallow\-\_\-storage\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-::shallow\-\_\-storage\-\_\-decoder().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+shallow\-\_\-storage\-\_\-decoder.\-hpp\end{DoxyCompactItemize}

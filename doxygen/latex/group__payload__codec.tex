@@ -1,0 +1,37 @@
+\hypertarget{group__payload__codec}{\section{Payload Codec}
+\label{group__payload__codec}\index{Payload Codec@{Payload Codec}}
+}
+
+
+The payload layer provides users of an encoder or decoder with a convenient A\-P\-I.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__payload__codec__api}{A\-P\-I}
+\begin{DoxyCompactList}\small\item\em The A\-P\-I used by payload codecs. \end{DoxyCompactList}\item 
+\hyperlink{group__payload__codec__layers}{Layers}
+\begin{DoxyCompactList}\small\item\em Implementations of the codec A\-P\-I. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1partial__decoding__tracker}{kodo\-::partial\-\_\-decoding\-\_\-tracker$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em This layer can be added to a decoding stack to track when partial decoding is possible i.\-e. when symbols in decoder are fully decoded even though the full data block has not been sent. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1rank__symbol__decoding__status__updater}{kodo\-::rank\-\_\-symbol\-\_\-decoding\-\_\-status\-\_\-updater$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em This layer can be added to a decoding stack to update the status of the different decoding symbols. The functionality makes it possible for a user to detect when partial decoding is possible i.\-e. when symbols in decoder are fully decoded even though the full data block has not been sent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The payload layer provides users of an encoder or decoder with a convenient A\-P\-I. Creating a layer implementing the payload A\-P\-I makes it possible to extend encoders and decoders with functionality not necessarily requiring direct access to the symbol id and coded symbol.
+
+The payload layer also provides a user of an encoder/decoder with a more convenient A\-P\-I than the coding\-\_\-layer\-\_\-api, which requires the user to provide seperate buffers for the symbol id and symbol data. Using the payload layer A\-P\-I the user only provides a single memory buffer, as shown in the following example for an encoder\-:
+
+
+\begin{DoxyCode}
+std::vector<uint8\_t> payload(encoder->payload\_size());
+uint32\_t bytes\_used = encoder->encode(&payload[0]);
+\end{DoxyCode}
+
+
+Splitting the payload buffer In order to use the payload layer one must also provide the functionality to split the provided payload buffer into a symbol header and symbol buffer, which are used by the \hyperlink{group__codec__header__api}{A\-P\-I}. 

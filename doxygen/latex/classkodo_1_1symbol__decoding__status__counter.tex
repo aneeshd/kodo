@@ -1,0 +1,218 @@
+\hypertarget{classkodo_1_1symbol__decoding__status__counter}{\section{kodo\-:\-:symbol\-\_\-decoding\-\_\-status\-\_\-counter$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1symbol__decoding__status__counter}\index{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter$<$ Super\-Coder $>$@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter$<$ Super\-Coder $>$}}
+}
+
+
+The symbol decoding status counter maintains information about how many symbols are in which state.  
+
+
+
+
+{\ttfamily \#include $<$symbol\-\_\-decoding\-\_\-status\-\_\-counter.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:symbol\-\_\-decoding\-\_\-status\-\_\-counter$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1symbol__decoding__status__counter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1symbol__decoding__status__counter_a976783389e62d4637fafd7a811065bf3}{\hyperlink{classkodo_1_1symbol__decoding__status__counter_a976783389e62d4637fafd7a811065bf3}{symbol\-\_\-decoding\-\_\-status\-\_\-counter} ()}\label{classkodo_1_1symbol__decoding__status__counter_a976783389e62d4637fafd7a811065bf3}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1symbol__decoding__status__counter_a8559a9d661957c072c722dd7e1cd70a4}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1symbol__decoding__status__counter_a94b69d06fe168d75293fa2e3fbc0bfb9}{set\-\_\-symbol\-\_\-missing} (uint32\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1symbol__decoding__status__counter_a4a2564a440f41a0f66b78a9f117deb21}{set\-\_\-symbol\-\_\-seen} (uint32\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1symbol__decoding__status__counter_a9e5a9ed0b7c4639d7fe64653ab199a4f}{set\-\_\-symbol\-\_\-decoded} (uint32\-\_\-t index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1symbol__decoding__status__counter_a46c35ce7a13620b970c66eabd2b42a92}{symbols\-\_\-missing} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1symbol__decoding__status__counter_a1ccc2d54e045a38f3a61e485a19dea57}{symbols\-\_\-seen} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1symbol__decoding__status__counter_a21d0bfbd0bab67f42e7b0e9f6150666d}{symbols\-\_\-decoded} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1symbol__decoding__status__counter_a818603dbe1428fc230ef8764e3dc6560}{uint32\-\_\-t \hyperlink{classkodo_1_1symbol__decoding__status__counter_a818603dbe1428fc230ef8764e3dc6560}{m\-\_\-symbols\-\_\-missing}}\label{classkodo_1_1symbol__decoding__status__counter_a818603dbe1428fc230ef8764e3dc6560}
+
+\begin{DoxyCompactList}\small\item\em Counter for keeping track of the currently missing symbols. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1symbol__decoding__status__counter_a3d13d01ddf0cc30601c32c0546057572}{m\-\_\-symbols\-\_\-seen}
+\item 
+\hypertarget{classkodo_1_1symbol__decoding__status__counter_a5dff727cb161c4de980d4304ab13e156}{uint32\-\_\-t \hyperlink{classkodo_1_1symbol__decoding__status__counter_a5dff727cb161c4de980d4304ab13e156}{m\-\_\-symbols\-\_\-decoded}}\label{classkodo_1_1symbol__decoding__status__counter_a5dff727cb161c4de980d4304ab13e156}
+
+\begin{DoxyCompactList}\small\item\em Counter for symbols which have been fully decoded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter$<$ Super\-Coder $>$}
+
+The symbol decoding status counter maintains information about how many symbols are in which state. 
+
+On the decoder side there are three states a symbol can be in information about these states can be found in the \hyperlink{classkodo_1_1symbol__decoding__status__tracker}{symbol\-\_\-decoding\-\_\-status\-\_\-tracker} layer. This layer maintains counters showing how many symbols are in each state. 
+
+Definition at line 25 of file symbol\-\_\-decoding\-\_\-status\-\_\-counter.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1symbol__decoding__status__counter_a8559a9d661957c072c722dd7e1cd70a4}{\index{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::symbol_decoding_status_counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ template$<$class Factory $>$ void {\bf kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}$<$ Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1symbol__decoding__status__counter_a8559a9d661957c072c722dd7e1cd70a4}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file symbol\-\_\-decoding\-\_\-status\-\_\-counter.\-hpp.
+
+\hypertarget{classkodo_1_1symbol__decoding__status__counter_a9e5a9ed0b7c4639d7fe64653ab199a4f}{\index{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}!set\-\_\-symbol\-\_\-decoded@{set\-\_\-symbol\-\_\-decoded}}
+\index{set\-\_\-symbol\-\_\-decoded@{set\-\_\-symbol\-\_\-decoded}!kodo::symbol_decoding_status_counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}}
+\subsubsection[{set\-\_\-symbol\-\_\-decoded}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}$<$ Super\-Coder $>$\-::set\-\_\-symbol\-\_\-decoded (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1symbol__decoding__status__counter_a9e5a9ed0b7c4639d7fe64653ab199a4f}
+
+
+
+
+Specifies that the decoder has fully decoded a specific symbol. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the symbol whose state should be changed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file symbol\-\_\-decoding\-\_\-status\-\_\-counter.\-hpp.
+
+\hypertarget{classkodo_1_1symbol__decoding__status__counter_a94b69d06fe168d75293fa2e3fbc0bfb9}{\index{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}!set\-\_\-symbol\-\_\-missing@{set\-\_\-symbol\-\_\-missing}}
+\index{set\-\_\-symbol\-\_\-missing@{set\-\_\-symbol\-\_\-missing}!kodo::symbol_decoding_status_counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}}
+\subsubsection[{set\-\_\-symbol\-\_\-missing}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}$<$ Super\-Coder $>$\-::set\-\_\-symbol\-\_\-missing (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1symbol__decoding__status__counter_a94b69d06fe168d75293fa2e3fbc0bfb9}
+
+
+
+
+Specifies that the decoder has no knowledge about a specific symbol 
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the symbol whose state should be changed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file symbol\-\_\-decoding\-\_\-status\-\_\-counter.\-hpp.
+
+\hypertarget{classkodo_1_1symbol__decoding__status__counter_a4a2564a440f41a0f66b78a9f117deb21}{\index{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}!set\-\_\-symbol\-\_\-seen@{set\-\_\-symbol\-\_\-seen}}
+\index{set\-\_\-symbol\-\_\-seen@{set\-\_\-symbol\-\_\-seen}!kodo::symbol_decoding_status_counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}}
+\subsubsection[{set\-\_\-symbol\-\_\-seen}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}$<$ Super\-Coder $>$\-::set\-\_\-symbol\-\_\-seen (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1symbol__decoding__status__counter_a4a2564a440f41a0f66b78a9f117deb21}
+
+
+
+
+Specifies that the decoder has \char`\"{}seen\char`\"{} a specific symbol. When a symbol is \char`\"{}seen\char`\"{} by a decoder it means that the decoder has knowledge about a specific symbol. If the decoder uses Gaussian Elimination it means that the symbol has been selected as pivot in the decoding matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the symbol whose state should be changed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file symbol\-\_\-decoding\-\_\-status\-\_\-counter.\-hpp.
+
+\hypertarget{classkodo_1_1symbol__decoding__status__counter_a21d0bfbd0bab67f42e7b0e9f6150666d}{\index{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}!symbols\-\_\-decoded@{symbols\-\_\-decoded}}
+\index{symbols\-\_\-decoded@{symbols\-\_\-decoded}!kodo::symbol_decoding_status_counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}}
+\subsubsection[{symbols\-\_\-decoded}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}$<$ Super\-Coder $>$\-::symbols\-\_\-decoded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1symbol__decoding__status__counter_a21d0bfbd0bab67f42e7b0e9f6150666d}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+The number of decoded symbols at the decoder 
+\end{DoxyReturn}
+
+
+Definition at line 141 of file symbol\-\_\-decoding\-\_\-status\-\_\-counter.\-hpp.
+
+\hypertarget{classkodo_1_1symbol__decoding__status__counter_a46c35ce7a13620b970c66eabd2b42a92}{\index{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}!symbols\-\_\-missing@{symbols\-\_\-missing}}
+\index{symbols\-\_\-missing@{symbols\-\_\-missing}!kodo::symbol_decoding_status_counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}}
+\subsubsection[{symbols\-\_\-missing}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}$<$ Super\-Coder $>$\-::symbols\-\_\-missing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1symbol__decoding__status__counter_a46c35ce7a13620b970c66eabd2b42a92}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+The number of missing symbols at the decoder 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file symbol\-\_\-decoding\-\_\-status\-\_\-counter.\-hpp.
+
+\hypertarget{classkodo_1_1symbol__decoding__status__counter_a1ccc2d54e045a38f3a61e485a19dea57}{\index{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}!symbols\-\_\-seen@{symbols\-\_\-seen}}
+\index{symbols\-\_\-seen@{symbols\-\_\-seen}!kodo::symbol_decoding_status_counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}}
+\subsubsection[{symbols\-\_\-seen}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}$<$ Super\-Coder $>$\-::symbols\-\_\-seen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1symbol__decoding__status__counter_a1ccc2d54e045a38f3a61e485a19dea57}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+The number of \char`\"{}seen\char`\"{} symbols at the decoder 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file symbol\-\_\-decoding\-\_\-status\-\_\-counter.\-hpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classkodo_1_1symbol__decoding__status__counter_a3d13d01ddf0cc30601c32c0546057572}{\index{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}!m\-\_\-symbols\-\_\-seen@{m\-\_\-symbols\-\_\-seen}}
+\index{m\-\_\-symbols\-\_\-seen@{m\-\_\-symbols\-\_\-seen}!kodo::symbol_decoding_status_counter@{kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}}
+\subsubsection[{m\-\_\-symbols\-\_\-seen}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter}$<$ Super\-Coder $>$\-::m\-\_\-symbols\-\_\-seen}}\label{classkodo_1_1symbol__decoding__status__counter_a3d13d01ddf0cc30601c32c0546057572}
+Counter for the symbols which have been \char`\"{}seen\char`\"{}, see the \hyperlink{classkodo_1_1symbol__decoding__status__tracker}{symbol\-\_\-decoding\-\_\-status\-\_\-tracker} layer for a description of what seen means. 
+
+Definition at line 154 of file symbol\-\_\-decoding\-\_\-status\-\_\-counter.\-hpp.
+
+
+
+Referenced by kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter$<$ symbol\-\_\-decoding\-\_\-status\-\_\-tracker$<$ coefficient\-\_\-value\-\_\-access$<$ coefficient\-\_\-storage$<$ coefficient\-\_\-info$<$ deep\-\_\-symbol\-\_\-storage$<$ storage\-\_\-bytes\-\_\-used$<$ storage\-\_\-block\-\_\-info$<$ finite\-\_\-field\-\_\-math$<$ fifi\-::default\-\_\-field$<$ Field $>$\-::type, finite\-\_\-field\-\_\-info$<$ Field, final\-\_\-coder\-\_\-factory\-\_\-pool$<$ full\-\_\-rlnc\-\_\-decoder$<$ Field $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$\-::initialize(), kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter$<$ symbol\-\_\-decoding\-\_\-status\-\_\-tracker$<$ coefficient\-\_\-value\-\_\-access$<$ coefficient\-\_\-storage$<$ coefficient\-\_\-info$<$ deep\-\_\-symbol\-\_\-storage$<$ storage\-\_\-bytes\-\_\-used$<$ storage\-\_\-block\-\_\-info$<$ finite\-\_\-field\-\_\-math$<$ fifi\-::default\-\_\-field$<$ Field $>$\-::type, finite\-\_\-field\-\_\-info$<$ Field, final\-\_\-coder\-\_\-factory\-\_\-pool$<$ full\-\_\-rlnc\-\_\-decoder$<$ Field $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$\-::set\-\_\-symbol\-\_\-decoded(), kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter$<$ symbol\-\_\-decoding\-\_\-status\-\_\-tracker$<$ coefficient\-\_\-value\-\_\-access$<$ coefficient\-\_\-storage$<$ coefficient\-\_\-info$<$ deep\-\_\-symbol\-\_\-storage$<$ storage\-\_\-bytes\-\_\-used$<$ storage\-\_\-block\-\_\-info$<$ finite\-\_\-field\-\_\-math$<$ fifi\-::default\-\_\-field$<$ Field $>$\-::type, finite\-\_\-field\-\_\-info$<$ Field, final\-\_\-coder\-\_\-factory\-\_\-pool$<$ full\-\_\-rlnc\-\_\-decoder$<$ Field $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$\-::set\-\_\-symbol\-\_\-missing(), kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter$<$ symbol\-\_\-decoding\-\_\-status\-\_\-tracker$<$ coefficient\-\_\-value\-\_\-access$<$ coefficient\-\_\-storage$<$ coefficient\-\_\-info$<$ deep\-\_\-symbol\-\_\-storage$<$ storage\-\_\-bytes\-\_\-used$<$ storage\-\_\-block\-\_\-info$<$ finite\-\_\-field\-\_\-math$<$ fifi\-::default\-\_\-field$<$ Field $>$\-::type, finite\-\_\-field\-\_\-info$<$ Field, final\-\_\-coder\-\_\-factory\-\_\-pool$<$ full\-\_\-rlnc\-\_\-decoder$<$ Field $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$\-::set\-\_\-symbol\-\_\-seen(), and kodo\-::symbol\-\_\-decoding\-\_\-status\-\_\-counter$<$ symbol\-\_\-decoding\-\_\-status\-\_\-tracker$<$ coefficient\-\_\-value\-\_\-access$<$ coefficient\-\_\-storage$<$ coefficient\-\_\-info$<$ deep\-\_\-symbol\-\_\-storage$<$ storage\-\_\-bytes\-\_\-used$<$ storage\-\_\-block\-\_\-info$<$ finite\-\_\-field\-\_\-math$<$ fifi\-::default\-\_\-field$<$ Field $>$\-::type, finite\-\_\-field\-\_\-info$<$ Field, final\-\_\-coder\-\_\-factory\-\_\-pool$<$ full\-\_\-rlnc\-\_\-decoder$<$ Field $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$\-::symbols\-\_\-seen().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+symbol\-\_\-decoding\-\_\-status\-\_\-counter.\-hpp\end{DoxyCompactItemize}

@@ -19,7 +19,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @brief A random annex decoder
     template<class DecoderType, class BlockPartitioning>
     class random_annex_decoder : random_annex_base<BlockPartitioning>

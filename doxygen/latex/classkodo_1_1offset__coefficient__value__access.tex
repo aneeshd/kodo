@@ -1,0 +1,194 @@
+\hypertarget{classkodo_1_1offset__coefficient__value__access}{\section{kodo\-:\-:offset\-\_\-coefficient\-\_\-value\-\_\-access$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1offset__coefficient__value__access}\index{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access$<$ Super\-Coder $>$@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access$<$ Super\-Coder $>$}}
+}
+
+
+Provides functions to access and manipulate values in an array of coefficients, but with an added offset to the indexes.  
+
+
+
+
+{\ttfamily \#include $<$offset\-\_\-coefficient\-\_\-value\-\_\-access.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:offset\-\_\-coefficient\-\_\-value\-\_\-access$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classkodo_1_1offset__coefficient__value__access}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \\*
+\hyperlink{classkodo_1_1coefficient__value__access}{coefficient\-\_\-value\-\_\-access}\\*
+$<$ Super\-Coder $>$ \hyperlink{classkodo_1_1offset__coefficient__value__access_afbb688e0f2bcccea653a5bc9becaa16f}{Super}
+\item 
+typedef \hyperlink{classkodo_1_1coefficient__value__access_a629750d630f4188d48eb49f76cf750f1}{Super\-::value\-\_\-type} \hyperlink{classkodo_1_1offset__coefficient__value__access_a4dc52c0872e6ef6bc528d2bfac18f5b7}{value\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1offset__coefficient__value__access_ad9ce9dea9fab3f01d870e7a49ef1a084}{\hyperlink{classkodo_1_1offset__coefficient__value__access_ad9ce9dea9fab3f01d870e7a49ef1a084}{offset\-\_\-coefficient\-\_\-value\-\_\-access} ()}\label{classkodo_1_1offset__coefficient__value__access_ad9ce9dea9fab3f01d870e7a49ef1a084}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1offset__coefficient__value__access_af8296bff7302435fc7468c499ed9c516}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. \end{DoxyCompactList}\item 
+\hyperlink{classkodo_1_1coefficient__value__access_a629750d630f4188d48eb49f76cf750f1}{value\-\_\-type} \hyperlink{classkodo_1_1offset__coefficient__value__access_a058c1d828ae5abcc8c5395e41ac97b09}{coefficient\-\_\-value} (const \hyperlink{classkodo_1_1coefficient__value__access_a629750d630f4188d48eb49f76cf750f1}{value\-\_\-type} $\ast$coefficients, uint32\-\_\-t index) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1offset__coefficient__value__access_ad36f50a55c03fe158d2f769437b2aedf}{set\-\_\-coefficient\-\_\-value} (\hyperlink{classkodo_1_1coefficient__value__access_a629750d630f4188d48eb49f76cf750f1}{value\-\_\-type} $\ast$coefficients, uint32\-\_\-t index, \hyperlink{classkodo_1_1coefficient__value__access_a629750d630f4188d48eb49f76cf750f1}{value\-\_\-type} value) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1offset__coefficient__value__access_a13bc790d10f25379367c681a4da9eab6}{set\-\_\-coefficient\-\_\-offset} (uint32\-\_\-t offset)
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1offset__coefficient__value__access_a7927ceed944b99334083b00afccba7bc}{coefficient\-\_\-offset} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access$<$ Super\-Coder $>$}
+
+Provides functions to access and manipulate values in an array of coefficients, but with an added offset to the indexes. 
+
+This is useful in cases where we want to create e.\-g. an non-\/square decoding matrix. E.\-g. imagine this matrix\-:
+
+1 0 1 0 1 1 0 1 1 1 0 0 0 1 0 1 0 1
+
+By default we will always access the coding coefficients from the beginning of the encoding vector. Which enables us to decode e.\-g. a follows\-:
+
+1 0 0 0 1 0 0 1 0 1 0 1 0 0 1 0 0 1
+
+This has nicely create 3 pivot positions from in the first 3 columns. Now, lets imagine that we wanted to shift those pivot positions so that they would appear in the last three columns. This could be done by adding a offset to the index when inspecting the coefficient values. 
+
+Definition at line 41 of file offset\-\_\-coefficient\-\_\-value\-\_\-access.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1offset__coefficient__value__access_afbb688e0f2bcccea653a5bc9becaa16f}{\index{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}!Super@{Super}}
+\index{Super@{Super}!kodo::offset_coefficient_value_access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}}
+\subsubsection[{Super}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ typedef {\bf coefficient\-\_\-value\-\_\-access}$<$Super\-Coder$>$ {\bf kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}$<$ Super\-Coder $>$\-::{\bf Super}}}\label{classkodo_1_1offset__coefficient__value__access_afbb688e0f2bcccea653a5bc9becaa16f}
+The actual super class, we exploit that most of the functionality needed is already implemented in the \hyperlink{classkodo_1_1coefficient__value__access}{coefficient\-\_\-value\-\_\-access} layer 
+
+Definition at line 49 of file offset\-\_\-coefficient\-\_\-value\-\_\-access.\-hpp.
+
+\hypertarget{classkodo_1_1offset__coefficient__value__access_a4dc52c0872e6ef6bc528d2bfac18f5b7}{\index{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!kodo::offset_coefficient_value_access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ typedef {\bf Super\-::value\-\_\-type} {\bf kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}$<$ Super\-Coder $>$\-::{\bf value\-\_\-type}}}\label{classkodo_1_1offset__coefficient__value__access_a4dc52c0872e6ef6bc528d2bfac18f5b7}
+
+
+
+
+The value type storing the field elements used for the specified field. E.\-g. the binary extension field 2$^\wedge$8 uses uint8\-\_\-t as the value\-\_\-type. 
+
+Definition at line 52 of file offset\-\_\-coefficient\-\_\-value\-\_\-access.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1offset__coefficient__value__access_a7927ceed944b99334083b00afccba7bc}{\index{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}!coefficient\-\_\-offset@{coefficient\-\_\-offset}}
+\index{coefficient\-\_\-offset@{coefficient\-\_\-offset}!kodo::offset_coefficient_value_access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}}
+\subsubsection[{coefficient\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ uint32\-\_\-t {\bf kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}$<$ Super\-Coder $>$\-::coefficient\-\_\-offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1offset__coefficient__value__access_a7927ceed944b99334083b00afccba7bc}
+\begin{DoxyReturn}{Returns}
+The offset currently used 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file offset\-\_\-coefficient\-\_\-value\-\_\-access.\-hpp.
+
+\hypertarget{classkodo_1_1offset__coefficient__value__access_a058c1d828ae5abcc8c5395e41ac97b09}{\index{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}!coefficient\-\_\-value@{coefficient\-\_\-value}}
+\index{coefficient\-\_\-value@{coefficient\-\_\-value}!kodo::offset_coefficient_value_access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}}
+\subsubsection[{coefficient\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ {\bf value\-\_\-type} {\bf kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}$<$ Super\-Coder $>$\-::coefficient\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{const {\bf value\-\_\-type} $\ast$}]{coefficients, }
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1offset__coefficient__value__access_a058c1d828ae5abcc8c5395e41ac97b09}
+
+
+
+
+Access the value of in an array of coefficients 
+\begin{DoxyParams}{Parameters}
+{\em coefficients} & The coefficients array \\
+\hline
+{\em index} & The index of the value we are interested in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value at the specified index 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file offset\-\_\-coefficient\-\_\-value\-\_\-access.\-hpp.
+
+\hypertarget{classkodo_1_1offset__coefficient__value__access_af8296bff7302435fc7468c499ed9c516}{\index{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::offset_coefficient_value_access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ template$<$class Factory $>$ void {\bf kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}$<$ Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1offset__coefficient__value__access_af8296bff7302435fc7468c499ed9c516}
+
+
+Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file offset\-\_\-coefficient\-\_\-value\-\_\-access.\-hpp.
+
+\hypertarget{classkodo_1_1offset__coefficient__value__access_a13bc790d10f25379367c681a4da9eab6}{\index{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}!set\-\_\-coefficient\-\_\-offset@{set\-\_\-coefficient\-\_\-offset}}
+\index{set\-\_\-coefficient\-\_\-offset@{set\-\_\-coefficient\-\_\-offset}!kodo::offset_coefficient_value_access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}}
+\subsubsection[{set\-\_\-coefficient\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void {\bf kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}$<$ Super\-Coder $>$\-::set\-\_\-coefficient\-\_\-offset (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1offset__coefficient__value__access_a13bc790d10f25379367c681a4da9eab6}
+Sets the coefficient offset which will be added when accessing coefficient values 
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 94 of file offset\-\_\-coefficient\-\_\-value\-\_\-access.\-hpp.
+
+\hypertarget{classkodo_1_1offset__coefficient__value__access_ad36f50a55c03fe158d2f769437b2aedf}{\index{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}!set\-\_\-coefficient\-\_\-value@{set\-\_\-coefficient\-\_\-value}}
+\index{set\-\_\-coefficient\-\_\-value@{set\-\_\-coefficient\-\_\-value}!kodo::offset_coefficient_value_access@{kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}}
+\subsubsection[{set\-\_\-coefficient\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void {\bf kodo\-::offset\-\_\-coefficient\-\_\-value\-\_\-access}$<$ Super\-Coder $>$\-::set\-\_\-coefficient\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{coefficients, }
+\item[{uint32\-\_\-t}]{index, }
+\item[{{\bf value\-\_\-type}}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1offset__coefficient__value__access_ad36f50a55c03fe158d2f769437b2aedf}
+
+
+
+
+Access the value of in an array of coefficients 
+\begin{DoxyParams}{Parameters}
+{\em coefficients} & The coefficients array \\
+\hline
+{\em index} & The index of the value we are interested in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value at the specified index 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file offset\-\_\-coefficient\-\_\-value\-\_\-access.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+offset\-\_\-coefficient\-\_\-value\-\_\-access.\-hpp\end{DoxyCompactItemize}

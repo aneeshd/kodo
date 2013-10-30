@@ -1,0 +1,152 @@
+\hypertarget{classkodo_1_1linear__block__decoder__delayed}{\section{kodo\-:\-:linear\-\_\-block\-\_\-decoder\-\_\-delayed$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1linear__block__decoder__delayed}\index{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed$<$ Super\-Coder $>$@{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed$<$ Super\-Coder $>$}}
+}
+
+
+Linear block decoder with delayer backwards substitution.  
+
+
+
+
+{\ttfamily \#include $<$linear\-\_\-block\-\_\-decoder\-\_\-delayed.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:linear\-\_\-block\-\_\-decoder\-\_\-delayed$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1linear__block__decoder__delayed}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1linear__block__decoder__delayed_a389fff9ec0b312fcf6645169684bb316}{typedef Super\-Coder\-::field\-\_\-type \hyperlink{classkodo_1_1linear__block__decoder__delayed_a389fff9ec0b312fcf6645169684bb316}{field\-\_\-type}}\label{classkodo_1_1linear__block__decoder__delayed_a389fff9ec0b312fcf6645169684bb316}
+
+\begin{DoxyCompactList}\small\item\em The field we use. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1linear__block__decoder__delayed_af82c96ec9377c711acfb52c01183dd4c}{typedef field\-\_\-type\-::value\-\_\-type \hyperlink{classkodo_1_1linear__block__decoder__delayed_af82c96ec9377c711acfb52c01183dd4c}{value\-\_\-type}}\label{classkodo_1_1linear__block__decoder__delayed_af82c96ec9377c711acfb52c01183dd4c}
+
+\begin{DoxyCompactList}\small\item\em The value\-\_\-type used to store the field elements. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1linear__block__decoder__delayed_a6d811d8ce9d33c3d0a510acb5ac73cc3}{typedef \\*
+Super\-Coder\-::direction\-\_\-policy \hyperlink{classkodo_1_1linear__block__decoder__delayed_a6d811d8ce9d33c3d0a510acb5ac73cc3}{direction\-\_\-policy}}\label{classkodo_1_1linear__block__decoder__delayed_a6d811d8ce9d33c3d0a510acb5ac73cc3}
+
+\begin{DoxyCompactList}\small\item\em Access the direction policy used by the underlying decoder. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1linear__block__decoder__delayed_a099ad86049d265c8ccf03d1dff458b63}{decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint8\-\_\-t $\ast$coefficients)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1linear__block__decoder__delayed_aeed23d2d884563a337f8ace14b7cc129}{decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint32\-\_\-t symbol\-\_\-index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1linear__block__decoder__delayed_af0711d3777ce49d2d5eb3a68bd62b1d9}{decode\-\_\-coefficients} (\hyperlink{classkodo_1_1linear__block__decoder__delayed_af82c96ec9377c711acfb52c01183dd4c}{value\-\_\-type} $\ast$symbol\-\_\-data, \hyperlink{classkodo_1_1linear__block__decoder__delayed_af82c96ec9377c711acfb52c01183dd4c}{value\-\_\-type} $\ast$coefficients)
+\item 
+void \hyperlink{classkodo_1_1linear__block__decoder__delayed_acede3d3cc6115c91be59a4904c337a8f}{final\-\_\-backward\-\_\-substitute} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed$<$ Super\-Coder $>$}
+
+Linear block decoder with delayer backwards substitution. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000022}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+The delayed backwards substitution can reduce the fill-\/in effect and can therefore improve the decoding throughput when decoding sparse symbols, in particular if the generation size is large. 
+
+Definition at line 26 of file linear\-\_\-block\-\_\-decoder\-\_\-delayed.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1linear__block__decoder__delayed_af0711d3777ce49d2d5eb3a68bd62b1d9}{\index{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed@{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}!decode\-\_\-coefficients@{decode\-\_\-coefficients}}
+\index{decode\-\_\-coefficients@{decode\-\_\-coefficients}!kodo::linear_block_decoder_delayed@{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}}
+\subsubsection[{decode\-\_\-coefficients}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void {\bf kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}$<$ Super\-Coder $>$\-::decode\-\_\-coefficients (
+\begin{DoxyParamCaption}
+\item[{{\bf value\-\_\-type} $\ast$}]{symbol\-\_\-data, }
+\item[{{\bf value\-\_\-type} $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classkodo_1_1linear__block__decoder__delayed_af0711d3777ce49d2d5eb3a68bd62b1d9}
+Performs the forward substitution, but waits with the final backwards substitution until full rank is achieved. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The buffer of the encoded symbol \\
+\hline
+{\em coefficients} & The coding coefficients used to encode the symbol \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file linear\-\_\-block\-\_\-decoder\-\_\-delayed.\-hpp.
+
+
+
+Referenced by kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed$<$ Super\-Coder $>$\-::decode\-\_\-symbol().
+
+\hypertarget{classkodo_1_1linear__block__decoder__delayed_a099ad86049d265c8ccf03d1dff458b63}{\index{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed@{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!kodo::linear_block_decoder_delayed@{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void {\bf kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}$<$ Super\-Coder $>$\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint8\-\_\-t $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1linear__block__decoder__delayed_a099ad86049d265c8ccf03d1dff458b63}
+
+
+
+
+Decodes an encoded symbol according to the coding coefficients stored in the corresponding symbol\-\_\-id.
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The encoded symbol \\
+\hline
+{\em coefficients} & The coding coefficients used to create the encoded symbol \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 42 of file linear\-\_\-block\-\_\-decoder\-\_\-delayed.\-hpp.
+
+\hypertarget{classkodo_1_1linear__block__decoder__delayed_aeed23d2d884563a337f8ace14b7cc129}{\index{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed@{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!kodo::linear_block_decoder_delayed@{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void {\bf kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}$<$ Super\-Coder $>$\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1linear__block__decoder__delayed_aeed23d2d884563a337f8ace14b7cc129}
+
+
+
+
+The decode function for systematic packets i.\-e. specific uncoded symbols. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The uncoded source symbol. \\
+\hline
+{\em symbol\-\_\-index} & The index of this uncoded symbol in the data block. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file linear\-\_\-block\-\_\-decoder\-\_\-delayed.\-hpp.
+
+\hypertarget{classkodo_1_1linear__block__decoder__delayed_acede3d3cc6115c91be59a4904c337a8f}{\index{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed@{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}!final\-\_\-backward\-\_\-substitute@{final\-\_\-backward\-\_\-substitute}}
+\index{final\-\_\-backward\-\_\-substitute@{final\-\_\-backward\-\_\-substitute}!kodo::linear_block_decoder_delayed@{kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}}
+\subsubsection[{final\-\_\-backward\-\_\-substitute}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void {\bf kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed}$<$ Super\-Coder $>$\-::final\-\_\-backward\-\_\-substitute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classkodo_1_1linear__block__decoder__delayed_acede3d3cc6115c91be59a4904c337a8f}
+Performs the final backward substitution that transform the coding matrix from echelon form to reduce echelon form and hence fully decode the generation 
+
+Definition at line 144 of file linear\-\_\-block\-\_\-decoder\-\_\-delayed.\-hpp.
+
+
+
+Referenced by kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed$<$ Super\-Coder $>$\-::decode\-\_\-coefficients(), and kodo\-::linear\-\_\-block\-\_\-decoder\-\_\-delayed$<$ Super\-Coder $>$\-::decode\-\_\-symbol().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+linear\-\_\-block\-\_\-decoder\-\_\-delayed.\-hpp\end{DoxyCompactItemize}

@@ -1,0 +1,68 @@
+\hypertarget{group__coefficient__generator__api}{\section{A\-P\-I}
+\label{group__coefficient__generator__api}\index{A\-P\-I@{A\-P\-I}}
+}
+
+
+The A\-P\-I used by generator layers.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__coefficient__generator__api_gaf9f828a98483445a8ccf785e3a671cb3}{layer\-::generate} (uint8\-\_\-t $\ast$symbol\-\_\-coefficients)
+\item 
+void \hyperlink{group__coefficient__generator__api_ga295e2fc5a74a92ef2281549a31379ba5}{layer\-::generate\-\_\-partial} (uint8\-\_\-t $\ast$symbol\-\_\-coefficients)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{group__coefficient__generator__api_ga4afaaccc0d847e2c8ba021cc4e8c9672}{layer\-::seed} (seed\-\_\-type seed\-\_\-value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The A\-P\-I used by generator layers. 
+
+\subsection{Function Documentation}
+\hypertarget{group__coefficient__generator__api_gaf9f828a98483445a8ccf785e3a671cb3}{\index{A\-P\-I@{A\-P\-I}!generate@{generate}}
+\index{generate@{generate}!API@{A\-P\-I}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::generate (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-coefficients}
+\end{DoxyParamCaption}
+)}}\label{group__coefficient__generator__api_gaf9f828a98483445a8ccf785e3a671cb3}
+Fills the input buffer with symbol coefficients used for either encoding or decoding a symbol. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-coefficient} & Pointer to the memory where the symbol coefficients should be stored. The symbol\-\_\-coefficient buffer should have at least layer\-::coefficients\-\_\-size() capacity. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__coefficient__generator__api_ga295e2fc5a74a92ef2281549a31379ba5}{\index{A\-P\-I@{A\-P\-I}!generate\-\_\-partial@{generate\-\_\-partial}}
+\index{generate\-\_\-partial@{generate\-\_\-partial}!API@{A\-P\-I}}
+\subsubsection[{generate\-\_\-partial}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::generate\-\_\-partial (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-coefficients}
+\end{DoxyParamCaption}
+)}}\label{group__coefficient__generator__api_ga295e2fc5a74a92ef2281549a31379ba5}
+
+
+
+
+The generate partial function must only generate non-\/zero symbol coefficients for symbols which have been set in the Symbol Storage Layer. The primary use-\/case for \hyperlink{group__coefficient__generator__api_ga295e2fc5a74a92ef2281549a31379ba5}{generate\-\_\-partial(uint8\-\_\-t$\ast$)} is to allow encoding to start prior to having all original source symbols available. Fills the input buffer with symbol coefficients used for either encoding or decoding a symbol. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-coefficient} & Pointer to the memory where the symbol coefficients should be stored. The symbol\-\_\-coefficient buffer should have at least layer\-::coefficients\-\_\-size() capacity. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__coefficient__generator__api_ga4afaaccc0d847e2c8ba021cc4e8c9672}{\index{A\-P\-I@{A\-P\-I}!seed@{seed}}
+\index{seed@{seed}!API@{A\-P\-I}}
+\subsubsection[{seed}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::seed (
+\begin{DoxyParamCaption}
+\item[{{\bf seed\-\_\-type}}]{seed\-\_\-value}
+\end{DoxyParamCaption}
+)}}\label{group__coefficient__generator__api_ga4afaaccc0d847e2c8ba021cc4e8c9672}
+Set the seed of the coefficient generator used. Note that not all generators provide the \hyperlink{group__coefficient__generator__api_ga4afaaccc0d847e2c8ba021cc4e8c9672}{seed()} function. E.\-g. a layer using a Vandermonde matrix as source for the symbol coefficients will not implement the \hyperlink{group__coefficient__generator__api_ga4afaaccc0d847e2c8ba021cc4e8c9672}{seed()} function.
+
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to provide the \hyperlink{classlayer_abd92e03d53ae960a9ef1e7a63fa06ccb}{layer\-::seed\-\_\-type} typedef.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & The seed value for the generator. \\
+\hline
+\end{DoxyParams}

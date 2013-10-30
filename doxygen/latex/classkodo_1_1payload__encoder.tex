@@ -1,0 +1,105 @@
+\hypertarget{classkodo_1_1payload__encoder}{\section{kodo\-:\-:payload\-\_\-encoder$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1payload__encoder}\index{kodo\-::payload\-\_\-encoder$<$ Super\-Coder $>$@{kodo\-::payload\-\_\-encoder$<$ Super\-Coder $>$}}
+}
+
+
+The payload encoder splits the payload buffer into symbol header and symbol.  
+
+
+
+
+{\ttfamily \#include $<$payload\-\_\-encoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:payload\-\_\-encoder$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.142857cm]{classkodo_1_1payload__encoder}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1payload__encoder_1_1factory}{factory}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1payload__encoder_a1d22d198e28d8c1fd74057c85ceee16e}{encode} (uint8\-\_\-t $\ast$payload)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1payload__encoder_a582ec311f719711a8e1eed9e19bdcf59}{payload\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::payload\-\_\-encoder$<$ Super\-Coder $>$}
+
+The payload encoder splits the payload buffer into symbol header and symbol. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000033}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+
+
+Definition at line 17 of file payload\-\_\-encoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1payload__encoder_a1d22d198e28d8c1fd74057c85ceee16e}{\index{kodo\-::payload\-\_\-encoder@{kodo\-::payload\-\_\-encoder}!encode@{encode}}
+\index{encode@{encode}!kodo::payload_encoder@{kodo\-::payload\-\_\-encoder}}
+\subsubsection[{encode}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::payload\-\_\-encoder}$<$ Super\-Coder $>$\-::encode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1payload__encoder_a1d22d198e28d8c1fd74057c85ceee16e}
+
+
+
+
+Encodes a symbol to the provided buffer using the following layout\-:
+
+
+\begin{DoxyCode}
++-------------------+---------------+
+|    symbol data    |   symbol \textcolor{keywordtype}{id}   |
++-------------------+---------------+
+\end{DoxyCode}
+
+
+The reason the symbol data is placed first in the payload buffer is to increase the chances of 16 byte-\/alignment of the symbol data. If the variable length id would be place in front of the symbol it would easily become unaligned. Unaligned symbol data access will most likely result in very bad performance.Encodes a symbol into the provided buffer. 
+\begin{DoxyParams}{Parameters}
+{\em payload} & The buffer which should contain the encoded symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the total bytes used from the payload buffer 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file payload\-\_\-encoder.\-hpp.
+
+\hypertarget{classkodo_1_1payload__encoder_a582ec311f719711a8e1eed9e19bdcf59}{\index{kodo\-::payload\-\_\-encoder@{kodo\-::payload\-\_\-encoder}!payload\-\_\-size@{payload\-\_\-size}}
+\index{payload\-\_\-size@{payload\-\_\-size}!kodo::payload_encoder@{kodo\-::payload\-\_\-encoder}}
+\subsubsection[{payload\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::payload\-\_\-encoder}$<$ Super\-Coder $>$\-::payload\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1payload__encoder_a582ec311f719711a8e1eed9e19bdcf59}
+
+
+
+
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the \hyperlink{group__codec__header__api_ga7138ea5d64116c9594774e0a3806eece}{layer\-::factory\-::max\-\_\-header\-\_\-size()} function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the required payload buffer size in bytes 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file payload\-\_\-encoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+payload\-\_\-encoder.\-hpp\end{DoxyCompactItemize}

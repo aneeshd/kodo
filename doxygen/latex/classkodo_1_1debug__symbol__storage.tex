@@ -1,0 +1,204 @@
+\hypertarget{classkodo_1_1debug__symbol__storage}{\section{kodo\-:\-:debug\-\_\-symbol\-\_\-storage$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1debug__symbol__storage}\index{kodo\-::debug\-\_\-symbol\-\_\-storage$<$ Super\-Coder $>$@{kodo\-::debug\-\_\-symbol\-\_\-storage$<$ Super\-Coder $>$}}
+}
+
+
+Print functions for symbol storage. Using this layer the content of the symbol storage can be printed.  
+
+
+
+
+{\ttfamily \#include $<$debug\-\_\-symbol\-\_\-storage.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:debug\-\_\-symbol\-\_\-storage$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1debug__symbol__storage}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Super\-Coder\-::field\-\_\-type \hyperlink{classkodo_1_1debug__symbol__storage_a7736af8ae93d35e1fb1afef311b1d351}{field\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+typedef field\-\_\-type\-::value\-\_\-type \hyperlink{classkodo_1_1debug__symbol__storage_a326cf277cc18223b60788238f9478c78}{value\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1debug__symbol__storage_a966b0de6079fdd9afd1176ab06f6b136}{print\-\_\-storage} (std\-::ostream \&out) const 
+\item 
+void \hyperlink{classkodo_1_1debug__symbol__storage_a5ee36c99fd490bda549cdbbb8e3121af}{print\-\_\-storage\-\_\-value} (std\-::ostream \&out) const 
+\item 
+void \hyperlink{classkodo_1_1debug__symbol__storage_a0b08d0a81c0e1f52cd6cd198d0c126b9}{print\-\_\-symbol} (std\-::ostream \&out, uint32\-\_\-t index) const 
+\item 
+void \hyperlink{classkodo_1_1debug__symbol__storage_a52824ea0ffe5561a72d887c05ba4e1ff}{print\-\_\-symbol\-\_\-value} (std\-::ostream \&out, uint32\-\_\-t index) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1debug__symbol__storage_aa548aa16b1213158dcaed2a1518dd98a}{print\-\_\-symbol\-\_\-info} (std\-::ostream \&out, uint32\-\_\-t index) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::debug\-\_\-symbol\-\_\-storage$<$ Super\-Coder $>$}
+
+Print functions for symbol storage. Using this layer the content of the symbol storage can be printed. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+This layer provides two different ways of printing the symbol data\-: 1) Using the \hyperlink{classkodo_1_1debug__symbol__storage_a966b0de6079fdd9afd1176ab06f6b136}{print\-\_\-storage()} and \hyperlink{classkodo_1_1debug__symbol__storage_a0b08d0a81c0e1f52cd6cd198d0c126b9}{print\-\_\-symbol()} functions, the data will be printed using the numeric value of the bytes stored 2) Using the \hyperlink{classkodo_1_1debug__symbol__storage_a5ee36c99fd490bda549cdbbb8e3121af}{print\-\_\-storage\-\_\-value()} and \hyperlink{classkodo_1_1debug__symbol__storage_a52824ea0ffe5561a72d887c05ba4e1ff}{print\-\_\-symbol\-\_\-value()} functions, the data will be printed using the numeric value of the finite field used
+
+0 I\-: 23 35 222 35 0 10 1 A\-: 33 22 19 01 10 15 2 ?\-: -\/
+
+The lines should be interpret as in the following example\-:
+
+1 A\-: 33 22 19 01 10 15 $^\wedge$ $^\wedge$ $^\wedge$ \begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}{\bf }&{\bf }\\\cline{1-2}
+&+--+ The values of the symbol storage (format depends on \\\cline{1-2}
+&the print function used either bytes or finite field) \\\cline{1-2}
+\end{TabularC}
+$|$ +-\/-\/-\/---+ The symbol state +-\/-\/-\/-\/-\/---+ The symbol's pivot position
+
+A symbol's storage can be in 3 states\-:
+
+A\-: The storage is available, but has not necessarily been initialized. I\-: The storage is available and has been explicitly been initialized by the user through a set\-\_\-symbol() or set\-\_\-symbols() call. ?\-: No storage is available for this symbol. 
+
+Definition at line 54 of file debug\-\_\-symbol\-\_\-storage.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1debug__symbol__storage_a7736af8ae93d35e1fb1afef311b1d351}{\index{kodo\-::debug\-\_\-symbol\-\_\-storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}!field\-\_\-type@{field\-\_\-type}}
+\index{field\-\_\-type@{field\-\_\-type}!kodo::debug_symbol_storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}}
+\subsubsection[{field\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef Super\-Coder\-::field\-\_\-type {\bf kodo\-::debug\-\_\-symbol\-\_\-storage}$<$ Super\-Coder $>$\-::{\bf field\-\_\-type}}}\label{classkodo_1_1debug__symbol__storage_a7736af8ae93d35e1fb1afef311b1d351}
+
+
+
+
+The finite field type used e.\-g. fifi\-::binary8 for the Finite Field 2$^\wedge$8 
+
+Definition at line 59 of file debug\-\_\-symbol\-\_\-storage.\-hpp.
+
+\hypertarget{classkodo_1_1debug__symbol__storage_a326cf277cc18223b60788238f9478c78}{\index{kodo\-::debug\-\_\-symbol\-\_\-storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!kodo::debug_symbol_storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef field\-\_\-type\-::value\-\_\-type {\bf kodo\-::debug\-\_\-symbol\-\_\-storage}$<$ Super\-Coder $>$\-::{\bf value\-\_\-type}}}\label{classkodo_1_1debug__symbol__storage_a326cf277cc18223b60788238f9478c78}
+
+
+
+
+The value type storing the field elements used for the specified field. E.\-g. the binary extension field 2$^\wedge$8 uses uint8\-\_\-t as the value\-\_\-type. 
+
+Definition at line 62 of file debug\-\_\-symbol\-\_\-storage.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1debug__symbol__storage_a966b0de6079fdd9afd1176ab06f6b136}{\index{kodo\-::debug\-\_\-symbol\-\_\-storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}!print\-\_\-storage@{print\-\_\-storage}}
+\index{print\-\_\-storage@{print\-\_\-storage}!kodo::debug_symbol_storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}}
+\subsubsection[{print\-\_\-storage}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::debug\-\_\-symbol\-\_\-storage}$<$ Super\-Coder $>$\-::print\-\_\-storage (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1debug__symbol__storage_a966b0de6079fdd9afd1176ab06f6b136}
+Print all symbols stored in the storage where the symbol data is shown in bytes. 
+\begin{DoxyParams}{Parameters}
+{\em out} & The output stream to print to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file debug\-\_\-symbol\-\_\-storage.\-hpp.
+
+\hypertarget{classkodo_1_1debug__symbol__storage_a5ee36c99fd490bda549cdbbb8e3121af}{\index{kodo\-::debug\-\_\-symbol\-\_\-storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}!print\-\_\-storage\-\_\-value@{print\-\_\-storage\-\_\-value}}
+\index{print\-\_\-storage\-\_\-value@{print\-\_\-storage\-\_\-value}!kodo::debug_symbol_storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}}
+\subsubsection[{print\-\_\-storage\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::debug\-\_\-symbol\-\_\-storage}$<$ Super\-Coder $>$\-::print\-\_\-storage\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1debug__symbol__storage_a5ee36c99fd490bda549cdbbb8e3121af}
+Print all symbols stored in the storage where the symbol data is shown in bytes. 
+\begin{DoxyParams}{Parameters}
+{\em out} & The output stream to print to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file debug\-\_\-symbol\-\_\-storage.\-hpp.
+
+\hypertarget{classkodo_1_1debug__symbol__storage_a0b08d0a81c0e1f52cd6cd198d0c126b9}{\index{kodo\-::debug\-\_\-symbol\-\_\-storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}!print\-\_\-symbol@{print\-\_\-symbol}}
+\index{print\-\_\-symbol@{print\-\_\-symbol}!kodo::debug_symbol_storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}}
+\subsubsection[{print\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::debug\-\_\-symbol\-\_\-storage}$<$ Super\-Coder $>$\-::print\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1debug__symbol__storage_a0b08d0a81c0e1f52cd6cd198d0c126b9}
+Print the bytes of a symbol at a specific index to the output stream 
+\begin{DoxyParams}{Parameters}
+{\em out} & The output stream to print to \\
+\hline
+{\em index} & The index of symbol to print \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file debug\-\_\-symbol\-\_\-storage.\-hpp.
+
+
+
+Referenced by kodo\-::debug\-\_\-symbol\-\_\-storage$<$ deep\-\_\-symbol\-\_\-storage$<$ storage\-\_\-bytes\-\_\-used$<$ storage\-\_\-block\-\_\-info$<$ finite\-\_\-field\-\_\-math$<$ fifi\-::default\-\_\-field$<$ Field $>$\-::type, finite\-\_\-field\-\_\-info$<$ Field, final\-\_\-coder\-\_\-factory\-\_\-pool$<$ rlnc\-\_\-decoder$<$ Field $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$\-::print\-\_\-storage().
+
+\hypertarget{classkodo_1_1debug__symbol__storage_aa548aa16b1213158dcaed2a1518dd98a}{\index{kodo\-::debug\-\_\-symbol\-\_\-storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}!print\-\_\-symbol\-\_\-info@{print\-\_\-symbol\-\_\-info}}
+\index{print\-\_\-symbol\-\_\-info@{print\-\_\-symbol\-\_\-info}!kodo::debug_symbol_storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}}
+\subsubsection[{print\-\_\-symbol\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::debug\-\_\-symbol\-\_\-storage}$<$ Super\-Coder $>$\-::print\-\_\-symbol\-\_\-info (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classkodo_1_1debug__symbol__storage_aa548aa16b1213158dcaed2a1518dd98a}
+Print the bytes of a symbol at a specific index to the output stream 
+\begin{DoxyParams}{Parameters}
+{\em out} & The output stream to print to \\
+\hline
+{\em index} & The index of symbol to print \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 155 of file debug\-\_\-symbol\-\_\-storage.\-hpp.
+
+
+
+Referenced by kodo\-::debug\-\_\-symbol\-\_\-storage$<$ deep\-\_\-symbol\-\_\-storage$<$ storage\-\_\-bytes\-\_\-used$<$ storage\-\_\-block\-\_\-info$<$ finite\-\_\-field\-\_\-math$<$ fifi\-::default\-\_\-field$<$ Field $>$\-::type, finite\-\_\-field\-\_\-info$<$ Field, final\-\_\-coder\-\_\-factory\-\_\-pool$<$ rlnc\-\_\-decoder$<$ Field $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$\-::print\-\_\-symbol(), and kodo\-::debug\-\_\-symbol\-\_\-storage$<$ deep\-\_\-symbol\-\_\-storage$<$ storage\-\_\-bytes\-\_\-used$<$ storage\-\_\-block\-\_\-info$<$ finite\-\_\-field\-\_\-math$<$ fifi\-::default\-\_\-field$<$ Field $>$\-::type, finite\-\_\-field\-\_\-info$<$ Field, final\-\_\-coder\-\_\-factory\-\_\-pool$<$ rlnc\-\_\-decoder$<$ Field $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$\-::print\-\_\-symbol\-\_\-value().
+
+\hypertarget{classkodo_1_1debug__symbol__storage_a52824ea0ffe5561a72d887c05ba4e1ff}{\index{kodo\-::debug\-\_\-symbol\-\_\-storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}!print\-\_\-symbol\-\_\-value@{print\-\_\-symbol\-\_\-value}}
+\index{print\-\_\-symbol\-\_\-value@{print\-\_\-symbol\-\_\-value}!kodo::debug_symbol_storage@{kodo\-::debug\-\_\-symbol\-\_\-storage}}
+\subsubsection[{print\-\_\-symbol\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::debug\-\_\-symbol\-\_\-storage}$<$ Super\-Coder $>$\-::print\-\_\-symbol\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1debug__symbol__storage_a52824ea0ffe5561a72d887c05ba4e1ff}
+Print finite field elements of a specific symbol's data to the output stream 
+\begin{DoxyParams}{Parameters}
+{\em out} & The output stream to print to \\
+\hline
+{\em index} & The index of symbol to print \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file debug\-\_\-symbol\-\_\-storage.\-hpp.
+
+
+
+Referenced by kodo\-::debug\-\_\-symbol\-\_\-storage$<$ deep\-\_\-symbol\-\_\-storage$<$ storage\-\_\-bytes\-\_\-used$<$ storage\-\_\-block\-\_\-info$<$ finite\-\_\-field\-\_\-math$<$ fifi\-::default\-\_\-field$<$ Field $>$\-::type, finite\-\_\-field\-\_\-info$<$ Field, final\-\_\-coder\-\_\-factory\-\_\-pool$<$ rlnc\-\_\-decoder$<$ Field $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$\-::print\-\_\-storage\-\_\-value().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+debug\-\_\-symbol\-\_\-storage.\-hpp\end{DoxyCompactItemize}

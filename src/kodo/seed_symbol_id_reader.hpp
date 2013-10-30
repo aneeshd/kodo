@@ -13,7 +13,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @brief Reads the seed from the symbol_id buffer and uses it to seed
     ///        the generator layer, which produces the corresponding coding
     ///        coefficients.

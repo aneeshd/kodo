@@ -14,7 +14,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup factory_layers
     /// Terminates the layered coder and contains the coder final
     /// factory. The pool factory uses a memory pool to recycle

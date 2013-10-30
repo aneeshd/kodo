@@ -1,0 +1,49 @@
+\hypertarget{group__object__data__type}{\section{Type Requirement}
+\label{group__object__data__type}\index{Type Requirement@{Type Requirement}}
+}
+
+
+The type requirements for an Object\-Data type.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{group__object__data__type_gafcccd13382edeea01629744f28f86984}{object\-\_\-data\-::size} () const 
+\item 
+void \hyperlink{group__object__data__type_ga70e0d8af81b20eb6b4e9818efd2c1502}{object\-\_\-data\-::read} (pointer \&encoder, uint32\-\_\-t offset, uint32\-\_\-t size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The type requirements for an Object\-Data type. Besides the functions mentioned here the Object\-Data type must be Copy\-Constructable 
+
+\subsection{Function Documentation}
+\hypertarget{group__object__data__type_ga70e0d8af81b20eb6b4e9818efd2c1502}{\index{Type Requirement@{Type Requirement}!read@{read}}
+\index{read@{read}!Type Requirement@{Type Requirement}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}void object\-\_\-data\-::read (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer} \&}]{encoder, }
+\item[{uint32\-\_\-t}]{offset, }
+\item[{uint32\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{group__object__data__type_ga70e0d8af81b20eb6b4e9818efd2c1502}
+Initializes the encoder with data from the storage object. 
+\begin{DoxyParams}{Parameters}
+{\em encoder} & A pointer to the encoder to be initialized \\
+\hline
+{\em offset} & The offset in bytes into the storage object \\
+\hline
+{\em size} & The number of bytes to read from the object \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__object__data__type_gafcccd13382edeea01629744f28f86984}{\index{Type Requirement@{Type Requirement}!size@{size}}
+\index{size@{size}!Type Requirement@{Type Requirement}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t object\-\_\-data\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__object__data__type_gafcccd13382edeea01629744f28f86984}
+\begin{DoxyReturn}{Returns}
+The size of the object in bytes 
+\end{DoxyReturn}

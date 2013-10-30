@@ -1,0 +1,119 @@
+\hypertarget{classkodo_1_1user__defined__generator}{\section{kodo\-:\-:user\-\_\-defined\-\_\-generator$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1user__defined__generator}\index{kodo\-::user\-\_\-defined\-\_\-generator$<$ Super\-Coder $>$@{kodo\-::user\-\_\-defined\-\_\-generator$<$ Super\-Coder $>$}}
+}
+
+
+This layer allows the user to specify the coefficients which be used for the coding operation.  
+
+
+
+
+{\ttfamily \#include $<$user\-\_\-defined\-\_\-generator.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:user\-\_\-defined\-\_\-generator$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1user__defined__generator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1user__defined__generator_a071d73519f3dceef49250d00d59df796}{\hyperlink{classkodo_1_1user__defined__generator_a071d73519f3dceef49250d00d59df796}{user\-\_\-defined\-\_\-generator} ()}\label{classkodo_1_1user__defined__generator_a071d73519f3dceef49250d00d59df796}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1user__defined__generator_ae0e894bb737df14bf486bed83d780bdb}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1user__defined__generator_a1e12cb072652f686ef0f4a8e7e6436fc}{generate} (uint8\-\_\-t $\ast$coefficients)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1user__defined__generator_a90a9fd664b818de9ff062c8cc5d4498b}{set\-\_\-user\-\_\-coefficients} (const uint8\-\_\-t $\ast$coefficients)
+\item 
+const uint8\-\_\-t $\ast$ \hyperlink{classkodo_1_1user__defined__generator_ae02b1ed10fac5bc96d161f7d05d1c771}{user\-\_\-coefficients} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::user\-\_\-defined\-\_\-generator$<$ Super\-Coder $>$}
+
+This layer allows the user to specify the coefficients which be used for the coding operation. 
+
+Definition at line 18 of file user\-\_\-defined\-\_\-generator.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1user__defined__generator_a1e12cb072652f686ef0f4a8e7e6436fc}{\index{kodo\-::user\-\_\-defined\-\_\-generator@{kodo\-::user\-\_\-defined\-\_\-generator}!generate@{generate}}
+\index{generate@{generate}!kodo::user_defined_generator@{kodo\-::user\-\_\-defined\-\_\-generator}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void {\bf kodo\-::user\-\_\-defined\-\_\-generator}$<$ Super\-Coder $>$\-::generate (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1user__defined__generator_a1e12cb072652f686ef0f4a8e7e6436fc}
+
+
+
+
+Fills the input buffer with symbol coefficients used for either encoding or decoding a symbol. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-coefficient} & Pointer to the memory where the symbol coefficients should be stored. The symbol\-\_\-coefficient buffer should have at least layer\-::coefficients\-\_\-size() capacity. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file user\-\_\-defined\-\_\-generator.\-hpp.
+
+\hypertarget{classkodo_1_1user__defined__generator_ae0e894bb737df14bf486bed83d780bdb}{\index{kodo\-::user\-\_\-defined\-\_\-generator@{kodo\-::user\-\_\-defined\-\_\-generator}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::user_defined_generator@{kodo\-::user\-\_\-defined\-\_\-generator}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ template$<$class Factory $>$ void {\bf kodo\-::user\-\_\-defined\-\_\-generator}$<$ Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1user__defined__generator_ae0e894bb737df14bf486bed83d780bdb}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file user\-\_\-defined\-\_\-generator.\-hpp.
+
+\hypertarget{classkodo_1_1user__defined__generator_a90a9fd664b818de9ff062c8cc5d4498b}{\index{kodo\-::user\-\_\-defined\-\_\-generator@{kodo\-::user\-\_\-defined\-\_\-generator}!set\-\_\-user\-\_\-coefficients@{set\-\_\-user\-\_\-coefficients}}
+\index{set\-\_\-user\-\_\-coefficients@{set\-\_\-user\-\_\-coefficients}!kodo::user_defined_generator@{kodo\-::user\-\_\-defined\-\_\-generator}}
+\subsubsection[{set\-\_\-user\-\_\-coefficients}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void {\bf kodo\-::user\-\_\-defined\-\_\-generator}$<$ Super\-Coder $>$\-::set\-\_\-user\-\_\-coefficients (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1user__defined__generator_a90a9fd664b818de9ff062c8cc5d4498b}
+
+\begin{DoxyParams}{Parameters}
+{\em coefficients} & The coefficients which should be used next time generate is called \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file user\-\_\-defined\-\_\-generator.\-hpp.
+
+\hypertarget{classkodo_1_1user__defined__generator_ae02b1ed10fac5bc96d161f7d05d1c771}{\index{kodo\-::user\-\_\-defined\-\_\-generator@{kodo\-::user\-\_\-defined\-\_\-generator}!user\-\_\-coefficients@{user\-\_\-coefficients}}
+\index{user\-\_\-coefficients@{user\-\_\-coefficients}!kodo::user_defined_generator@{kodo\-::user\-\_\-defined\-\_\-generator}}
+\subsubsection[{user\-\_\-coefficients}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ const uint8\-\_\-t$\ast$ {\bf kodo\-::user\-\_\-defined\-\_\-generator}$<$ Super\-Coder $>$\-::user\-\_\-coefficients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1user__defined__generator_ae02b1ed10fac5bc96d161f7d05d1c771}
+\begin{DoxyReturn}{Returns}
+The user specified coefficients 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file user\-\_\-defined\-\_\-generator.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+user\-\_\-defined\-\_\-generator.\-hpp\end{DoxyCompactItemize}

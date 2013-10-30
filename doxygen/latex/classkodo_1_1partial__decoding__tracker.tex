@@ -1,0 +1,105 @@
+\hypertarget{classkodo_1_1partial__decoding__tracker}{\section{kodo\-:\-:partial\-\_\-decoding\-\_\-tracker$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1partial__decoding__tracker}\index{kodo\-::partial\-\_\-decoding\-\_\-tracker$<$ Super\-Coder $>$@{kodo\-::partial\-\_\-decoding\-\_\-tracker$<$ Super\-Coder $>$}}
+}
+
+
+This layer can be added to a decoding stack to track when partial decoding is possible i.\-e. when symbols in decoder are fully decoded even though the full data block has not been sent.  
+
+
+
+
+{\ttfamily \#include $<$partial\-\_\-decoding\-\_\-tracker.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:partial\-\_\-decoding\-\_\-tracker$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.926829cm]{classkodo_1_1partial__decoding__tracker}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1partial__decoding__tracker_a6878a4e001ef59da2a892350e1927527}{\hyperlink{classkodo_1_1partial__decoding__tracker_a6878a4e001ef59da2a892350e1927527}{partial\-\_\-decoding\-\_\-tracker} ()}\label{classkodo_1_1partial__decoding__tracker_a6878a4e001ef59da2a892350e1927527}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1partial__decoding__tracker_a64bbc1d447d0132af8896012c2363403}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1partial__decoding__tracker_afe4322f2e809db0c31472b38372e8434}{decode} (uint8\-\_\-t $\ast$payload)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+bool \hyperlink{classkodo_1_1partial__decoding__tracker_ab682c510706b0f941144a2534b4fcd3f}{is\-\_\-partial\-\_\-complete} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::partial\-\_\-decoding\-\_\-tracker$<$ Super\-Coder $>$}
+
+This layer can be added to a decoding stack to track when partial decoding is possible i.\-e. when symbols in decoder are fully decoded even though the full data block has not been sent. 
+
+Detecting whether data has been partially decoded is done by using the decoders' symbol status A\-P\-I in particiular by comparing the \hyperlink{group__decoder__api_ga3a3785c55a9450955473ea46c8d7afb7}{layer\-::symbols\-\_\-decoded()} counters before and after calling \hyperlink{group__payload__codec__api_gaa19a3256acd51356401762ee79d21d95}{layer\-::decode(uint8\-\_\-t$\ast$)}
+
+To figure out which symbols have been partially decoded the decoder's \hyperlink{group__decoder__api_gae4e6fba10d31bdd30b40f80d614faa4d}{layer\-::is\-\_\-symbol\-\_\-decoded(uint32\-\_\-t) const }function can be used. 
+
+Definition at line 40 of file partial\-\_\-decoding\-\_\-tracker.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1partial__decoding__tracker_afe4322f2e809db0c31472b38372e8434}{\index{kodo\-::partial\-\_\-decoding\-\_\-tracker@{kodo\-::partial\-\_\-decoding\-\_\-tracker}!decode@{decode}}
+\index{decode@{decode}!kodo::partial_decoding_tracker@{kodo\-::partial\-\_\-decoding\-\_\-tracker}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::partial\-\_\-decoding\-\_\-tracker}$<$ Super\-Coder $>$\-::decode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1partial__decoding__tracker_afe4322f2e809db0c31472b38372e8434}
+
+
+
+
+Decodes an encoded symbol stored in the payload buffer. 
+\begin{DoxyParams}{Parameters}
+{\em payload} & The buffer storing the payload of an encoded symbol. The payload buffer may be changed by the decode function, an cannot be reused. If the payload is needed in several places make sure to keep a copy of the original payload. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file partial\-\_\-decoding\-\_\-tracker.\-hpp.
+
+\hypertarget{classkodo_1_1partial__decoding__tracker_a64bbc1d447d0132af8896012c2363403}{\index{kodo\-::partial\-\_\-decoding\-\_\-tracker@{kodo\-::partial\-\_\-decoding\-\_\-tracker}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::partial_decoding_tracker@{kodo\-::partial\-\_\-decoding\-\_\-tracker}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ template$<$class Factory $>$ void {\bf kodo\-::partial\-\_\-decoding\-\_\-tracker}$<$ Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1partial__decoding__tracker_a64bbc1d447d0132af8896012c2363403}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file partial\-\_\-decoding\-\_\-tracker.\-hpp.
+
+\hypertarget{classkodo_1_1partial__decoding__tracker_ab682c510706b0f941144a2534b4fcd3f}{\index{kodo\-::partial\-\_\-decoding\-\_\-tracker@{kodo\-::partial\-\_\-decoding\-\_\-tracker}!is\-\_\-partial\-\_\-complete@{is\-\_\-partial\-\_\-complete}}
+\index{is\-\_\-partial\-\_\-complete@{is\-\_\-partial\-\_\-complete}!kodo::partial_decoding_tracker@{kodo\-::partial\-\_\-decoding\-\_\-tracker}}
+\subsubsection[{is\-\_\-partial\-\_\-complete}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ bool {\bf kodo\-::partial\-\_\-decoding\-\_\-tracker}$<$ Super\-Coder $>$\-::is\-\_\-partial\-\_\-complete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1partial__decoding__tracker_ab682c510706b0f941144a2534b4fcd3f}
+\begin{DoxyReturn}{Returns}
+True if the decoding matrix should be partially decoded. 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file partial\-\_\-decoding\-\_\-tracker.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+partial\-\_\-decoding\-\_\-tracker.\-hpp\end{DoxyCompactItemize}

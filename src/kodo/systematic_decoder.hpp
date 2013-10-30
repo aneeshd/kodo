@@ -12,7 +12,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup codec_header_layers
     /// @brief Systematic decoding layer.
     template<class SuperCoder>

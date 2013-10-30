@@ -12,7 +12,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup symbol_id_layers
     /// @brief Base layer for seed symbol id reader and writers
     template<class SuperCoder>

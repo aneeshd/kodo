@@ -1,0 +1,275 @@
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme}{\section{kodo\-:\-:rfc5052\-\_\-partitioning\-\_\-scheme Class Reference}
+\label{classkodo_1_1rfc5052__partitioning__scheme}\index{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}}
+}
+
+
+R\-F\-C5052 block partitioning scheme.  
+
+
+
+
+{\ttfamily \#include $<$rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme_af78177bc60453630e55c7d5ca9887ae6}{\hyperlink{classkodo_1_1rfc5052__partitioning__scheme_af78177bc60453630e55c7d5ca9887ae6}{rfc5052\-\_\-partitioning\-\_\-scheme} ()}\label{classkodo_1_1rfc5052__partitioning__scheme_af78177bc60453630e55c7d5ca9887ae6}
+
+\begin{DoxyCompactList}\small\item\em Create an uninitialized partitioning scheme. \end{DoxyCompactList}\item 
+\hyperlink{classkodo_1_1rfc5052__partitioning__scheme_a4aae176907402fc22d41d26860624c51}{rfc5052\-\_\-partitioning\-\_\-scheme} (uint32\-\_\-t max\-\_\-symbols, uint32\-\_\-t max\-\_\-symbol\-\_\-size, uint32\-\_\-t \hyperlink{classkodo_1_1rfc5052__partitioning__scheme_a169472a094a76d65f42079a2207265d4}{object\-\_\-size})
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1rfc5052__partitioning__scheme_a3fda95b3f78a1ec1b40d66f16bad6fdf}{symbols} (uint32\-\_\-t block\-\_\-id) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1rfc5052__partitioning__scheme_a1ed5a33599a5fe385468a07598f8bc70}{symbol\-\_\-size} (uint32\-\_\-t block\-\_\-id) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1rfc5052__partitioning__scheme_acdef2d0896a69e6942730f5cbfdd1368}{block\-\_\-size} (uint32\-\_\-t block\-\_\-id) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1rfc5052__partitioning__scheme_a654ba05491e531a33b3d3a0f0dab31f7}{byte\-\_\-offset} (uint32\-\_\-t block\-\_\-id) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1rfc5052__partitioning__scheme_ab616a4bf5a0f8c7c6b0f37e06527529f}{bytes\-\_\-used} (uint32\-\_\-t block\-\_\-id) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1rfc5052__partitioning__scheme_a7e149bff4f13117646bedcd133cf2b69}{blocks} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1rfc5052__partitioning__scheme_a169472a094a76d65f42079a2207265d4}{object\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1rfc5052__partitioning__scheme_a0bc62b5ab235f8bd2a0ed492c2576cff}{total\-\_\-symbols} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1rfc5052__partitioning__scheme_a0ee99b22750466351c016424d01f2976}{total\-\_\-block\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\-F\-C5052 block partitioning scheme. 
+
+Takes as input the number of symbols the symbol size and the total length of an object and returns the number the number blocks to use and the symbols and symbol size needed to encode/decode an object of the given size 
+
+Definition at line 21 of file rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme_a4aae176907402fc22d41d26860624c51}{\index{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}!rfc5052\-\_\-partitioning\-\_\-scheme@{rfc5052\-\_\-partitioning\-\_\-scheme}}
+\index{rfc5052\-\_\-partitioning\-\_\-scheme@{rfc5052\-\_\-partitioning\-\_\-scheme}!kodo::rfc5052_partitioning_scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}}
+\subsubsection[{rfc5052\-\_\-partitioning\-\_\-scheme}]{\setlength{\rightskip}{0pt plus 5cm}kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme\-::rfc5052\-\_\-partitioning\-\_\-scheme (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{max\-\_\-symbols, }
+\item[{uint32\-\_\-t}]{max\-\_\-symbol\-\_\-size, }
+\item[{uint32\-\_\-t}]{object\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rfc5052__partitioning__scheme_a4aae176907402fc22d41d26860624c51}
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em max\-\_\-symbols} & the maximum number of symbols in a block \\
+\hline
+{\em max\-\_\-symbol\-\_\-size} & the size in bytes of a symbol \\
+\hline
+{\em object\-\_\-size} & the size in bytes of the whole object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme_acdef2d0896a69e6942730f5cbfdd1368}{\index{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}!block\-\_\-size@{block\-\_\-size}}
+\index{block\-\_\-size@{block\-\_\-size}!kodo::rfc5052_partitioning_scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}}
+\subsubsection[{block\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme\-::block\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{block\-\_\-id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rfc5052__partitioning__scheme_acdef2d0896a69e6942730f5cbfdd1368}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\-\_\-id} & the block index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size of a specific block in bytes 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp.
+
+
+
+Referenced by bytes\-\_\-used().
+
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme_a7e149bff4f13117646bedcd133cf2b69}{\index{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}!blocks@{blocks}}
+\index{blocks@{blocks}!kodo::rfc5052_partitioning_scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}}
+\subsubsection[{blocks}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme\-::blocks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rfc5052__partitioning__scheme_a7e149bff4f13117646bedcd133cf2b69}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+the total number of blocks in the object 
+\end{DoxyReturn}
+
+
+Definition at line 187 of file rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp.
+
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme_a654ba05491e531a33b3d3a0f0dab31f7}{\index{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}!byte\-\_\-offset@{byte\-\_\-offset}}
+\index{byte\-\_\-offset@{byte\-\_\-offset}!kodo::rfc5052_partitioning_scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}}
+\subsubsection[{byte\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme\-::byte\-\_\-offset (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{block\-\_\-id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rfc5052__partitioning__scheme_a654ba05491e531a33b3d3a0f0dab31f7}
+
+
+
+
+
+
+Definition at line 152 of file rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp.
+
+
+
+Referenced by bytes\-\_\-used().
+
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme_ab616a4bf5a0f8c7c6b0f37e06527529f}{\index{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}!bytes\-\_\-used@{bytes\-\_\-used}}
+\index{bytes\-\_\-used@{bytes\-\_\-used}!kodo::rfc5052_partitioning_scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}}
+\subsubsection[{bytes\-\_\-used}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme\-::bytes\-\_\-used (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{block\-\_\-id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rfc5052__partitioning__scheme_ab616a4bf5a0f8c7c6b0f37e06527529f}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\-\_\-id} & the block index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes used in a specific block 
+\end{DoxyReturn}
+
+
+Definition at line 173 of file rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp.
+
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme_a169472a094a76d65f42079a2207265d4}{\index{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}!object\-\_\-size@{object\-\_\-size}}
+\index{object\-\_\-size@{object\-\_\-size}!kodo::rfc5052_partitioning_scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}}
+\subsubsection[{object\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme\-::object\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rfc5052__partitioning__scheme_a169472a094a76d65f42079a2207265d4}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+the size of the object being partitioned 
+\end{DoxyReturn}
+
+
+Definition at line 194 of file rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp.
+
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme_a1ed5a33599a5fe385468a07598f8bc70}{\index{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}!symbol\-\_\-size@{symbol\-\_\-size}}
+\index{symbol\-\_\-size@{symbol\-\_\-size}!kodo::rfc5052_partitioning_scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}}
+\subsubsection[{symbol\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme\-::symbol\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{block\-\_\-id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rfc5052__partitioning__scheme_a1ed5a33599a5fe385468a07598f8bc70}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\-\_\-id} & the block index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size of a symbol in a specific block 
+\end{DoxyReturn}
+
+
+Definition at line 139 of file rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp.
+
+
+
+Referenced by block\-\_\-size().
+
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme_a3fda95b3f78a1ec1b40d66f16bad6fdf}{\index{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}!symbols@{symbols}}
+\index{symbols@{symbols}!kodo::rfc5052_partitioning_scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}}
+\subsubsection[{symbols}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme\-::symbols (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{block\-\_\-id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rfc5052__partitioning__scheme_a3fda95b3f78a1ec1b40d66f16bad6fdf}
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\-\_\-id} & the block index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of symbols in a specific block 
+\end{DoxyReturn}
+
+
+Definition at line 131 of file rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp.
+
+
+
+Referenced by block\-\_\-size().
+
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme_a0ee99b22750466351c016424d01f2976}{\index{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}!total\-\_\-block\-\_\-size@{total\-\_\-block\-\_\-size}}
+\index{total\-\_\-block\-\_\-size@{total\-\_\-block\-\_\-size}!kodo::rfc5052_partitioning_scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}}
+\subsubsection[{total\-\_\-block\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme\-::total\-\_\-block\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rfc5052__partitioning__scheme_a0ee99b22750466351c016424d01f2976}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+The total number of bytes needed to cover all blocks 
+\end{DoxyReturn}
+
+
+Definition at line 208 of file rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp.
+
+\hypertarget{classkodo_1_1rfc5052__partitioning__scheme_a0bc62b5ab235f8bd2a0ed492c2576cff}{\index{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}!total\-\_\-symbols@{total\-\_\-symbols}}
+\index{total\-\_\-symbols@{total\-\_\-symbols}!kodo::rfc5052_partitioning_scheme@{kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme}}
+\subsubsection[{total\-\_\-symbols}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t kodo\-::rfc5052\-\_\-partitioning\-\_\-scheme\-::total\-\_\-symbols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rfc5052__partitioning__scheme_a0bc62b5ab235f8bd2a0ed492c2576cff}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+the total number of symbols in the entire object 
+\end{DoxyReturn}
+
+
+Definition at line 201 of file rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+rfc5052\-\_\-partitioning\-\_\-scheme.\-hpp\end{DoxyCompactItemize}

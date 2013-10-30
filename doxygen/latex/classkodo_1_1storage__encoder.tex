@@ -1,0 +1,72 @@
+\hypertarget{classkodo_1_1storage__encoder}{\section{kodo\-:\-:storage\-\_\-encoder$<$ Encoder\-Type, Block\-Partitioning $>$ Class Template Reference}
+\label{classkodo_1_1storage__encoder}\index{kodo\-::storage\-\_\-encoder$<$ Encoder\-Type, Block\-Partitioning $>$@{kodo\-::storage\-\_\-encoder$<$ Encoder\-Type, Block\-Partitioning $>$}}
+}
+
+
+A storage encoder creates a number of encoders over a sak\-::const\-\_\-storage object.  
+
+
+
+
+{\ttfamily \#include $<$storage\-\_\-encoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:storage\-\_\-encoder$<$ Encoder\-Type, Block\-Partitioning $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classkodo_1_1storage__encoder}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1storage__encoder_a3d83d8ea600f2203d54bda68fb0a0572}{typedef Encoder\-Type\-::factory \hyperlink{classkodo_1_1storage__encoder_a3d83d8ea600f2203d54bda68fb0a0572}{factory}}\label{classkodo_1_1storage__encoder_a3d83d8ea600f2203d54bda68fb0a0572}
+
+\begin{DoxyCompactList}\small\item\em The factory type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classkodo_1_1storage__encoder_a0cb18dc86a8640678b92bc5c8651f9d4}{storage\-\_\-encoder} (typename Encoder\-Type\-::factory \&\hyperlink{classkodo_1_1storage__encoder_a3d83d8ea600f2203d54bda68fb0a0572}{factory}, const sak\-::const\-\_\-storage \&data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Encoder\-Type, class Block\-Partitioning = rfc5052\-\_\-partitioning\-\_\-scheme$>$class kodo\-::storage\-\_\-encoder$<$ Encoder\-Type, Block\-Partitioning $>$}
+
+A storage encoder creates a number of encoders over a sak\-::const\-\_\-storage object. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000061}{Todo}]Missing or incorrectly named unit test \end{DoxyRefDesc}
+If the sak\-::const\-\_\-storage object is too large for a single encoder/decoder pair one may use the storage encoder. \begin{Desc}
+\item[Examples\-: ]\par
+\hyperlink{encode_decode_storage_8cpp-example}{encode\-\_\-decode\-\_\-storage.\-cpp}.\end{Desc}
+
+
+Definition at line 25 of file storage\-\_\-encoder.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classkodo_1_1storage__encoder_a0cb18dc86a8640678b92bc5c8651f9d4}{\index{kodo\-::storage\-\_\-encoder@{kodo\-::storage\-\_\-encoder}!storage\-\_\-encoder@{storage\-\_\-encoder}}
+\index{storage\-\_\-encoder@{storage\-\_\-encoder}!kodo::storage_encoder@{kodo\-::storage\-\_\-encoder}}
+\subsubsection[{storage\-\_\-encoder}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Encoder\-Type , class Block\-Partitioning  = rfc5052\-\_\-partitioning\-\_\-scheme$>$ {\bf kodo\-::storage\-\_\-encoder}$<$ Encoder\-Type, Block\-Partitioning $>$\-::{\bf storage\-\_\-encoder} (
+\begin{DoxyParamCaption}
+\item[{typename Encoder\-Type\-::factory \&}]{factory, }
+\item[{const sak\-::const\-\_\-storage \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1storage__encoder_a0cb18dc86a8640678b92bc5c8651f9d4}
+Constructs a new storage encoder 
+\begin{DoxyParams}{Parameters}
+{\em factory} & the encoder factory to use \\
+\hline
+{\em object} & the object to encode \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 43 of file storage\-\_\-encoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+storage\-\_\-encoder.\-hpp\end{DoxyCompactItemize}

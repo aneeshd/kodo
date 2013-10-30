@@ -1,0 +1,82 @@
+\hypertarget{classkodo_1_1storage__aware__encoder}{\section{kodo\-:\-:storage\-\_\-aware\-\_\-encoder$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1storage__aware__encoder}\index{kodo\-::storage\-\_\-aware\-\_\-encoder$<$ Super\-Coder $>$@{kodo\-::storage\-\_\-aware\-\_\-encoder$<$ Super\-Coder $>$}}
+}
+
+
+Implements the \hyperlink{group__encoder__api_ga10c217148f82a6ed036563d3542cad72}{layer\-::rank()} and \hyperlink{group__encoder__api_ga72b86000f3b686b3d2791e71f4950dc6}{layer\-::is\-\_\-symbol\-\_\-pivot()} functions based on the storage status.  
+
+
+
+
+{\ttfamily \#include $<$storage\-\_\-aware\-\_\-encoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:storage\-\_\-aware\-\_\-encoder$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1storage__aware__encoder}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1storage__aware__encoder_a25d84a021cec32e455bd36f81ee50664}{rank} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+bool \hyperlink{classkodo_1_1storage__aware__encoder_aa0ca84e51f4d6c6efc7a1161c1345a16}{is\-\_\-symbol\-\_\-pivot} (uint32\-\_\-t index) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::storage\-\_\-aware\-\_\-encoder$<$ Super\-Coder $>$}
+
+Implements the \hyperlink{group__encoder__api_ga10c217148f82a6ed036563d3542cad72}{layer\-::rank()} and \hyperlink{group__encoder__api_ga72b86000f3b686b3d2791e71f4950dc6}{layer\-::is\-\_\-symbol\-\_\-pivot()} functions based on the storage status. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000057}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+This kind of functionality is needed when an encoder should be able to support encoding before all symbols are ready. The coefficient generator layers uses this information to create partial coefficient vectors if needed. 
+
+Definition at line 22 of file storage\-\_\-aware\-\_\-encoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1storage__aware__encoder_aa0ca84e51f4d6c6efc7a1161c1345a16}{\index{kodo\-::storage\-\_\-aware\-\_\-encoder@{kodo\-::storage\-\_\-aware\-\_\-encoder}!is\-\_\-symbol\-\_\-pivot@{is\-\_\-symbol\-\_\-pivot}}
+\index{is\-\_\-symbol\-\_\-pivot@{is\-\_\-symbol\-\_\-pivot}!kodo::storage_aware_encoder@{kodo\-::storage\-\_\-aware\-\_\-encoder}}
+\subsubsection[{is\-\_\-symbol\-\_\-pivot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ bool {\bf kodo\-::storage\-\_\-aware\-\_\-encoder}$<$ Super\-Coder $>$\-::is\-\_\-symbol\-\_\-pivot (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1storage__aware__encoder_aa0ca84e51f4d6c6efc7a1161c1345a16}
+
+
+
+
+The symbol pivot indicates whether a symbol is available to either an encoder or decoder. A coefficient generator may use this information when generating coding coefficients. \begin{DoxyReturn}{Returns}
+True if the symbol is available. 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file storage\-\_\-aware\-\_\-encoder.\-hpp.
+
+\hypertarget{classkodo_1_1storage__aware__encoder_a25d84a021cec32e455bd36f81ee50664}{\index{kodo\-::storage\-\_\-aware\-\_\-encoder@{kodo\-::storage\-\_\-aware\-\_\-encoder}!rank@{rank}}
+\index{rank@{rank}!kodo::storage_aware_encoder@{kodo\-::storage\-\_\-aware\-\_\-encoder}}
+\subsubsection[{rank}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::storage\-\_\-aware\-\_\-encoder}$<$ Super\-Coder $>$\-::rank (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1storage__aware__encoder_a25d84a021cec32e455bd36f81ee50664}
+
+
+
+
+The rank of a decoder states how many symbols have been decoded or partially decoded. The rank of an encoder states how many symbols are available for encoding. \begin{DoxyReturn}{Returns}
+the rank of the decoder or encoder 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file storage\-\_\-aware\-\_\-encoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+storage\-\_\-aware\-\_\-encoder.\-hpp\end{DoxyCompactItemize}

@@ -17,7 +17,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @brief A random annex encoder.
     ///
     /// The Random Annex Code has been proposed in the paper "Collecting

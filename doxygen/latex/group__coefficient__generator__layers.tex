@@ -1,0 +1,23 @@
+\hypertarget{group__coefficient__generator__layers}{\section{Layers}
+\label{group__coefficient__generator__layers}\index{Layers@{Layers}}
+}
+
+
+Implementations of the coefficient generator A\-P\-I.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1sparse__uniform__generator}{kodo\-::sparse\-\_\-uniform\-\_\-generator$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em Generate uniformly distributed coefficients with a specific density. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1storage__aware__generator}{kodo\-::storage\-\_\-aware\-\_\-generator$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em The storage aware generator will ensure that \hyperlink{group__coefficient__generator__api_ga295e2fc5a74a92ef2281549a31379ba5}{layer\-::generate\-\_\-partial(uint8\-\_\-t$\ast$)} is called whenever the encoder indicates that it does not have full rank (i.\-e. not all symbols have been specified). \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1uniform__generator}{kodo\-::uniform\-\_\-generator$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em Generates an uniform random coefficient (from the chosen Finite Field) for every symbol. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1user__defined__generator}{kodo\-::user\-\_\-defined\-\_\-generator$<$ Super\-Coder $>$}
+\begin{DoxyCompactList}\small\item\em This layer allows the user to specify the coefficients which be used for the coding operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementations of the coefficient generator A\-P\-I. 

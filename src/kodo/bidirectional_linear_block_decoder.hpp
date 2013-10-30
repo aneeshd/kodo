@@ -22,7 +22,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup decoder_layers
     /// @ingroup codec_layers
     /// @brief Implements basic linear block decoder.

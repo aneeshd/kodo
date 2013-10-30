@@ -1,0 +1,135 @@
+\hypertarget{classkodo_1_1encode__symbol__tracker}{\section{kodo\-:\-:encode\-\_\-symbol\-\_\-tracker$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1encode__symbol__tracker}\index{kodo\-::encode\-\_\-symbol\-\_\-tracker$<$ Super\-Coder $>$@{kodo\-::encode\-\_\-symbol\-\_\-tracker$<$ Super\-Coder $>$}}
+}
+
+
+Counts the number of symbols which have been encoded.  
+
+
+
+
+{\ttfamily \#include $<$encode\-\_\-symbol\-\_\-tracker.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:encode\-\_\-symbol\-\_\-tracker$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1encode__symbol__tracker}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1encode__symbol__tracker_ae799ea4de17cead6de3df2428249a82b}{\hyperlink{classkodo_1_1encode__symbol__tracker_ae799ea4de17cead6de3df2428249a82b}{encode\-\_\-symbol\-\_\-tracker} ()}\label{classkodo_1_1encode__symbol__tracker_ae799ea4de17cead6de3df2428249a82b}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1encode__symbol__tracker_abef531a3f3433727d78b1b9352795452}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1encode__symbol__tracker_a4759ac212e553894ad3fb0775cfc5216}{encode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint8\-\_\-t $\ast$coefficients)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1encode__symbol__tracker_ace33cd516fddc799fdcab68a110f16b3}{encode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint32\-\_\-t symbol\-\_\-index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1encode__symbol__tracker_af2a4c33b0fa86380ad8fa7a9ccbd0a21}{encode\-\_\-symbol\-\_\-count} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::encode\-\_\-symbol\-\_\-tracker$<$ Super\-Coder $>$}
+
+Counts the number of symbols which have been encoded. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000012}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+
+
+Definition at line 16 of file encode\-\_\-symbol\-\_\-tracker.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1encode__symbol__tracker_a4759ac212e553894ad3fb0775cfc5216}{\index{kodo\-::encode\-\_\-symbol\-\_\-tracker@{kodo\-::encode\-\_\-symbol\-\_\-tracker}!encode\-\_\-symbol@{encode\-\_\-symbol}}
+\index{encode\-\_\-symbol@{encode\-\_\-symbol}!kodo::encode_symbol_tracker@{kodo\-::encode\-\_\-symbol\-\_\-tracker}}
+\subsubsection[{encode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::encode\-\_\-symbol\-\_\-tracker}$<$ Super\-Coder $>$\-::encode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint8\-\_\-t $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1encode__symbol__tracker_a4759ac212e553894ad3fb0775cfc5216}
+
+
+
+
+Encodes a symbol according to the symbol coefficients
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The destination buffer for the encoded symbol \\
+\hline
+{\em coefficients} & At this point the symbol id should be initialized with the desired coding coefficients. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file encode\-\_\-symbol\-\_\-tracker.\-hpp.
+
+\hypertarget{classkodo_1_1encode__symbol__tracker_ace33cd516fddc799fdcab68a110f16b3}{\index{kodo\-::encode\-\_\-symbol\-\_\-tracker@{kodo\-::encode\-\_\-symbol\-\_\-tracker}!encode\-\_\-symbol@{encode\-\_\-symbol}}
+\index{encode\-\_\-symbol@{encode\-\_\-symbol}!kodo::encode_symbol_tracker@{kodo\-::encode\-\_\-symbol\-\_\-tracker}}
+\subsubsection[{encode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::encode\-\_\-symbol\-\_\-tracker}$<$ Super\-Coder $>$\-::encode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1encode__symbol__tracker_ace33cd516fddc799fdcab68a110f16b3}
+
+
+
+
+The encode function for systematic packets i.\-e. specific uncoded symbols. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The destination of the uncoded source symbol. \\
+\hline
+{\em symbol\-\_\-index} & The index of this uncoded symbol in the data block. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file encode\-\_\-symbol\-\_\-tracker.\-hpp.
+
+\hypertarget{classkodo_1_1encode__symbol__tracker_af2a4c33b0fa86380ad8fa7a9ccbd0a21}{\index{kodo\-::encode\-\_\-symbol\-\_\-tracker@{kodo\-::encode\-\_\-symbol\-\_\-tracker}!encode\-\_\-symbol\-\_\-count@{encode\-\_\-symbol\-\_\-count}}
+\index{encode\-\_\-symbol\-\_\-count@{encode\-\_\-symbol\-\_\-count}!kodo::encode_symbol_tracker@{kodo\-::encode\-\_\-symbol\-\_\-tracker}}
+\subsubsection[{encode\-\_\-symbol\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::encode\-\_\-symbol\-\_\-tracker}$<$ Super\-Coder $>$\-::encode\-\_\-symbol\-\_\-count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1encode__symbol__tracker_af2a4c33b0fa86380ad8fa7a9ccbd0a21}
+\begin{DoxyReturn}{Returns}
+the symbol encoded counter 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file encode\-\_\-symbol\-\_\-tracker.\-hpp.
+
+\hypertarget{classkodo_1_1encode__symbol__tracker_abef531a3f3433727d78b1b9352795452}{\index{kodo\-::encode\-\_\-symbol\-\_\-tracker@{kodo\-::encode\-\_\-symbol\-\_\-tracker}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::encode_symbol_tracker@{kodo\-::encode\-\_\-symbol\-\_\-tracker}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ template$<$class Factory $>$ void {\bf kodo\-::encode\-\_\-symbol\-\_\-tracker}$<$ Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1encode__symbol__tracker_abef531a3f3433727d78b1b9352795452}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file encode\-\_\-symbol\-\_\-tracker.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+encode\-\_\-symbol\-\_\-tracker.\-hpp\end{DoxyCompactItemize}

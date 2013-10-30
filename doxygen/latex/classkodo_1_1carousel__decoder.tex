@@ -1,0 +1,101 @@
+\hypertarget{classkodo_1_1carousel__decoder}{\section{kodo\-:\-:carousel\-\_\-decoder$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1carousel__decoder}\index{kodo\-::carousel\-\_\-decoder$<$ Super\-Coder $>$@{kodo\-::carousel\-\_\-decoder$<$ Super\-Coder $>$}}
+}
+
+
+Carousel decoder takes symbols produced by a carousel encoder and decodes them.  
+
+
+
+
+{\ttfamily \#include $<$carousel\-\_\-decoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:carousel\-\_\-decoder$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1carousel__decoder}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1carousel__decoder_1_1factory}{factory}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1carousel__decoder_a8446993ce8507a96150d9d667fc2fb24}{typedef \hyperlink{classkodo_1_1carousel__common_aff8e05bd881924ffbfb317d778ff2de6}{carousel\-\_\-common\-::id\-\_\-type} \hyperlink{classkodo_1_1carousel__decoder_a8446993ce8507a96150d9d667fc2fb24}{id\-\_\-type}}\label{classkodo_1_1carousel__decoder_a8446993ce8507a96150d9d667fc2fb24}
+
+\begin{DoxyCompactList}\small\item\em The symbol id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1carousel__decoder_a20021ea31a5800a40363ec04ca6dc653}{decode} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint8\-\_\-t $\ast$symbol\-\_\-header)
+\begin{DoxyCompactList}\small\item\em Reads the symbol header. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1carousel__decoder_ab129f046d2c84d50596ccbfaf50dbee9}{header\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em Can be reimplemented by a symbol header A\-P\-I layer to ensure that enough space is available in the header for some layer specific data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::carousel\-\_\-decoder$<$ Super\-Coder $>$}
+
+Carousel decoder takes symbols produced by a carousel encoder and decodes them. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000025}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+
+
+Definition at line 19 of file carousel\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1carousel__decoder_a20021ea31a5800a40363ec04ca6dc653}{\index{kodo\-::carousel\-\_\-decoder@{kodo\-::carousel\-\_\-decoder}!decode@{decode}}
+\index{decode@{decode}!kodo::carousel_decoder@{kodo\-::carousel\-\_\-decoder}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::carousel\-\_\-decoder}$<$ Super\-Coder $>$\-::decode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-header}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1carousel__decoder_a20021ea31a5800a40363ec04ca6dc653}
+
+
+Reads the symbol header. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The destination buffer for the encoded symbol. \\
+\hline
+{\em symbol\-\_\-header} & At this point the symbol header should be initialized. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file carousel\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1carousel__decoder_ab129f046d2c84d50596ccbfaf50dbee9}{\index{kodo\-::carousel\-\_\-decoder@{kodo\-::carousel\-\_\-decoder}!header\-\_\-size@{header\-\_\-size}}
+\index{header\-\_\-size@{header\-\_\-size}!kodo::carousel_decoder@{kodo\-::carousel\-\_\-decoder}}
+\subsubsection[{header\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::carousel\-\_\-decoder}$<$ Super\-Coder $>$\-::header\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1carousel__decoder_ab129f046d2c84d50596ccbfaf50dbee9}
+
+
+Can be reimplemented by a symbol header A\-P\-I layer to ensure that enough space is available in the header for some layer specific data. 
+
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the \hyperlink{group__codec__header__api_ga7138ea5d64116c9594774e0a3806eece}{layer\-::factory\-::max\-\_\-header\-\_\-size()} function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The size in bytes required for the symbol header buffer. 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file carousel\-\_\-decoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+carousel\-\_\-decoder.\-hpp\end{DoxyCompactItemize}

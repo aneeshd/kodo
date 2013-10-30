@@ -1,0 +1,92 @@
+\hypertarget{classkodo_1_1payload__decoder}{\section{kodo\-:\-:payload\-\_\-decoder$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1payload__decoder}\index{kodo\-::payload\-\_\-decoder$<$ Super\-Coder $>$@{kodo\-::payload\-\_\-decoder$<$ Super\-Coder $>$}}
+}
+
+
+The payload decoder splits the payload buffer into symbol header and symbol.  
+
+
+
+
+{\ttfamily \#include $<$payload\-\_\-decoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:payload\-\_\-decoder$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.297297cm]{classkodo_1_1payload__decoder}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1payload__decoder_1_1factory}{factory}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1payload__decoder_a004c96d9eeb56d4e338bb12e04ba51aa}{decode} (uint8\-\_\-t $\ast$payload)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1payload__decoder_ab951b47cd85fea514bb4c7c999c3e675}{payload\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::payload\-\_\-decoder$<$ Super\-Coder $>$}
+
+The payload decoder splits the payload buffer into symbol header and symbol. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000032}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+
+
+Definition at line 17 of file payload\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1payload__decoder_a004c96d9eeb56d4e338bb12e04ba51aa}{\index{kodo\-::payload\-\_\-decoder@{kodo\-::payload\-\_\-decoder}!decode@{decode}}
+\index{decode@{decode}!kodo::payload_decoder@{kodo\-::payload\-\_\-decoder}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::payload\-\_\-decoder}$<$ Super\-Coder $>$\-::decode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1payload__decoder_a004c96d9eeb56d4e338bb12e04ba51aa}
+
+
+
+
+Unpacks the symbol data and symbol header from the payload buffer. Decodes an encoded symbol stored in the payload buffer. 
+\begin{DoxyParams}{Parameters}
+{\em payload} & The buffer storing the payload of an encoded symbol. The payload buffer may be changed by the decode function, an cannot be reused. If the payload is needed in several places make sure to keep a copy of the original payload. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file payload\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1payload__decoder_ab951b47cd85fea514bb4c7c999c3e675}{\index{kodo\-::payload\-\_\-decoder@{kodo\-::payload\-\_\-decoder}!payload\-\_\-size@{payload\-\_\-size}}
+\index{payload\-\_\-size@{payload\-\_\-size}!kodo::payload_decoder@{kodo\-::payload\-\_\-decoder}}
+\subsubsection[{payload\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::payload\-\_\-decoder}$<$ Super\-Coder $>$\-::payload\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1payload__decoder_ab951b47cd85fea514bb4c7c999c3e675}
+
+
+
+
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the \hyperlink{group__codec__header__api_ga7138ea5d64116c9594774e0a3806eece}{layer\-::factory\-::max\-\_\-header\-\_\-size()} function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the required payload buffer size in bytes 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file payload\-\_\-decoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+payload\-\_\-decoder.\-hpp\end{DoxyCompactItemize}

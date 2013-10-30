@@ -1,0 +1,95 @@
+\hypertarget{group__payload__codec__api}{\section{A\-P\-I}
+\label{group__payload__codec__api}\index{A\-P\-I@{A\-P\-I}}
+}
+
+
+The A\-P\-I used by payload codecs.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{group__payload__codec__api_gae38feedd50372252ded284d12bcf9dab}{layer\-::factory\-::max\-\_\-payload\-\_\-size} () const 
+\item 
+uint32\-\_\-t \hyperlink{group__payload__codec__api_ga8d9deb3b1062947bb305e938ff20689b}{layer\-::encode} (uint8\-\_\-t $\ast$payload)
+\item 
+void \hyperlink{group__payload__codec__api_gaa19a3256acd51356401762ee79d21d95}{layer\-::decode} (uint8\-\_\-t $\ast$payload)
+\item 
+uint32\-\_\-t \hyperlink{group__payload__codec__api_ga210cf0d2ea9c66ac32557ac265eb95c6}{layer\-::recode} (uint8\-\_\-t $\ast$payload)
+\item 
+uint32\-\_\-t \hyperlink{group__payload__codec__api_gae41a009ed90022aab131c1078bf8c773}{layer\-::payload\-\_\-size} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The A\-P\-I used by payload codecs. 
+
+\subsection{Function Documentation}
+\hypertarget{group__payload__codec__api_gaa19a3256acd51356401762ee79d21d95}{\index{A\-P\-I@{A\-P\-I}!decode@{decode}}
+\index{decode@{decode}!API@{A\-P\-I}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::decode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)}}\label{group__payload__codec__api_gaa19a3256acd51356401762ee79d21d95}
+Decodes an encoded symbol stored in the payload buffer. 
+\begin{DoxyParams}{Parameters}
+{\em payload} & The buffer storing the payload of an encoded symbol. The payload buffer may be changed by the decode function, an cannot be reused. If the payload is needed in several places make sure to keep a copy of the original payload. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__payload__codec__api_ga8d9deb3b1062947bb305e938ff20689b}{\index{A\-P\-I@{A\-P\-I}!encode@{encode}}
+\index{encode@{encode}!API@{A\-P\-I}}
+\subsubsection[{encode}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::encode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)}}\label{group__payload__codec__api_ga8d9deb3b1062947bb305e938ff20689b}
+Encodes a symbol into the provided buffer. 
+\begin{DoxyParams}{Parameters}
+{\em payload} & The buffer which should contain the encoded symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the total bytes used from the payload buffer 
+\end{DoxyReturn}
+\hypertarget{group__payload__codec__api_gae38feedd50372252ded284d12bcf9dab}{\index{A\-P\-I@{A\-P\-I}!max\-\_\-payload\-\_\-size@{max\-\_\-payload\-\_\-size}}
+\index{max\-\_\-payload\-\_\-size@{max\-\_\-payload\-\_\-size}!API@{A\-P\-I}}
+\subsubsection[{max\-\_\-payload\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::factory\-::max\-\_\-payload\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__payload__codec__api_gae38feedd50372252ded284d12bcf9dab}
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the \hyperlink{group__payload__codec__api_gae41a009ed90022aab131c1078bf8c773}{layer\-::payload\-\_\-size()} function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the maximum required payload buffer size in bytes 
+\end{DoxyReturn}
+\hypertarget{group__payload__codec__api_gae41a009ed90022aab131c1078bf8c773}{\index{A\-P\-I@{A\-P\-I}!payload\-\_\-size@{payload\-\_\-size}}
+\index{payload\-\_\-size@{payload\-\_\-size}!API@{A\-P\-I}}
+\subsubsection[{payload\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::payload\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__payload__codec__api_gae41a009ed90022aab131c1078bf8c773}
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the \hyperlink{group__codec__header__api_ga7138ea5d64116c9594774e0a3806eece}{layer\-::factory\-::max\-\_\-header\-\_\-size()} function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the required payload buffer size in bytes 
+\end{DoxyReturn}
+\hypertarget{group__payload__codec__api_ga210cf0d2ea9c66ac32557ac265eb95c6}{\index{A\-P\-I@{A\-P\-I}!recode@{recode}}
+\index{recode@{recode}!API@{A\-P\-I}}
+\subsubsection[{recode}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::recode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)}}\label{group__payload__codec__api_ga210cf0d2ea9c66ac32557ac265eb95c6}
+Recodes a symbol into the provided buffer. This function is special for network codes. 
+\begin{DoxyParams}{Parameters}
+{\em payload} & The buffer which should contain the recoded symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the total bytes used from the payload buffer 
+\end{DoxyReturn}

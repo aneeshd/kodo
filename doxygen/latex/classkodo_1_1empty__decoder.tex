@@ -1,0 +1,94 @@
+\hypertarget{classkodo_1_1empty__decoder}{\section{kodo\-:\-:empty\-\_\-decoder$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1empty__decoder}\index{kodo\-::empty\-\_\-decoder$<$ Super\-Coder $>$@{kodo\-::empty\-\_\-decoder$<$ Super\-Coder $>$}}
+}
+
+
+Empty implementation of the \hyperlink{classkodo_1_1empty__decoder_aa700bffb25d17e3e2c819d36ed61308a}{decode\-\_\-symbol(uint8\-\_\-t$\ast$,uint8\-\_\-t$\ast$)} and \hyperlink{classkodo_1_1empty__decoder_aac8f8c663ddeaf9700d1a0fc50674462}{decode\-\_\-symbol(uint8\-\_\-t$\ast$, uint32\-\_\-t)} functions.  
+
+
+
+
+{\ttfamily \#include $<$empty\-\_\-decoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:empty\-\_\-decoder$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1empty__decoder}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1empty__decoder_aa700bffb25d17e3e2c819d36ed61308a}{decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint8\-\_\-t $\ast$symbol\-\_\-coefficients)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1empty__decoder_aac8f8c663ddeaf9700d1a0fc50674462}{decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint32\-\_\-t symbol\-\_\-index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::empty\-\_\-decoder$<$ Super\-Coder $>$}
+
+Empty implementation of the \hyperlink{classkodo_1_1empty__decoder_aa700bffb25d17e3e2c819d36ed61308a}{decode\-\_\-symbol(uint8\-\_\-t$\ast$,uint8\-\_\-t$\ast$)} and \hyperlink{classkodo_1_1empty__decoder_aac8f8c663ddeaf9700d1a0fc50674462}{decode\-\_\-symbol(uint8\-\_\-t$\ast$, uint32\-\_\-t)} functions. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000011}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+
+
+Definition at line 18 of file empty\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1empty__decoder_aa700bffb25d17e3e2c819d36ed61308a}{\index{kodo\-::empty\-\_\-decoder@{kodo\-::empty\-\_\-decoder}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!kodo::empty_decoder@{kodo\-::empty\-\_\-decoder}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::empty\-\_\-decoder}$<$ Super\-Coder $>$\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1empty__decoder_aa700bffb25d17e3e2c819d36ed61308a}
+
+
+
+
+Decodes an encoded symbol according to the coding coefficients stored in the corresponding symbol\-\_\-id.
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The encoded symbol \\
+\hline
+{\em coefficients} & The coding coefficients used to create the encoded symbol \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file empty\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1empty__decoder_aac8f8c663ddeaf9700d1a0fc50674462}{\index{kodo\-::empty\-\_\-decoder@{kodo\-::empty\-\_\-decoder}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!kodo::empty_decoder@{kodo\-::empty\-\_\-decoder}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::empty\-\_\-decoder}$<$ Super\-Coder $>$\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1empty__decoder_aac8f8c663ddeaf9700d1a0fc50674462}
+
+
+
+
+The decode function for systematic packets i.\-e. specific uncoded symbols. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The uncoded source symbol. \\
+\hline
+{\em symbol\-\_\-index} & The index of this uncoded symbol in the data block. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file empty\-\_\-decoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+empty\-\_\-decoder.\-hpp\end{DoxyCompactItemize}

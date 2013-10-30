@@ -9,7 +9,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup symbol_storage_layers
     ///
     /// @brief Defines several functions to retrieve info about the

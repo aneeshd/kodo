@@ -1,0 +1,144 @@
+\hypertarget{classkodo_1_1payload__recoder}{\section{kodo\-:\-:payload\-\_\-recoder$<$ Recoding\-Stack, Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1payload__recoder}\index{kodo\-::payload\-\_\-recoder$<$ Recoding\-Stack, Super\-Coder $>$@{kodo\-::payload\-\_\-recoder$<$ Recoding\-Stack, Super\-Coder $>$}}
+}
+
+
+Implements the recode function for Network Codes.  
+
+
+
+
+{\ttfamily \#include $<$payload\-\_\-recoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:payload\-\_\-recoder$<$ Recoding\-Stack, Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.250000cm]{classkodo_1_1payload__recoder}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1payload__recoder_1_1factory}{factory}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Recoding\-Stack$<$ Super\-Coder $>$ \hyperlink{classkodo_1_1payload__recoder_ae40f7011e88c0b6509efce4fe4182df6}{recode\-\_\-stack}
+\item 
+\hypertarget{classkodo_1_1payload__recoder_a94e44641e051e5a2904543e4cd45c541}{typedef Super\-Coder\-::pointer \hyperlink{classkodo_1_1payload__recoder_a94e44641e051e5a2904543e4cd45c541}{pointer}}\label{classkodo_1_1payload__recoder_a94e44641e051e5a2904543e4cd45c541}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the coder constructed by the factory. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1payload__recoder_adf59d1601c93717e9f17b6baa2f73e31}{typedef recode\-\_\-stack\-::pointer \hyperlink{classkodo_1_1payload__recoder_adf59d1601c93717e9f17b6baa2f73e31}{recode\-\_\-pointer}}\label{classkodo_1_1payload__recoder_adf59d1601c93717e9f17b6baa2f73e31}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the recoding stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1payload__recoder_abc4e07b712377850e90b67eb7dba533f}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1payload__recoder_a859fae103d182ed8076f53d72976441b}{recode} (uint8\-\_\-t $\ast$payload)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1payload__recoder_a09e6d9d43172e206c423ed682a385c74}{payload\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1payload__recoder_a6b77dfcf9a88c7604527897c95d0fbf8}{\hyperlink{classkodo_1_1payload__recoder_adf59d1601c93717e9f17b6baa2f73e31}{recode\-\_\-pointer} \hyperlink{classkodo_1_1payload__recoder_a6b77dfcf9a88c7604527897c95d0fbf8}{m\-\_\-recode\-\_\-stack}}\label{classkodo_1_1payload__recoder_a6b77dfcf9a88c7604527897c95d0fbf8}
+
+\begin{DoxyCompactList}\small\item\em Store the recode stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$template$<$ class $>$ class Recoding\-Stack, class Super\-Coder$>$class kodo\-::payload\-\_\-recoder$<$ Recoding\-Stack, Super\-Coder $>$}
+
+Implements the recode function for Network Codes. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000034}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+The payload recoder layer has been implemented as a simple layer forwarding calls to recode to a proxy encoder. The reason for this design was that recoding could be implemented by almost entirely copying the layers of an encoder. The only difference being that the a special Symbol I\-D layer generating the recoding coefficients and creating the recoded symbol id (or encoding vector). 
+
+Definition at line 24 of file payload\-\_\-recoder.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1payload__recoder_ae40f7011e88c0b6509efce4fe4182df6}{\index{kodo\-::payload\-\_\-recoder@{kodo\-::payload\-\_\-recoder}!recode\-\_\-stack@{recode\-\_\-stack}}
+\index{recode\-\_\-stack@{recode\-\_\-stack}!kodo::payload_recoder@{kodo\-::payload\-\_\-recoder}}
+\subsubsection[{recode\-\_\-stack}]{\setlength{\rightskip}{0pt plus 5cm}template$<$template$<$ class $>$ class Recoding\-Stack, class Super\-Coder$>$ typedef Recoding\-Stack$<$Super\-Coder$>$ {\bf kodo\-::payload\-\_\-recoder}$<$ Recoding\-Stack, Super\-Coder $>$\-::{\bf recode\-\_\-stack}}}\label{classkodo_1_1payload__recoder_ae40f7011e88c0b6509efce4fe4182df6}
+The recoding stack. Any calls not implemented in the recoding stack will be forwarded to the Super\-Coder stack typically via the \hyperlink{classkodo_1_1proxy__layer}{proxy\-\_\-layer} class. 
+
+Definition at line 31 of file payload\-\_\-recoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1payload__recoder_abc4e07b712377850e90b67eb7dba533f}{\index{kodo\-::payload\-\_\-recoder@{kodo\-::payload\-\_\-recoder}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::payload_recoder@{kodo\-::payload\-\_\-recoder}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$template$<$ class $>$ class Recoding\-Stack, class Super\-Coder$>$ template$<$class Factory $>$ void {\bf kodo\-::payload\-\_\-recoder}$<$ Recoding\-Stack, Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1payload__recoder_abc4e07b712377850e90b67eb7dba533f}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file payload\-\_\-recoder.\-hpp.
+
+\hypertarget{classkodo_1_1payload__recoder_a09e6d9d43172e206c423ed682a385c74}{\index{kodo\-::payload\-\_\-recoder@{kodo\-::payload\-\_\-recoder}!payload\-\_\-size@{payload\-\_\-size}}
+\index{payload\-\_\-size@{payload\-\_\-size}!kodo::payload_recoder@{kodo\-::payload\-\_\-recoder}}
+\subsubsection[{payload\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$template$<$ class $>$ class Recoding\-Stack, class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::payload\-\_\-recoder}$<$ Recoding\-Stack, Super\-Coder $>$\-::payload\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1payload__recoder_a09e6d9d43172e206c423ed682a385c74}
+
+
+
+
+Make sure we have enough space for both the payload produced by the main stack and the recoding stack. \begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the \hyperlink{group__codec__header__api_ga7138ea5d64116c9594774e0a3806eece}{layer\-::factory\-::max\-\_\-header\-\_\-size()} function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+the required payload buffer size in bytes 
+\end{DoxyReturn}
+
+
+Definition at line 117 of file payload\-\_\-recoder.\-hpp.
+
+\hypertarget{classkodo_1_1payload__recoder_a859fae103d182ed8076f53d72976441b}{\index{kodo\-::payload\-\_\-recoder@{kodo\-::payload\-\_\-recoder}!recode@{recode}}
+\index{recode@{recode}!kodo::payload_recoder@{kodo\-::payload\-\_\-recoder}}
+\subsubsection[{recode}]{\setlength{\rightskip}{0pt plus 5cm}template$<$template$<$ class $>$ class Recoding\-Stack, class Super\-Coder$>$ uint32\-\_\-t {\bf kodo\-::payload\-\_\-recoder}$<$ Recoding\-Stack, Super\-Coder $>$\-::recode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{payload}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1payload__recoder_a859fae103d182ed8076f53d72976441b}
+
+
+
+
+Recodes a symbol into the provided buffer. This function is special for network codes. 
+\begin{DoxyParams}{Parameters}
+{\em payload} & The buffer which should contain the recoded symbol. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the total bytes used from the payload buffer 
+\end{DoxyReturn}
+
+
+Definition at line 108 of file payload\-\_\-recoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+payload\-\_\-recoder.\-hpp\end{DoxyCompactItemize}

@@ -1,0 +1,153 @@
+\hypertarget{classkodo_1_1rank__callback__decoder}{\section{kodo\-:\-:rank\-\_\-callback\-\_\-decoder$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1rank__callback__decoder}\index{kodo\-::rank\-\_\-callback\-\_\-decoder$<$ Super\-Coder $>$@{kodo\-::rank\-\_\-callback\-\_\-decoder$<$ Super\-Coder $>$}}
+}
+
+
+Allows a callback function to be invoked after rank changed.  
+
+
+
+
+{\ttfamily \#include $<$rank\-\_\-callback\-\_\-decoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:rank\-\_\-callback\-\_\-decoder$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1rank__callback__decoder}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::function$<$ void(uint32\-\_\-t)$>$ \hyperlink{classkodo_1_1rank__callback__decoder_a44bad0740473037f1e3f6a32dec28db9}{rank\-\_\-changed\-\_\-callback}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1rank__callback__decoder_ae217b6d103d1f8856e7e45d5df966935}{\hyperlink{classkodo_1_1rank__callback__decoder_ae217b6d103d1f8856e7e45d5df966935}{rank\-\_\-callback\-\_\-decoder} ()}\label{classkodo_1_1rank__callback__decoder_ae217b6d103d1f8856e7e45d5df966935}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1rank__callback__decoder_a4a65c05528939d8d15a5abfb55d70b52}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1rank__callback__decoder_a1ec61392b090985a1f8d9aff2a57c542}{decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint8\-\_\-t $\ast$coefficients)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1rank__callback__decoder_a133a52aa81876546549cf15c60d04c2d}{decode\-\_\-symbol} (uint8\-\_\-t $\ast$symbol\-\_\-data, uint32\-\_\-t symbol\-\_\-index)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+void \hyperlink{classkodo_1_1rank__callback__decoder_a1bdfbd89baaa93fc50cca6c0941671e9}{set\-\_\-rank\-\_\-changed\-\_\-callback} (const \hyperlink{classkodo_1_1rank__callback__decoder_a44bad0740473037f1e3f6a32dec28db9}{rank\-\_\-changed\-\_\-callback} \&callback)
+\item 
+\hypertarget{classkodo_1_1rank__callback__decoder_aee90041d06fe4074bb7a578461d602e9}{void \hyperlink{classkodo_1_1rank__callback__decoder_aee90041d06fe4074bb7a578461d602e9}{reset\-\_\-rank\-\_\-changed\-\_\-callback} ()}\label{classkodo_1_1rank__callback__decoder_aee90041d06fe4074bb7a578461d602e9}
+
+\begin{DoxyCompactList}\small\item\em Reset rank changed callback function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::rank\-\_\-callback\-\_\-decoder$<$ Super\-Coder $>$}
+
+Allows a callback function to be invoked after rank changed. 
+
+This layer allows a callback function to be assigned to each decoder. After the rank has changed in a decoder, it will automatically invoke the assigned callback function. 
+
+Definition at line 22 of file rank\-\_\-callback\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1rank__callback__decoder_a44bad0740473037f1e3f6a32dec28db9}{\index{kodo\-::rank\-\_\-callback\-\_\-decoder@{kodo\-::rank\-\_\-callback\-\_\-decoder}!rank\-\_\-changed\-\_\-callback@{rank\-\_\-changed\-\_\-callback}}
+\index{rank\-\_\-changed\-\_\-callback@{rank\-\_\-changed\-\_\-callback}!kodo::rank_callback_decoder@{kodo\-::rank\-\_\-callback\-\_\-decoder}}
+\subsubsection[{rank\-\_\-changed\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef std\-::function$<$void (uint32\-\_\-t)$>$ {\bf kodo\-::rank\-\_\-callback\-\_\-decoder}$<$ Super\-Coder $>$\-::{\bf rank\-\_\-changed\-\_\-callback}}}\label{classkodo_1_1rank__callback__decoder_a44bad0740473037f1e3f6a32dec28db9}
+The rank changed callback function. The callback is invoked whenever the rank changed and provides the current rank as a uint32\-\_\-t 
+
+Definition at line 29 of file rank\-\_\-callback\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1rank__callback__decoder_a1ec61392b090985a1f8d9aff2a57c542}{\index{kodo\-::rank\-\_\-callback\-\_\-decoder@{kodo\-::rank\-\_\-callback\-\_\-decoder}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!kodo::rank_callback_decoder@{kodo\-::rank\-\_\-callback\-\_\-decoder}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::rank\-\_\-callback\-\_\-decoder}$<$ Super\-Coder $>$\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint8\-\_\-t $\ast$}]{coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rank__callback__decoder_a1ec61392b090985a1f8d9aff2a57c542}
+
+
+
+
+Invoke rank changed callback Decodes an encoded symbol according to the coding coefficients stored in the corresponding symbol\-\_\-id.
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The encoded symbol \\
+\hline
+{\em coefficients} & The coding coefficients used to create the encoded symbol \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file rank\-\_\-callback\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1rank__callback__decoder_a133a52aa81876546549cf15c60d04c2d}{\index{kodo\-::rank\-\_\-callback\-\_\-decoder@{kodo\-::rank\-\_\-callback\-\_\-decoder}!decode\-\_\-symbol@{decode\-\_\-symbol}}
+\index{decode\-\_\-symbol@{decode\-\_\-symbol}!kodo::rank_callback_decoder@{kodo\-::rank\-\_\-callback\-\_\-decoder}}
+\subsubsection[{decode\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::rank\-\_\-callback\-\_\-decoder}$<$ Super\-Coder $>$\-::decode\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-data, }
+\item[{uint32\-\_\-t}]{symbol\-\_\-index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rank__callback__decoder_a133a52aa81876546549cf15c60d04c2d}
+
+
+
+
+Invoke rank changed callback The decode function for systematic packets i.\-e. specific uncoded symbols. 
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-data} & The uncoded source symbol. \\
+\hline
+{\em symbol\-\_\-index} & The index of this uncoded symbol in the data block. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file rank\-\_\-callback\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1rank__callback__decoder_a4a65c05528939d8d15a5abfb55d70b52}{\index{kodo\-::rank\-\_\-callback\-\_\-decoder@{kodo\-::rank\-\_\-callback\-\_\-decoder}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::rank_callback_decoder@{kodo\-::rank\-\_\-callback\-\_\-decoder}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ template$<$class Factory $>$ void {\bf kodo\-::rank\-\_\-callback\-\_\-decoder}$<$ Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rank__callback__decoder_a4a65c05528939d8d15a5abfb55d70b52}
+
+
+Initializes the coder. 
+
+Reset rank callback function 
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file rank\-\_\-callback\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1rank__callback__decoder_a1bdfbd89baaa93fc50cca6c0941671e9}{\index{kodo\-::rank\-\_\-callback\-\_\-decoder@{kodo\-::rank\-\_\-callback\-\_\-decoder}!set\-\_\-rank\-\_\-changed\-\_\-callback@{set\-\_\-rank\-\_\-changed\-\_\-callback}}
+\index{set\-\_\-rank\-\_\-changed\-\_\-callback@{set\-\_\-rank\-\_\-changed\-\_\-callback}!kodo::rank_callback_decoder@{kodo\-::rank\-\_\-callback\-\_\-decoder}}
+\subsubsection[{set\-\_\-rank\-\_\-changed\-\_\-callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::rank\-\_\-callback\-\_\-decoder}$<$ Super\-Coder $>$\-::set\-\_\-rank\-\_\-changed\-\_\-callback (
+\begin{DoxyParamCaption}
+\item[{const {\bf rank\-\_\-changed\-\_\-callback} \&}]{callback}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1rank__callback__decoder_a1bdfbd89baaa93fc50cca6c0941671e9}
+Set rank changed callback function 
+\begin{DoxyParams}{Parameters}
+{\em callback} & rank changed callback function \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 83 of file rank\-\_\-callback\-\_\-decoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+rank\-\_\-callback\-\_\-decoder.\-hpp\end{DoxyCompactItemize}

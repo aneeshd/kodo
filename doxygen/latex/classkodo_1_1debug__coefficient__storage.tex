@@ -1,0 +1,115 @@
+\hypertarget{classkodo_1_1debug__coefficient__storage}{\section{kodo\-:\-:debug\-\_\-coefficient\-\_\-storage$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1debug__coefficient__storage}\index{kodo\-::debug\-\_\-coefficient\-\_\-storage$<$ Super\-Coder $>$@{kodo\-::debug\-\_\-coefficient\-\_\-storage$<$ Super\-Coder $>$}}
+}
+
+
+Print functions for coefficient storage.  
+
+
+
+
+{\ttfamily \#include $<$debug\-\_\-coefficient\-\_\-storage.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:debug\-\_\-coefficient\-\_\-storage$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1debug__coefficient__storage}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Super\-Coder\-::field\-\_\-type \hyperlink{classkodo_1_1debug__coefficient__storage_a84bcc1645af839927355175c06c9ab6a}{field\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+typedef field\-\_\-type\-::value\-\_\-type \hyperlink{classkodo_1_1debug__coefficient__storage_a11acae745ea1f84a2e73816e4dfe64ec}{value\-\_\-type}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1debug__coefficient__storage_ab32d8d72fba9711e21f354dec49eac70}{print\-\_\-coefficient\-\_\-vector\-\_\-values} (std\-::ostream \&out)
+\item 
+void \hyperlink{classkodo_1_1debug__coefficient__storage_add771319983c0e4a2d57fd8753b5f6c9}{print\-\_\-coefficient\-\_\-vector\-\_\-value} (std\-::ostream \&out, uint32\-\_\-t index)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::debug\-\_\-coefficient\-\_\-storage$<$ Super\-Coder $>$}
+
+Print functions for coefficient storage. 
+
+This layer implements useful functions to print stored coefficients 
+
+Definition at line 22 of file debug\-\_\-coefficient\-\_\-storage.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1debug__coefficient__storage_a84bcc1645af839927355175c06c9ab6a}{\index{kodo\-::debug\-\_\-coefficient\-\_\-storage@{kodo\-::debug\-\_\-coefficient\-\_\-storage}!field\-\_\-type@{field\-\_\-type}}
+\index{field\-\_\-type@{field\-\_\-type}!kodo::debug_coefficient_storage@{kodo\-::debug\-\_\-coefficient\-\_\-storage}}
+\subsubsection[{field\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef Super\-Coder\-::field\-\_\-type {\bf kodo\-::debug\-\_\-coefficient\-\_\-storage}$<$ Super\-Coder $>$\-::{\bf field\-\_\-type}}}\label{classkodo_1_1debug__coefficient__storage_a84bcc1645af839927355175c06c9ab6a}
+
+
+
+
+The finite field type used e.\-g. fifi\-::binary8 for the Finite Field 2$^\wedge$8 
+
+Definition at line 27 of file debug\-\_\-coefficient\-\_\-storage.\-hpp.
+
+\hypertarget{classkodo_1_1debug__coefficient__storage_a11acae745ea1f84a2e73816e4dfe64ec}{\index{kodo\-::debug\-\_\-coefficient\-\_\-storage@{kodo\-::debug\-\_\-coefficient\-\_\-storage}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!kodo::debug_coefficient_storage@{kodo\-::debug\-\_\-coefficient\-\_\-storage}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef field\-\_\-type\-::value\-\_\-type {\bf kodo\-::debug\-\_\-coefficient\-\_\-storage}$<$ Super\-Coder $>$\-::{\bf value\-\_\-type}}}\label{classkodo_1_1debug__coefficient__storage_a11acae745ea1f84a2e73816e4dfe64ec}
+
+
+
+
+The value type storing the field elements used for the specified field. E.\-g. the binary extension field 2$^\wedge$8 uses uint8\-\_\-t as the value\-\_\-type. 
+
+Definition at line 30 of file debug\-\_\-coefficient\-\_\-storage.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1debug__coefficient__storage_add771319983c0e4a2d57fd8753b5f6c9}{\index{kodo\-::debug\-\_\-coefficient\-\_\-storage@{kodo\-::debug\-\_\-coefficient\-\_\-storage}!print\-\_\-coefficient\-\_\-vector\-\_\-value@{print\-\_\-coefficient\-\_\-vector\-\_\-value}}
+\index{print\-\_\-coefficient\-\_\-vector\-\_\-value@{print\-\_\-coefficient\-\_\-vector\-\_\-value}!kodo::debug_coefficient_storage@{kodo\-::debug\-\_\-coefficient\-\_\-storage}}
+\subsubsection[{print\-\_\-coefficient\-\_\-vector\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::debug\-\_\-coefficient\-\_\-storage}$<$ Super\-Coder $>$\-::print\-\_\-coefficient\-\_\-vector\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1debug__coefficient__storage_add771319983c0e4a2d57fd8753b5f6c9}
+Prints a vector of coefficients 
+\begin{DoxyParams}{Parameters}
+{\em out} & The output stream to print to \\
+\hline
+{\em index} & The index of the coefficients vector to print \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file debug\-\_\-coefficient\-\_\-storage.\-hpp.
+
+
+
+Referenced by kodo\-::debug\-\_\-coefficient\-\_\-storage$<$ coefficient\-\_\-value\-\_\-access$<$ coefficient\-\_\-storage$<$ coefficient\-\_\-info$<$ debug\-\_\-symbol\-\_\-storage$<$ deep\-\_\-symbol\-\_\-storage$<$ storage\-\_\-bytes\-\_\-used$<$ storage\-\_\-block\-\_\-info$<$ finite\-\_\-field\-\_\-math$<$ fifi\-::default\-\_\-field$<$ Field $>$\-::type, finite\-\_\-field\-\_\-info$<$ Field, final\-\_\-coder\-\_\-factory\-\_\-pool$<$ rlnc\-\_\-decoder$<$ Field $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$ $>$\-::print\-\_\-coefficient\-\_\-vector\-\_\-values().
+
+\hypertarget{classkodo_1_1debug__coefficient__storage_ab32d8d72fba9711e21f354dec49eac70}{\index{kodo\-::debug\-\_\-coefficient\-\_\-storage@{kodo\-::debug\-\_\-coefficient\-\_\-storage}!print\-\_\-coefficient\-\_\-vector\-\_\-values@{print\-\_\-coefficient\-\_\-vector\-\_\-values}}
+\index{print\-\_\-coefficient\-\_\-vector\-\_\-values@{print\-\_\-coefficient\-\_\-vector\-\_\-values}!kodo::debug_coefficient_storage@{kodo\-::debug\-\_\-coefficient\-\_\-storage}}
+\subsubsection[{print\-\_\-coefficient\-\_\-vector\-\_\-values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::debug\-\_\-coefficient\-\_\-storage}$<$ Super\-Coder $>$\-::print\-\_\-coefficient\-\_\-vector\-\_\-values (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1debug__coefficient__storage_ab32d8d72fba9711e21f354dec49eac70}
+Prints the decoding matrix to the output stream 
+\begin{DoxyParams}{Parameters}
+{\em out} & The output stream to print to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file debug\-\_\-coefficient\-\_\-storage.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+debug\-\_\-coefficient\-\_\-storage.\-hpp\end{DoxyCompactItemize}

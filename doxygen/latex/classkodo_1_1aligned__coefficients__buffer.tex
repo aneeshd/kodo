@@ -1,0 +1,102 @@
+\hypertarget{classkodo_1_1aligned__coefficients__buffer}{\section{kodo\-:\-:aligned\-\_\-coefficients\-\_\-buffer$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1aligned__coefficients__buffer}\index{kodo\-::aligned\-\_\-coefficients\-\_\-buffer$<$ Super\-Coder $>$@{kodo\-::aligned\-\_\-coefficients\-\_\-buffer$<$ Super\-Coder $>$}}
+}
+
+
+Helper layer for layers that require a buffer for storing symbol coefficients. The storage is uninitialized. The buffer is guaranteed to be aligned (on a 16 byte boundary).  
+
+
+
+
+{\ttfamily \#include $<$aligned\-\_\-coefficients\-\_\-buffer.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:aligned\-\_\-coefficients\-\_\-buffer$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.385516cm]{classkodo_1_1aligned__coefficients__buffer}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Super\-Coder\-::pointer \hyperlink{classkodo_1_1aligned__coefficients__buffer_acb8a6277e85aec287e8d55b75d9d194f}{pointer}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1aligned__coefficients__buffer_a6522051ba0c85adc914e13ecb107ba53}{typedef boost\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classkodo_1_1aligned__coefficients__buffer}{aligned\-\_\-coefficients\-\_\-buffer}\\*
+$<$ Super\-Coder $>$ $>$ \hyperlink{classkodo_1_1aligned__coefficients__buffer_a6522051ba0c85adc914e13ecb107ba53}{this\-\_\-pointer}}\label{classkodo_1_1aligned__coefficients__buffer_a6522051ba0c85adc914e13ecb107ba53}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the type of this layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1aligned__coefficients__buffer_a424523156543710afd6a4e87c84e8c76}{construct} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1aligned__coefficients__buffer_a055b8fdec9a3f1bfbfe1d3e429bb7d33}{typedef std\-::vector$<$ uint8\-\_\-t, \\*
+sak\-::aligned\-\_\-allocator\\*
+$<$ uint8\-\_\-t $>$ $>$ \hyperlink{classkodo_1_1aligned__coefficients__buffer_a055b8fdec9a3f1bfbfe1d3e429bb7d33}{aligned\-\_\-vector}}\label{classkodo_1_1aligned__coefficients__buffer_a055b8fdec9a3f1bfbfe1d3e429bb7d33}
+
+\begin{DoxyCompactList}\small\item\em The storage type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1aligned__coefficients__buffer_ac2930a2afae8407244486e0f9a2ba787}{\hyperlink{classkodo_1_1aligned__coefficients__buffer_a055b8fdec9a3f1bfbfe1d3e429bb7d33}{aligned\-\_\-vector} \hyperlink{classkodo_1_1aligned__coefficients__buffer_ac2930a2afae8407244486e0f9a2ba787}{m\-\_\-coefficients}}\label{classkodo_1_1aligned__coefficients__buffer_ac2930a2afae8407244486e0f9a2ba787}
+
+\begin{DoxyCompactList}\small\item\em Temp symbol id (with aligned memory) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::aligned\-\_\-coefficients\-\_\-buffer$<$ Super\-Coder $>$}
+
+Helper layer for layers that require a buffer for storing symbol coefficients. The storage is uninitialized. The buffer is guaranteed to be aligned (on a 16 byte boundary). 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Missing or incorrectly named unit test \end{DoxyRefDesc}
+
+
+Definition at line 22 of file aligned\-\_\-coefficients\-\_\-buffer.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classkodo_1_1aligned__coefficients__buffer_acb8a6277e85aec287e8d55b75d9d194f}{\index{kodo\-::aligned\-\_\-coefficients\-\_\-buffer@{kodo\-::aligned\-\_\-coefficients\-\_\-buffer}!pointer@{pointer}}
+\index{pointer@{pointer}!kodo::aligned_coefficients_buffer@{kodo\-::aligned\-\_\-coefficients\-\_\-buffer}}
+\subsubsection[{pointer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ typedef Super\-Coder\-::pointer {\bf kodo\-::aligned\-\_\-coefficients\-\_\-buffer}$<$ Super\-Coder $>$\-::{\bf pointer}}}\label{classkodo_1_1aligned__coefficients__buffer_acb8a6277e85aec287e8d55b75d9d194f}
+
+
+
+
+
+
+Definition at line 27 of file aligned\-\_\-coefficients\-\_\-buffer.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1aligned__coefficients__buffer_a424523156543710afd6a4e87c84e8c76}{\index{kodo\-::aligned\-\_\-coefficients\-\_\-buffer@{kodo\-::aligned\-\_\-coefficients\-\_\-buffer}!construct@{construct}}
+\index{construct@{construct}!kodo::aligned_coefficients_buffer@{kodo\-::aligned\-\_\-coefficients\-\_\-buffer}}
+\subsubsection[{construct}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ template$<$class Factory $>$ void {\bf kodo\-::aligned\-\_\-coefficients\-\_\-buffer}$<$ Super\-Coder $>$\-::construct (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1aligned__coefficients__buffer_a424523156543710afd6a4e87c84e8c76}
+
+
+Constructs the coder with the maximum parameters it will ever see. A coder may only be constructed O\-N\-C\-E, but initialized many times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 37 of file aligned\-\_\-coefficients\-\_\-buffer.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+aligned\-\_\-coefficients\-\_\-buffer.\-hpp\end{DoxyCompactItemize}

@@ -9,7 +9,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup storage_info_layers
     ///
     /// @brief Provides access to the number of useful bytes used out of the

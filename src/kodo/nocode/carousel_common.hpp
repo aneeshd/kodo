@@ -7,7 +7,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// Carousel common info shared between encoder
     /// and decoder
     class carousel_common

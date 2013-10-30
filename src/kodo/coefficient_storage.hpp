@@ -11,7 +11,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup coefficient_storage_layers
     /// @brief Provides storage and access to the coding coefficients
     ///        used during encoding and decoding.

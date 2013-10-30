@@ -1,0 +1,194 @@
+\hypertarget{rank_callback_8cpp-example}{\section{rank\-\_\-callback.\-cpp}
+}
+It may be that we want a function to be called on some event within the decoder. This can be done using callback functions. The following example illustrates how this can be done by adding the rank\-\_\-callback\-\_\-decoder layer to the decoder stack and how the rank changed event can be handled in three different ways. Other callback layers could also be used instead of the rank callback layer provided that they are added at the correct position in the stack.
+
+
+\begin{DoxyCodeInclude}
+\textcolor{comment}{// Copyright Steinwurf ApS 2011-2013.}
+\textcolor{comment}{// Distributed under the "STEINWURF RESEARCH LICENSE 1.0".}
+\textcolor{comment}{// See accompanying file LICENSE.rst or}
+\textcolor{comment}{// http://www.steinwurf.com/licensing}
+
+
+\textcolor{preprocessor}{#include <functional>}
+
+\textcolor{preprocessor}{#include <kodo/rlnc/full\_vector\_codes.hpp>}
+\textcolor{preprocessor}{#include <kodo/rank\_callback\_decoder.hpp>}
+
+\textcolor{keyword}{namespace }kodo
+\{
+    \textcolor{comment}{// Added rank\_callback layer to decoder stack}
+    \textcolor{keyword}{template}<\textcolor{keyword}{class} Field>
+    \textcolor{keyword}{class }full\_rlnc\_callback\_decoder
+        : \textcolor{keyword}{public} \textcolor{comment}{// Payload API}
+                 payload\_decoder<
+                 \textcolor{comment}{// Codec Header API}
+                 systematic\_decoder<
+                 symbol\_id\_decoder<
+                 \textcolor{comment}{// Symbol ID API}
+                 plain\_symbol\_id\_reader<
+                 \textcolor{comment}{// Codec API}
+
+                 \textcolor{comment}{// rank\_callback layer is inserted in "Codec API" which it}
+                 \textcolor{comment}{// designed for. It has to be inserted into the stack above}
+                 \textcolor{comment}{// layers that can change the rank during decoding}
+                 rank\_callback\_decoder<
+
+                 aligned\_coefficients\_decoder<
+                 forward\_linear\_block\_decoder<
+                 symbol\_decoding\_status\_counter<
+                 symbol\_decoding\_status\_tracker<
+                 \textcolor{comment}{// Coefficient Storage API}
+                 coefficient\_value\_access<
+                 coefficient\_storage<
+                 coefficient\_info<
+                 \textcolor{comment}{// Storage API}
+                 deep\_symbol\_storage<
+                 storage\_bytes\_used<
+                 storage\_block\_info<
+                 \textcolor{comment}{// Finite Field API}
+                 finite\_field\_math<typename fifi::default\_field<Field>::type,
+                 finite\_field\_info<Field,
+                 \textcolor{comment}{// Factory API}
+                 final\_coder\_factory\_pool<
+                 \textcolor{comment}{// Final type}
+                 full\_rlnc\_callback\_decoder<Field>
+                     > > > > > > > > > > > > > > > > > >
+    \{\};
+\}
+
+\textcolor{comment}{// Typdefs for the encoder/decoder type we wish to use}
+\textcolor{keyword}{typedef} \hyperlink{classkodo_1_1full__rlnc__encoder}{kodo::full\_rlnc\_encoder<fifi::binary8>} 
+      \hyperlink{classkodo_1_1full__rlnc__encoder}{rlnc\_encoder};
+\textcolor{keyword}{typedef} \hyperlink{classkodo_1_1full__rlnc__callback__decoder}{kodo::full\_rlnc\_callback\_decoder<fifi::binary8>} 
+      \hyperlink{classkodo_1_1full__rlnc__callback__decoder}{rlnc\_decoder};
+
+\textcolor{comment}{// Global function as callback handler}
+\textcolor{keywordtype}{void} rank\_changed\_event(uint32\_t rank)
+\{
+    std::cout << \textcolor{stringliteral}{"Rank changed to "} << rank << std::endl;
+\}
+
+\textcolor{comment}{// Global function as callback handler with pointer to the calling decoder}
+\textcolor{comment}{// as parameter}
+\textcolor{keywordtype}{void} rank\_changed\_event2(boost::weak\_ptr<rlnc\_decoder> w\_decoder, uint32\_t rank)
+\{
+    \textcolor{keywordflow}{if} ( boost::shared\_ptr<rlnc\_decoder> decoder = w\_decoder.lock() )
+    \{
+        std::cout << \textcolor{stringliteral}{"Rank changed to "} << rank << \textcolor{stringliteral}{"/"} <<
+            decoder->symbols() << std::endl;
+    \}
+\}
+
+\textcolor{comment}{// Some class}
+\textcolor{keyword}{class }\hyperlink{classcallback__handler}{callback\_handler}
+\{
+    \textcolor{keyword}{public}:
+
+        \textcolor{comment}{// Member function as callback handler}
+        \textcolor{keywordtype}{void} rank\_changed\_event3(uint32\_t rank)
+        \{
+            std::cout << \textcolor{stringliteral}{"Rank changed to "} << rank << std::endl;
+        \}
+\};
+
+\textcolor{keywordtype}{int} main()
+\{
+    \textcolor{comment}{// Set the number of symbols (i.e. the generation size in RLNC}
+    \textcolor{comment}{// terminology) and the size of a symbol in bytes}
+    uint32\_t symbols = 8;
+    uint32\_t symbol\_size = 160;
+
+    \textcolor{comment}{// In the following we will make an encoder/decoder factory.}
+    \textcolor{comment}{// The factories are used to build actual encoders/decoders}
+    \hyperlink{classkodo_1_1payload__encoder_1_1factory}{rlnc\_encoder::factory} encoder\_factory(symbols, symbol\_size);
+    \textcolor{keyword}{auto} encoder = encoder\_factory.build();
+
+    \hyperlink{classkodo_1_1payload__decoder_1_1factory}{rlnc\_decoder::factory} decoder\_factory(symbols, symbol\_size);
+    \textcolor{keyword}{auto} decoder = decoder\_factory.build();
+
+
+    \textcolor{comment}{// The following three code blocks illustrates three common ways that}
+    \textcolor{comment}{// a callback function may be set and used.}
+    \textcolor{comment}{// You may comment in the code block that you want to test.}
+
+
+    \textcolor{comment}{//  // Callback option 1:}
+    \textcolor{comment}{//  // Set callback for decoder to be a global function}
+    \textcolor{comment}{//}
+    \textcolor{comment}{//  // Set callback handler}
+    \textcolor{comment}{//  decoder->set\_rank\_changed\_callback( rank\_changed\_event );}
+
+
+
+    \textcolor{comment}{// Callback option 2:}
+    \textcolor{comment}{// Set callback for decoder to be a global function that takes a}
+    \textcolor{comment}{// pointer to the calling decoder as an additional argument}
+
+    \textcolor{comment}{// Gets a weak pointer to decoder to ensure that our callback}
+    \textcolor{comment}{// doesn't prevent kodo from freeing memory}
+    boost::weak\_ptr<rlnc\_decoder> w\_ptr(decoder);
+
+    \textcolor{comment}{// Set callback handler}
+    decoder->set\_rank\_changed\_callback (
+        std::bind( &rank\_changed\_event2, w\_ptr, std::placeholders::\_1 )
+    );
+
+
+
+    \textcolor{comment}{//  // Callback option 3:}
+    \textcolor{comment}{//  // Set callback for decoder to be a member function of some class}
+    \textcolor{comment}{//  // This method is using lambda expressions which is not yet available in}
+    \textcolor{comment}{//  // all compilers.}
+    \textcolor{comment}{//}
+    \textcolor{comment}{//  // Declare a class to handle callback}
+    \textcolor{comment}{//  callback\_handler handler;}
+    \textcolor{comment}{//}
+    \textcolor{comment}{//  // Set callback handler}
+    \textcolor{comment}{//  decoder->set\_rank\_changed\_callback (}
+    \textcolor{comment}{//      [&] (uint32\_t rank) \{ handler.rank\_changed\_event3( rank ); \}}
+    \textcolor{comment}{//  );}
+
+
+
+    \textcolor{comment}{// Allocate some storage for a "payload" the payload is what we would}
+    \textcolor{comment}{// eventually send over a network}
+    std::vector<uint8\_t> payload(encoder->payload\_size());
+
+    \textcolor{comment}{// Allocate some data to encode. In this case we make a buffer with the}
+    \textcolor{comment}{// same size as the encoder's block size (the max. amount a single encoder}
+    \textcolor{comment}{// can encode)}
+    std::vector<uint8\_t> data\_in(encoder->block\_size(), \textcolor{charliteral}{'x'});
+
+
+    \textcolor{comment}{// Assign the data buffer to the encoder so that we may start}
+    \textcolor{comment}{// to produce encoded symbols from it}
+    encoder->set\_symbols(sak::storage(data\_in));
+
+    \textcolor{keywordflow}{while}( !decoder->is\_complete() )
+    \{
+        \textcolor{comment}{// Encode a packet into the payload buffer}
+        encoder->encode( &payload[0] );
+
+        \textcolor{comment}{// Pass that packet to the decoder}
+        decoder->decode( &payload[0] );
+    \}
+
+    \textcolor{comment}{// The decoder is complete, now copy the symbols from the decoder}
+    std::vector<uint8\_t> data\_out(decoder->block\_size());
+    decoder->copy\_symbols(sak::storage(data\_out));
+
+    \textcolor{comment}{// Check we properly decoded the data}
+    \textcolor{keywordflow}{if} (std::equal(data\_out.begin(), data\_out.end(), data\_in.begin()))
+    \{
+        std::cout << \textcolor{stringliteral}{"Data decoded correctly"} << std::endl;
+    \}
+    \textcolor{keywordflow}{else}
+    \{
+        std::cout << \textcolor{stringliteral}{"Unexpected failure to decode "}
+                  << \textcolor{stringliteral}{"please file a bug report :)"} << std::endl;
+    \}
+
+\}
+\end{DoxyCodeInclude}
+ 

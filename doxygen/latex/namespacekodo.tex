@@ -1,0 +1,784 @@
+\hypertarget{namespacekodo}{\section{kodo Namespace Reference}
+\label{namespacekodo}\index{kodo@{kodo}}
+}
+
+
+Here we define the stacks which should be tested.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1aligned__coefficients__buffer}{aligned\-\_\-coefficients\-\_\-buffer}
+\begin{DoxyCompactList}\small\item\em Helper layer for layers that require a buffer for storing symbol coefficients. The storage is uninitialized. The buffer is guaranteed to be aligned (on a 16 byte boundary). \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1aligned__coefficients__decoder}{aligned\-\_\-coefficients\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Aligns the symbol coefficient buffer if necessary. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1backward__linear__block__decoder}{backward\-\_\-linear\-\_\-block\-\_\-decoder}
+\item 
+struct \hyperlink{structkodo_1_1backward__linear__block__decoder__policy}{backward\-\_\-linear\-\_\-block\-\_\-decoder\-\_\-policy}
+\item 
+class \hyperlink{classkodo_1_1bidirectional__linear__block__decoder}{bidirectional\-\_\-linear\-\_\-block\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Implements basic linear block decoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1cached__symbol__decoder}{cached\-\_\-symbol\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em This layer extracts the symbol coefficients and symbol data and makes it available for use. It does not perform any decoding on the coefficients or the symbol. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1coefficient__info}{coefficient\-\_\-info}
+\begin{DoxyCompactList}\small\item\em Provides info about the coding coefficients used during encoding and decoding. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1coefficient__storage}{coefficient\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em Provides storage and access to the coding coefficients used during encoding and decoding. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1coefficient__value__access}{coefficient\-\_\-value\-\_\-access}
+\begin{DoxyCompactList}\small\item\em Provides functions to access and manipulate values in an array of coefficients. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1copy__payload__decoder}{copy\-\_\-payload\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Make decoder work on a copy of the payload. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1debug__cached__symbol__decoder}{debug\-\_\-cached\-\_\-symbol\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em This layer makes it easy to print the incoming coded symbol and coding coefficients. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1debug__coefficient__storage}{debug\-\_\-coefficient\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em Print functions for coefficient storage. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1debug__linear__block__decoder}{debug\-\_\-linear\-\_\-block\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Debug layer which allows inspecting the state of a linear block decoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1debug__symbol__storage}{debug\-\_\-symbol\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em Print functions for symbol storage. Using this layer the content of the symbol storage can be printed. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1deep__storage__decoder}{deep\-\_\-storage\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em A storage decoder creates a number of decoders decoding into a sak\-::mutable\-\_\-storage object. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1deep__symbol__storage}{deep\-\_\-symbol\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em The deep storage implementation. In this context deep means that the symbol storage contains the entire coding buffer internally. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1empty__decoder}{empty\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Empty implementation of the \hyperlink{classkodo_1_1empty__decoder_aa700bffb25d17e3e2c819d36ed61308a}{decode\-\_\-symbol(uint8\-\_\-t$\ast$,uint8\-\_\-t$\ast$)} and \hyperlink{classkodo_1_1empty__decoder_aac8f8c663ddeaf9700d1a0fc50674462}{decode\-\_\-symbol(uint8\-\_\-t$\ast$, uint32\-\_\-t)} functions. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1encode__symbol__tracker}{encode\-\_\-symbol\-\_\-tracker}
+\begin{DoxyCompactList}\small\item\em Counts the number of symbols which have been encoded. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1fake__symbol__storage}{fake\-\_\-symbol\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em Implements the Symbol Storage A\-P\-I but only with empty functions. Useful in unit tests. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1file__encoder}{file\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em A file encoder creates a number of encoders over the data of a file. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1file__reader}{file\-\_\-reader}
+\begin{DoxyCompactList}\small\item\em The file reader class reads data from a local file and initializes the an encoder with data from a specific offset within the file. This class can be used in conjunction with object encoders. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1final__coder__factory}{final\-\_\-coder\-\_\-factory}
+\item 
+class \hyperlink{classkodo_1_1final__coder__factory__pool}{final\-\_\-coder\-\_\-factory\-\_\-pool}
+\item 
+class \hyperlink{classkodo_1_1finite__field__counter}{finite\-\_\-field\-\_\-counter}
+\item 
+class \hyperlink{classkodo_1_1finite__field__info}{finite\-\_\-field\-\_\-info}
+\item 
+class \hyperlink{classkodo_1_1finite__field__math}{finite\-\_\-field\-\_\-math}
+\begin{DoxyCompactList}\small\item\em Basic layer performing common finite field operation. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1forward__linear__block__decoder}{forward\-\_\-linear\-\_\-block\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Implements basic linear block decoder using the forward direction policy. This is equivalent to the standard approach to Gaussian Elimination. \end{DoxyCompactList}\item 
+struct \hyperlink{structkodo_1_1forward__linear__block__decoder__policy}{forward\-\_\-linear\-\_\-block\-\_\-decoder\-\_\-policy}
+\item 
+struct \hyperlink{structkodo_1_1has__debug__cached__symbol__decoder}{has\-\_\-debug\-\_\-cached\-\_\-symbol\-\_\-decoder}
+\item 
+struct \hyperlink{structkodo_1_1has__debug__linear__block__decoder}{has\-\_\-debug\-\_\-linear\-\_\-block\-\_\-decoder}
+\item 
+struct \hyperlink{structkodo_1_1has__deep__symbol__storage}{has\-\_\-deep\-\_\-symbol\-\_\-storage}
+\item 
+struct \hyperlink{structkodo_1_1has__linear__block__decoder__delayed}{has\-\_\-linear\-\_\-block\-\_\-decoder\-\_\-delayed}
+\item 
+struct \hyperlink{structkodo_1_1has__partial__decoding__tracker}{has\-\_\-partial\-\_\-decoding\-\_\-tracker}
+\item 
+class \hyperlink{classkodo_1_1has__print__cached__symbol__coefficients}{has\-\_\-print\-\_\-cached\-\_\-symbol\-\_\-coefficients}
+\item 
+class \hyperlink{classkodo_1_1has__print__cached__symbol__data}{has\-\_\-print\-\_\-cached\-\_\-symbol\-\_\-data}
+\item 
+struct \hyperlink{structkodo_1_1has__shallow__symbol__storage}{has\-\_\-shallow\-\_\-symbol\-\_\-storage}
+\item 
+struct \hyperlink{structkodo_1_1has__const__shallow__symbol__storage}{has\-\_\-const\-\_\-shallow\-\_\-symbol\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em Type trait helper for detection the \hyperlink{classkodo_1_1const__shallow__symbol__storage}{const\-\_\-shallow\-\_\-symbol\-\_\-storage}. \end{DoxyCompactList}\item 
+struct \hyperlink{structkodo_1_1has__mutable__shallow__symbol__storage}{has\-\_\-mutable\-\_\-shallow\-\_\-symbol\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em Type trait helper for detection the \hyperlink{classkodo_1_1mutable__shallow__symbol__storage}{mutable\-\_\-shallow\-\_\-symbol\-\_\-storage}. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1largest__nonzero__index__decoder}{largest\-\_\-nonzero\-\_\-index\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em This layer can be added to a decoding stack to monitor the coding coefficients passed to a decoder. This specific layer tracks the largest index where it have seen non-\/zero coefficients. One use-\/case of this is to monitor when partial decoding is possible i.\-e. when symbols in decoder are fully decoded even though the full data block has not been sent. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1linear__block__decoder__delayed}{linear\-\_\-block\-\_\-decoder\-\_\-delayed}
+\begin{DoxyCompactList}\small\item\em Linear block decoder with delayer backwards substitution. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1linear__block__encoder}{linear\-\_\-block\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em A linear block encoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1matrix}{matrix}
+\begin{DoxyCompactList}\small\item\em Simple storage class with a matrix A\-P\-I for finite field elements. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1nocode__carousel__encoder}{nocode\-\_\-carousel\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em For testing purposes this encoder implements a simple repetition code i.\-e. the symbols are the original source symbols produced by the encoder in a round-\/robin fashion. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1nocode__carousel__decoder}{nocode\-\_\-carousel\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em For testing purposes this decoder will takes symbols produced by the carousel encoder and put them in the right order until all symbols have been received. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1carousel__common}{carousel\-\_\-common}
+\item 
+class \hyperlink{classkodo_1_1carousel__decoder}{carousel\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Carousel decoder takes symbols produced by a carousel encoder and decodes them. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1carousel__encoder}{carousel\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em Simple un-\/coded scheme not meant for practical use but for simulation purposes. As it simply produces un-\/coded symbols. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1nocode__decoder}{nocode\-\_\-decoder}
+\item 
+class \hyperlink{classkodo_1_1nocode__encoder}{nocode\-\_\-encoder}
+\item 
+class \hyperlink{classkodo_1_1object__decoder}{object\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em The object decoder supports decoding objects split over multiple decoders. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1object__encoder}{object\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em The object encoder, allows encoding of objects too large for a single block encoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1offset__coefficient__value__access}{offset\-\_\-coefficient\-\_\-value\-\_\-access}
+\begin{DoxyCompactList}\small\item\em Provides functions to access and manipulate values in an array of coefficients, but with an added offset to the indexes. \end{DoxyCompactList}\item 
+struct \hyperlink{structkodo_1_1operations__counter}{operations\-\_\-counter}
+\item 
+class \hyperlink{classkodo_1_1partial__decoding__tracker}{partial\-\_\-decoding\-\_\-tracker}
+\begin{DoxyCompactList}\small\item\em This layer can be added to a decoding stack to track when partial decoding is possible i.\-e. when symbols in decoder are fully decoded even though the full data block has not been sent. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1partial__shallow__symbol__storage}{partial\-\_\-shallow\-\_\-symbol\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em Same as a shallow storage but supports storage object with a total size less than the coding block size. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1payload__decoder}{payload\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em The payload decoder splits the payload buffer into symbol header and symbol. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1payload__encoder}{payload\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em The payload encoder splits the payload buffer into symbol header and symbol. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1payload__rank__decoder}{payload\-\_\-rank\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em The payload decoder splits the payload buffer into symbol header and symbol. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1payload__rank__encoder}{payload\-\_\-rank\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em The payload rank encoder writes the rank of the encoder into the payload buffer. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1payload__rank__recoder}{payload\-\_\-rank\-\_\-recoder}
+\begin{DoxyCompactList}\small\item\em The payload rank recoder writes the rank of the encoder into the payload buffer. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1payload__recoder}{payload\-\_\-recoder}
+\begin{DoxyCompactList}\small\item\em Implements the recode function for Network Codes. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1plain__symbol__id}{plain\-\_\-symbol\-\_\-id}
+\begin{DoxyCompactList}\small\item\em Base class for the plain symbol id reader and writer. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1base__plain__symbol__id__reader}{base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-reader}
+\begin{DoxyCompactList}\small\item\em Reads the coding coefficients from the symbol id buffer and initializes the symbol coefficients pointer. This implementation is the most basic one where the symbol id simply is the coding coefficients. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1plain__symbol__id__reader}{plain\-\_\-symbol\-\_\-id\-\_\-reader}
+\begin{DoxyCompactList}\small\item\em Reads the coding coefficients from the symbol id buffer and initializes the symbol coefficients pointer. This implementation is the most basic one where the symbol id simply is the coding coefficients. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1base__plain__symbol__id__writer}{base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-writer}
+\begin{DoxyCompactList}\small\item\em Writes the symbol id and initializes the coding coefficients pointer. This implementation is the most basic one where the symbol id simply is the coding coefficients. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1plain__symbol__id__writer}{plain\-\_\-symbol\-\_\-id\-\_\-writer}
+\begin{DoxyCompactList}\small\item\em Writes the symbol id and initializes the coding coefficients pointer. This implementation is the most basic one where the symbol id simply is the coding coefficients. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1proxy__layer}{proxy\-\_\-layer}
+\begin{DoxyCompactList}\small\item\em Special layer used to create parallel stacks with some shared layers. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1proxy__seen__encoder__rank}{proxy\-\_\-seen\-\_\-encoder\-\_\-rank}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classkodo_1_1proxy__seen__encoder__rank}{proxy\-\_\-seen\-\_\-encoder\-\_\-rank} will forward calls to the \hyperlink{classkodo_1_1proxy__seen__encoder__rank_a7c7561fc6d6825fdba4137d044e959c2}{seen\-\_\-encoder\-\_\-rank()} function to a main stack. \end{DoxyCompactList}\item 
+struct \hyperlink{structkodo_1_1annex__info}{annex\-\_\-info}
+\begin{DoxyCompactList}\small\item\em Annex info helper class. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1random__annex__base}{random\-\_\-annex\-\_\-base}
+\begin{DoxyCompactList}\small\item\em Base class for the random annex encoder and decoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1random__annex__decoder}{random\-\_\-annex\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em A random annex decoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1random__annex__encoder}{random\-\_\-annex\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em A random annex encoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1rank__callback__decoder}{rank\-\_\-callback\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Allows a callback function to be invoked after rank changed. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1rank__info}{rank\-\_\-info}
+\begin{DoxyCompactList}\small\item\em provides the \hyperlink{classlayer_a1de820b75c9af3faf024dee2b22599e4}{layer\-::rank\-\_\-type} typedef \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1rank__symbol__decoding__status__updater}{rank\-\_\-symbol\-\_\-decoding\-\_\-status\-\_\-updater}
+\begin{DoxyCompactList}\small\item\em This layer can be added to a decoding stack to update the status of the different decoding symbols. The functionality makes it possible for a user to detect when partial decoding is possible i.\-e. when symbols in decoder are fully decoded even though the full data block has not been sent. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1recoding__symbol__id}{recoding\-\_\-symbol\-\_\-id}
+\begin{DoxyCompactList}\small\item\em Randomly recombines existing coding coefficients to allow a decoder to produce recoded packets. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1rfc5052__partitioning__scheme}{rfc5052\-\_\-partitioning\-\_\-scheme}
+\begin{DoxyCompactList}\small\item\em R\-F\-C5052 block partitioning scheme. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1full__rlnc__encoder}{full\-\_\-rlnc\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em Complete stack implementing a R\-L\-N\-C encoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1recoding__stack}{recoding\-\_\-stack}
+\item 
+class \hyperlink{classkodo_1_1full__rlnc__decoder}{full\-\_\-rlnc\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Implementation of a complete R\-L\-N\-C decoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1debug__full__rlnc__decoder}{debug\-\_\-full\-\_\-rlnc\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Implementation of a \hyperlink{classkodo_1_1full__rlnc__decoder}{full\-\_\-rlnc\-\_\-decoder}, but with the debug layers added. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1on__the__fly__encoder}{on\-\_\-the\-\_\-fly\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em Complete stack implementing a full R\-L\-N\-C on-\/the-\/fly encoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1on__the__fly__recoding__stack}{on\-\_\-the\-\_\-fly\-\_\-recoding\-\_\-stack}
+\item 
+class \hyperlink{classkodo_1_1on__the__fly__decoder}{on\-\_\-the\-\_\-fly\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Implementation of a complete R\-L\-N\-C decoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1debug__on__the__fly__decoder}{debug\-\_\-on\-\_\-the\-\_\-fly\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Implementation of a complete R\-L\-N\-C decoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1seed__rlnc__encoder}{seed\-\_\-rlnc\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em Complete stack implementing a seed based R\-L\-N\-C encoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1seed__rlnc__decoder}{seed\-\_\-rlnc\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Implementation of a seed based R\-L\-N\-C decoder this configuration. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1rs__encoder}{rs\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em Complete stack implementing a Reed-\/\-Solomon encoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1rs__decoder}{rs\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Implementation of a complete R\-S decoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1reed__solomon__symbol__id}{reed\-\_\-solomon\-\_\-symbol\-\_\-id}
+\begin{DoxyCompactList}\small\item\em Base class for the Reed-\/\-Solomon symbol id reader and writer. Contains the functionality to cache the generator matrices. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1reed__solomon__symbol__id__reader__base}{reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader\-\_\-base}
+\begin{DoxyCompactList}\small\item\em Reads the row index of the Reed-\/\-Solomon generator matrix from the symbol id buffer. This is then use to fetch the corresponding coding coefficients. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1reed__solomon__symbol__id__reader}{reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-reader}
+\begin{DoxyCompactList}\small\item\em Reads the row index of the Reed-\/\-Solomon generator matrix from the symbol id buffer. This is then use to fetch the corresponding coding coefficients. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1reed__solomon__symbol__id__writer}{reed\-\_\-solomon\-\_\-symbol\-\_\-id\-\_\-writer}
+\begin{DoxyCompactList}\small\item\em Uses the count of the currently encoded symbol to select the proper row in the generator matrix. The row is selected using the encoded symbol count. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1systematic__vandermonde__matrix}{systematic\-\_\-vandermonde\-\_\-matrix}
+\begin{DoxyCompactList}\small\item\em Computes a Vandermonde matrix to generate the coding coefficients. The matrix code is. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1systematic__vandermonde__matrix__base}{systematic\-\_\-vandermonde\-\_\-matrix\-\_\-base}
+\begin{DoxyCompactList}\small\item\em Computes a Vandermonde matrix to generate the coding coefficients. The matrix code is. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1transpose__vandermonde__matrix}{transpose\-\_\-vandermonde\-\_\-matrix}
+\begin{DoxyCompactList}\small\item\em Construct the transposes the Vandermonde matrix in order to make memory access more efficient. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1vandermonde__matrix}{vandermonde\-\_\-matrix}
+\begin{DoxyCompactList}\small\item\em Computes a Vandermonde matrix to generate the coding coefficients. The matrix code is. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1vandermonde__matrix__base}{vandermonde\-\_\-matrix\-\_\-base}
+\begin{DoxyCompactList}\small\item\em Computes a Vandermonde matrix to generate the coding coefficients. The matrix code is. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1seed__symbol__id}{seed\-\_\-symbol\-\_\-id}
+\begin{DoxyCompactList}\small\item\em Base layer for seed symbol id reader and writers. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1seed__symbol__id__reader}{seed\-\_\-symbol\-\_\-id\-\_\-reader}
+\begin{DoxyCompactList}\small\item\em Reads the seed from the symbol\-\_\-id buffer and uses it to seed the generator layer, which produces the corresponding coding coefficients. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1seed__symbol__id__writer}{seed\-\_\-symbol\-\_\-id\-\_\-writer}
+\begin{DoxyCompactList}\small\item\em Writes a seed as the symbol id. The seed is used to seed the generator layer before generating the coefficients. The current symbol count is used as the seed. Which allows the decoder to reproduce the coefficients used. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1shallow__storage__decoder}{shallow\-\_\-storage\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em A storage decoder creates a number of decoders decoding into a sak\-::mutable\-\_\-storage object. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1shallow__symbol__storage}{shallow\-\_\-symbol\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em The shallow storage implementation. In this context shallow means that the symbol storage only contains pointers to some external data structure. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1const__shallow__symbol__storage}{const\-\_\-shallow\-\_\-symbol\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em Defines a coding layer for 'const' symbol storage. Only useful for encoders since these to modify the buffers / data they operate on. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1mutable__shallow__symbol__storage}{mutable\-\_\-shallow\-\_\-symbol\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em Defines a coding layer for 'mutable' symbol storage. Allows the buffer data to be modified i.\-e. useful in decoders which need to access and modify the incoming symbols. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1sparse__uniform__generator}{sparse\-\_\-uniform\-\_\-generator}
+\begin{DoxyCompactList}\small\item\em Generate uniformly distributed coefficients with a specific density. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1storage__aware__encoder}{storage\-\_\-aware\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em Implements the \hyperlink{group__encoder__api_ga10c217148f82a6ed036563d3542cad72}{layer\-::rank()} and \hyperlink{group__encoder__api_ga72b86000f3b686b3d2791e71f4950dc6}{layer\-::is\-\_\-symbol\-\_\-pivot()} functions based on the storage status. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1storage__aware__generator}{storage\-\_\-aware\-\_\-generator}
+\begin{DoxyCompactList}\small\item\em The storage aware generator will ensure that \hyperlink{group__coefficient__generator__api_ga295e2fc5a74a92ef2281549a31379ba5}{layer\-::generate\-\_\-partial(uint8\-\_\-t$\ast$)} is called whenever the encoder indicates that it does not have full rank (i.\-e. not all symbols have been specified). \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1storage__block__info}{storage\-\_\-block\-\_\-info}
+\begin{DoxyCompactList}\small\item\em Defines several functions to retrieve info about the symbol storage layers. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1storage__bytes__used}{storage\-\_\-bytes\-\_\-used}
+\begin{DoxyCompactList}\small\item\em Provides access to the number of useful bytes used out of the total size of the encoders or decoders storage. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1storage__encoder}{storage\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em A storage encoder creates a number of encoders over a sak\-::const\-\_\-storage object. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1storage__reader}{storage\-\_\-reader}
+\begin{DoxyCompactList}\small\item\em The storage reader class reads data from a memory buffer and initializes the an encoder with data from a specific offset within the memory buffer. This class can be used in conjunction with object encoders. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1symbol__decoding__status__counter}{symbol\-\_\-decoding\-\_\-status\-\_\-counter}
+\begin{DoxyCompactList}\small\item\em The symbol decoding status counter maintains information about how many symbols are in which state. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1symbol__decoding__status__tracker}{symbol\-\_\-decoding\-\_\-status\-\_\-tracker}
+\begin{DoxyCompactList}\small\item\em The symbol decoding status tracker stores information about the status of the different symbols contained within a decoder. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1symbol__id__decoder}{symbol\-\_\-id\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Writes the symbol id into the symbol header. Generates the the symbol coding coefficients. and calls the \hyperlink{group__decoder__api_gae28d93bf78534b4f4f4052ad6b1f7a4d}{layer\-::decode\-\_\-symbol()} function. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1symbol__id__encoder}{symbol\-\_\-id\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em Writes the symbol id into the symbol header. Generates the the symbol coding coefficients. and calls the \hyperlink{group__encoder__api_gaf28d3c1b82242263733ed082b1e10915}{layer\-::encode\-\_\-symbol()} function. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1systematic__base__coder}{systematic\-\_\-base\-\_\-coder}
+\item 
+class \hyperlink{classkodo_1_1systematic__decoder}{systematic\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em Systematic decoding layer. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1base__systematic__encoder}{base\-\_\-systematic\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em Systematic encoding layer. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1systematic__encoder}{systematic\-\_\-encoder}
+\item 
+class \hyperlink{classkodo_1_1non__systematic__encoder}{non\-\_\-systematic\-\_\-encoder}
+\item 
+class \hyperlink{classkodo_1_1uniform__generator}{uniform\-\_\-generator}
+\begin{DoxyCompactList}\small\item\em Generates an uniform random coefficient (from the chosen Finite Field) for every symbol. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1user__defined__generator}{user\-\_\-defined\-\_\-generator}
+\begin{DoxyCompactList}\small\item\em This layer allows the user to specify the coefficients which be used for the coding operation. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1zero__symbol__encoder}{zero\-\_\-symbol\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em Zeros the symbol data buffer. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1fake__codec__layer}{fake\-\_\-codec\-\_\-layer}
+\item 
+class \hyperlink{classkodo_1_1rlnc__decoder}{rlnc\-\_\-decoder}
+\item 
+class \hyperlink{classkodo_1_1shallow__rlnc__encoder}{shallow\-\_\-rlnc\-\_\-encoder}
+\begin{DoxyCompactList}\small\item\em Encoder stack using a partial shallow storage class. \end{DoxyCompactList}\item 
+class \hyperlink{classkodo_1_1shallow__rlnc__decoder}{shallow\-\_\-rlnc\-\_\-decoder}
+\item 
+class \hyperlink{classkodo_1_1full__rlnc__callback__decoder}{full\-\_\-rlnc\-\_\-callback\-\_\-decoder}
+\item 
+class \hyperlink{classkodo_1_1symbol__info__decoder}{symbol\-\_\-info\-\_\-decoder}
+\begin{DoxyCompactList}\small\item\em The symbol info stack defined below can be used to split an incoming encoded payload into the encoded symbol data and symbol id (the R\-L\-N\-C encoding vector). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\bool \hyperlink{group__generic__api_ga1f174dc461330b794c554960156ccd8f}{is\-\_\-partial\-\_\-complete} (const T \&t)
+\item 
+{\footnotesize template$<$class T $>$ }\\bool \hyperlink{group__generic__api_ga34033f038598eb0310780c63fdf0ab55}{is\-\_\-partial\-\_\-complete} (const boost\-::shared\-\_\-ptr$<$ T $>$ \&t)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool what, class T $>$ }\\bool \hyperlink{group__generic__api_ga50c2d14a04778fbb6c4bf53fe5cdfac1}{is\-\_\-partial\-\_\-complete} (const T \&t, char($\ast$)\mbox{[}what\mbox{]}=0)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool what, class T $>$ }\\bool \hyperlink{group__generic__api_ga736c9a71c804eb6f190208a808a7ff47}{is\-\_\-partial\-\_\-complete} (const T \&t, char($\ast$)\mbox{[}!what\mbox{]}=0)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\hyperlink{structkodo_1_1operations__counter}{operations\-\_\-counter} \hyperlink{namespacekodo_a1f29521fbf5adf9e1a4b9a7889018ec0}{operator-\/} (const \hyperlink{structkodo_1_1operations__counter}{operations\-\_\-counter} \&a, const \hyperlink{structkodo_1_1operations__counter}{operations\-\_\-counter} \&b)
+\item 
+\hyperlink{structkodo_1_1operations__counter}{operations\-\_\-counter} \hyperlink{namespacekodo_a884238f1ed3b2147a61d90dcfa56d955}{operator+} (const \hyperlink{structkodo_1_1operations__counter}{operations\-\_\-counter} \&a, const \hyperlink{structkodo_1_1operations__counter}{operations\-\_\-counter} \&b)
+\item 
+bool \hyperlink{namespacekodo_a219bba3ea747706cc4003c53bb5d1cad}{operator$>$=} (const \hyperlink{structkodo_1_1operations__counter}{operations\-\_\-counter} \&a, const \hyperlink{structkodo_1_1operations__counter}{operations\-\_\-counter} \&b)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{group__generic__api_ga0f23c8aa6a9df27288999a56ef0a0dfa}{print\-\_\-cached\-\_\-symbol\-\_\-coefficients} (const T \&t, std\-::ostream \&out)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{group__generic__api_ga738799d8f76f36e79fb8cb9ebcef752b}{print\-\_\-cached\-\_\-symbol\-\_\-coefficients} (const boost\-::shared\-\_\-ptr$<$ T $>$ \&t, std\-::ostream \&out)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool what, class T $>$ }\\void \hyperlink{group__generic__api_ga1145d50be325131c13fe37d7ab904969}{print\-\_\-cached\-\_\-symbol\-\_\-coefficients} (const T \&t, std\-::ostream \&out, char($\ast$)\mbox{[}what\mbox{]}=0)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool what, class T $>$ }\\void \hyperlink{group__generic__api_ga2be16badfbd7d704927588182b7e8d14}{print\-\_\-cached\-\_\-symbol\-\_\-coefficients} (const T \&t, std\-::ostream \&out, char($\ast$)\mbox{[}!what\mbox{]}=0)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{group__generic__api_ga080a3e36453ee6c8de96e7af13d4f936}{print\-\_\-cached\-\_\-symbol\-\_\-data} (const T \&t, std\-::ostream \&out)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{group__generic__api_ga4ff9ca7a1a94d833b26ef306da5a9641}{print\-\_\-cached\-\_\-symbol\-\_\-data} (const boost\-::shared\-\_\-ptr$<$ T $>$ \&t, std\-::ostream \&out)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool what, class T $>$ }\\void \hyperlink{group__generic__api_ga5dde22f82c20ea17c098f00c3f5aaa42}{print\-\_\-cached\-\_\-symbol\-\_\-data} (const T \&t, std\-::ostream \&out, char($\ast$)\mbox{[}what\mbox{]}=0)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool what, class T $>$ }\\void \hyperlink{group__generic__api_ga07e81e56542b4179eda44d2a2a3f89aa}{print\-\_\-cached\-\_\-symbol\-\_\-data} (const T \&t, std\-::ostream \&out, char($\ast$)\mbox{[}!what\mbox{]}=0)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{group__generic__api_ga924f8d925a9bf15ef020657f853907f0}{print\-\_\-decoder\-\_\-state} (const T \&t, std\-::ostream \&out)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{group__generic__api_gac3889d72f30da12931b08209957dd076}{print\-\_\-decoder\-\_\-state} (const boost\-::shared\-\_\-ptr$<$ T $>$ \&t, std\-::ostream \&out)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool what, class T $>$ }\\void \hyperlink{group__generic__api_ga4f59151196d0d2e957a96438a149087f}{print\-\_\-decoder\-\_\-state} (const T \&t, std\-::ostream \&out, char($\ast$)\mbox{[}what\mbox{]}=0)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool what, class T $>$ }\\void \hyperlink{group__generic__api_gaefd74f1db665a902b41794daf1b1b070}{print\-\_\-decoder\-\_\-state} (const T \&t, std\-::ostream \&out, char($\ast$)\mbox{[}!what\mbox{]}=0)
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{namespacekodo_a716a68560b2163210d157459c98baeb7}{max\-\_\-annex\-\_\-size} (uint32\-\_\-t max\-\_\-symbols, uint32\-\_\-t max\-\_\-symbol\-\_\-size, uint32\-\_\-t object\-\_\-size)
+\item 
+\hypertarget{namespacekodo_af940cb8b90aae5de4d7fc89ef6c1b11b}{bool \hyperlink{namespacekodo_af940cb8b90aae5de4d7fc89ef6c1b11b}{operator$<$} (const \hyperlink{structkodo_1_1annex__info}{annex\-\_\-info} \&a, const \hyperlink{structkodo_1_1annex__info}{annex\-\_\-info} \&b)}\label{namespacekodo_af940cb8b90aae5de4d7fc89ef6c1b11b}
+
+\begin{DoxyCompactList}\small\item\em Allows our annex info class to be used in e.\-g. a std\-::set. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Super\-Coder $>$ }\\bool \hyperlink{namespacekodo_aa7bbe252fea63f6a4727b3e825b681fb}{is\-\_\-systematic\-\_\-encoder\-\_\-dispatch} (const \hyperlink{classkodo_1_1systematic__encoder}{systematic\-\_\-encoder}$<$ Super\-Coder $>$ $\ast$)
+\item 
+{\footnotesize template$<$class Super\-Coder $>$ }\\bool \hyperlink{namespacekodo_a20082a7f36a28a31049deb1ec8b62a0d}{is\-\_\-systematic\-\_\-on\-\_\-dispatch} (\hyperlink{classkodo_1_1systematic__encoder}{systematic\-\_\-encoder}$<$ Super\-Coder $>$ $\ast$e)
+\item 
+{\footnotesize template$<$class Super\-Coder $>$ }\\void \hyperlink{namespacekodo_a5c0720515a23dd6f78822f27317619bb}{set\-\_\-systematic\-\_\-off\-\_\-dispatch} (\hyperlink{classkodo_1_1systematic__encoder}{systematic\-\_\-encoder}$<$ Super\-Coder $>$ $\ast$e)
+\item 
+{\footnotesize template$<$class Super\-Coder $>$ }\\void \hyperlink{namespacekodo_aaf2e525aaa8dd6ce3ff2fb72b32bd876}{set\-\_\-systematic\-\_\-on\-\_\-dispatch} (\hyperlink{classkodo_1_1systematic__encoder}{systematic\-\_\-encoder}$<$ Super\-Coder $>$ $\ast$e)
+\item 
+bool \hyperlink{namespacekodo_a265d6235baebdcaa9f6773d4a9035f24}{is\-\_\-systematic\-\_\-encoder\-\_\-dispatch} (...)
+\item 
+{\footnotesize template$<$class Encoder $>$ }\\bool \hyperlink{namespacekodo_a28819f1383e522581e8dc7fb351b0438}{is\-\_\-systematic\-\_\-encoder} (const Encoder \&e)
+\item 
+{\footnotesize template$<$class Encoder $>$ }\\bool \hyperlink{namespacekodo_a0eed748c3372ff18d65a7d6bf7d5fb66}{is\-\_\-systematic\-\_\-encoder} (const boost\-::shared\-\_\-ptr$<$ Encoder $>$ \&e)
+\item 
+bool \hyperlink{namespacekodo_ac0a13c9a6557f84250910206ee04905a}{is\-\_\-systematic\-\_\-on\-\_\-dispatch} (...)
+\item 
+{\footnotesize template$<$class Encoder $>$ }\\bool \hyperlink{namespacekodo_a5ddd9632e1c9a2387bf15c81ad6c793b}{is\-\_\-systematic\-\_\-on} (Encoder \&e)
+\item 
+{\footnotesize template$<$class Encoder $>$ }\\bool \hyperlink{namespacekodo_a7cfc3e2516396e709f08e795aedd0316}{is\-\_\-systematic\-\_\-on} (boost\-::shared\-\_\-ptr$<$ Encoder $>$ \&e)
+\item 
+void \hyperlink{namespacekodo_a4da653f13bbc24f1513fdb70ce4adab5}{set\-\_\-systematic\-\_\-off\-\_\-dispatch} (...)
+\item 
+{\footnotesize template$<$class Encoder $>$ }\\void \hyperlink{namespacekodo_a759a26580c7da7172657f338fd72a934}{set\-\_\-systematic\-\_\-off} (Encoder \&e)
+\item 
+{\footnotesize template$<$class Encoder $>$ }\\void \hyperlink{namespacekodo_a17fff80cddd66155cfa15d8b8ce8415b}{set\-\_\-systematic\-\_\-off} (boost\-::shared\-\_\-ptr$<$ Encoder $>$ \&e)
+\item 
+void \hyperlink{namespacekodo_ab49f22550578e1311b976e3b39fcd1e4}{set\-\_\-systematic\-\_\-on\-\_\-dispatch} (...)
+\item 
+{\footnotesize template$<$class Encoder $>$ }\\void \hyperlink{namespacekodo_a949e0264c6b1b7ec1d4d71fe60160c32}{set\-\_\-systematic\-\_\-on} (Encoder \&e)
+\item 
+{\footnotesize template$<$class Encoder $>$ }\\void \hyperlink{namespacekodo_ae472b70a5a866749d5ce8d4156720cfb}{set\-\_\-systematic\-\_\-on} (boost\-::shared\-\_\-ptr$<$ Encoder $>$ \&e)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Here we define the stacks which should be tested. Defines a number test stacks which contains the layers we wish to test. The stacks we define below contain the expect layers used in a typical coefficient storage stack. In addition to this we test both with and without adding the factory pool layer. This layer will recycle the allocated objects.
+
+Tests\-:
+\begin{DoxyItemize}
+\item layer\-::initialize(uint32\-\_\-t,uint32\-\_\-t)
+\item layer\-::decode(const uint8\-\_\-t$\ast$)
+\end{DoxyItemize}
+
+Tests\-:
+\begin{DoxyItemize}
+\item layer\-::initialize(uint32\-\_\-t,uint32\-\_\-t)
+\item \hyperlink{group__decoder__api_gae28d93bf78534b4f4f4052ad6b1f7a4d}{layer\-::decode\-\_\-symbol(uint8\-\_\-t$\ast$,uint8\-\_\-t$\ast$)}
+\item \hyperlink{group__decoder__api_ga14ba28f27d03e2eee864bc7eed6cb188}{layer\-::decode\-\_\-symbol(uint8\-\_\-t$\ast$,uint32\-\_\-t)}
+\item layer\-::set\-\_\-rank\-\_\-changed\-\_\-callback()
+\item layer\-::reset\-\_\-rank\-\_\-changed\-\_\-callback()
+\end{DoxyItemize}
+
+Defines a number test stacks which contains the layers we wish to test. The stacks we define below contain the expect layers used in a typical storage stack. In addition to this we test both with and without adding the factory pool layer. This layer will recycle the allocated objects. 
+
+\subsection{Function Documentation}
+\hypertarget{namespacekodo_a28819f1383e522581e8dc7fb351b0438}{\index{kodo@{kodo}!is\-\_\-systematic\-\_\-encoder@{is\-\_\-systematic\-\_\-encoder}}
+\index{is\-\_\-systematic\-\_\-encoder@{is\-\_\-systematic\-\_\-encoder}!kodo@{kodo}}
+\subsubsection[{is\-\_\-systematic\-\_\-encoder}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Encoder $>$ bool kodo\-::is\-\_\-systematic\-\_\-encoder (
+\begin{DoxyParamCaption}
+\item[{const Encoder \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a28819f1383e522581e8dc7fb351b0438}
+Returns whether an encoder has systematic capabilities this is sometimes needed when writing generic code that works with many different encoder types. Different encoders should overload / specialize this function to return true if they support the systematic operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the encoder supports the systematic operations otherwise false 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples\-: ]\par
+\hyperlink{encode_decode_file_8cpp-example}{encode\-\_\-decode\-\_\-file.\-cpp}, and \hyperlink{switch_systematic_on_off_8cpp-example}{switch\-\_\-systematic\-\_\-on\-\_\-off.\-cpp}.\end{Desc}
+
+
+Definition at line 46 of file systematic\-\_\-operations.\-hpp.
+
+
+
+Referenced by is\-\_\-systematic\-\_\-encoder().
+
+\hypertarget{namespacekodo_a0eed748c3372ff18d65a7d6bf7d5fb66}{\index{kodo@{kodo}!is\-\_\-systematic\-\_\-encoder@{is\-\_\-systematic\-\_\-encoder}}
+\index{is\-\_\-systematic\-\_\-encoder@{is\-\_\-systematic\-\_\-encoder}!kodo@{kodo}}
+\subsubsection[{is\-\_\-systematic\-\_\-encoder}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Encoder $>$ bool kodo\-::is\-\_\-systematic\-\_\-encoder (
+\begin{DoxyParamCaption}
+\item[{const boost\-::shared\-\_\-ptr$<$ Encoder $>$ \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a0eed748c3372ff18d65a7d6bf7d5fb66}
+Helper for unwrapping encoders stored in a shared\-\_\-ptr
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the encoder supports the systematic operations otherwise false 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file systematic\-\_\-operations.\-hpp.
+
+\hypertarget{namespacekodo_a265d6235baebdcaa9f6773d4a9035f24}{\index{kodo@{kodo}!is\-\_\-systematic\-\_\-encoder\-\_\-dispatch@{is\-\_\-systematic\-\_\-encoder\-\_\-dispatch}}
+\index{is\-\_\-systematic\-\_\-encoder\-\_\-dispatch@{is\-\_\-systematic\-\_\-encoder\-\_\-dispatch}!kodo@{kodo}}
+\subsubsection[{is\-\_\-systematic\-\_\-encoder\-\_\-dispatch}]{\setlength{\rightskip}{0pt plus 5cm}bool kodo\-::is\-\_\-systematic\-\_\-encoder\-\_\-dispatch (
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a265d6235baebdcaa9f6773d4a9035f24}
+Catch all implementation if no specializations exist this function will be called. \begin{DoxyReturn}{Returns}
+always return false 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file systematic\-\_\-operations.\-hpp.
+
+\hypertarget{namespacekodo_aa7bbe252fea63f6a4727b3e825b681fb}{\index{kodo@{kodo}!is\-\_\-systematic\-\_\-encoder\-\_\-dispatch@{is\-\_\-systematic\-\_\-encoder\-\_\-dispatch}}
+\index{is\-\_\-systematic\-\_\-encoder\-\_\-dispatch@{is\-\_\-systematic\-\_\-encoder\-\_\-dispatch}!kodo@{kodo}}
+\subsubsection[{is\-\_\-systematic\-\_\-encoder\-\_\-dispatch}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ bool kodo\-::is\-\_\-systematic\-\_\-encoder\-\_\-dispatch (
+\begin{DoxyParamCaption}
+\item[{const systematic\-\_\-encoder$<$ Super\-Coder $>$ $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_aa7bbe252fea63f6a4727b3e825b681fb}
+Overload for the generic is\-\_\-systematic\-\_\-encoder\-\_\-dispatch(...) function
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true since this is an systematic encoder 
+\end{DoxyReturn}
+
+
+Definition at line 220 of file systematic\-\_\-encoder.\-hpp.
+
+
+
+Referenced by is\-\_\-systematic\-\_\-encoder().
+
+\hypertarget{namespacekodo_a5ddd9632e1c9a2387bf15c81ad6c793b}{\index{kodo@{kodo}!is\-\_\-systematic\-\_\-on@{is\-\_\-systematic\-\_\-on}}
+\index{is\-\_\-systematic\-\_\-on@{is\-\_\-systematic\-\_\-on}!kodo@{kodo}}
+\subsubsection[{is\-\_\-systematic\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Encoder $>$ bool kodo\-::is\-\_\-systematic\-\_\-on (
+\begin{DoxyParamCaption}
+\item[{Encoder \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a5ddd9632e1c9a2387bf15c81ad6c793b}
+Returns whether the encoder is in the systematic mode i.\-e. it is generating un-\/coded symbols
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the encoder is in the systematic state 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples\-: ]\par
+\hyperlink{switch_systematic_on_off_8cpp-example}{switch\-\_\-systematic\-\_\-on\-\_\-off.\-cpp}.\end{Desc}
+
+
+Definition at line 87 of file systematic\-\_\-operations.\-hpp.
+
+
+
+Referenced by is\-\_\-systematic\-\_\-on().
+
+\hypertarget{namespacekodo_a7cfc3e2516396e709f08e795aedd0316}{\index{kodo@{kodo}!is\-\_\-systematic\-\_\-on@{is\-\_\-systematic\-\_\-on}}
+\index{is\-\_\-systematic\-\_\-on@{is\-\_\-systematic\-\_\-on}!kodo@{kodo}}
+\subsubsection[{is\-\_\-systematic\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Encoder $>$ bool kodo\-::is\-\_\-systematic\-\_\-on (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ Encoder $>$ \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a7cfc3e2516396e709f08e795aedd0316}
+Helper for unwrapping encoders stored in a shared\-\_\-ptr
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the encoder is in the systematic state 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file systematic\-\_\-operations.\-hpp.
+
+\hypertarget{namespacekodo_ac0a13c9a6557f84250910206ee04905a}{\index{kodo@{kodo}!is\-\_\-systematic\-\_\-on\-\_\-dispatch@{is\-\_\-systematic\-\_\-on\-\_\-dispatch}}
+\index{is\-\_\-systematic\-\_\-on\-\_\-dispatch@{is\-\_\-systematic\-\_\-on\-\_\-dispatch}!kodo@{kodo}}
+\subsubsection[{is\-\_\-systematic\-\_\-on\-\_\-dispatch}]{\setlength{\rightskip}{0pt plus 5cm}bool kodo\-::is\-\_\-systematic\-\_\-on\-\_\-dispatch (
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_ac0a13c9a6557f84250910206ee04905a}
+Catch all implementation if no specializations exist this function will be called. \begin{DoxyReturn}{Returns}
+always return false 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file systematic\-\_\-operations.\-hpp.
+
+\hypertarget{namespacekodo_a20082a7f36a28a31049deb1ec8b62a0d}{\index{kodo@{kodo}!is\-\_\-systematic\-\_\-on\-\_\-dispatch@{is\-\_\-systematic\-\_\-on\-\_\-dispatch}}
+\index{is\-\_\-systematic\-\_\-on\-\_\-dispatch@{is\-\_\-systematic\-\_\-on\-\_\-dispatch}!kodo@{kodo}}
+\subsubsection[{is\-\_\-systematic\-\_\-on\-\_\-dispatch}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ bool kodo\-::is\-\_\-systematic\-\_\-on\-\_\-dispatch (
+\begin{DoxyParamCaption}
+\item[{systematic\-\_\-encoder$<$ Super\-Coder $>$ $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a20082a7f36a28a31049deb1ec8b62a0d}
+Overload for the generic is\-\_\-systematic\-\_\-on\-\_\-dispatch(...) function
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the encoder currently produces systematic symbols 
+\end{DoxyReturn}
+
+
+Definition at line 234 of file systematic\-\_\-encoder.\-hpp.
+
+
+
+Referenced by is\-\_\-systematic\-\_\-on().
+
+\hypertarget{namespacekodo_a716a68560b2163210d157459c98baeb7}{\index{kodo@{kodo}!max\-\_\-annex\-\_\-size@{max\-\_\-annex\-\_\-size}}
+\index{max\-\_\-annex\-\_\-size@{max\-\_\-annex\-\_\-size}!kodo@{kodo}}
+\subsubsection[{max\-\_\-annex\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t kodo\-::max\-\_\-annex\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{max\-\_\-symbols, }
+\item[{uint32\-\_\-t}]{max\-\_\-symbol\-\_\-size, }
+\item[{uint32\-\_\-t}]{object\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{namespacekodo_a716a68560b2163210d157459c98baeb7}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000038}{Todo}]Missing or incorrectly named unit test For a given selection of object partitioning parameters this function returns the maximum allowed annex size.\end{DoxyRefDesc}
+
+
+The result returned from this function is guaranteed to work for any partitioning scheme as long as the maximum symbol size is not changed and maximum number of symbols per block is not increased. 
+
+Definition at line 29 of file random\-\_\-annex\-\_\-base.\-hpp.
+
+
+
+Referenced by invoke\-\_\-max\-\_\-annex\-\_\-size().
+
+\hypertarget{namespacekodo_a884238f1ed3b2147a61d90dcfa56d955}{\index{kodo@{kodo}!operator+@{operator+}}
+\index{operator+@{operator+}!kodo@{kodo}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf operations\-\_\-counter} kodo\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{const operations\-\_\-counter \&}]{a, }
+\item[{const operations\-\_\-counter \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a884238f1ed3b2147a61d90dcfa56d955}
+Subtract two operations counters ala. a + b 
+\begin{DoxyParams}{Parameters}
+{\em a} & The operations counter to be reduced \\
+\hline
+{\em b} & The operations counter subtracted from a \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 83 of file operations\-\_\-counter.\-hpp.
+
+\hypertarget{namespacekodo_a1f29521fbf5adf9e1a4b9a7889018ec0}{\index{kodo@{kodo}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!kodo@{kodo}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf operations\-\_\-counter} kodo\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const operations\-\_\-counter \&}]{a, }
+\item[{const operations\-\_\-counter \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a1f29521fbf5adf9e1a4b9a7889018ec0}
+Subtract two operations counters ala. a -\/ b 
+\begin{DoxyParams}{Parameters}
+{\em a} & The operations counter to be reduced \\
+\hline
+{\em b} & The operations counter subtracted from a \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file operations\-\_\-counter.\-hpp.
+
+\hypertarget{namespacekodo_a219bba3ea747706cc4003c53bb5d1cad}{\index{kodo@{kodo}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!kodo@{kodo}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool kodo\-::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const operations\-\_\-counter \&}]{a, }
+\item[{const operations\-\_\-counter \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a219bba3ea747706cc4003c53bb5d1cad}
+Implement the greater than or equal operator such as a $>$= b 
+\begin{DoxyParams}{Parameters}
+{\em a} & The first operations counter \\
+\hline
+{\em b} & The second operations counter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 115 of file operations\-\_\-counter.\-hpp.
+
+\hypertarget{namespacekodo_a759a26580c7da7172657f338fd72a934}{\index{kodo@{kodo}!set\-\_\-systematic\-\_\-off@{set\-\_\-systematic\-\_\-off}}
+\index{set\-\_\-systematic\-\_\-off@{set\-\_\-systematic\-\_\-off}!kodo@{kodo}}
+\subsubsection[{set\-\_\-systematic\-\_\-off}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Encoder $>$ void kodo\-::set\-\_\-systematic\-\_\-off (
+\begin{DoxyParamCaption}
+\item[{Encoder \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a759a26580c7da7172657f338fd72a934}
+Switches the systematic encoding off -\/ i.\-e. stop generating un-\/coded symbols.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples\-: ]\par
+\hyperlink{encode_decode_file_8cpp-example}{encode\-\_\-decode\-\_\-file.\-cpp}, and \hyperlink{switch_systematic_on_off_8cpp-example}{switch\-\_\-systematic\-\_\-on\-\_\-off.\-cpp}.\end{Desc}
+
+
+Definition at line 125 of file systematic\-\_\-operations.\-hpp.
+
+
+
+Referenced by set\-\_\-systematic\-\_\-off().
+
+\hypertarget{namespacekodo_a17fff80cddd66155cfa15d8b8ce8415b}{\index{kodo@{kodo}!set\-\_\-systematic\-\_\-off@{set\-\_\-systematic\-\_\-off}}
+\index{set\-\_\-systematic\-\_\-off@{set\-\_\-systematic\-\_\-off}!kodo@{kodo}}
+\subsubsection[{set\-\_\-systematic\-\_\-off}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Encoder $>$ void kodo\-::set\-\_\-systematic\-\_\-off (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ Encoder $>$ \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a17fff80cddd66155cfa15d8b8ce8415b}
+Helper for unwrapping encoders stored in a shared\-\_\-ptr
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 137 of file systematic\-\_\-operations.\-hpp.
+
+\hypertarget{namespacekodo_a4da653f13bbc24f1513fdb70ce4adab5}{\index{kodo@{kodo}!set\-\_\-systematic\-\_\-off\-\_\-dispatch@{set\-\_\-systematic\-\_\-off\-\_\-dispatch}}
+\index{set\-\_\-systematic\-\_\-off\-\_\-dispatch@{set\-\_\-systematic\-\_\-off\-\_\-dispatch}!kodo@{kodo}}
+\subsubsection[{set\-\_\-systematic\-\_\-off\-\_\-dispatch}]{\setlength{\rightskip}{0pt plus 5cm}void kodo\-::set\-\_\-systematic\-\_\-off\-\_\-dispatch (
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a4da653f13bbc24f1513fdb70ce4adab5}
+Catch all implementation if no specializations exist this function will be called. \begin{DoxyReturn}{Returns}
+always return false 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file systematic\-\_\-operations.\-hpp.
+
+\hypertarget{namespacekodo_a5c0720515a23dd6f78822f27317619bb}{\index{kodo@{kodo}!set\-\_\-systematic\-\_\-off\-\_\-dispatch@{set\-\_\-systematic\-\_\-off\-\_\-dispatch}}
+\index{set\-\_\-systematic\-\_\-off\-\_\-dispatch@{set\-\_\-systematic\-\_\-off\-\_\-dispatch}!kodo@{kodo}}
+\subsubsection[{set\-\_\-systematic\-\_\-off\-\_\-dispatch}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void kodo\-::set\-\_\-systematic\-\_\-off\-\_\-dispatch (
+\begin{DoxyParamCaption}
+\item[{systematic\-\_\-encoder$<$ Super\-Coder $>$ $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a5c0720515a23dd6f78822f27317619bb}
+Overload for the generic set\-\_\-systematic\-\_\-off\-\_\-dispatch(...) function
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 248 of file systematic\-\_\-encoder.\-hpp.
+
+
+
+Referenced by set\-\_\-systematic\-\_\-off().
+
+\hypertarget{namespacekodo_a949e0264c6b1b7ec1d4d71fe60160c32}{\index{kodo@{kodo}!set\-\_\-systematic\-\_\-on@{set\-\_\-systematic\-\_\-on}}
+\index{set\-\_\-systematic\-\_\-on@{set\-\_\-systematic\-\_\-on}!kodo@{kodo}}
+\subsubsection[{set\-\_\-systematic\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Encoder $>$ void kodo\-::set\-\_\-systematic\-\_\-on (
+\begin{DoxyParamCaption}
+\item[{Encoder \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_a949e0264c6b1b7ec1d4d71fe60160c32}
+Switches the systematic encoding on -\/ i.\-e. start generating un-\/coded symbols.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples\-: ]\par
+\hyperlink{switch_systematic_on_off_8cpp-example}{switch\-\_\-systematic\-\_\-on\-\_\-off.\-cpp}.\end{Desc}
+
+
+Definition at line 162 of file systematic\-\_\-operations.\-hpp.
+
+
+
+Referenced by set\-\_\-systematic\-\_\-on().
+
+\hypertarget{namespacekodo_ae472b70a5a866749d5ce8d4156720cfb}{\index{kodo@{kodo}!set\-\_\-systematic\-\_\-on@{set\-\_\-systematic\-\_\-on}}
+\index{set\-\_\-systematic\-\_\-on@{set\-\_\-systematic\-\_\-on}!kodo@{kodo}}
+\subsubsection[{set\-\_\-systematic\-\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Encoder $>$ void kodo\-::set\-\_\-systematic\-\_\-on (
+\begin{DoxyParamCaption}
+\item[{boost\-::shared\-\_\-ptr$<$ Encoder $>$ \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_ae472b70a5a866749d5ce8d4156720cfb}
+Helper for unwrapping encoders stored in a shared\-\_\-ptr
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file systematic\-\_\-operations.\-hpp.
+
+\hypertarget{namespacekodo_ab49f22550578e1311b976e3b39fcd1e4}{\index{kodo@{kodo}!set\-\_\-systematic\-\_\-on\-\_\-dispatch@{set\-\_\-systematic\-\_\-on\-\_\-dispatch}}
+\index{set\-\_\-systematic\-\_\-on\-\_\-dispatch@{set\-\_\-systematic\-\_\-on\-\_\-dispatch}!kodo@{kodo}}
+\subsubsection[{set\-\_\-systematic\-\_\-on\-\_\-dispatch}]{\setlength{\rightskip}{0pt plus 5cm}void kodo\-::set\-\_\-systematic\-\_\-on\-\_\-dispatch (
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_ab49f22550578e1311b976e3b39fcd1e4}
+Catch all implementation if no specializations exist this function will be called. \begin{DoxyReturn}{Returns}
+always return false 
+\end{DoxyReturn}
+
+
+Definition at line 146 of file systematic\-\_\-operations.\-hpp.
+
+\hypertarget{namespacekodo_aaf2e525aaa8dd6ce3ff2fb72b32bd876}{\index{kodo@{kodo}!set\-\_\-systematic\-\_\-on\-\_\-dispatch@{set\-\_\-systematic\-\_\-on\-\_\-dispatch}}
+\index{set\-\_\-systematic\-\_\-on\-\_\-dispatch@{set\-\_\-systematic\-\_\-on\-\_\-dispatch}!kodo@{kodo}}
+\subsubsection[{set\-\_\-systematic\-\_\-on\-\_\-dispatch}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ void kodo\-::set\-\_\-systematic\-\_\-on\-\_\-dispatch (
+\begin{DoxyParamCaption}
+\item[{systematic\-\_\-encoder$<$ Super\-Coder $>$ $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespacekodo_aaf2e525aaa8dd6ce3ff2fb72b32bd876}
+Overload for the generic set\-\_\-systematic\-\_\-on\-\_\-dispatch(...) function
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & the encoder \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 262 of file systematic\-\_\-encoder.\-hpp.
+
+
+
+Referenced by set\-\_\-systematic\-\_\-on().
+

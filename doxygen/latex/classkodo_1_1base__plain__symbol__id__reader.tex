@@ -1,0 +1,67 @@
+\hypertarget{classkodo_1_1base__plain__symbol__id__reader}{\section{kodo\-:\-:base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-reader$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1base__plain__symbol__id__reader}\index{kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-reader$<$ Super\-Coder $>$@{kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-reader$<$ Super\-Coder $>$}}
+}
+
+
+Reads the coding coefficients from the symbol id buffer and initializes the symbol coefficients pointer. This implementation is the most basic one where the symbol id simply is the coding coefficients.  
+
+
+
+
+{\ttfamily \#include $<$plain\-\_\-symbol\-\_\-id\-\_\-reader.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-reader$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1base__plain__symbol__id__reader}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classkodo_1_1base__plain__symbol__id__reader_a2d8c47b2854ccf9d616700469e03a569}{read\-\_\-id} (uint8\-\_\-t $\ast$symbol\-\_\-id, uint8\-\_\-t $\ast$$\ast$symbol\-\_\-coefficients)
+\begin{DoxyCompactList}\small\item\em Can be reimplemented by a Symbol I\-D layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-reader$<$ Super\-Coder $>$}
+
+Reads the coding coefficients from the symbol id buffer and initializes the symbol coefficients pointer. This implementation is the most basic one where the symbol id simply is the coding coefficients. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000036}{Todo}]Missing or incorrectly named unit test\end{DoxyRefDesc}
+
+
+Definition at line 22 of file plain\-\_\-symbol\-\_\-id\-\_\-reader.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1base__plain__symbol__id__reader_a2d8c47b2854ccf9d616700469e03a569}{\index{kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-reader@{kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-reader}!read\-\_\-id@{read\-\_\-id}}
+\index{read\-\_\-id@{read\-\_\-id}!kodo::base_plain_symbol_id_reader@{kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-reader}}
+\subsubsection[{read\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ void {\bf kodo\-::base\-\_\-plain\-\_\-symbol\-\_\-id\-\_\-reader}$<$ Super\-Coder $>$\-::read\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{symbol\-\_\-id, }
+\item[{uint8\-\_\-t $\ast$$\ast$}]{symbol\-\_\-coefficients}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1base__plain__symbol__id__reader_a2d8c47b2854ccf9d616700469e03a569}
+
+
+Can be reimplemented by a Symbol I\-D layer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol\-\_\-id} & Contains the symbol id for an encoded symbol. \\
+\hline
+{\em coefficient} & Pointer to pointer of the symbol coefficients. After the call to read\-\_\-id the coefficients pointer will point to memory storing all coding coefficients corresponding to the symbol id read from the symbol\-\_\-id buffer. Note, the buffer returned may be change by the calling code. The implementation should therefore ensure that this will not cause problems e.\-g. by returning a pointer to a internal buffered copy of the coefficients. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file plain\-\_\-symbol\-\_\-id\-\_\-reader.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+plain\-\_\-symbol\-\_\-id\-\_\-reader.\-hpp\end{DoxyCompactItemize}

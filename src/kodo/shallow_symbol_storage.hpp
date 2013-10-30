@@ -12,7 +12,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup symbol_storage_layers
     /// @brief The shallow storage implementation. In this context shallow
     /// means that the symbol storage only contains pointers to some

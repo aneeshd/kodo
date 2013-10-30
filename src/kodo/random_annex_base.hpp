@@ -19,6 +19,7 @@
 
 namespace kodo
 {
+    /// @todo Missing or incorrectly named unit test
     /// For a given selection of object partitioning parameters this function
     /// returns the maximum allowed annex size.
     ///

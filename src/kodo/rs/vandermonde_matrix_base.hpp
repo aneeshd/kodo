@@ -13,7 +13,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @brief Computes a Vandermonde matrix to generate the coding
     ///        coefficients. The matrix code is
     template<class SuperCoder>

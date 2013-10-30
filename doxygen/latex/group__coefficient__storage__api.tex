@@ -1,0 +1,186 @@
+\hypertarget{group__coefficient__storage__api}{\section{A\-P\-I}
+\label{group__coefficient__storage__api}\index{A\-P\-I@{A\-P\-I}}
+}
+
+
+The A\-P\-I used by storage layers.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{group__coefficient__storage__api_ga4bf955840bac622c19cf19c0f8425cca}{layer\-::factory\-::max\-\_\-coefficients\-\_\-size} () const 
+\item 
+uint32\-\_\-t \hyperlink{group__coefficient__storage__api_ga82899f2e9bb1ac587ce04d480d9e3af8}{layer\-::factory\-::max\-\_\-coefficient\-\_\-vectors} () const 
+\item 
+uint32\-\_\-t \hyperlink{group__coefficient__storage__api_gad1eec7417e960f93e39d6b12cfab1d53}{layer\-::coefficient\-\_\-vectors} () const 
+\item 
+uint32\-\_\-t \hyperlink{group__coefficient__storage__api_gad6edd703054ca227046d4d7f827fb1f6}{layer\-::coefficient\-\_\-vector\-\_\-size} () const 
+\item 
+uint32\-\_\-t \hyperlink{group__coefficient__storage__api_gaca30da6cd0d33efc5ac528eadd43147c}{layer\-::coefficient\-\_\-vector\-\_\-length} () const 
+\item 
+uint32\-\_\-t \hyperlink{group__coefficient__storage__api_gab1e8bf505965d65dd3044f8d7067e82e}{layer\-::coefficient\-\_\-vector\-\_\-elements} () const 
+\item 
+value\-\_\-type $\ast$ \hyperlink{group__coefficient__storage__api_ga11529097f8883e4fd619ac1b85e496f6}{layer\-::coefficient\-\_\-vector\-\_\-values} (uint32\-\_\-t index)
+\item 
+const value\-\_\-type $\ast$ \hyperlink{group__coefficient__storage__api_gabbd848b3d62611d1b13da07755fb050a}{layer\-::coefficient\-\_\-vector\-\_\-values} (uint32\-\_\-t index) const 
+\item 
+uint8\-\_\-t $\ast$ \hyperlink{group__coefficient__storage__api_gad15e1a9c3d9b24ffdf5e9d2915c03f44}{layer\-::coefficient\-\_\-vector\-\_\-data} (uint32\-\_\-t index)
+\item 
+const uint8\-\_\-t $\ast$ \hyperlink{group__coefficient__storage__api_gae86412692c0a2384e3702a6504c3b911}{layer\-::coefficient\-\_\-vector\-\_\-data} (uint32\-\_\-t index) const 
+\item 
+void \hyperlink{group__coefficient__storage__api_ga1cfc9696c66b278ce1e137f48a261601}{layer\-::set\-\_\-coefficient\-\_\-vector\-\_\-data} (uint32\-\_\-t index, const sak\-::const\-\_\-storage \&storage)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The A\-P\-I used by storage layers. 
+
+\subsection{Function Documentation}
+\hypertarget{group__coefficient__storage__api_gad15e1a9c3d9b24ffdf5e9d2915c03f44}{\index{A\-P\-I@{A\-P\-I}!coefficient\-\_\-vector\-\_\-data@{coefficient\-\_\-vector\-\_\-data}}
+\index{coefficient\-\_\-vector\-\_\-data@{coefficient\-\_\-vector\-\_\-data}!API@{A\-P\-I}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ layer\-::coefficient\-\_\-vector\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}}\label{group__coefficient__storage__api_gad15e1a9c3d9b24ffdf5e9d2915c03f44}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the specified vector 
+\end{DoxyReturn}
+\hypertarget{group__coefficient__storage__api_gae86412692c0a2384e3702a6504c3b911}{\index{A\-P\-I@{A\-P\-I}!coefficient\-\_\-vector\-\_\-data@{coefficient\-\_\-vector\-\_\-data}}
+\index{coefficient\-\_\-vector\-\_\-data@{coefficient\-\_\-vector\-\_\-data}!API@{A\-P\-I}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\-\_\-t$\ast$ layer\-::coefficient\-\_\-vector\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{group__coefficient__storage__api_gae86412692c0a2384e3702a6504c3b911}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the specified vector 
+\end{DoxyReturn}
+\hypertarget{group__coefficient__storage__api_gab1e8bf505965d65dd3044f8d7067e82e}{\index{A\-P\-I@{A\-P\-I}!coefficient\-\_\-vector\-\_\-elements@{coefficient\-\_\-vector\-\_\-elements}}
+\index{coefficient\-\_\-vector\-\_\-elements@{coefficient\-\_\-vector\-\_\-elements}!API@{A\-P\-I}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-elements}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::coefficient\-\_\-vector\-\_\-elements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__coefficient__storage__api_gab1e8bf505965d65dd3044f8d7067e82e}
+\begin{DoxyReturn}{Returns}
+The number of coefficients stored in a coefficient vector. The count will say how many finite field elements will be stored within a coefficient vector, whereas the size and length refers to the space (in terms of memory) occupied by those coefficients. 
+\end{DoxyReturn}
+\hypertarget{group__coefficient__storage__api_gaca30da6cd0d33efc5ac528eadd43147c}{\index{A\-P\-I@{A\-P\-I}!coefficient\-\_\-vector\-\_\-length@{coefficient\-\_\-vector\-\_\-length}}
+\index{coefficient\-\_\-vector\-\_\-length@{coefficient\-\_\-vector\-\_\-length}!API@{A\-P\-I}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::coefficient\-\_\-vector\-\_\-length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__coefficient__storage__api_gaca30da6cd0d33efc5ac528eadd43147c}
+\begin{DoxyReturn}{Returns}
+The number of \hyperlink{classlayer_a3ad6d6930927932e5c25f2a2b5277cc0}{layer\-::value\-\_\-type} elements needed to store the symbol coefficients. 
+\end{DoxyReturn}
+\hypertarget{group__coefficient__storage__api_gad6edd703054ca227046d4d7f827fb1f6}{\index{A\-P\-I@{A\-P\-I}!coefficient\-\_\-vector\-\_\-size@{coefficient\-\_\-vector\-\_\-size}}
+\index{coefficient\-\_\-vector\-\_\-size@{coefficient\-\_\-vector\-\_\-size}!API@{A\-P\-I}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::coefficient\-\_\-vector\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__coefficient__storage__api_gad6edd703054ca227046d4d7f827fb1f6}
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the layer\-::factory\-::max\-\_\-coefficient\-\_\-vector\-\_\-size() function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The number of bytes needed to store the symbol coefficients. 
+\end{DoxyReturn}
+\hypertarget{group__coefficient__storage__api_ga11529097f8883e4fd619ac1b85e496f6}{\index{A\-P\-I@{A\-P\-I}!coefficient\-\_\-vector\-\_\-values@{coefficient\-\_\-vector\-\_\-values}}
+\index{coefficient\-\_\-vector\-\_\-values@{coefficient\-\_\-vector\-\_\-values}!API@{A\-P\-I}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-values}]{\setlength{\rightskip}{0pt plus 5cm}value\-\_\-type$\ast$ layer\-::coefficient\-\_\-vector\-\_\-values (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}}\label{group__coefficient__storage__api_ga11529097f8883e4fd619ac1b85e496f6}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the specified vector 
+\end{DoxyReturn}
+\hypertarget{group__coefficient__storage__api_gabbd848b3d62611d1b13da07755fb050a}{\index{A\-P\-I@{A\-P\-I}!coefficient\-\_\-vector\-\_\-values@{coefficient\-\_\-vector\-\_\-values}}
+\index{coefficient\-\_\-vector\-\_\-values@{coefficient\-\_\-vector\-\_\-values}!API@{A\-P\-I}}
+\subsubsection[{coefficient\-\_\-vector\-\_\-values}]{\setlength{\rightskip}{0pt plus 5cm}const value\-\_\-type$\ast$ layer\-::coefficient\-\_\-vector\-\_\-values (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{group__coefficient__storage__api_gabbd848b3d62611d1b13da07755fb050a}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the index in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the specified vector 
+\end{DoxyReturn}
+\hypertarget{group__coefficient__storage__api_gad1eec7417e960f93e39d6b12cfab1d53}{\index{A\-P\-I@{A\-P\-I}!coefficient\-\_\-vectors@{coefficient\-\_\-vectors}}
+\index{coefficient\-\_\-vectors@{coefficient\-\_\-vectors}!API@{A\-P\-I}}
+\subsubsection[{coefficient\-\_\-vectors}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::coefficient\-\_\-vectors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__coefficient__storage__api_gad1eec7417e960f93e39d6b12cfab1d53}
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the \hyperlink{group__coefficient__storage__api_ga82899f2e9bb1ac587ce04d480d9e3af8}{layer\-::factory\-::max\-\_\-coefficient\-\_\-vectors()} function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The number of coefficient vectors stored. When accessing the coefficients data the index used should be between 0 and the number returned by this function. 
+\end{DoxyReturn}
+\hypertarget{group__coefficient__storage__api_ga82899f2e9bb1ac587ce04d480d9e3af8}{\index{A\-P\-I@{A\-P\-I}!max\-\_\-coefficient\-\_\-vectors@{max\-\_\-coefficient\-\_\-vectors}}
+\index{max\-\_\-coefficient\-\_\-vectors@{max\-\_\-coefficient\-\_\-vectors}!API@{A\-P\-I}}
+\subsubsection[{max\-\_\-coefficient\-\_\-vectors}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::factory\-::max\-\_\-coefficient\-\_\-vectors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__coefficient__storage__api_ga82899f2e9bb1ac587ce04d480d9e3af8}
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the \hyperlink{group__coefficient__storage__api_gad1eec7417e960f93e39d6b12cfab1d53}{layer\-::coefficient\-\_\-vectors()} function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The maximum required coefficient vectors 
+\end{DoxyReturn}
+\hypertarget{group__coefficient__storage__api_ga4bf955840bac622c19cf19c0f8425cca}{\index{A\-P\-I@{A\-P\-I}!max\-\_\-coefficients\-\_\-size@{max\-\_\-coefficients\-\_\-size}}
+\index{max\-\_\-coefficients\-\_\-size@{max\-\_\-coefficients\-\_\-size}!API@{A\-P\-I}}
+\subsubsection[{max\-\_\-coefficients\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t layer\-::factory\-::max\-\_\-coefficients\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{group__coefficient__storage__api_ga4bf955840bac622c19cf19c0f8425cca}
+\begin{DoxyNote}{Note}
+If you implement this function you most likely also have to implement the layer\-::coefficients\-\_\-size() function.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The maximum required coefficients buffer size in bytes 
+\end{DoxyReturn}
+\hypertarget{group__coefficient__storage__api_ga1cfc9696c66b278ce1e137f48a261601}{\index{A\-P\-I@{A\-P\-I}!set\-\_\-coefficient\-\_\-vector\-\_\-data@{set\-\_\-coefficient\-\_\-vector\-\_\-data}}
+\index{set\-\_\-coefficient\-\_\-vector\-\_\-data@{set\-\_\-coefficient\-\_\-vector\-\_\-data}!API@{A\-P\-I}}
+\subsubsection[{set\-\_\-coefficient\-\_\-vector\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void layer\-::set\-\_\-coefficient\-\_\-vector\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index, }
+\item[{const sak\-::const\-\_\-storage \&}]{storage}
+\end{DoxyParamCaption}
+)}}\label{group__coefficient__storage__api_ga1cfc9696c66b278ce1e137f48a261601}
+Sets a coefficient buffer -\/ by copying it into the right location in the buffer. 
+\begin{DoxyParams}{Parameters}
+{\em index} & the index of the coefficients into the coding block \\
+\hline
+{\em storage} & The actual data of the coefficients \\
+\hline
+\end{DoxyParams}

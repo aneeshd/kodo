@@ -9,7 +9,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup type_traits
     /// Type trait helper allows compile time detection of whether an
     /// encoder / decoder contains the shallow_symbol_storage layer

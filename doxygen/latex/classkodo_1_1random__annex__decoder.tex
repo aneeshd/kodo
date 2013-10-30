@@ -1,0 +1,156 @@
+\hypertarget{classkodo_1_1random__annex__decoder}{\section{kodo\-:\-:random\-\_\-annex\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$ Class Template Reference}
+\label{classkodo_1_1random__annex__decoder}\index{kodo\-::random\-\_\-annex\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$@{kodo\-::random\-\_\-annex\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$}}
+}
+
+
+A random annex decoder.  
+
+
+
+
+{\ttfamily \#include $<$random\-\_\-annex\-\_\-decoder.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:random\-\_\-annex\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1random__annex__decoder}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classkodo_1_1random__annex__decoder_1_1call__proxy}{call\-\_\-proxy}
+\item 
+class \hyperlink{classkodo_1_1random__annex__decoder_1_1wrap__coder}{wrap\-\_\-coder}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classkodo_1_1random__annex__decoder_a68e1a5fbc7128fe60d8905e0ec0fc83c}{typedef Decoder\-Type\-::factory \hyperlink{classkodo_1_1random__annex__decoder_a68e1a5fbc7128fe60d8905e0ec0fc83c}{factory\-\_\-type}}\label{classkodo_1_1random__annex__decoder_a68e1a5fbc7128fe60d8905e0ec0fc83c}
+
+\begin{DoxyCompactList}\small\item\em The type of factory used to build decoders. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1random__annex__decoder_adbc8e1eb9e3b31cd1461d375cb3e6b2f}{typedef Decoder\-Type\-::pointer \hyperlink{classkodo_1_1random__annex__decoder_adbc8e1eb9e3b31cd1461d375cb3e6b2f}{internal\-\_\-pointer\-\_\-type}}\label{classkodo_1_1random__annex__decoder_adbc8e1eb9e3b31cd1461d375cb3e6b2f}
+
+\begin{DoxyCompactList}\small\item\em Pointer to a decoder. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1random__annex__decoder_a7f51485decbfc15960dcc266f82beed0}{typedef Block\-Partitioning \hyperlink{classkodo_1_1random__annex__decoder_a7f51485decbfc15960dcc266f82beed0}{block\-\_\-partitioning}}\label{classkodo_1_1random__annex__decoder_a7f51485decbfc15960dcc266f82beed0}
+
+\begin{DoxyCompactList}\small\item\em The block partitioning scheme used. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1random__annex__decoder_ae9f03beed282a957f0ab4affe1d224d7}{typedef \hyperlink{classkodo_1_1random__annex__base}{random\-\_\-annex\-\_\-base}\\*
+$<$ Block\-Partitioning $>$ \hyperlink{classkodo_1_1random__annex__decoder_ae9f03beed282a957f0ab4affe1d224d7}{Base}}\label{classkodo_1_1random__annex__decoder_ae9f03beed282a957f0ab4affe1d224d7}
+
+\begin{DoxyCompactList}\small\item\em The base. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1random__annex__decoder_a6cd2a7b5e4aa6e0fc3970faeda0448a8}{typedef std\-::set$<$ \hyperlink{structkodo_1_1annex__info}{annex\-\_\-info} $>$\\*
+\-::iterator \hyperlink{classkodo_1_1random__annex__decoder_a6cd2a7b5e4aa6e0fc3970faeda0448a8}{annex\-\_\-iterator}}\label{classkodo_1_1random__annex__decoder_a6cd2a7b5e4aa6e0fc3970faeda0448a8}
+
+\begin{DoxyCompactList}\small\item\em The annex iterator type. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1random__annex__decoder_ab4721acd76dbc223b2e46966b543913a}{typedef boost\-::function$<$ void()$>$ \hyperlink{classkodo_1_1random__annex__decoder_ab4721acd76dbc223b2e46966b543913a}{is\-\_\-complete\-\_\-handler}}\label{classkodo_1_1random__annex__decoder_ab4721acd76dbc223b2e46966b543913a}
+
+\begin{DoxyCompactList}\small\item\em The callback function to invoke when a decoder completes. \end{DoxyCompactList}\item 
+\hypertarget{classkodo_1_1random__annex__decoder_aad5ac43c9eb997492773190be2ddd9e8}{typedef \hyperlink{classkodo_1_1random__annex__decoder_1_1wrap__coder}{wrap\-\_\-coder} {\bfseries pointer\-\_\-type}}\label{classkodo_1_1random__annex__decoder_aad5ac43c9eb997492773190be2ddd9e8}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classkodo_1_1random__annex__decoder_aaec4ec2f265c4a8ae741e7b2573348ce}{random\-\_\-annex\-\_\-decoder} (uint32\-\_\-t annex\-\_\-size, \hyperlink{classkodo_1_1random__annex__decoder_a68e1a5fbc7128fe60d8905e0ec0fc83c}{factory\-\_\-type} \&factory, uint32\-\_\-t \hyperlink{classkodo_1_1random__annex__decoder_aa63cbf2aae8f7339af18d4cd4aeb49f3}{object\-\_\-size})
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1random__annex__decoder_aa90effdcf8eb8c1c6d6032da8a80356c}{decoders} () const 
+\item 
+\hyperlink{classkodo_1_1random__annex__decoder_1_1wrap__coder}{pointer\-\_\-type} \hyperlink{classkodo_1_1random__annex__decoder_a9899aedc9bf52b46668eb15958c51cd1}{build} (uint32\-\_\-t decoder\-\_\-id)
+\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1random__annex__decoder_aa63cbf2aae8f7339af18d4cd4aeb49f3}{object\-\_\-size} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Decoder\-Type, class Block\-Partitioning$>$class kodo\-::random\-\_\-annex\-\_\-decoder$<$ Decoder\-Type, Block\-Partitioning $>$}
+
+A random annex decoder. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000039}{Todo}]Missing or incorrectly named unit test \end{DoxyRefDesc}
+
+
+Definition at line 25 of file random\-\_\-annex\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classkodo_1_1random__annex__decoder_aaec4ec2f265c4a8ae741e7b2573348ce}{\index{kodo\-::random\-\_\-annex\-\_\-decoder@{kodo\-::random\-\_\-annex\-\_\-decoder}!random\-\_\-annex\-\_\-decoder@{random\-\_\-annex\-\_\-decoder}}
+\index{random\-\_\-annex\-\_\-decoder@{random\-\_\-annex\-\_\-decoder}!kodo::random_annex_decoder@{kodo\-::random\-\_\-annex\-\_\-decoder}}
+\subsubsection[{random\-\_\-annex\-\_\-decoder}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Decoder\-Type , class Block\-Partitioning $>$ {\bf kodo\-::random\-\_\-annex\-\_\-decoder}$<$ Decoder\-Type, Block\-Partitioning $>$\-::{\bf random\-\_\-annex\-\_\-decoder} (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{annex\-\_\-size, }
+\item[{{\bf factory\-\_\-type} \&}]{factory, }
+\item[{uint32\-\_\-t}]{object\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1random__annex__decoder_aaec4ec2f265c4a8ae741e7b2573348ce}
+Constructs a new random annex decoder 
+\begin{DoxyParams}{Parameters}
+{\em annex\-\_\-size} & the number of symbols used for the random annex \\
+\hline
+{\em factory} & the decoder factory to use \\
+\hline
+{\em object\-\_\-size} & size in bytes of the object that is to be decoded \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 130 of file random\-\_\-annex\-\_\-decoder.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1random__annex__decoder_a9899aedc9bf52b46668eb15958c51cd1}{\index{kodo\-::random\-\_\-annex\-\_\-decoder@{kodo\-::random\-\_\-annex\-\_\-decoder}!build@{build}}
+\index{build@{build}!kodo::random_annex_decoder@{kodo\-::random\-\_\-annex\-\_\-decoder}}
+\subsubsection[{build}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Decoder\-Type , class Block\-Partitioning $>$ {\bf pointer\-\_\-type} {\bf kodo\-::random\-\_\-annex\-\_\-decoder}$<$ Decoder\-Type, Block\-Partitioning $>$\-::build (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{decoder\-\_\-id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1random__annex__decoder_a9899aedc9bf52b46668eb15958c51cd1}
+Builds a specific decoder 
+\begin{DoxyParams}{Parameters}
+{\em decoder\-\_\-id} & specifies the decoder to build \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the initialized decoder 
+\end{DoxyReturn}
+
+
+Definition at line 167 of file random\-\_\-annex\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1random__annex__decoder_aa90effdcf8eb8c1c6d6032da8a80356c}{\index{kodo\-::random\-\_\-annex\-\_\-decoder@{kodo\-::random\-\_\-annex\-\_\-decoder}!decoders@{decoders}}
+\index{decoders@{decoders}!kodo::random_annex_decoder@{kodo\-::random\-\_\-annex\-\_\-decoder}}
+\subsubsection[{decoders}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Decoder\-Type , class Block\-Partitioning $>$ uint32\-\_\-t {\bf kodo\-::random\-\_\-annex\-\_\-decoder}$<$ Decoder\-Type, Block\-Partitioning $>$\-::decoders (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1random__annex__decoder_aa90effdcf8eb8c1c6d6032da8a80356c}
+\begin{DoxyReturn}{Returns}
+the number of decoders which may be created for this object 
+\end{DoxyReturn}
+
+
+Definition at line 159 of file random\-\_\-annex\-\_\-decoder.\-hpp.
+
+\hypertarget{classkodo_1_1random__annex__decoder_aa63cbf2aae8f7339af18d4cd4aeb49f3}{\index{kodo\-::random\-\_\-annex\-\_\-decoder@{kodo\-::random\-\_\-annex\-\_\-decoder}!object\-\_\-size@{object\-\_\-size}}
+\index{object\-\_\-size@{object\-\_\-size}!kodo::random_annex_decoder@{kodo\-::random\-\_\-annex\-\_\-decoder}}
+\subsubsection[{object\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Decoder\-Type , class Block\-Partitioning $>$ uint32\-\_\-t {\bf kodo\-::random\-\_\-annex\-\_\-decoder}$<$ Decoder\-Type, Block\-Partitioning $>$\-::object\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1random__annex__decoder_aa63cbf2aae8f7339af18d4cd4aeb49f3}
+\begin{DoxyReturn}{Returns}
+the total size of the object to encode in bytes 
+\end{DoxyReturn}
+
+
+Definition at line 175 of file random\-\_\-annex\-\_\-decoder.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+random\-\_\-annex\-\_\-decoder.\-hpp\end{DoxyCompactItemize}

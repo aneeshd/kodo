@@ -1,0 +1,83 @@
+\hypertarget{classkodo_1_1transpose__vandermonde__matrix_1_1factory}{\section{kodo\-:\-:transpose\-\_\-vandermonde\-\_\-matrix$<$ Super\-Coder $>$\-:\-:factory Class Reference}
+\label{classkodo_1_1transpose__vandermonde__matrix_1_1factory}\index{kodo\-::transpose\-\_\-vandermonde\-\_\-matrix$<$ Super\-Coder $>$\-::factory@{kodo\-::transpose\-\_\-vandermonde\-\_\-matrix$<$ Super\-Coder $>$\-::factory}}
+}
+
+
+{\ttfamily \#include $<$transpose\-\_\-vandermonde\-\_\-matrix.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:transpose\-\_\-vandermonde\-\_\-matrix$<$ Super\-Coder $>$\-:\-:factory\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1transpose__vandermonde__matrix_1_1factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classkodo_1_1transpose__vandermonde__matrix_1_1factory_a6bd881b0e179bdc5f0286e9381b0d061}{factory} (uint32\-\_\-t max\-\_\-symbols, uint32\-\_\-t max\-\_\-symbol\-\_\-size)
+\begin{DoxyCompactList}\small\item\em Factory constructor. \end{DoxyCompactList}\item 
+boost\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classkodo_1_1transpose__vandermonde__matrix_aa009fc588662c9cf5495dad11cfbabab}{generator\-\_\-matrix} $>$ \hyperlink{classkodo_1_1transpose__vandermonde__matrix_1_1factory_aec74e9769f94247a796baa4624e4b6f4}{construct\-\_\-matrix} (uint32\-\_\-t symbols)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::transpose\-\_\-vandermonde\-\_\-matrix$<$ Super\-Coder $>$\-::factory}
+
+The factory layer associated with this coder. Maintains the block generator needed for the encoding vectors. 
+
+Definition at line 30 of file transpose\-\_\-vandermonde\-\_\-matrix.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classkodo_1_1transpose__vandermonde__matrix_1_1factory_a6bd881b0e179bdc5f0286e9381b0d061}{\index{kodo\-::transpose\-\_\-vandermonde\-\_\-matrix\-::factory@{kodo\-::transpose\-\_\-vandermonde\-\_\-matrix\-::factory}!factory@{factory}}
+\index{factory@{factory}!kodo::transpose_vandermonde_matrix::factory@{kodo\-::transpose\-\_\-vandermonde\-\_\-matrix\-::factory}}
+\subsubsection[{factory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ {\bf kodo\-::transpose\-\_\-vandermonde\-\_\-matrix}$<$ Super\-Coder $>$\-::factory\-::factory (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{max\-\_\-symbols, }
+\item[{uint32\-\_\-t}]{max\-\_\-symbol\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1transpose__vandermonde__matrix_1_1factory_a6bd881b0e179bdc5f0286e9381b0d061}
+
+
+Factory constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\-\_\-symbols} & the maximum symbols this coder can expect \\
+\hline
+{\em max\-\_\-symbol\-\_\-size} & the maximum size of a symbol in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file transpose\-\_\-vandermonde\-\_\-matrix.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1transpose__vandermonde__matrix_1_1factory_aec74e9769f94247a796baa4624e4b6f4}{\index{kodo\-::transpose\-\_\-vandermonde\-\_\-matrix\-::factory@{kodo\-::transpose\-\_\-vandermonde\-\_\-matrix\-::factory}!construct\-\_\-matrix@{construct\-\_\-matrix}}
+\index{construct\-\_\-matrix@{construct\-\_\-matrix}!kodo::transpose_vandermonde_matrix::factory@{kodo\-::transpose\-\_\-vandermonde\-\_\-matrix\-::factory}}
+\subsubsection[{construct\-\_\-matrix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder$>$ boost\-::shared\-\_\-ptr$<${\bf generator\-\_\-matrix}$>$ {\bf kodo\-::transpose\-\_\-vandermonde\-\_\-matrix}$<$ Super\-Coder $>$\-::factory\-::construct\-\_\-matrix (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{symbols}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1transpose__vandermonde__matrix_1_1factory_aec74e9769f94247a796baa4624e4b6f4}
+Transposes the constructed Vandermonde matrix 
+\begin{DoxyParams}{Parameters}
+{\em symbols} & The number of source symbols to encode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Vandermonde matrix 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file transpose\-\_\-vandermonde\-\_\-matrix.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+transpose\-\_\-vandermonde\-\_\-matrix.\-hpp\end{DoxyCompactItemize}

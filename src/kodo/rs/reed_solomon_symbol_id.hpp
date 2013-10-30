@@ -10,7 +10,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup symbol_id_layers
     ///
     /// @brief Base class for the Reed-Solomon symbol id reader and

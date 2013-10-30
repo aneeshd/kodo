@@ -9,7 +9,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup decoder_layers
     /// @ingroup empty
     /// @brief Empty implementation of the decode_symbol(uint8_t*,uint8_t*) and

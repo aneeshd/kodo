@@ -9,7 +9,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup encoder_layers
     /// @brief Zeros the symbol data buffer
     template<class SuperCoder>

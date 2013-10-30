@@ -17,7 +17,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup symbol_id_layers
     ///
     /// @brief Uses the count of the currently encoded symbol to select the

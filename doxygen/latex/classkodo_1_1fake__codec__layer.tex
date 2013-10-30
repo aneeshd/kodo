@@ -1,0 +1,95 @@
+\hypertarget{classkodo_1_1fake__codec__layer}{\section{kodo\-:\-:fake\-\_\-codec\-\_\-layer$<$ Super\-Coder $>$ Class Template Reference}
+\label{classkodo_1_1fake__codec__layer}\index{kodo\-::fake\-\_\-codec\-\_\-layer$<$ Super\-Coder $>$@{kodo\-::fake\-\_\-codec\-\_\-layer$<$ Super\-Coder $>$}}
+}
+
+
+{\ttfamily \#include $<$coefficient\-\_\-generator\-\_\-helper.\-hpp$>$}
+
+Inheritance diagram for kodo\-:\-:fake\-\_\-codec\-\_\-layer$<$ Super\-Coder $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkodo_1_1fake__codec__layer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Factory $>$ }\\void \hyperlink{classkodo_1_1fake__codec__layer_a4a3fe8c54381d84b58970a4a4ec9b14c}{initialize} (Factory \&the\-\_\-factory)
+\begin{DoxyCompactList}\small\item\em Initializes the coder. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classkodo_1_1fake__codec__layer_a26a3755b8be4d3e805c166b88b9cf2f0}{rank} () const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+bool \hyperlink{classkodo_1_1fake__codec__layer_abe5b06b5b6c2cfbcecf31f527f2f5395}{is\-\_\-symbol\-\_\-pivot} (uint32\-\_\-t index) const 
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Super\-Coder$>$class kodo\-::fake\-\_\-codec\-\_\-layer$<$ Super\-Coder $>$}
+
+Fake codec layer is a helper call for unit-\/testing code for the coefficient generator layers. The fake layer will generate a certain number pivot 
+
+Definition at line 39 of file coefficient\-\_\-generator\-\_\-helper.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classkodo_1_1fake__codec__layer_a4a3fe8c54381d84b58970a4a4ec9b14c}{\index{kodo\-::fake\-\_\-codec\-\_\-layer@{kodo\-::fake\-\_\-codec\-\_\-layer}!initialize@{initialize}}
+\index{initialize@{initialize}!kodo::fake_codec_layer@{kodo\-::fake\-\_\-codec\-\_\-layer}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ template$<$class Factory $>$ void {\bf kodo\-::fake\-\_\-codec\-\_\-layer}$<$ Super\-Coder $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Factory \&}]{the\-\_\-factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1fake__codec__layer_a4a3fe8c54381d84b58970a4a4ec9b14c}
+
+
+Initializes the coder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-\_\-factory} & The factory used to build the codec layer. Provides access to cached data and factory functions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file coefficient\-\_\-generator\-\_\-helper.\-hpp.
+
+\hypertarget{classkodo_1_1fake__codec__layer_abe5b06b5b6c2cfbcecf31f527f2f5395}{\index{kodo\-::fake\-\_\-codec\-\_\-layer@{kodo\-::fake\-\_\-codec\-\_\-layer}!is\-\_\-symbol\-\_\-pivot@{is\-\_\-symbol\-\_\-pivot}}
+\index{is\-\_\-symbol\-\_\-pivot@{is\-\_\-symbol\-\_\-pivot}!kodo::fake_codec_layer@{kodo\-::fake\-\_\-codec\-\_\-layer}}
+\subsubsection[{is\-\_\-symbol\-\_\-pivot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ bool {\bf kodo\-::fake\-\_\-codec\-\_\-layer}$<$ Super\-Coder $>$\-::is\-\_\-symbol\-\_\-pivot (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1fake__codec__layer_abe5b06b5b6c2cfbcecf31f527f2f5395}
+
+
+
+
+The symbol pivot indicates whether a symbol is available to either an encoder or decoder. A coefficient generator may use this information when generating coding coefficients. \begin{DoxyReturn}{Returns}
+True if the symbol is available. 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file coefficient\-\_\-generator\-\_\-helper.\-hpp.
+
+\hypertarget{classkodo_1_1fake__codec__layer_a26a3755b8be4d3e805c166b88b9cf2f0}{\index{kodo\-::fake\-\_\-codec\-\_\-layer@{kodo\-::fake\-\_\-codec\-\_\-layer}!rank@{rank}}
+\index{rank@{rank}!kodo::fake_codec_layer@{kodo\-::fake\-\_\-codec\-\_\-layer}}
+\subsubsection[{rank}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Super\-Coder $>$ uint32\-\_\-t {\bf kodo\-::fake\-\_\-codec\-\_\-layer}$<$ Super\-Coder $>$\-::rank (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classkodo_1_1fake__codec__layer_a26a3755b8be4d3e805c166b88b9cf2f0}
+
+
+
+
+The rank of a decoder states how many symbols have been decoded or partially decoded. The rank of an encoder states how many symbols are available for encoding. \begin{DoxyReturn}{Returns}
+the rank of the decoder or encoder 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file coefficient\-\_\-generator\-\_\-helper.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+coefficient\-\_\-generator\-\_\-helper.\-hpp\end{DoxyCompactItemize}

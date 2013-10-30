@@ -12,7 +12,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup storage_layers
     /// @brief Same as a shallow storage but supports storage object
     ///        with a total size less than the coding block size.

@@ -14,7 +14,7 @@
 
 namespace kodo
 {
-
+    /// @todo Missing or incorrectly named unit test
     /// @ingroup symbol_id_layers
     /// @brief Randomly recombines existing coding coefficients to
     ///        allow a decoder to produce recoded packets.
