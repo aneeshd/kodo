@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Copyright Steinwurf ApS 2011-2013.
 Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
@@ -12,7 +11,6 @@ In order for this script to output some comparison figures you should force the
 relevant benchmark run on our buildslaves: http://176.28.49.184:12344/buildslaves
 """
 
-import argparse
 import pandas as pd
 import scipy as sp
 
@@ -26,7 +24,7 @@ today = now.date()
 today = datetime(today.year, today.month, today.day)
 yesterday = today - timedelta(1)
 
-def plot(args):
+def plot_comparison_throughput(args):
     query_branches = {
     "type": args.coder,
     "scheduler": "kodo-force-benchmark",
@@ -120,21 +118,3 @@ def plot(args):
 
     for p in pdf:
         pdf[p].close()
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        '--coder', dest='coder', action='store', choices=['encoder','decoder'],
-        default='decoder',
-        help='Whether to consider the encoding or decoding performance'
-        )
-    parser.add_argument(
-        '--days', dest='days', type=int, action='store', default=3,
-        help='How many days to look back in time when comparing')
-    parser.add_argument(
-        '--output-format', dest='format', action='store', default='eps',
-        help='The format of the generated figures, e.g. eps, pdf')
-
-
-    args = parser.parse_args()
-    plot(args)

@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Copyright Steinwurf ApS 2011-2013.
 Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
@@ -8,7 +7,6 @@ http://www.steinwurf.com/licensing
 Plot the number of extra symbols needed to decode
 """
 
-import argparse
 import pandas as pd
 import scipy as sp
 
@@ -22,7 +20,7 @@ today = now.date()
 today = datetime(today.year, today.month, today.day)
 yesterday = today - timedelta(1)
 
-def plot(args):
+def plot_dependency_decoding_probablity(args):
 
     if args.jsonfile:
         PATH  = ("figures_local/")
@@ -101,21 +99,3 @@ def plot(args):
         pdf.savefig(transparent=True)
 
     pdf.close()
-
-
-if __name__ == '__main__':
-
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument(
-        '--json', dest='jsonfile', action='store',
-        help='the .json file written by gauge benchmark, if non provided plots \
-        from the database',
-        default="")
-    parser.add_argument(
-        '--output-format', dest='format', action='store', default='eps',
-        help='The format of the generated figures, e.g. eps, pdf')
-
-    args = parser.parse_args()
-
-    plot(args)
