@@ -14,17 +14,11 @@ import sys
 sys.path.insert(0, "../")
 import processing_shared as ps
 
-from datetime import datetime, timedelta
-now = datetime.utcnow()
-today = now.date()
-today = datetime(today.year, today.month, today.day)
-yesterday = today - timedelta(1)
+def plot_dependency_decoding_probablity(format, jsonfile, **kwargs):
 
-def plot_dependency_decoding_probablity(args):
-
-    if args.jsonfile:
+    if jsonfile:
         PATH  = ("figures_local/")
-        df = pd.read_json(args.jsonfile)
+        df = pd.read_json(jsonfile)
         df['buildername'] = "local"
 
     else:
@@ -32,7 +26,7 @@ def plot_dependency_decoding_probablity(args):
         query = {
         "branch" : "master",
         "scheduler": "kodo-nightly-benchmark",
-        "utc_date" : {"$gte": yesterday, "$lt": today}
+        "utc_date" : {"$gte": ps.yesterday, "$lt": ps.today}
         }
 
         db = ps.connect_database()
@@ -74,7 +68,7 @@ def plot_dependency_decoding_probablity(args):
         pl.xticks( symbols-2**sp.arange(sp.log2(symbols))[::-1] ,
             2**sp.arange(sp.log2(symbols),dtype=int)[::-1])
         pl.grid('on')
-        pl.savefig(PATH + "sparse/" + buildername + str(symbols) + "." + args.format)
+        pl.savefig(PATH + "sparse/" + buildername + str(symbols) + "." + format)
         pdf.savefig(transparent=True)
 
     for (buildername, symbol_size, symbols), group in dense:
@@ -95,7 +89,7 @@ def plot_dependency_decoding_probablity(args):
         pl.xticks( symbols-2**sp.arange(sp.log2(symbols))[::-1],
             2**sp.arange(sp.log2(symbols),dtype=int)[::-1])
         pl.grid('on')
-        pl.savefig(PATH + "dense/" + buildername + str(symbols) + "." + args.format)
+        pl.savefig(PATH + "dense/" + buildername + str(symbols) + "." + format)
         pdf.savefig(transparent=True)
 
     pdf.close()

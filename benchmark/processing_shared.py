@@ -11,6 +11,12 @@ plotting
 import os
 import scipy as sp
 
+from datetime import datetime, timedelta
+now = datetime.utcnow()
+today = now.date()
+today = datetime(today.year, today.month, today.day)
+yesterday = today - timedelta(1)
+
 import pymongo
 assert pymongo.version_tuple[:2] >= (2,5), "You need a newer version of pymongo"
 from pymongo import MongoClient
@@ -83,4 +89,3 @@ def set_plot_details(p, title):
     p.set_title(title, ha = "left", position = (.0,1.03), fontsize = "medium")
     set_markers(p)
     set_legend()
-

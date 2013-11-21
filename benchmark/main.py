@@ -36,23 +36,27 @@ if __name__ == '__main__':
         choices = plots.keys(),
         help    = 'Decide which plot you want to generated. '
                   'Write ALL to generated all plots.')
+
     parser.add_argument('--json',
         action  = 'store',
         default = "",
         dest    = 'jsonfile',
         help    = 'the .json file written by gauge benchmark, if non provided plots from the database')
+
     parser.add_argument('--days',
         action  = 'store',
         default = 3,
         dest    = 'days',
         help    = 'How many days to look back in time when comparing',
         type    = int)
+
     parser.add_argument('--coder',
         action  = 'store',
         choices = ['encoder', 'decoder'],
         default = 'decoder',
         dest    = 'coder',
         help    = 'Whether to consider the encoding or decoding performance')
+
     parser.add_argument('--output-format',
         action  = 'store',
         choices = ['eps', 'pdf', 'pgf', 'png', 'ps', 'raw', 'rgba', 'svg',
@@ -63,4 +67,4 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    plots[args.plot](args)
+    plots[args.plot](args.format, args.jsonfile, args.coder, args.days)

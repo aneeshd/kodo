@@ -14,24 +14,19 @@ import sys
 sys.path.insert(0, "../")
 import processing_shared as ps
 
-from datetime import datetime, timedelta
-now = datetime.utcnow()
-today = now.date()
-today = datetime(today.year, today.month, today.day)
-yesterday = today - timedelta(1)
+def plot_throughput(format, jsonfile, coder, **kwargs):
 
-def plot_throughput(args):
-    if args.jsonfile:
-        PATH  = ("figures_local/" + args.coder + "/")
-        df = pd.read_json(args.jsonfile)
+    if jsonfile:
+        PATH  = ("figures_local/" + coder + "/")
+        df = pd.read_json(jsonfile)
         df['buildername'] = "local"
     else:
-        PATH  = ("figures_database/" + args.coder + "/")
+        PATH  = ("figures_database/" + coder + "/")
         query = {
-        "type": args.coder,
+        "type": coder,
         "branch" : "master",
         "scheduler": "kodo-nightly-benchmark",
-        "utc_date" : {"$gte": yesterday, "$lt": today}
+        "utc_date" : {"$gte": ps.yesterday, "$lt": ps-today}
         }
 
         db = ps.connect_database()
@@ -63,7 +58,7 @@ def plot_throughput(args):
         pl.ylabel("Throughput" + " [" + list(group['unit'])[0] + "]")
         pl.xticks(list(sp.unique(group['symbols'])))
         p.set_yscale('log')
-        pl.savefig(PATH + "sparse/" + buildername + "." + args.format)
+        pl.savefig(PATH + "sparse/" + buildername + "." + format)
         pdf.savefig(transparent=True)
 
     for (buildername,symbols), group in dense:
@@ -74,7 +69,7 @@ def plot_throughput(args):
         pl.ylabel("Throughput" + " [" + list(group['unit'])[0] + "]")
         pl.xticks(list(sp.unique(group['symbols'])))
         p.set_yscale('log')
-        pl.savefig(PATH + "dense/"+ buildername + "." + args.format)
+        pl.savefig(PATH + "dense/"+ buildername + "." + format)
         pdf.savefig(transparent=True)
 
     pdf.close()

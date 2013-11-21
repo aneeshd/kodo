@@ -11,6 +11,7 @@ In order for this script to output some comparison figures you should force the
 relevant benchmark run on our buildslaves: http://176.28.49.184:12344/buildslaves
 """
 
+from datetime import timedelta
 import pandas as pd
 import scipy as sp
 
@@ -18,24 +19,18 @@ import sys
 sys.path.insert(0, "../")
 import processing_shared as ps
 
-from datetime import datetime, timedelta
-now = datetime.utcnow()
-today = now.date()
-today = datetime(today.year, today.month, today.day)
-yesterday = today - timedelta(1)
-
-def plot_comparison_throughput(args):
+def plot_comparison_throughput(format, jsonfile, coder, days):
     query_branches = {
-    "type": args.coder,
+    "type": coder,
     "scheduler": "kodo-force-benchmark",
-    "utc_date" : {"$gte": now - timedelta(args.days)}
+    "utc_date" : {"$gte": ps.now - timedelta(days)}
     }
 
     query_master = {
-    "type": args.coder,
+    "type": coder,
     "branch" : "master",
     "scheduler": "kodo-nightly-benchmark",
-    "utc_date" : {"$gte": yesterday, "$lt": today}
+    "utc_date" : {"$gte": ps.yesterday, "$lt": ps.today}
     }
 
     db = ps.connect_database()
@@ -52,7 +47,7 @@ def plot_comparison_throughput(args):
     from matplotlib.backends.backend_pdf import PdfPages as pp
     pl.close('all')
 
-    PATH  = ("./figures_database/" + args.coder + "/")
+    PATH  = ("./figures_database/" + coder + "/")
 
     branches = list(sp.unique(df_all['branch']))
     if len(branches) == 1:
@@ -103,7 +98,7 @@ def plot_comparison_throughput(args):
                 ps.set_plot_details(p, buildername)
                 pl.ylabel("Throughput gain [\%]")
                 pl.xticks(list(sp.unique(group['symbols'])))
-                pl.savefig(PATH_BRANCH + "/sparse/" + buildername + "." + args.format)
+                pl.savefig(PATH_BRANCH + "/sparse/" + buildername + "." + format)
                 pdf[branch].savefig(transparent=True)
 
             for key, g in dense:
@@ -113,7 +108,7 @@ def plot_comparison_throughput(args):
                 ps.set_plot_details(p, buildername)
                 pl.ylabel("Throughput gain [\%]")
                 pl.xticks(list(sp.unique(group['symbols'])))
-                pl.savefig(PATH_BRANCH + "/dense/" + buildername + "." + args.format)
+                pl.savefig(PATH_BRANCH + "/dense/" + buildername + "." + format)
                 pdf[branch].savefig(transparent=True)
 
     for p in pdf:
