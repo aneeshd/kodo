@@ -8,7 +8,8 @@ Plot the difference in throughput between all branches where the benchmarks have
 been run within the last 72 hours for all supported Kodo platforms
 
 In order for this script to output some comparison figures you should force the
-relevant benchmark run on our buildslaves: http://176.28.49.184:12344/buildslaves
+relevant benchmark run on our buildslaves:
+http://buildbot.steinwurf.dk/buildslaves
 """
 
 from datetime import timedelta
@@ -19,18 +20,18 @@ import sys
 sys.path.insert(0, "../")
 import processing_shared as ps
 
-def plot_comparison_throughput(format, jsonfile, coder, days):
+def plot_throughput_comparison(format, jsonfile, coder, days):
     query_branches = {
-    "type": coder,
-    "scheduler": "kodo-force-benchmark",
-    "utc_date" : {"$gte": ps.now - timedelta(days)}
+        "type": coder,
+        "scheduler": "kodo-force-benchmark",
+        "utc_date" : {"$gte": ps.now - timedelta(days)}
     }
 
     query_master = {
-    "type": coder,
-    "branch" : "master",
-    "scheduler": "kodo-nightly-benchmark",
-    "utc_date" : {"$gte": ps.yesterday, "$lt": ps.today}
+        "type": coder,
+        "branch" : "master",
+        "scheduler": "kodo-nightly-benchmark",
+        "utc_date" : {"$gte": ps.yesterday, "$lt": ps.today}
     }
 
     db = ps.connect_database()

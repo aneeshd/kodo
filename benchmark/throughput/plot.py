@@ -4,7 +4,7 @@ Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
 See accompanying file LICENSE.rst or
 http://www.steinwurf.com/licensing
 
-Plot the throughput for all benchmarked Kodo platforms
+Plot the throughput for all platforms
 """
 
 import pandas as pd
@@ -23,10 +23,10 @@ def plot_throughput(format, jsonfile, coder, **kwargs):
     else:
         PATH  = ("figures_database/" + coder + "/")
         query = {
-        "type": coder,
-        "branch" : "master",
-        "scheduler": "kodo-nightly-benchmark",
-        "utc_date" : {"$gte": ps.yesterday, "$lt": ps-today}
+            "type": coder,
+            "branch" : "master",
+            "scheduler": "kodo-nightly-benchmark",
+            "utc_date" : {"$gte": ps.yesterday, "$lt": ps-today}
         }
 
         db = ps.connect_database()

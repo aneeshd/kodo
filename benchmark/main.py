@@ -11,18 +11,18 @@ Plot the number of extra symbols needed to decode
 import argparse
 from decoding_probability.plot import plot_decoding_probablity
 from decoding_probability.plot_dependency import \
-     plot_dependency_decoding_probablity
+     plot_decoding_probablity_dependency
 
 from overhead.plot import plot_overhead
 from throughput.plot import plot_throughput
-from throughput.plot_comparison import plot_comparison_throughput
+from throughput.plot_comparison import plot_throughput_comparison
 
 plots = {
-    'plot_decoding_probablity'            : plot_decoding_probablity,
-    'plot_dependency_decoding_probablity' : plot_dependency_decoding_probablity,
-    'plot_overhead'                       : plot_overhead,
-    'plot_throughput'                     : plot_throughput,
-    'plot_comparison_throughput'          : plot_comparison_throughput,
+    'decoding_probablity'            : plot_decoding_probablity,
+    'decoding_probablity_dependency' : plot_decoding_probablity_dependency,
+    'overhead'                       : plot_overhead,
+    'throughput'                     : plot_throughput,
+    'throughput_comparison'          : plot_throughput_comparison,
 }
 
 if __name__ == '__main__':
@@ -32,8 +32,8 @@ if __name__ == '__main__':
 
     parser.add_argument(
         action  = 'store',
-        dest    = 'plot',
         choices = plots.keys(),
+        dest    = 'plot',
         help    = 'Decide which plot you want to generated. '
                   'Write ALL to generated all plots.')
 
@@ -41,7 +41,8 @@ if __name__ == '__main__':
         action  = 'store',
         default = "",
         dest    = 'jsonfile',
-        help    = 'the .json file written by gauge benchmark, if non provided plots from the database')
+        help    = 'the .json file written by gauge benchmark, if non provided'
+                  'plots from the database')
 
     parser.add_argument('--days',
         action  = 'store',

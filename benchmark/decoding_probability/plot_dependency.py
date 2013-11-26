@@ -3,8 +3,6 @@ Copyright Steinwurf ApS 2011-2013.
 Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
 See accompanying file LICENSE.rst or
 http://www.steinwurf.com/licensing
-
-Plot the number of extra symbols needed to decode
 """
 
 import pandas as pd
@@ -14,7 +12,7 @@ import sys
 sys.path.insert(0, "../")
 import processing_shared as ps
 
-def plot_dependency_decoding_probablity(format, jsonfile, **kwargs):
+def plot_decoding_probablity_dependency(format, jsonfile, **kwargs):
 
     if jsonfile:
         PATH  = ("figures_local/")
@@ -24,9 +22,9 @@ def plot_dependency_decoding_probablity(format, jsonfile, **kwargs):
     else:
         PATH  = ("figures_database_detailed/")
         query = {
-        "branch" : "master",
-        "scheduler": "kodo-nightly-benchmark",
-        "utc_date" : {"$gte": ps.yesterday, "$lt": ps.today}
+            "branch" : "master",
+            "scheduler": "kodo-nightly-benchmark",
+            "utc_date" : {"$gte": ps.yesterday, "$lt": ps.today}
         }
 
         db = ps.connect_database()
