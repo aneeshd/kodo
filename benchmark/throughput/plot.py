@@ -14,7 +14,7 @@ import sys
 sys.path.insert(0, "../")
 import processing_shared as ps
 
-def plot_throughput(format, jsonfile, coder, **kwargs):
+def plot_throughput(format, jsonfile, coder):
 
     if jsonfile:
         PATH  = ("figures_local/" + coder + "/")
@@ -26,7 +26,7 @@ def plot_throughput(format, jsonfile, coder, **kwargs):
             "type": coder,
             "branch" : "master",
             "scheduler": "kodo-nightly-benchmark",
-            "utc_date" : {"$gte": ps.yesterday, "$lt": ps-today}
+            "utc_date" : {"$gte": ps.yesterday, "$lt": ps.today}
         }
 
         db = ps.connect_database()

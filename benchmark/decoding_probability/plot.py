@@ -12,7 +12,7 @@ import sys
 sys.path.insert(0, "../")
 import processing_shared as ps
 
-def plot_decoding_probablity(format, jsonfile, **kwargs):
+def plot_decoding_probablity(format, jsonfile):
 
     if jsonfile:
         PATH  = ("figures_local/")

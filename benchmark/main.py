@@ -18,60 +18,104 @@ from overhead.plot import plot_overhead
 from throughput.plot import plot_throughput
 from throughput.plot_comparison import plot_throughput_comparison
 
+FUNCTION_KEY = 'function'
+ARGUMENT_KEY = 'arguments'
+
 benchmarks = {
-    'decoding_probablity'            : plot_decoding_probablity,
-    'decoding_probablity_dependency' : plot_decoding_probablity_dependency,
-    'overhead'                       : plot_overhead,
-    'throughput'                     : plot_throughput,
-    'throughput_comparison'          : plot_throughput_comparison,
+    'decoding_probablity'            : {
+        FUNCTION_KEY  : plot_decoding_probablity,
+        ARGUMENT_KEY : ['output-format', 'json',]},
+    'decoding_probablity_dependency' : {
+         FUNCTION_KEY : plot_decoding_probablity_dependency,
+         ARGUMENT_KEY : ['output-format', 'json',]},
+    'overhead' : {
+         FUNCTION_KEY : plot_overhead,
+         ARGUMENT_KEY : ['output-format', 'json',]},
+    'throughput' : {
+         FUNCTION_KEY : plot_throughput,
+         ARGUMENT_KEY : ['output-format', 'json', 'coder']},
+    'throughput_comparison' : {
+         FUNCTION_KEY : plot_throughput_comparison,
+         ARGUMENT_KEY : ['output-format', 'coder', 'days']},
 }
 
-if __name__ == '__main__':
+arguments = {
+    'output-format' : {
+        'action'  : 'store',
+        'choices' : ['eps', 'pdf', 'pgf', 'png', 'ps', 'raw', 'rgba', 'svg',
+                     'svgz'],
+        'default' : 'eps',
+        'dest'    : 'format',
+        'help'    : 'The format of the generated figures.'
+    },
+    'json' : {
+        'action'  : 'store',
+        'default' : '',
+        'dest'    : 'jsonfile',
+        'help'    : 'the .json file written by gauge benchmark, if non provided'
+                    'plots from the database'
+    },
+    'days' : {
+        'action'  : 'store',
+        'default' : 3,
+        'dest'    : 'days',
+        'help'    : 'How many days to look back in time when comparing',
+        'type'    : int
+    },
+    'coder' : {
+        'action'  : 'store',
+        'choices' : ['encoder', 'decoder'],
+        'default' : 'decoder',
+        'dest'    : 'coder',
+        'help'    : 'Whether to consider the encoding or decoding performance'
+    }
+}
+
+def add_argument(parser, argument):
+    parser.add_argument(
+        '--{}'.format(argument),
+        **arguments[argument])
+
+def main():
     if len(sys.argv) < 2:
         print 'Please specify which benchmark to plot:\n{}'.format('\n'.join(
-            ['{}. {}'.format(i+1, name) for i, name in enumerate(benchmarks)]))
+            ['{}. {}'.format(i+1, name) for i, name in enumerate(benchmarks.keys())]))
+        return
+
+    index = None
+    try:
+        index = int(sys.argv[1])-1
+    except ValueError:
+        pass
+    key = None
+
+    if index is not None:
+        if index in range(len(benchmarks)):
+            key = benchmarks.keys()[index]
+        else:
+            print('index out of range')
+            return
     else:
-        #index = int(sys.argv[1])
-        plot = sys.argv[1]
-        parser = argparse.ArgumentParser(
-            description="Plot the benchmark data located at the Steinwurf MongoDB")
+        key = sys.argv[1]
 
-        parser.add_argument(
-            action  = 'store',
-            choices = plots.keys(),
-            dest    = 'plot',
-            help    = 'Decide which plot you want to generated. '
-                      'Write ALL to generated all plots.')
+    benchmark = None
+    if key in benchmarks.keys():
+        benchmark = benchmarks[key]
+        print "Creating plots for the {} benchmark".format(key)
+    else:
+        print('{} is not a valid plot.'.format(key))
+        return
 
-        parser.add_argument('--json',
-            action  = 'store',
-            default = "",
-            dest    = 'jsonfile',
-            help    = 'the .json file written by gauge benchmark, if non provided'
-                      'plots from the database')
+    parser = argparse.ArgumentParser(
+        description= 'Plot the benchmark data', usage = "%(prog)s [plot|index] {options}")
 
-        parser.add_argument('--days',
-            action  = 'store',
-            default = 3,
-            dest    = 'days',
-            help    = 'How many days to look back in time when comparing',
-            type    = int)
+    for argument in benchmark[ARGUMENT_KEY]:
+        add_argument(parser, argument)
 
-        parser.add_argument('--coder',
-            action  = 'store',
-            choices = ['encoder', 'decoder'],
-            default = 'decoder',
-            dest    = 'coder',
-            help    = 'Whether to consider the encoding or decoding performance')
+    args = parser.parse_args(sys.argv[2:])
+    benchmark[FUNCTION_KEY](
+        **{ key: value for (key, value) in args._get_kwargs() })
 
-        parser.add_argument('--output-format',
-            action  = 'store',
-            choices = ['eps', 'pdf', 'pgf', 'png', 'ps', 'raw', 'rgba', 'svg',
-                       'svgz'],
-            default = 'eps',
-            dest    = 'format',
-            help    = 'The format of the generated figures.')
 
-        args = parser.parse_args()
-
-        plots[args.plot](args.format, args.jsonfile, args.coder, args.days)
+if __name__ == '__main__':
+    main()
