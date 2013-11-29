@@ -17,26 +17,12 @@ today = now.date()
 today = datetime(today.year, today.month, today.day)
 yesterday = today - timedelta(1)
 
-import pymongo
-assert pymongo.version_tuple[:2] >= (2,5), "You need a newer version of pymongo"
-from pymongo import MongoClient
 
 import pandas as pd
 assert sp.any(sp.array(pd.version.version.split(".")) >= ['1','12',sp.inf]), \
     "You need a newer version of pandas"
 
-address = "176.28.49.184"
-username = "guest"
-password = "none"
 
-def connect_database():
-    """
-    Connect to the benchmark database
-    """
-    client = MongoClient(address)
-    db = client["benchmark"]
-    db.authenticate(username, password)
-    return db
 
 def markers(label):
         if "Binary8" in label:

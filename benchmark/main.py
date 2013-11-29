@@ -79,7 +79,8 @@ def add_argument(parser, argument):
 def main():
     if len(sys.argv) < 2:
         print 'Please specify which benchmark to plot:\n{}'.format('\n'.join(
-            ['{}. {}'.format(i+1, name) for i, name in enumerate(benchmarks.keys())]))
+            ['{}. {}'.format(i+1, name) \
+                for i, name in enumerate(benchmarks.keys())]))
         return
 
     index = None
@@ -87,8 +88,8 @@ def main():
         index = int(sys.argv[1])-1
     except ValueError:
         pass
-    key = None
 
+    key = None
     if index is not None:
         if index in range(len(benchmarks)):
             key = benchmarks.keys()[index]
@@ -107,15 +108,22 @@ def main():
         return
 
     parser = argparse.ArgumentParser(
-        description= 'Plot the benchmark data', usage = "%(prog)s [plot|index] {options}")
+        description = 'Plot the benchmark data',
+        usage       = '%(prog)s [plot|plot-index] {options}')
 
-    for argument in benchmark[ARGUMENT_KEY]:
-        add_argument(parser, argument)
+    #for argument in benchmark[ARGUMENT_KEY]:
+    #    add_argument(parser, argument)
 
-    args = parser.parse_args(sys.argv[2:])
-    benchmark[FUNCTION_KEY](
-        **{ key: value for (key, value) in args._get_kwargs() })
+    from plot import Plot
 
+    p1 = Plot("test", parser, ['coder', 'days', 'json', 'output-dir'])
+    p1.plot()
+    p2.plot()
+    #print sys.argv[2:]
+    #args = parser.parse_args(sys.argv[2:])
+    #benchmark[FUNCTION_KEY](
+    #    **{ key: value for (key, value) in args._get_kwargs() })
+    #print args
 
 if __name__ == '__main__':
     main()
