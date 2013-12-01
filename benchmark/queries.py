@@ -66,6 +66,6 @@ class RecentDataQuery(object):
         }
 
         db = ps.connect_database()
-        mc = db[self.collection].find(query)
-        df = pd.DataFrame.from_records( list(mc) )
-
+        collection = list(db[self.collection].find(query))
+        data = pandas.DataFrame.from_records( collection )
+        return data
