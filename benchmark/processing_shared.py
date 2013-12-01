@@ -11,13 +11,6 @@ plotting
 import os
 import scipy as sp
 
-from datetime import datetime, timedelta
-now = datetime.utcnow()
-today = now.date()
-today = datetime(today.year, today.month, today.day)
-yesterday = today - timedelta(1)
-
-
 import pandas as pd
 assert sp.any(sp.array(pd.version.version.split(".")) >= ['1','12',sp.inf]), \
     "You need a newer version of pandas"
@@ -46,7 +39,7 @@ def set_markers(plot):
 def mkdir_p(path):
     try:
         os.makedirs(path)
-    except OSError as exc:
+    except OSError:
         pass
 
 from matplotlib import pyplot as pl

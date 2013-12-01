@@ -44,8 +44,12 @@ def plot_overhead(format, jsonfile):
     pdf = pp(PATH + "all.pdf")
 
     ps.mkdir_p(PATH + "sparse")
-    sparse = df[df['testcase'] == "SparseFullRLNC"].groupby(by= ['buildername',
-        'symbol_size'])
+    ps.mkdir_p(PATH + "dense")
+    sparse = df[df['testcase'] == "SparseFullRLNC"]
+    sparse.groupby(by= ['buildername', 'symbol_size'])
+
+    dense = df[df['testcase'] != "SparseFullRLNC"]
+    dense.groupby(by= ['buildername', 'symbol_size'])
 
     for (buildername,symbols), group in sparse:
         ps.set_sparse_plot()
@@ -57,10 +61,6 @@ def plot_overhead(format, jsonfile):
         pl.xticks(list(sp.unique(group['symbols'])))
         pl.savefig(PATH + "sparse/" + buildername + "." + format)
         pdf.savefig(transparent=True)
-
-    ps.mkdir_p(PATH + "dense")
-    dense = df[df['testcase'] != "SparseFullRLNC"].groupby(by= ['buildername',
-        'symbol_size'])
 
     for (buildername,symbols), group in dense:
         ps.set_dense_plot()

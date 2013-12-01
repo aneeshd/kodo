@@ -24,18 +24,18 @@ class Runner(object):
 
         options = self.argsparser.parse_args()
 
-        data_frame = None
+        data = None
         for query in self.queries
-            data_frame = query.query(options)
-            if data_frame:
+            data = query.query(options)
+            if data:
                 break
         else:
             print('No data found.')
             exit()
 
-        map(lambda p: p.patch(options, data_frame), self.patchers)
+        map(lambda p: p.patch(options, data), self.patchers)
         map(lambda w: w.init(options), self.writers)
         for plotter in self.plotters:
-            for plot in plotter(options):
-                map(lambda w: w.save(), self.writers)
+            for plotname in plotter.plot(options, data):
+                map(lambda w: w.save(plotname), self.writers)
         map(lambda w: w.close(), self.writers)

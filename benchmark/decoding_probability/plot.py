@@ -34,10 +34,10 @@ def plot_decoding_probablity(format, jsonfile):
     df['mean'] = df['used'].apply(sp.mean) -df['symbols']
     df['std'] = df['used'].apply(sp.std)
 
-    sparse = df[df['testcase'] == "SparseFullRLNC"].groupby(by= ['buildername',
-        'symbol_size'])
-    dense = df[df['testcase'] != "SparseFullRLNC"].groupby(by= ['buildername',
-        'symbol_size'])
+    sparse = df[df['testcase'] == "SparseFullRLNC"].groupby(
+        by = ['buildername', 'symbol_size'])
+    dense = df[df['testcase'] != "SparseFullRLNC"].groupby(
+        by = ['buildername', 'symbol_size'])
 
     from matplotlib import pyplot as pl
     from matplotlib.backends.backend_pdf import PdfPages as pp
