@@ -5,15 +5,16 @@ See accompanying file LICENSE.rst or
 http://www.steinwurf.com/licensing
 """
 
-class DefaultPlotter(object):
-    """docstring for DefaultPlotter"""
+class Plotter(object):
+    """docstring for Plotter"""
     def __init__(self, rows, cols, rc_params, ylabel, yscale = 'linear'):
-        super(DefaultPlotter, self).__init__()
+        super(Plotter, self).__init__()
         self.rows = rows
         self.cols = cols
         self.rc_params = rc_params
         self.yscale = yscale
         self.ylabel = ylabel
+
     def add_option(self, parser):
         pass
 

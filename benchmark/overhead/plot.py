@@ -10,7 +10,24 @@ import scipy as sp
 
 import sys
 sys.path.insert(0, "../")
-import processing_shared as ps
+
+from writers import FileWriter, PdfWriter
+from writers import FileWriter, PdfWriter
+from writers import FileWriter, PdfWriter
+from writers import FileWriter, PdfWriter
+from writers import FileWriter, PdfWriter
+
+if __name__ == '__main__':
+    overhead = Runner(
+        name = 'overhead',
+        argsparser = parser,
+        sources = [],
+        patchers = [],
+        modifiers = [],
+        writers = [],
+        plotters = [])
+
+    overhead.run()
 
 def plot_overhead(format, jsonfile):
 
