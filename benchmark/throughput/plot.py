@@ -3,9 +3,48 @@ Copyright Steinwurf ApS 2011-2013.
 Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
 See accompanying file LICENSE.rst or
 http://www.steinwurf.com/licensing
-
-Plot the throughput for all platforms
 """
+
+import sys
+sys.path.insert(0, "../")
+
+from sources import JsonFile, MongoDbDatabaseQuery
+from patchers import AddAttribute, AddMean
+from modifiers import Selector, GroupBy
+from writers import FileWriter, PdfWriter
+from plotters import Plotter
+
+if __name__ == '__main__':
+    sparse_parser = argparse.ArgumentParser(description = 'Plot the benchmark data')
+
+    sparse_throughput = Runner(
+        name = 'sparse_throughput',
+        argsparser = sparse_parser,
+        sources = [
+            JsonFile(),
+            MongoDbDatabaseQuery(collection = 'kodo_throughput')],
+        patchers = [
+            AddAttribute(attribute = 'buildername', value = 'local'),
+            AddMean(base = 'throughput')],
+        modifiers = [
+            Selector(column = 'testcase',
+                     select = "SparseFullRLNC"),
+            GroupBy(by = ['buildername', 'symbol_size'])
+            ],
+        writers = [FileWriter(), PdfWriter()],
+        plotters = [
+            Plotter(
+                rows=['symbols'],
+                cols=['benchmark','density'],
+                rc_params = {
+                    'figure.subplot.right' : 0.7,
+                    'figure.subplot.left'  : 0.1
+                },
+                ylabel = "Throughput",
+                yscale = 'log')
+        ])
+
+    sparse_throughput.run()
 
 import pandas as pd
 import scipy as sp
@@ -55,7 +94,7 @@ def plot_throughput(format, jsonfile, coder):
         p = group.pivot_table('mean',  rows='symbols', cols=['benchmark',
         'density']).plot()
         ps.set_plot_details(p, buildername)
-        pl.ylabel("Throughput" + " [" + list(group['unit'])[0] + "]")
+        pl.ylabel("Throughput [" + list(group['unit'])[0] + "]")
         pl.xticks(list(sp.unique(group['symbols'])))
         p.set_yscale('log')
         pl.savefig(PATH + "sparse/" + buildername + "." + format)
