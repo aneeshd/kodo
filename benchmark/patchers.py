@@ -7,17 +7,19 @@ http://www.steinwurf.com/licensing
 
 import scipy
 
-class AddBuilderName(object):
+class AddAttribute(object):
     """docstring for AddBuilderName"""
-    def __init__(self):
+    def __init__(self, attribute, value):
         super(AddBuilderName, self).__init__()
+        self.attribute = attribute
+        self.value = value
 
     def add_option(self, parser):
         pass
 
     def patch(self, options, data):
-        if not data['buildername']:
-            data['buildername'] = 'local'
+        if not data[self.attribute]:
+            data[self.attribute] = value
 
 class AddMeanSimple(object):
     """docstring for AddMeanSimple"""

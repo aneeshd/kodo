@@ -19,14 +19,14 @@ class GroupBy(object):
 
 class Selector(object):
     """docstring for Selector"""
-    def __init__(self, column, select, neq = False):
+    def __init__(self, column, select, equal = True):
         super(Selector, self).__init__()
         self.column = column
         self.select = select
-        self.neq = neq
+        self.equal = equal
 
     def add_options(self):
         pass
 
     def modify(self, options, data):
-        return data[(data[self.column] == self.select) != self.neq]
+        return data[(data[self.column] == self.select) == self.equal]

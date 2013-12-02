@@ -5,29 +5,50 @@ See accompanying file LICENSE.rst or
 http://www.steinwurf.com/licensing
 """
 
-import pandas as pd
-import scipy as sp
-
 import sys
 sys.path.insert(0, "../")
 
+from sources import JsonFile, MongoDbDatabaseQuery
+from patchers import AddAttribute, AddRelativeMean
+from modifiers import Selector, GroupBy
 from writers import FileWriter, PdfWriter
-from writers import FileWriter, PdfWriter
-from writers import FileWriter, PdfWriter
-from writers import FileWriter, PdfWriter
-from writers import FileWriter, PdfWriter
+from plotters import Plotter
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description = 'Plot the benchmark data')
+    sparse = True
     overhead = Runner(
         name = 'overhead',
         argsparser = parser,
-        sources = [],
-        patchers = [],
-        modifiers = [],
-        writers = [],
-        plotters = [])
+        sources = [
+            JsonFile(),
+            MongoDbDatabaseQuery(collection = 'kodo_overhead')],
+        patchers = [
+            AddAttribute(attribute = 'buildername',value = 'local'),
+            AddRelativeMean(base = 'used', relation = 'coded')],
+        modifiers = [
+            Selector(column = 'testcase',
+                     select = "SparseFullRLNC"
+                     equal = sparse),
+            GroupBy(by = ['buildername', 'symbol_size'])
+            ],
+        writers = [FileWriter(), PdfWriter()],
+        plotters = [
+            Plotter(
+                rows=['symbols'],
+                cols=['benchmark','density'],
+                rc_params = {
+                    'figure.subplot.right': .7 ,
+                    'figure.subplot.left': .1
+                },
+                ylabel = "Overhead [\%]",
+                yscale = 'log')
+        ])
 
     overhead.run()
+
+import pandas as pd
+import scipy as sp
 
 def plot_overhead(format, jsonfile):
 
