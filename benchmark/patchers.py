@@ -15,7 +15,7 @@ class AddAttribute(Component):
         self.attribute = attribute
         self.value = value
 
-    def patch(self, options, data):
+    def patch(self, data):
         if self.attribute not in data.keys():
             data[self.attribute] = value
 
@@ -25,7 +25,7 @@ class AddMeanSimple(Component):
         super(AddMeanSimple, self).__init__()
         self.base = base
 
-    def patch(self, options, data):
+    def patch(self, data):
         if 'mean' not in data.keys():
             data['mean'] = data[self.base].apply(scipy.mean)
 
@@ -36,8 +36,8 @@ class AddRelativeMean(Component):
         self.base = base
         self.relation = relation
 
-    def patch(self, options, data):
-        if 'mean' not in data.keys():
-            relation_mean = data[self.relation].apply(scipy.mean)
-            data['mean'] = (data[self.base].apply(scipy.mean) - relation_mean) \
-                           / relation_mean
+    def patch(self, data):
+        if 'mean' in data.keys():
+            return
+        rel_mean = data[self.relation].apply(scipy.mean)
+        data['mean'] = (data[self.base].apply(scipy.mean) - rel_mean) / rel_mean

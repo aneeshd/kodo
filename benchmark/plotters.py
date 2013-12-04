@@ -10,45 +10,45 @@ from component import Component
 
 class Plotter(Component):
     """docstring for Plotter"""
-    def __init__(self, rows, cols, rc_params, ylabel, yscale = 'linear'):
+    def __init__(self, rows, columns, rc_params, ylabel, yscale = 'linear'):
         super(Plotter, self).__init__()
         self.rows = rows
-        self.cols = cols
+        self.columns = columns
         self.rc_params = rc_params
         self.yscale = yscale
         self.ylabel = ylabel
 
-    def plot(self, options, data):
+    def plot(self, data):
         for (buildername, symbols), group in data:
-            pyplot.rcParams.update(self.rc_params)
+            pyplot.rcParams.update(self._get('rc_params'))
             plot = group.pivot_table('mean',
-                rows=self.rows,
-                cols=self.cols).plot()
+                rows=self._get('rows'),
+                cols=self._get('cols')).plot()
             plot.set_title(buildername,
-                ha = "left",
+                ha = 'left',
                 position = (.0,1.03),
-                fontsize = "medium")
+                fontsize = 'medium')
             for line in plot.lines:
                 marker = None
-                if "Binary8" in line.get_label():
-                    marker = "v"
-                elif "Binary16" in line.get_label():
-                    marker ="^"
-                elif "Binary" in line.get_label():
-                    marker = "o"
-                elif "Prime2325" in line.get_label():
-                    marker = "*"
+                if 'Binary8' in line.get_label():
+                    marker = 'v'
+                elif 'Binary16' in line.get_label():
+                    marker = '^'
+                elif 'Binary' in line.get_label():
+                    marker = 'o'
+                elif 'Prime2325' in line.get_label():
+                    marker = '*'
 
                 if marker:
                     line.set_marker(marker)
                 else:
-                    print '{} not found'.format(line.get_label())
-                    exit()
+                    assert False, '{} not found'.format(line.get_label())
 
             pyplot.legend(bbox_to_anchor=(1., -0.01), loc=3, ncol=1)
 
-            pyplot.ylabel(self.ylabel.format(**group))
-            plot.set_yscale(self.yscale)
+            pyplot.ylabel(self._get('ylabel').format(**self.options))
+            plot.set_yscale(
+                self._get('yscale'))
             pyplot.xticks(list(scipy.unique(group['symbols'])))
             yield buildername
 
@@ -58,7 +58,7 @@ class DependencyPlotter(Component):
     def __init__(self):
         super(DependencyPlotter, self).__init__()
 
-    def plot(self, options, data):
+    def plot(self, data):
         pass
 """
 #dependency

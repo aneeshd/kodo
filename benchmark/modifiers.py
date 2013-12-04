@@ -13,16 +13,17 @@ class GroupBy(Component):
         super(GroupBy, self).__init__()
         self.by = by
 
-    def modify(self, options, data):
-        return data.groupby(by = self.by)
+    def modify(self, data):
+        return data.groupby(by = self._get('by'))
 
 class Selector(Component):
     """docstring for Selector"""
-    def __init__(self, column, select, equal = True):
+    def __init__(self, column, select, select_equal = True):
         super(Selector, self).__init__()
         self.column = column
         self.select = select
-        self.equal = equal
+        self.select_equal = select_equal
 
-    def modify(self, options, data):
-        return data[(data[self.column] == self.select) == self.equal]
+    def modify(self, data):
+        return data[(data[self._get('column')] == self._get('select')) == \
+                    self._get('select_equal')]

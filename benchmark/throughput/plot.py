@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     sparse_throughput = Runner(
         name = 'sparse_throughput',
-        argsparser = sparse_parser,
+        argparser = sparse_parser,
         sources = [
             JsonFile(),
             MongoDbDatabaseQuery(collection = 'kodo_throughput')],

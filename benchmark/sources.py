@@ -25,9 +25,11 @@ yesterday = today - timedelta(1)
 
 class JsonFile(Component):
     """docstring for JsonFile"""
-    def __init__(self):
+    def __init__(self, jsonfile = None):
         super(JsonFile, self).__init__()
-    def add_options(self, parser):
+        self = jsonfile
+
+    def add_arguments(self, parser):
         parser.add_argument('--jsonfile',
             action  = 'store',
             default = '',
@@ -35,9 +37,9 @@ class JsonFile(Component):
                       'provided plots will be based on data from the database.'
         )
 
-    def get_data(self, options):
-        if options['jsonfile']:
-            df = pandas.read_json(options['jsonfile'])
+    def get_data(self):
+        if self._has('jsonfile'):
+            df = pandas.read_json(self._get('jsonfile'))
             return df
         else:
             return None
@@ -69,8 +71,9 @@ class MongoDbDatabaseQuery(Component):
                         MongoDbDatabaseQuery.password)
         return db
 
-    def get_data(self, options):
+    def get_data(self):
         db = self.__connect()
-        collection = list(db[self.collection].find(self.query))
+        collection = list(
+            db[self._get('collection')].find(self._get('query')))
         data = pandas.DataFrame.from_records( collection )
         return data

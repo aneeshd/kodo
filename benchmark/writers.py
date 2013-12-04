@@ -17,7 +17,7 @@ class FileWriter(Component):
     def __init__(self):
         super(FileWriter, self).__init__()
 
-    def add_options(self, parser):
+    def add_arguments(self, parser):
         parser.add_argument('--output-dir',
             action  = 'store',
             default = 'figures',
@@ -29,15 +29,16 @@ class FileWriter(Component):
             default = 'eps',
             help    = 'The format of the generated figures.')
 
-    def init(self, options):
+    def init(self):
+        mkdir(os.path.join(self._get('output_dir'), self._get('run_name')))
         pyplot.close('all')
 
-    def save(self, options, benchmark):
+    def save(self, name):
         pyplot.savefig(os.path.join(
-            options['output_dir'], '{}.{}'.format(
-            benchmark, options['output_format'])))
+            self._get('output_dir'), self._get('run_name'), '{}.{}'.format(
+            name, self._get('output_format'))))
 
-    def close(self, options):
+    def close(self):
         pass
 
 class PdfWriter(Component):
@@ -45,19 +46,23 @@ class PdfWriter(Component):
     def __init__(self):
         super(PdfWriter, self).__init__()
 
-    def add_options(self, parser):
+    def add_arguments(self, parser):
         parser.add_argument('--pdf-output-dir',
             action  = 'store',
             default = 'figures',
             help    = 'The output directory for storing a pdf containing all'
                       'plots.')
 
-    def init(self, options):
-        mkdir(options['pdf_output_dir'])
-        self.pdf = PdfPages(os.path.join(options['pdf_output_dir'], 'all.pdf'))
+    def init(self):
+        mkdir(os.path.join(self._get('pdf_output_dir'), self._get('run_name')))
+        self.pdf = PdfPages(
+            os.path.join(
+                self._get('pdf_output_dir'),
+                self._get('run_name'),
+                'all.pdf'))
 
-    def save(self, options, benchmark):
+    def save(self, name):
         self.pdf.savefig(transparent = True)
 
-    def close(self, options):
+    def close(self):
         self.pdf.close()

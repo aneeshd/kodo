@@ -17,12 +17,11 @@ from writers import FileWriter, PdfWriter
 from plotters import Plotter
 
 if __name__ == '__main__':
-    sparse_parser = argparse.ArgumentParser(
+    parser = argparse.ArgumentParser(
         description = 'Plot the benchmark data')
 
-    sparse_overhead = Runner(
-        name = 'sparse_overhead',
-        argsparser = sparse_parser,
+    overhead = Runner(
+        argparser = parser,
         sources = [
             JsonFile(),
             MongoDbDatabaseQuery(collection = 'kodo_overhead')],
@@ -38,7 +37,7 @@ if __name__ == '__main__':
         plotters = [
             Plotter(
                 rows=['symbols'],
-                cols=['benchmark','density'],
+                columns=['benchmark','density'],
                 rc_params = {
                     'figure.subplot.right' : 0.7,
                     'figure.subplot.left'  : 0.1
@@ -47,39 +46,18 @@ if __name__ == '__main__':
                 yscale = 'log')
         ])
 
-    sparse_overhead.run()
+    #Sparse
+    overhead.run('sparse')
 
-    dense_parser = argparse.ArgumentParser(
-        description = 'Plot the benchmark data')
-    dense_overhead = Runner(
-        name = 'dense_overhead',
-        argsparser = dense_parser,
-        sources = [
-            JsonFile(),
-            MongoDbDatabaseQuery(collection = 'kodo_overhead')],
-        patchers = [
-            AddAttribute(attribute = 'buildername', value = 'local'),
-            AddRelativeMean(base = 'used', relation = 'coded')],
-        modifiers = [
-            Selector(column = 'testcase',
-                     select = "SparseFullRLNC",
-                     equal = False),
-            GroupBy(by = ['buildername', 'symbol_size'])
-            ],
-        writers = [FileWriter(), PdfWriter()],
-        plotters = [
-            Plotter(
-                rows=['symbols'],
-                cols=['benchmark','testcase'],
-                rc_params = {
-                    'figure.subplot.right' : 0.48,
-                    'figure.subplot.left'  : 0.1
-                },
-                ylabel = "Overhead [\%]",
-                yscale = 'log')
-        ])
-
-    dense_overhead.run()
+    # Dense
+    overhead.run('dense', {
+        'select_equal' : False,
+        'columns'      : ['benchmark','testcase'],
+        'rc_params'    : {
+            'figure.subplot.right' : 0.48,
+            'figure.subplot.left'  : 0.1
+        }
+    })
 """
 import pandas as pd
 import scipy as sp

@@ -9,11 +9,10 @@ from component import Component
 
 class SetUnit(Component):
     """docstring for SetUnit"""
-    def __init__(self, by):
+    def __init__(self):
         super(SetUnit, self).__init__()
 
-    def set(self, options, data):
-        result = { 'unit ' : {} }
+    def set(self, data):
+        self.options['unit'] = {}
         for (buildername,_), group in data:
-            result['unit'][buildername] = list(group['unit'])[0]
-        options.update(result)
+            self.options['unit'][buildername] = list(group['unit'])[0]

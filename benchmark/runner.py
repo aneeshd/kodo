@@ -8,8 +8,7 @@ http://www.steinwurf.com/licensing
 class Runner(object):
     """docstring for Runner"""
     def __init__(self,
-                 name,
-                 argsparser,
+                 argparser,
                  sources = [],
                  patchers = [],
                  modifiers = [],
@@ -17,43 +16,48 @@ class Runner(object):
                  writers = [],
                  plotters = []):
         super(Runner, self).__init__()
-        self.name = name
-        self.argsparser = argsparser
+        self.argparser = argparser
         self.sources = sources
-        self.modifiers = modifiers
         self.patchers = patchers
+        self.modifiers = modifiers
         self.setters = setters
         self.writers = writers
         self.plotters = plotters
 
-    def run(self, options = {}):
-        for item in self.sources + \
-                    self.patchers + \
-                    self.modifiers + \
-                    self.writers + \
-                    self.plotters:
-            item.add_options(self.argsparser)
+        components = self.sources + \
+                     self.patchers + \
+                     self.modifiers + \
+                     self.setters + \
+                     self.plotters + \
+                     self.writers
 
-        options.update(self.argsparser.parse_args()._get_kwargs())
+        map(lambda c: c.add_arguments(self.argparser), components)
+        o =  {k, v for (k, v) in self.argparser.parse_args()._get_kwargs()}
+        print o
+        self.options = o
+        map(lambda c: c.set_options(self.options), components)
+
+    def run(self, name, options = {}):
+        self.options['run_name'] = name
+        self.options.update(options)
 
         data = None
         for source in self.sources:
-            data = source.get_data(options)
+            data = source.get_data()
             if data:
                 break
         else:
-            print('No data found.')
-            exit()
+            assert False, 'No data found.'
 
-        map(lambda p: p.patch(options, data), self.patchers)
+        map(lambda p: p.patch(data), self.patchers)
 
         for modifier in self.modifiers:
-            data = modifier.modify(options, data)
+            data = modifier.modify(data)
 
-        map(lambda s: s.set(options, data), self.setters)
-        map(lambda w: w.init(options), self.writers)
+        map(lambda s: s.set(self.options, data), self.setters)
+        map(lambda w: w.init(), self.writers)
 
         for plotter in self.plotters:
-            for plotname in plotter.plot(options, data):
-                map(lambda w: w.save(options, plotname), self.writers)
-        map(lambda w: w.close(options), self.writers)
+            for plotname in plotter.plot(data):
+                map(lambda w: w.save(plotname), self.writers)
+        map(lambda w: w.close(), self.writers)
