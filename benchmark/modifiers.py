@@ -5,28 +5,24 @@ See accompanying file LICENSE.rst or
 http://www.steinwurf.com/licensing
 """
 
-class GroupBy(object):
+from component import Component
+
+class GroupBy(Component):
     """docstring for GroupBy"""
     def __init__(self, by):
         super(GroupBy, self).__init__()
         self.by = by
 
-    def add_options(self):
-        pass
-
     def modify(self, options, data):
         return data.groupby(by = self.by)
 
-class Selector(object):
+class Selector(Component):
     """docstring for Selector"""
     def __init__(self, column, select, equal = True):
         super(Selector, self).__init__()
         self.column = column
         self.select = select
         self.equal = equal
-
-    def add_options(self):
-        pass
 
     def modify(self, options, data):
         return data[(data[self.column] == self.select) == self.equal]

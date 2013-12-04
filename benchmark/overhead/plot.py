@@ -1,13 +1,15 @@
+#!/usr/bin/env python
 """
 Copyright Steinwurf ApS 2011-2013.
 Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
 See accompanying file LICENSE.rst or
 http://www.steinwurf.com/licensing
 """
-
+import argparse
 import sys
 sys.path.insert(0, "../")
 
+from runner import Runner
 from sources import JsonFile, MongoDbDatabaseQuery
 from patchers import AddAttribute, AddRelativeMean
 from modifiers import Selector, GroupBy

@@ -6,7 +6,7 @@ http://www.steinwurf.com/licensing
 """
 
 import pandas
-assert pandas.version.version.split(".")[:2] >= ['1','12'],\
+assert pandas.version.version.split(".")[:2] >= ['0','12'],\
     'You need a newer version of pandas'
 
 import pymongo
@@ -15,12 +15,15 @@ assert pymongo.version_tuple[:2] >= (2,5),\
 from pymongo import MongoClient
 
 from datetime import datetime, timedelta
+
+from component import Component
+
 now = datetime.utcnow()
 today = now.date()
 today = datetime(today.year, today.month, today.day)
 yesterday = today - timedelta(1)
 
-class JsonFile(object):
+class JsonFile(Component):
     """docstring for JsonFile"""
     def __init__(self):
         super(JsonFile, self).__init__()
@@ -33,13 +36,13 @@ class JsonFile(object):
         )
 
     def get_data(self, options):
-        if options['jsonfile']:
+        if options.jsonfile:
             df = pandas.read_json(options['jsonfile'])
             return df
         else:
             return None
 
-class MongoDbDatabaseQuery(object):
+class MongoDbDatabaseQuery(Component):
     database = 'benchmark'
     address = '176.28.49.184'
     username = 'guest'
@@ -55,10 +58,8 @@ class MongoDbDatabaseQuery(object):
                 'utc_date'  : {'$gte': yesterday}
             }
         self.query = query
-    def add_options(self, parser):
-        pass
 
-    def __connect():
+    def __connect(self):
         """
         Connect to the database
         """
@@ -69,7 +70,7 @@ class MongoDbDatabaseQuery(object):
         return db
 
     def get_data(self, options):
-        db = __connect()
+        db = self.__connect()
         collection = list(db[self.collection].find(self.query))
         data = pandas.DataFrame.from_records( collection )
         return data

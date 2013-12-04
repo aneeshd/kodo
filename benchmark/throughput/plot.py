@@ -15,7 +15,8 @@ from writers import FileWriter, PdfWriter
 from plotters import Plotter
 
 if __name__ == '__main__':
-    sparse_parser = argparse.ArgumentParser(description = 'Plot the benchmark data')
+    sparse_parser = argparse.ArgumentParser(
+        description = 'Plot the benchmark data')
 
     sparse_throughput = Runner(
         name = 'sparse_throughput',

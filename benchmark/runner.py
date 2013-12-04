@@ -35,7 +35,7 @@ class Runner(object):
         options = self.argsparser.parse_args()
 
         data = None
-        for source in self.sources
+        for source in self.sources:
             data = source.get_data(options)
             if data:
                 break
@@ -45,23 +45,11 @@ class Runner(object):
 
         map(lambda p: p.patch(options, data), self.patchers)
 
-        for modifier in self.modifiers
+        for modifier in self.modifiers:
             data = modifier.modify(options, data)
 
         map(lambda w: w.init(options), self.writers)
         for plotter in self.plotters:
             for plotname in plotter.plot(options, data):
-                map(lambda w: w.save(plotname), self.writers)
-        map(lambda w: w.close(), self.writers)
-
-
-# runners
-parser = argparse.ArgumentParser(description = 'Plot the benchmark data')
-decoding_probability = Runner(
-    name = 'decoding_probability',
-    argsparser = parser,
-    sources = [],
-    patchers = [],
-    writers = [],
-    plotters = [])
-
+                map(lambda w: w.save(options, plotname), self.writers)
+        map(lambda w: w.close(options), self.writers)

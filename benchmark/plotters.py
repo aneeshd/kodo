@@ -4,8 +4,11 @@ Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
 See accompanying file LICENSE.rst or
 http://www.steinwurf.com/licensing
 """
+import scipy
+from matplotlib import pyplot
+from component import Component
 
-class Plotter(object):
+class Plotter(Component):
     """docstring for Plotter"""
     def __init__(self, rows, cols, rc_params, ylabel, yscale = 'linear'):
         super(Plotter, self).__init__()
@@ -14,9 +17,6 @@ class Plotter(object):
         self.rc_params = rc_params
         self.yscale = yscale
         self.ylabel = ylabel
-
-    def add_option(self, parser):
-        pass
 
     def plot(self, options, data):
         for (buildername, symbols), group in data:
@@ -48,22 +48,19 @@ class Plotter(object):
             pyplot.legend(bbox_to_anchor=(1., -0.01), loc=3, ncol=1)
 
             pyplot.ylabel(self.ylabel.format(**group))
-            pyplot.set_yscale(self.yscale)
-            pyplot.xticks(list(sp.unique(group['symbols'])))
+            plot.set_yscale(self.yscale)
+            pyplot.xticks(list(scipy.unique(group['symbols'])))
             yield buildername
 
 
-class DependencyPlotter(object):
+class DependencyPlotter(Component):
     """docstring for DependencyPlotter"""
     def __init__(self):
         super(DependencyPlotter, self).__init__()
 
-    def add_option(self, parser):
-        pass
-
     def plot(self, options, data):
         pass
-
+"""
 #dependency
 #sparse
 for (buildername, symbol_size, symbols), group in sparse:
@@ -154,3 +151,4 @@ for buildername, group in groups:
             pl.xticks(list(sp.unique(group['symbols'])))
             pl.savefig(PATH_BRANCH + "/dense/" + buildername + "." + format)
             pdf[branch].savefig(transparent=True)
+"""

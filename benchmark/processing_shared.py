@@ -12,10 +12,6 @@ import os
 import scipy as sp
 
 import pandas as pd
-assert sp.any(sp.array(pd.version.version.split(".")) >= ['1','12',sp.inf]), \
-    "You need a newer version of pandas"
-
-
 
 def markers(label):
         if "Binary8" in label:
@@ -38,9 +34,11 @@ def set_markers(plot):
 
 def mkdir_p(path):
     try:
-        os.makedirs(path)
+        if not os.path.isdir(path):
+            os.makedirs(path)
     except OSError:
-        pass
+        if not os.path.isdir(path):
+            raise
 
 from matplotlib import pyplot as pl
 

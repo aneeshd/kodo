@@ -6,45 +6,38 @@ http://www.steinwurf.com/licensing
 """
 
 import scipy
+from component import Component
 
-class AddAttribute(object):
-    """docstring for AddBuilderName"""
+class AddAttribute(Component):
+    """docstring for AddAttribute"""
     def __init__(self, attribute, value):
-        super(AddBuilderName, self).__init__()
+        super(AddAttribute, self).__init__()
         self.attribute = attribute
         self.value = value
 
-    def add_option(self, parser):
-        pass
-
     def patch(self, options, data):
-        if not data[self.attribute]:
+        if self.attribute not in data.keys():
             data[self.attribute] = value
 
-class AddMeanSimple(object):
+class AddMeanSimple(Component):
     """docstring for AddMeanSimple"""
     def __init__(self, base):
         super(AddMeanSimple, self).__init__()
         self.base = base
-    def add_option(self, parser):
-        pass
 
     def patch(self, options, data):
-        if not data['mean']:
+        if 'mean' not in data.keys():
             data['mean'] = data[self.base].apply(scipy.mean)
 
-class AddRelativeMean(object):
-    """docstring for AddMeanOverHead"""
+class AddRelativeMean(Component):
+    """docstring for AddRelativeMean"""
     def __init__(self, base, relation):
-        super(AddMeanOverHead, self).__init__()
+        super(AddRelativeMean, self).__init__()
         self.base = base
         self.relation = relation
 
-    def add_option(self, parser):
-        pass
-
     def patch(self, options, data):
-        if not data['mean']:
+        if 'mean' not in data.keys():
             relation_mean = data[self.relation].apply(scipy.mean)
             data['mean'] = (data[self.base].apply(scipy.mean) - relation_mean) \
                            / relation_mean
