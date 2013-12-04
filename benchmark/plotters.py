@@ -23,7 +23,7 @@ class Plotter(Component):
             pyplot.rcParams.update(self._get('rc_params'))
             plot = group.pivot_table('mean',
                 rows=self._get('rows'),
-                cols=self._get('cols')).plot()
+                cols=self._get('columns')).plot()
             plot.set_title(buildername,
                 ha = 'left',
                 position = (.0,1.03),

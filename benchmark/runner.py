@@ -32,14 +32,12 @@ class Runner(object):
                      self.writers
 
         map(lambda c: c.add_arguments(self.argparser), components)
-        o =  {k, v for (k, v) in self.argparser.parse_args()._get_kwargs()}
-        print o
-        self.options = o
+        self.options = dict(self.argparser.parse_args()._get_kwargs())
         map(lambda c: c.set_options(self.options), components)
 
-    def run(self, name, options = {}):
+    def run(self, name, run_specific_options = {}):
         self.options['run_name'] = name
-        self.options.update(options)
+        self.options.update(run_specific_options)
 
         data = None
         for source in self.sources:

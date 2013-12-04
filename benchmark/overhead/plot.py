@@ -42,14 +42,14 @@ if __name__ == '__main__':
                     'figure.subplot.right' : 0.7,
                     'figure.subplot.left'  : 0.1
                 },
-                ylabel = "Overhead [\%]",
+                ylabel = "Overhead [%]",
                 yscale = 'log')
         ])
 
     #Sparse
     overhead.run('sparse')
 
-    # Dense
+    # Dense (no data?)
     overhead.run('dense', {
         'select_equal' : False,
         'columns'      : ['benchmark','testcase'],
