@@ -34,8 +34,8 @@ class FileWriter(Component):
 
     def save(self, options, benchmark):
         pyplot.savefig(os.path.join(
-            options.output_dir, '{}.{}'.format(
-            benchmark, options.output_format)))
+            options['output_dir'], '{}.{}'.format(
+            benchmark, options['output_format'])))
 
     def close(self, options):
         pass
@@ -53,8 +53,8 @@ class PdfWriter(Component):
                       'plots.')
 
     def init(self, options):
-        mkdir(options.pdf_output_dir)
-        self.pdf = PdfPages(os.path.join(options.pdf_output_dir, 'all.pdf'))
+        mkdir(options['pdf_output_dir'])
+        self.pdf = PdfPages(os.path.join(options['pdf_output_dir'], 'all.pdf'))
 
     def save(self, options, benchmark):
         self.pdf.savefig(transparent = True)

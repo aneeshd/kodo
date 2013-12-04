@@ -36,7 +36,7 @@ class JsonFile(Component):
         )
 
     def get_data(self, options):
-        if options.jsonfile:
+        if options['jsonfile']:
             df = pandas.read_json(options['jsonfile'])
             return df
         else:

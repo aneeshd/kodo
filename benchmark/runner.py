@@ -13,6 +13,7 @@ class Runner(object):
                  sources = [],
                  patchers = [],
                  modifiers = [],
+                 setters = [],
                  writers = [],
                  plotters = []):
         super(Runner, self).__init__()
@@ -21,10 +22,11 @@ class Runner(object):
         self.sources = sources
         self.modifiers = modifiers
         self.patchers = patchers
+        self.setters = setters
         self.writers = writers
         self.plotters = plotters
 
-    def run(self):
+    def run(self, options = {}):
         for item in self.sources + \
                     self.patchers + \
                     self.modifiers + \
@@ -32,7 +34,7 @@ class Runner(object):
                     self.plotters:
             item.add_options(self.argsparser)
 
-        options = self.argsparser.parse_args()
+        options.update(self.argsparser.parse_args()._get_kwargs())
 
         data = None
         for source in self.sources:
@@ -48,7 +50,9 @@ class Runner(object):
         for modifier in self.modifiers:
             data = modifier.modify(options, data)
 
+        map(lambda s: s.set(options, data), self.setters)
         map(lambda w: w.init(options), self.writers)
+
         for plotter in self.plotters:
             for plotname in plotter.plot(options, data):
                 map(lambda w: w.save(options, plotname), self.writers)
