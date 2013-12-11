@@ -8,7 +8,6 @@ http://www.steinwurf.com/licensing
 class Runner(object):
     """docstring for Runner"""
     def __init__(self,
-                 argparser,
                  sources = [],
                  patchers = [],
                  modifiers = [],
@@ -16,7 +15,6 @@ class Runner(object):
                  writers = [],
                  plotters = []):
         super(Runner, self).__init__()
-        self.argparser = argparser
         self.sources = sources
         self.patchers = patchers
         self.modifiers = modifiers
@@ -24,20 +22,20 @@ class Runner(object):
         self.writers = writers
         self.plotters = plotters
 
-        components = self.sources + \
-                     self.patchers + \
-                     self.modifiers + \
-                     self.setters + \
-                     self.plotters + \
-                     self.writers
+        self.components = self.sources + \
+                          self.patchers + \
+                          self.modifiers + \
+                          self.setters + \
+                          self.plotters + \
+                          self.writers
 
-        map(lambda c: c.add_arguments(self.argparser), components)
-        self.options = dict(self.argparser.parse_args()._get_kwargs())
-        map(lambda c: c.set_options(self.options), components)
+    def add_arguments(self, parser):
+        map(lambda c: c.add_arguments(parser), self.components)
 
-    def run(self, name, run_specific_options = {}):
-        self.options['run_name'] = name
-        self.options.update(run_specific_options)
+    def run(self, run_name, arguments, options = {}):
+        options.update(arguments.__dict__)
+        options['run_name'] = run_name
+        map(lambda c: c.set_options(options), self.components)
 
         data = None
         for source in self.sources:
@@ -52,10 +50,11 @@ class Runner(object):
         for modifier in self.modifiers:
             data = modifier.modify(data)
 
-        map(lambda s: s.set(self.options, data), self.setters)
         map(lambda w: w.init(), self.writers)
 
         for plotter in self.plotters:
-            for plotname in plotter.plot(data):
+            for data_point in data:
+                map(lambda s: s.set(data_point), self.setters)
+                plotname = plotter.plot(data_point)
                 map(lambda w: w.save(plotname), self.writers)
         map(lambda w: w.close(), self.writers)

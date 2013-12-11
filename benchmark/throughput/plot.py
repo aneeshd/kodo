@@ -1,29 +1,31 @@
+#!/usr/bin/env python
 """
 Copyright Steinwurf ApS 2011-2013.
 Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
 See accompanying file LICENSE.rst or
 http://www.steinwurf.com/licensing
 """
-
+import argparse
 import sys
 sys.path.insert(0, "../")
 
-from sources import JsonFile, MongoDbDatabaseQuery
+from runner import Runner
+from sources import JsonFile, MongoDbDatabaseQuery, yesterday
 from patchers import AddAttribute, AddMean
 from modifiers import Selector, GroupBy
+from setters import SetUnit
 from writers import FileWriter, PdfWriter
 from plotters import Plotter
 
 if __name__ == '__main__':
-    sparse_parser = argparse.ArgumentParser(
-        description = 'Plot the benchmark data')
+    parser = argparse.ArgumentParser(description = 'Plot the benchmark data')
 
-    sparse_throughput = Runner(
-        name = 'sparse_throughput',
-        argparser = sparse_parser,
+    throughput = Runner(
         sources = [
             JsonFile(),
-            MongoDbDatabaseQuery(collection = 'kodo_throughput')],
+            MongoDbDatabaseQuery(
+                collection = 'kodo_throughput',
+                query = None)],
         patchers = [
             AddAttribute(attribute = 'buildername', value = 'local'),
             AddMean(base = 'throughput')],
@@ -32,84 +34,47 @@ if __name__ == '__main__':
                      select = "SparseFullRLNC"),
             GroupBy(by = ['buildername', 'symbol_size'])
             ],
+        setters = [SetUnit()],
         writers = [FileWriter(), PdfWriter()],
         plotters = [
             Plotter(
                 rows=['symbols'],
-                cols=['benchmark','density'],
+                columns=['benchmark','density'],
                 rc_params = {
                     'figure.subplot.right' : 0.7,
                     'figure.subplot.left'  : 0.1
                 },
-                ylabel = "Throughput",
+                ylabel = "Throughput [{unit}]",
                 yscale = 'log')
         ])
 
-    sparse_throughput.run()
+    throughput.add_arguments(parser)
 
-import pandas as pd
-import scipy as sp
+    args = parser.parse_args()
 
-import sys
-sys.path.insert(0, "../")
-import processing_shared as ps
-
-def plot_throughput(format, jsonfile, coder):
-
-    if jsonfile:
-        PATH  = ("figures_local/" + coder + "/")
-        df = pd.read_json(jsonfile)
-        df['buildername'] = "local"
-    else:
-        PATH  = ("figures_database/" + coder + "/")
+    for coder in ['decoder', 'encoder']:
         query = {
-            "type": coder,
-            "branch" : "master",
-            "scheduler": "kodo-nightly-benchmark",
-            "utc_date" : {"$gte": ps.yesterday, "$lt": ps.today}
-        }
+                    'type'      : coder,
+                    'branch'    : 'master',
+                    'scheduler' : 'kodo-nightly-benchmark',
+                    'utc_date'  : { '$gte' : yesterday }
+                }
+        throughput.run(
+            run_name = 'sparse',
+            arguments = args,
+            options = {
+                'query' : query
+            })
 
-        db = ps.connect_database()
-        mc = db.kodo_throughput.find(query)
-        df = pd.DataFrame.from_records( list(mc) )
-
-    df['mean'] = df['throughput'].apply(sp.mean)
-    df['std'] = df['throughput'].apply(sp.std)
-
-    # Group by type of code; dense, sparse
-    dense = df[df['testcase'] != "SparseFullRLNC"].groupby(by= ['buildername',
-        'symbol_size'])
-    sparse = df[df['testcase'] == "SparseFullRLNC"].groupby(by= ['buildername',
-        'symbol_size'])
-
-    from matplotlib import pyplot as pl
-    from matplotlib.backends.backend_pdf import PdfPages as pp
-    pl.close('all')
-
-    ps.mkdir_p(PATH + "sparse")
-    ps.mkdir_p(PATH + "dense")
-    pdf = pp(PATH + "all.pdf")
-
-    for (buildername,symbols), group in sparse:
-        ps.set_sparse_plot()
-        p = group.pivot_table('mean',  rows='symbols', cols=['benchmark',
-        'density']).plot()
-        ps.set_plot_details(p, buildername)
-        pl.ylabel("Throughput [" + list(group['unit'])[0] + "]")
-        pl.xticks(list(sp.unique(group['symbols'])))
-        p.set_yscale('log')
-        pl.savefig(PATH + "sparse/" + buildername + "." + format)
-        pdf.savefig(transparent=True)
-
-    for (buildername,symbols), group in dense:
-        ps.set_dense_plot()
-        p = group.pivot_table('mean',  rows='symbols', cols=['benchmark',
-        'testcase']).plot()
-        ps.set_plot_details(p, buildername)
-        pl.ylabel("Throughput" + " [" + list(group['unit'])[0] + "]")
-        pl.xticks(list(sp.unique(group['symbols'])))
-        p.set_yscale('log')
-        pl.savefig(PATH + "dense/"+ buildername + "." + format)
-        pdf.savefig(transparent=True)
-
-    pdf.close()
+        throughput.run(
+            run_name = 'dense',
+            arguments = args,
+            options = {
+                'select_equal' : False,
+                'columns'      : ['benchmark','testcase'],
+                'query'        : query,
+                'rc_params'    : {
+                    'figure.subplot.right' : 0.48,
+                    'figure.subplot.left'  : 0.1,
+                }
+            })

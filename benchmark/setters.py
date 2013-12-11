@@ -12,7 +12,6 @@ class SetUnit(Component):
     def __init__(self):
         super(SetUnit, self).__init__()
 
-    def set(self, data):
-        self.options['unit'] = {}
-        for (buildername,_), group in data:
-            self.options['unit'][buildername] = list(group['unit'])[0]
+    def set(self, data_point):
+        _, group = data_point
+        self.options['unit'] = list(group['unit'])[0]

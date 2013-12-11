@@ -14,10 +14,9 @@ assert pymongo.version_tuple[:2] >= (2,5),\
     'You need a newer version of pymongo'
 from pymongo import MongoClient
 
-from datetime import datetime, timedelta
-
 from component import Component
 
+from datetime import datetime, timedelta
 now = datetime.utcnow()
 today = now.date()
 today = datetime(today.year, today.month, today.day)
@@ -50,15 +49,9 @@ class MongoDbDatabaseQuery(Component):
     username = 'guest'
     password = 'none'
     """docstring for MongoDbDatabaseQuery"""
-    def __init__(self, collection, query = None):
+    def __init__(self, collection, query):
         super(MongoDbDatabaseQuery, self).__init__()
         self.collection = collection
-        if not query:
-            query = {
-                'branch'    : 'master',
-                'scheduler' : 'kodo-nightly-benchmark',
-                'utc_date'  : {'$gte': yesterday}
-            }
         self.query = query
 
     def __connect(self):

@@ -18,8 +18,105 @@ class Plotter(Component):
         self.yscale = yscale
         self.ylabel = ylabel
 
+    def plot(self, data_point):
+        (buildername, symbols), group = data_point
+        pyplot.rcParams.update(self._get('rc_params'))
+        plot = group.pivot_table('mean',
+            rows=self._get('rows'),
+            cols=self._get('columns')).plot()
+        plot.set_title(buildername,
+            ha = 'left',
+            position = (.0,1.03),
+            fontsize = 'medium')
+        for line in plot.lines:
+            marker = None
+            if 'Binary8' in line.get_label():
+                marker = 'v'
+            elif 'Binary16' in line.get_label():
+                marker = '^'
+            elif 'Binary' in line.get_label():
+                marker = 'o'
+            elif 'Prime2325' in line.get_label():
+                marker = '*'
+
+            if marker:
+                line.set_marker(marker)
+            else:
+                assert False, '{} not found'.format(line.get_label())
+
+        pyplot.legend(bbox_to_anchor=(1., -0.01), loc=3, ncol=1)
+
+        pyplot.ylabel(self._get('ylabel').format(**self.options))
+        plot.set_yscale(
+            self._get('yscale'))
+        pyplot.xticks(list(scipy.unique(group['symbols'])))
+        return buildername
+
+"""
+class DependencyPlotter(Component):
+
+    def __init__(self, rows, columns, rc_params, ylabel, yscale = 'linear'):
+        super(DependencyPlotter, self).__init__()
+        self.rows = rows
+        self.columns = columns
+        self.rc_params = rc_params
+        self.yscale = yscale
+        self.ylabel = ylabel
+
     def plot(self, data):
-        for (buildername, symbols), group in data:
+        (buildername, symbols), group = data_point
+        pyplot.rcParams.update(self._get('rc_params'))
+        plot = group.pivot_table('mean',
+            rows=self._get('rows'),
+            cols=self._get('columns')).plot()
+
+        for (deps, field,density) in zip(group['dependency'],
+            group['benchmark'], group['density']):
+            pyplot.plot(sp.arange(symbols), deps, marker = ps.markers(field),
+                label = "(" + field +", " + str(density) + ")")
+
+        plot.set_title(buildername,
+            ha = 'left',
+            position = (.0,1.03),
+            fontsize = 'medium')
+        for line in plot.lines:
+            marker = None
+            if 'Binary8' in line.get_label():
+                marker = 'v'
+            elif 'Binary16' in line.get_label():
+                marker = '^'
+            elif 'Binary' in line.get_label():
+                marker = 'o'
+            elif 'Prime2325' in line.get_label():
+                marker = '*'
+
+            if marker:
+                line.set_marker(marker)
+            else:
+                assert False, '{} not found'.format(line.get_label())
+
+        pyplot.legend(bbox_to_anchor=(1., -0.01), loc=3, ncol=1)
+
+        pyplot.ylabel(self._get('ylabel').format(**self.options))
+        plot.set_yscale(
+            self._get('yscale'))
+        pyplot.xticks(list(scipy.unique(group['symbols'])))
+        return buildername
+
+
+
+        #Verbose plotting since due to no pandas support for plotting of vectors
+
+
+        pl.title(buildername, ha = "left", position = (.0,1.03),
+            fontsize = "medium")
+        ps.set_legend()
+        pl.xlabel("Rank Defeciency")
+        pl.ylabel("Extra Packets")
+        pl.xticks( symbols-2**sp.arange(sp.log2(symbols))[::-1] ,
+            2**sp.arange(sp.log2(symbols),dtype=int)[::-1])
+        pl.grid('on')
+
             pyplot.rcParams.update(self._get('rc_params'))
             plot = group.pivot_table('mean',
                 rows=self._get('rows'),
@@ -50,17 +147,8 @@ class Plotter(Component):
             plot.set_yscale(
                 self._get('yscale'))
             pyplot.xticks(list(scipy.unique(group['symbols'])))
-            yield buildername
 
 
-class DependencyPlotter(Component):
-    """docstring for DependencyPlotter"""
-    def __init__(self):
-        super(DependencyPlotter, self).__init__()
-
-    def plot(self, data):
-        pass
-"""
 #dependency
 #sparse
 for (buildername, symbol_size, symbols), group in sparse:
