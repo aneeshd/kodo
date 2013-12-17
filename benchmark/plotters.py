@@ -8,6 +8,21 @@ import scipy
 from matplotlib import pyplot
 from component import Component
 
+markers = [
+    ('Binary8'  , 'v'),
+    ('Binary16' , '^'),
+    ('Binary'   , 'o'),
+    ('Prime2325', '*')
+]
+
+def get_marker(label):
+
+    for field, marker in markers:
+        if field in label:
+            return marker
+    else:
+        assert False, '{} not found'.format(field)
+
 class Plotter(Component):
     """docstring for Plotter"""
     def __init__(self, rows, columns, rc_params, ylabel, yscale = 'linear'):
@@ -29,20 +44,7 @@ class Plotter(Component):
             position = (.0,1.03),
             fontsize = 'medium')
         for line in plot.lines:
-            marker = None
-            if 'Binary8' in line.get_label():
-                marker = 'v'
-            elif 'Binary16' in line.get_label():
-                marker = '^'
-            elif 'Binary' in line.get_label():
-                marker = 'o'
-            elif 'Prime2325' in line.get_label():
-                marker = '*'
-
-            if marker:
-                line.set_marker(marker)
-            else:
-                assert False, '{} not found'.format(line.get_label())
+            line.set_marker(get_marker(line.get_label()))
 
         pyplot.legend(bbox_to_anchor=(1., -0.01), loc=3, ncol=1)
 
@@ -50,146 +52,51 @@ class Plotter(Component):
         plot.set_yscale(
             self._get('yscale'))
         pyplot.xticks(list(scipy.unique(group['symbols'])))
+        return buildername
+
+class DependencyPlotter(Component):
+
+    def __init__(self, columns, rc_params, ylabel, xlabel):
+        super(DependencyPlotter, self).__init__()
+        self.columns = columns
+        self.rc_params = rc_params
+        self.ylabel = ylabel
+        self.xlabel = xlabel
+
+    def plot(self, data):
+        (buildername, symbol_size, symbols), group = data
+
+        pyplot.rcParams.update(self._get('rc_params'))
+        to_zip = [group[c] for c in self._get('columns')]
+        for (dep, field, case) in zip(*to_zip):
+            pyplot.plot(
+                scipy.arange(symbols),
+                dep,
+                marker = get_marker(field),
+                label = "(" + field +", " + str(case) + ")")
+
+        pyplot.title(
+            buildername,
+            ha = "left",
+            position = (.0,1.03),
+            fontsize = "medium")
+
+        pyplot.legend(
+            bbox_to_anchor=(1., -0.01),
+            loc=3,
+            ncol=1)
+
+        pyplot.xlabel(self._get('xlabel'))
+        pyplot.ylabel(self._get('ylabel'))
+
+        pyplot.xticks(
+            symbols - 2**scipy.arange(scipy.log2(symbols))[::-1] ,
+                      2**scipy.arange(scipy.log2(symbols),dtype=int)[::-1])
+
+        pyplot.grid('on')
         return buildername
 
 """
-class DependencyPlotter(Component):
-
-    def __init__(self, rows, columns, rc_params, ylabel, yscale = 'linear'):
-        super(DependencyPlotter, self).__init__()
-        self.rows = rows
-        self.columns = columns
-        self.rc_params = rc_params
-        self.yscale = yscale
-        self.ylabel = ylabel
-
-    def plot(self, data):
-        (buildername, symbols), group = data_point
-        pyplot.rcParams.update(self._get('rc_params'))
-        plot = group.pivot_table('mean',
-            rows=self._get('rows'),
-            cols=self._get('columns')).plot()
-
-        for (deps, field,density) in zip(group['dependency'],
-            group['benchmark'], group['density']):
-            pyplot.plot(sp.arange(symbols), deps, marker = ps.markers(field),
-                label = "(" + field +", " + str(density) + ")")
-
-        plot.set_title(buildername,
-            ha = 'left',
-            position = (.0,1.03),
-            fontsize = 'medium')
-        for line in plot.lines:
-            marker = None
-            if 'Binary8' in line.get_label():
-                marker = 'v'
-            elif 'Binary16' in line.get_label():
-                marker = '^'
-            elif 'Binary' in line.get_label():
-                marker = 'o'
-            elif 'Prime2325' in line.get_label():
-                marker = '*'
-
-            if marker:
-                line.set_marker(marker)
-            else:
-                assert False, '{} not found'.format(line.get_label())
-
-        pyplot.legend(bbox_to_anchor=(1., -0.01), loc=3, ncol=1)
-
-        pyplot.ylabel(self._get('ylabel').format(**self.options))
-        plot.set_yscale(
-            self._get('yscale'))
-        pyplot.xticks(list(scipy.unique(group['symbols'])))
-        return buildername
-
-
-
-        #Verbose plotting since due to no pandas support for plotting of vectors
-
-
-        pl.title(buildername, ha = "left", position = (.0,1.03),
-            fontsize = "medium")
-        ps.set_legend()
-        pl.xlabel("Rank Defeciency")
-        pl.ylabel("Extra Packets")
-        pl.xticks( symbols-2**sp.arange(sp.log2(symbols))[::-1] ,
-            2**sp.arange(sp.log2(symbols),dtype=int)[::-1])
-        pl.grid('on')
-
-            pyplot.rcParams.update(self._get('rc_params'))
-            plot = group.pivot_table('mean',
-                rows=self._get('rows'),
-                cols=self._get('columns')).plot()
-            plot.set_title(buildername,
-                ha = 'left',
-                position = (.0,1.03),
-                fontsize = 'medium')
-            for line in plot.lines:
-                marker = None
-                if 'Binary8' in line.get_label():
-                    marker = 'v'
-                elif 'Binary16' in line.get_label():
-                    marker = '^'
-                elif 'Binary' in line.get_label():
-                    marker = 'o'
-                elif 'Prime2325' in line.get_label():
-                    marker = '*'
-
-                if marker:
-                    line.set_marker(marker)
-                else:
-                    assert False, '{} not found'.format(line.get_label())
-
-            pyplot.legend(bbox_to_anchor=(1., -0.01), loc=3, ncol=1)
-
-            pyplot.ylabel(self._get('ylabel').format(**self.options))
-            plot.set_yscale(
-                self._get('yscale'))
-            pyplot.xticks(list(scipy.unique(group['symbols'])))
-
-
-#dependency
-#sparse
-for (buildername, symbol_size, symbols), group in sparse:
-
-    #Verbose plotting since due to no pandas support for plotting of vectors
-    pl.figure()
-    ps.set_sparse_plot()
-    for (deps, field,density) in zip(group['dependency'],
-        group['benchmark'], group['density']):
-        pl.plot(sp.arange(symbols), deps, marker = ps.markers(field),
-            label = "(" + field +", " + str(density) + ")")
-
-    pl.title(buildername, ha = "left", position = (.0,1.03),
-        fontsize = "medium")
-    ps.set_legend()
-    pl.xlabel("Rank Defeciency")
-    pl.ylabel("Extra Packets")
-    pl.xticks( symbols-2**sp.arange(sp.log2(symbols))[::-1] ,
-        2**sp.arange(sp.log2(symbols),dtype=int)[::-1])
-    pl.grid('on')
-#dense
-for (buildername, symbol_size, symbols), group in dense:
-
-    #Verbose plotting since due to no pandas support for plotting of vectors
-    pl.figure()
-    ps.set_dense_plot()
-    for (deps, field,testcase) in zip(group['dependency'],
-        group['benchmark'], group['testcase']):
-        pl.plot(sp.arange(symbols), deps, marker = ps.markers(field),
-            label = "(" + field +", " + testcase + ")")
-
-    pl.title(buildername, ha = "left", position = (.0,1.03),
-        fontsize = "medium")
-    ps.set_legend()
-    pl.xlabel("Rank Defeciency")
-    pl.ylabel("Extra Packets")
-    pl.xticks( symbols-2**sp.arange(sp.log2(symbols))[::-1],
-        2**sp.arange(sp.log2(symbols),dtype=int)[::-1])
-    pl.grid('on')
-
-
 #comparision
 for buildername, group in groups:
     # Group all results from the most recent master build
