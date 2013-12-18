@@ -344,7 +344,6 @@ BENCHMARK_OPTION(overhead_options)
     symbols.push_back(64);
     symbols.push_back(128);
     symbols.push_back(256);
-    symbols.push_back(512);
 
     options.add_options()
         ("symbols", gauge::po::value<std::vector<uint32_t> >()->default_value(
