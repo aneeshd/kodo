@@ -1,15 +1,104 @@
+#!/usr/bin/env python
 """
 Copyright Steinwurf ApS 2011-2013.
 Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
 See accompanying file LICENSE.rst or
 http://www.steinwurf.com/licensing
-
+"""
+"""
 Plot the difference in throughput between all branches where the benchmarks have
 been run within the last 72 hours for all supported Kodo platforms
 
 In order for this script to output some comparison figures you should force the
 relevant benchmark run on our buildslaves:
 http://buildbot.steinwurf.dk/buildslaves
+"""
+
+
+import argparse
+import sys
+sys.path.insert(0, "../")
+
+from runner import Runner
+from sources import JsonFile, MongoDbQuery, MultiMongoDbQuery, yesterday
+from patchers import AddAttribute, AddMean
+from modifiers import Selector, GroupBy
+from setters import SetUnit
+from writers import FileWriter, PdfWriter
+from plotters import Plotter
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description = 'Plot the benchmark data')
+
+    parser.add_argument(
+        '--days', dest='days', type=int, action='store', default=3,
+        help='How many days to look back in time when comparing')
+
+    throughput_comparision = Runner(
+        sources = [
+            MultiMongoDbQuery([
+                MongoDbQuery(
+                    collection = 'kodo_throughput',
+                    query = None),
+                MongoDbQuery(
+                    collection = 'kodo_throughput',
+                    query = None),
+            ])],
+        patchers = [
+            AddMean(base = 'throughput')],
+        modifiers = [
+            GroupBy(by = ['buildername'])],
+        writers = [FileWriter(), PdfWriter()],
+        plotters = [
+            ComparisionPlotter(
+                rows=['symbols'],
+                columns=['benchmark','density'],
+                rc_params = {
+                    'figure.subplot.right' : 0.7,
+                    'figure.subplot.left'  : 0.1
+                },
+                ylabel = "Throughput [{unit}]",
+                yscale = 'log')
+        ])
+
+    throughput_comparision.add_arguments(parser)
+
+    args = parser.parse_args()
+
+    for coder in ['decoder', 'encoder']:
+        query = {
+                    'type'      : coder,
+                    'branch'    : 'master',
+                    'scheduler' : 'kodo-nightly-benchmark',
+                }
+
+
+        throughput_comparision.run(
+            run_name = 'sparse',
+            arguments = args,
+            options = {
+                'query' : query
+            })
+
+        throughput_comparision.run(
+            run_name = 'dense',
+            arguments = args,
+            options = {
+                'select_equal' : False,
+                'columns'      : ['benchmark','testcase'],
+                'query'        : query,
+                'rc_params'    : {
+                    'figure.subplot.right' : 0.48,
+                    'figure.subplot.left'  : 0.1,
+                }
+            })
+
+
+"""
+Copyright Steinwurf ApS 2011-2013.
+Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
+See accompanying file LICENSE.rst or
+http://www.steinwurf.com/licensing
 """
 
 from datetime import timedelta
@@ -40,8 +129,7 @@ def plot_throughput_comparison(format, jsonfile, coder, days):
 
     df_all = pd.DataFrame.from_records(sp.hstack( [list(cursor_master),
         list(cursor_branches)] ))
-    df_all['mean'] = df_all['throughput'].apply(sp.mean)
-    df_all['std'] = df_all['throughput'].apply(sp.std)
+
     groups = df_all.groupby(['buildername'])
 
     from matplotlib import pyplot as pl

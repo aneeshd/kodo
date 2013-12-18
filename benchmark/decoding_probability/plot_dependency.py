@@ -10,7 +10,7 @@ import sys
 sys.path.insert(0, '../')
 
 from runner import Runner
-from sources import JsonFile, MongoDbDatabaseQuery, yesterday
+from sources import JsonFile, MongoDbQuery, yesterday
 from patchers import AddAttribute, AddDependency
 from modifiers import Selector, GroupBy
 from setters import SetUnit
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     decoding_probablity = Runner(
         sources = [
             JsonFile(),
-            MongoDbDatabaseQuery(
+            MongoDbQuery(
                 collection = 'kodo_decoding_probability',
                 query = {
                     'branch' : 'master',

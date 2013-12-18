@@ -10,7 +10,7 @@ import sys
 sys.path.insert(0, "../")
 
 from runner import Runner
-from sources import JsonFile, MongoDbDatabaseQuery, yesterday
+from sources import JsonFile, MongoDbQuery, yesterday
 from patchers import AddAttribute, AddRelativeMean
 from modifiers import Selector, GroupBy
 from writers import FileWriter, PdfWriter
@@ -22,7 +22,7 @@ if __name__ == '__main__':
     overhead = Runner(
         sources = [
             JsonFile(),
-            MongoDbDatabaseQuery(
+            MongoDbQuery(
                 collection = 'kodo_overhead',
                 query = {
                     'branch'    : 'master',

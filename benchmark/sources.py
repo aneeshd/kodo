@@ -4,6 +4,7 @@ Distributed under the "STEINWURF RESEARCH LICENSE 1.0".
 See accompanying file LICENSE.rst or
 http://www.steinwurf.com/licensing
 """
+import scipy
 
 import pandas
 assert pandas.version.version.split(".")[:2] >= ['0','12'],\
@@ -43,30 +44,41 @@ class JsonFile(Component):
         else:
             return None
 
-class MongoDbDatabaseQuery(Component):
+def mongo_connect():
     database = 'benchmark'
     address = '176.28.49.184'
     username = 'guest'
     password = 'none'
-    """docstring for MongoDbDatabaseQuery"""
+
+    client = MongoClient(MongoDbQuery.address)
+    db = client[MongoDbQuery.database]
+    db.authenticate(MongoDbQuery.username,
+                    MongoDbQuery.password)
+    return db
+
+class MongoDbQuery(Component):
+
+    """docstring for MongoDbQuery"""
     def __init__(self, collection, query):
-        super(MongoDbDatabaseQuery, self).__init__()
+        super(MongoDbQuery, self).__init__()
         self.collection = collection
         self.query = query
 
-    def __connect(self):
-        """
-        Connect to the database
-        """
-        client = MongoClient(MongoDbDatabaseQuery.address)
-        db = client[MongoDbDatabaseQuery.database]
-        db.authenticate(MongoDbDatabaseQuery.username,
-                        MongoDbDatabaseQuery.password)
-        return db
+    def get_collection(self, db):
+        return list(db[self._get('collection')].find(self._get('query')))
 
     def get_data(self):
-        db = self.__connect()
-        collection = list(
-            db[self._get('collection')].find(self._get('query')))
-        data = pandas.DataFrame.from_records( collection )
+        db = mongo_connect()
+        data = pandas.DataFrame.from_records(self.get_collection(db))
         return data
+
+class MultiMongoDbQuery(Component):
+    """docstring for MultiMongoDbQuery"""
+    def __init__(self, mongo_db_queries):
+        super(MultiMongoDbQuery, self).__init__()
+        self.mongo_db_queries = mongo_db_queries
+
+    def get_data(self):
+        db = mongo_connect()
+        return pandas.DataFrame.from_records(scipy.hstack(
+            [dbquery.get_collection(db) for dbquery in self.mongo_db_queries])

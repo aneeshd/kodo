@@ -10,7 +10,7 @@ import sys
 sys.path.insert(0, "../")
 
 from runner import Runner
-from sources import JsonFile, MongoDbDatabaseQuery, yesterday
+from sources import JsonFile, MongoDbQuery, yesterday
 from patchers import AddAttribute, AddMean
 from modifiers import Selector, GroupBy
 from setters import SetUnit
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     throughput = Runner(
         sources = [
             JsonFile(),
-            MongoDbDatabaseQuery(
+            MongoDbQuery(
                 collection = 'kodo_throughput',
                 query = None)],
         patchers = [
