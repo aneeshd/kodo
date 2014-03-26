@@ -23,6 +23,7 @@ First, if you haven't already, install the prerequisites::
 
     sudo apt-get update
     sudo apt-get install python python-pip libfreetype6-dev libpng12-dev
+    sudo apt-get install texlive-full
     sudo apt-get build-dep python-scipy
 
 Install the virtualenv wrapper::
